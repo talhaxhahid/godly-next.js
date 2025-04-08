@@ -18,7 +18,8 @@
     align-items: center;
 }
 .getaquote{
-    width:100px;
+    width:120px;
     height: auto;
+    transform: translateY(50px);
     
 }
