@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
-import getaquote from "@/assets/getaquote.png";
 import "@/styles/header.css";
 import { Phone } from "lucide-react"; // optional icon lib or use your own SVG
 import HeaderButton from "@/components/HeaderButton";
