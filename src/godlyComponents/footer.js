@@ -2,7 +2,6 @@ import React from "react";
 import background from "../assets/texture.png";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import logo from '@/assets/logo.png';
-import Image from "next/image";
 import CityTags from '@/components/cityTags';
 
 const Footer = () => {

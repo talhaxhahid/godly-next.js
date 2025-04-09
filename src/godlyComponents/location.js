@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import background from "../assets/texture.png";
 import map from "@/assets/map.png";
 import SectionButton from "@/components/sectionButton";
