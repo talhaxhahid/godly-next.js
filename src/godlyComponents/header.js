@@ -8,7 +8,7 @@ import HeaderButton from "@/components/HeaderButton";
 
 const Header = () => {
   return (
-    <div className=" p-4 text-white godlyheader">
+    <div className=" p-4 text-white godlyheader w-full" style={{position:'fixed',top:'0',zIndex:'100'}} >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Top row: Logo and Nav */}
 
@@ -24,24 +24,24 @@ const Header = () => {
             <Image src={logo} alt="Logo" className="header-logo" />
           </div>
           <nav>
-            <ul className="flex gap-x-6 text-[#FDE4C8]">
+            <ul className="flex gap-x-6 text-[#FDE4C8] ">
               <li>
-                <a href="#" className="hover:text-gray-300  text-[#F3C99D]">
+                <a href="#" className="hover:text-gray-300 text-md text-[#F3C99D]">
                   SERVICES
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-300  text-[#F3C99D]">
+                <a href="#" className="hover:text-gray-300 text-md text-[#F3C99D]">
                   ABOUT US
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-300  text-[#F3C99D]">
+                <a href="#" className="hover:text-gray-300 text-md text-[#F3C99D]">
                   OUR PROMISE
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-300  text-[#F3C99D]">
+                <a href="#" className="hover:text-gray-300 text-md text-[#F3C99D]">
                   OUR PROCESS
                 </a>
               </li>
@@ -68,7 +68,7 @@ const Header = () => {
             </div>
           </div>
           <HeaderButton />
-          <Image src={getaquote} alt="get a quote" className="getaquote" />
+          
         </div>
       </div>
     </div>

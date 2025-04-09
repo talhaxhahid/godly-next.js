@@ -53,7 +53,7 @@ const FourStepProcess = () => {
           <h1>RAINGUARD TECH</h1>
         </div>
 
-        <div className="text-white py-16" style={{ marginTop: "4rem" }}>
+        <div className="text-white pt-8" style={{ marginTop: "4rem" }}>
           <div className="flex justify-center items-center relative z-10">
             {steps.map((step, index) => (
               <React.Fragment key={index}>
@@ -76,8 +76,8 @@ const FourStepProcess = () => {
         </div>
 
         <div
-          className="text-white py-16"
-          style={{ marginTop: "2rem", marginBottom: "8rem" }}
+          className="text-white pb-16 pt-4"
+          // style={{ marginTop: "1rem", marginBottom: "3rem" }}
         >
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 px-4 sm:px-6 md:px-8 relative z-10">
             {steps.map((step, index) => (
