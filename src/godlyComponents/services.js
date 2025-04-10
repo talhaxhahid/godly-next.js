@@ -45,7 +45,7 @@ const Services = () => {
         
         
         <h1 className="text-[#FDE4C8] text-7xl tracking-wide  text-center relative">Installation <span className="absolute text-sm -bottom-5 -rotate-5 bg-[#FDE4C8] text-black px-2 w-30">SOUTH FLORIDA</span></h1>
-        <p className="font-sans text-lg text-[#FDE4C8] text-center mt-6 w-120"> Christmas light installation, done for you. Forget the ladder and the hassle of storing lights each year. Let us light up your home or business once, and you'll never want to go back to doing it yourself.</p>
+        <p className="font-sans text-lg text-[#FDE4C8] text-center mt-6 w-120"> Christmas light installation, done for you. Forget the ladder and the hassle of storing lights each year. Let us light up your home or business once, and you will never want to go back to doing it yourself.</p>
         <Button className="hover:bg-white cursor-pointer bg-white text-black font-sans rounded-sm py-2 mt-5 mb-25">What We Offer</Button>
         </div >
     </div>
