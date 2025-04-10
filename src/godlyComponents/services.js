@@ -33,7 +33,7 @@ const Services = () => {
         <h1 className="text-[#FFFFFF] text-xl  tracking-wide">JUST</h1>
         </div>
         <h1 className="text-[#FFFFFF] text-6xl tracking-wide  text-center">WINDOW WASHERS</h1>
-        <p className="font-sans text-lg text-[#FFFFFF94] text-center mt-6"> Godly can clean nearly all components of <br></br> your home or building’s exterior.</p>
+        <p className="font-sans text-lg text-[#FFFFFF94] text-center mt-6"> Godly can clean nearly all components of <br></br> your home or buildings exterior.</p>
         </div>
         <ServicesGrid/>
     </div>
