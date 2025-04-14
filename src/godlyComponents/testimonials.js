@@ -35,7 +35,7 @@ const quotes = new Array(6).fill({
   });
   
   function SampleNextArrow(props) {
-    const { className, onClick } = props;
+    const { onClick } = props;
     return (
       <Button onClick={onClick} className="!absolute bottom-[-70px] left-1/2 ml-6 z-10 rounded-full p-2 w-10 h-10 bg-white text-black hover:bg-[#dec9b4]">
         <ChevronRight />
@@ -44,7 +44,7 @@ const quotes = new Array(6).fill({
   }
   
   function SamplePrevArrow(props) {
-    const { className, onClick } = props;
+    const { onClick } = props;
     return (
       <Button onClick={onClick} className="!absolute bottom-[-70px] left-1/2 -ml-16 z-10 rounded-full p-2 w-10 h-10 bg-white text-black hover:bg-[#dec9b4]">
         <ChevronLeft />
