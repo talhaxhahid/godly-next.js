@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import ServiceButton from "@/components/servicebutton";
 import Image from "next/image"
 import exteriorWindow from "@/assets/homepageServices/exterior_window.png"
 import interiorWindow from "@/assets/homepageServices/interior_window.png"
@@ -127,18 +128,28 @@ const services = [
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:px-20 sm:px-10">
         {services.map((service, idx) => (
-          <Card key={idx} className="bg-[#E9E5E4] rounded-sm">
-            <CardContent className="p-4 flex flex-col gap-3">
-              <Image
-                src={service.image}
-                alt={service.name}
-                width={40}
-                height={40}
-              />
-              <h3 className="text-lg font-normal">{service.name}</h3>
-              <p className="text-sm text-muted-foreground">{service.description}</p>
-            </CardContent>
-          </Card>
+          <Card
+          key={idx}
+          className="group hover:border-[#382f2d] hover:bg-[#382f2d] bg-[#E9E5E4] rounded-sm transition-transform duration-300 hover:rotate-[3deg] relative"
+        >
+          <CardContent className="p-4 flex flex-col gap-3">
+            <Image
+              src={service.image}
+              alt={service.name}
+              width={40}
+              height={40}
+              
+            />
+            <h3 className="text-lg font-normal group-hover:text-white">{service.name}</h3>
+            <p className="text-sm text-muted-foreground group-hover:text-white">{service.description}</p>
+        
+            <div className="absolute top-2 right-2 hidden group-hover:block">
+              <ServiceButton />
+            </div>
+          </CardContent>
+        </Card>
+        
+        
         ))}
       </div>
     )

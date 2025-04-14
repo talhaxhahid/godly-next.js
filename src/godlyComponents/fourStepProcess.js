@@ -35,7 +35,7 @@ const FourStepProcess = () => {
     },
   ];
   return (
-    <div className="fourstepprocess">
+    <div className="fourstepprocess" id="about">
       <div className="fourstepprocess-inner">
         <div className="heading">
           <h1>OUR 4 STEP PROCESS</h1>

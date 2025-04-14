@@ -34,7 +34,7 @@ const HowItWorks = () => {
     ];
 
     return (
-        <div
+        <div id="process"
             className="flex p-16 flex-col justify-items-center items-center min-h-screen bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background.src})` }}>
             <h1 className="text-6xl font-normal text-[#191717]">HOW IT WORKS</h1>
             <h4 className="text-3xl mt-4 font-normal text-[#61503E]">IN 3 SIMPLE STEPS</h4>

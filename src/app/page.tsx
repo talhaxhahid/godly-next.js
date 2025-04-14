@@ -1,5 +1,6 @@
-import WebsiteLayout from "@/godlyComponents/websiteLayout";
+
+import GodlyHome from "@/godlyComponents/home";
 
 export default function Home() {
-  return <WebsiteLayout />;
+  return <GodlyHome />;
 }

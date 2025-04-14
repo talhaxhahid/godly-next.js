@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import logo from '@/assets/logo.png';
 import Image from "next/image";
 import CityTags from '@/components/cityTags';
+import Link from "next/link";
 
 const Footer = () => {
     
@@ -21,7 +22,7 @@ const Footer = () => {
                         <div className="flex flex-col gap-2">
                             <h3 className="text-[#2D2B2B] font-normal uppercase">Information</h3>
                             <a href="#" className="hover:underline text-sm font-normal font-sans">FAQ</a>
-                            <a href="#" className="hover:underline text-sm font-normal font-sans">Blog</a>
+                            <Link href="/blogs" className="hover:underline text-sm font-normal font-sans">Blog</Link>
 
                         </div>
 
