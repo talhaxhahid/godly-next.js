@@ -1,4 +1,4 @@
-import BlogPage from "@/godlyComponents/blogPage";
+import BlogPage from "@/godlyComponents/home";
 
 export default function GodlyBlog() {
   return <BlogPage />;
