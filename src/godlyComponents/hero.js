@@ -19,19 +19,19 @@ const Hero = () => {
         
         <div className="relative z-10 p-8">
            <div className=" min-h-screen flex flex-col justify-end gap-5 pb-10"> 
-            <div className="flex items-center gap-1">
-            <h1 className="text-white mr-5">TOP RATED </h1>
-            <Star size={12} color="gold" fill="gold" />
-            <Star size={12} color="gold" fill="gold" />
-            <Star size={12} color="gold" fill="gold" />
-            <Star size={12} color="gold" fill="gold" />
-            <Star size={12} color="gold" fill="gold" />
+            <div className="flex items-center gap-1 -mb-6">
+            <h1 className="text-[#FDE4C8] mr-2 ">TOP RATED </h1>
+            <Star size={12} color="#FFAC33" fill="#FFAC33" />
+            <Star size={12} color="#FFAC33" fill="#FFAC33" />
+            <Star size={12} color="#FFAC33" fill="#FFAC33" />
+            <Star size={12} color="#FFAC33" fill="#FFAC33" />
+            <Star size={12} color="#FFAC33" fill="#FFAC33" />
             </div>
             <h1 className="text-7xl text-white">Window cleaning <span className="font-['luminaire-script'] text-3xl">And</span> pressure Washing services In South florida</h1>
             <p className="text-white font-sans">we specialize in window washing, home washing, pressure washing, paver sealing and more.</p>
              
            </div>
-           <div className=" min-h-screen pt-20">
+           <div className="  pt-5">
             <QuoteForm/>
 
            </div>

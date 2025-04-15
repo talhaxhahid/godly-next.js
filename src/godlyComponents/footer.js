@@ -21,7 +21,7 @@ const Footer = () => {
                         {/* Left: Information */}
                         <div className="flex flex-col gap-2">
                             <h3 className="text-[#2D2B2B] font-normal uppercase">Information</h3>
-                            <a href="#" className="hover:underline text-sm font-normal font-sans">FAQ</a>
+                            <Link href="#faq" className="hover:underline text-sm font-normal font-sans">FAQ</Link>
                             <Link href="/blogs" className="hover:underline text-sm font-normal font-sans">Blog</Link>
 
                         </div>
@@ -29,10 +29,10 @@ const Footer = () => {
                         {/* Center: Menu */}
                         <div className="flex flex-col gap-2">
                             <h3 className="text-[#2D2B2B] font-normal uppercase">Menu</h3>
-                            <a href="#" className="hover:underline text-sm font-normal font-sans">Services</a>
-                            <a href="#" className="hover:underline  text-sm font-normal font-sans">About us</a>
-                            <a href="#" className="hover:underline text-sm font-normal font-sans">Our promises</a>
-                            <a href="#" className="hover:underline text-sm font-normal font-sans">Our process</a>
+                            <Link href="#services" className="hover:underline text-sm font-normal font-sans">Services</Link>
+                            <Link href="/#about" className="hover:underline  text-sm font-normal font-sans">About us</Link>
+                            <Link href="/#promise"className="hover:underline text-sm font-normal font-sans">Our promises</Link>
+                            <Link href="/#process" className="hover:underline text-sm font-normal font-sans">Our process</Link>
                             <a href="#" className="hover:underline text-sm font-normal font-sans">Holiday lighting</a>
                         </div>
                     </div>

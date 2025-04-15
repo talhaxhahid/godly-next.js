@@ -15,7 +15,7 @@ const ChooseUs = () => {
 
   return (
     <div>
-    <div className="flex flex-col items-center bg-[#262424]  min-h-screen px-6 py-24 gap-20">
+    <div className="flex flex-col items-center bg-[#231f1f]  min-h-screen px-6 py-24 gap-20">
         <div>
         <h1 className="text-[#F3CA9E] text-center text-xl font-['luminaire-script']  -mt-4 underline">Why</h1>
         <h4 className="text-[#FFFFFF] text-6xl  tracking-wide  ">Choose US</h4>
@@ -61,7 +61,7 @@ const services = [
         {services.map((service, idx) => (
           <Card
           key={idx}
-          className="  bg-[#E9E5E4] rounded-sm "
+          className="  bg-[#d5cdcb] rounded-sm "
         >
           <CardContent className="p-4 flex flex-col gap-3">
             <Image
@@ -72,7 +72,7 @@ const services = [
               
             />
             <h3 className="text-lg font-normal ">{service.name}</h3>
-            <p className="text-sm text-muted-foreground ">{service.description}</p>
+            <p className="text-sm font-sans text-[#1F1D1D] ">{service.description}</p>
         
           </CardContent>
         </Card>

@@ -12,11 +12,13 @@ const Faq = () => {
   const [expandedItem, setExpandedItem] = useState("item-1"); // Set default value to item-1
 
   const handleAccordionChange = (value) => {
-    setExpandedItem(value);
+    if (value) {
+      setExpandedItem(value);
+    }
   };
 
   return (
-    <div
+    <div id="faq"
       className="flex flex-col items-center bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat min-h-screen px-6 py-12"
       style={{ backgroundImage: `url(${background.src})`, alignItems: 'center', justifyContent: 'center' }}
     >

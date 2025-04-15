@@ -12,9 +12,9 @@ export default function QuoteForm() {
   const [date, setDate] = useState(new Date());
 
   return (
-    <div className="w-full mx-auto bg-[#f9f1e7]  rounded-xl shadow-md border">
-      <div className="flex justify-between items-start mb-6 p-6 h-20 rounded-t-xl bg-[#ecdec5]">
-        <h2 className="text-4xl font-normal tracking-wide">LET US CALL YOU!</h2>
+    <div className="w-full mx-auto bg-[#fcf1dd]  rounded-xl shadow-md border">
+      <div className="flex justify-between items-center mb-6 p-2 px-6 h-20 rounded-t-xl bg-[#ecdec5]">
+        <h2 className="text-5xl text-[#2D2B2B] font-normal tracking-wide">LET US CALL YOU!</h2>
         <p className="text-sm text-right font-sans text-gray">
           Receive a call within 30 minutes<br /> during normal business hours.
         </p>
@@ -22,25 +22,25 @@ export default function QuoteForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
         <div>
-          <label className="block text-md font-normal uppercase mb-1">Name</label>
+          <label className="block text-md font-normal font-sans mb-1">Name</label>
           <Input   className="bg-transparent border-b-1 border-t-0 border-r-0 border-l-0 border-black rounded-none px-0 focus-visible:ring-0" />
         </div>
         <div>
-          <label className="block text-md font-normal uppercase mb-1">Email</label>
+          <label className="block text-md font-normal font-sans mb-1">Email</label>
           <Input   className="bg-transparent border-b-1 border-t-0 border-r-0 border-l-0  border-black rounded-none px-0 focus-visible:ring-0" />
         </div>
         <div>
-          <label className="block text-md font-normal uppercase mb-1">Phone Number</label>
+          <label className="block text-md font-normal font-sans mb-1">Phone Number</label>
           <Input   className="bg-transparent border-b-1 border-t-0 border-r-0 border-l-0  border-black rounded-none px-0 focus-visible:ring-0" />
         </div>
 
         <div>
-          <label className="block text-md font-normal uppercase mb-1">What services do you need?</label>
+          <label className="block text-md font-normal font-sans mb-1">What services do you need?</label>
           <Input  className="bg-transparent border-b-1 border-t-0 border-r-0 border-l-0  border-black rounded-none px-0 focus-visible:ring-0" />
         </div>
 
         <div>
-          <label className="block text-md font-normal uppercase mb-1">When do you need the work done by?</label>
+          <label className="block text-md font-normal font-sans mb-1">When do you need the work done by?</label>
           <Popover>
             <PopoverTrigger asChild>
               <button className="w-full bg-transparent border-b border-black text-left text-base px-0 py-1 focus:outline-none">
@@ -55,7 +55,7 @@ export default function QuoteForm() {
         </div>
 
         <div>
-          <label className="block text-md font-normal uppercase mb-1">Zip Code</label>
+          <label className="block text-md font-normal font-sans mb-1">Zip Code</label>
           <Input  className="bg-transparent border-b-1 border-t-0 border-r-0 border-l-0  border-black rounded-none px-0 focus-visible:ring-0" />
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function QuoteForm() {
      <div className='flex items-center justify-between p-4'>
       <div className="flex items-center space-x-2 mt-4">
         <Checkbox id="agree" className="bg-white" />
-        <label htmlFor="agree" className="text-sm">
+        <label htmlFor="agree" className="text-sm font-sans">
           I agree to get information text messages from Godly about my estimate and project
         </label>
       </div>

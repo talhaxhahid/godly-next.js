@@ -1,3 +1,5 @@
+"use client";
+import { useGodlyContext } from '@/context/godlyContext';
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import background from "../assets/texture.png";
@@ -32,7 +34,7 @@ import Services2 from "@/assets/otherservices2.png";
 
 
 const OtherServices = () => {
-
+const { city} = useGodlyContext();
 
 
     return (
@@ -40,7 +42,7 @@ const OtherServices = () => {
             className="flex gap-10 p-24 flex-col justify-items-center justify-center items-center min-h-screen bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background.src})` }}>
            
             
-            <h4 className="text-5xl py-10 font-normal text-[#191717] tracking-wide text-center w-4/5">enhance your cleaning with other services we offer in South Florida</h4>
+            <h4 className="text-5xl py-10 font-normal text-[#191717] tracking-wide text-center w-4/5">enhance your cleaning with other services we offer in {city}</h4>
             
             
             <div className="py-5 grid gap-10 px-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full max-w-screen-xl ">

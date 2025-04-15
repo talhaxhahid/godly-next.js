@@ -1,4 +1,5 @@
 "use client";
+import { useGodlyContext } from '@/context/godlyContext';
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -16,6 +17,18 @@ import screenCleans from "@/assets/homepageServices/screen_cleans.png"
 import skylights from "@/assets/homepageServices/sky_light.png"
 import solarPanels from "@/assets/homepageServices/solar_panels.png"
 import sealCoating from "@/assets/homepageServices/seal_coating.png"
+import exteriorWindowColor from "@/assets/homepageServices/exterior_window_color.png"
+import interiorWindowColor from "@/assets/homepageServices/interior_window_color.png"
+import gutterCleaningColor from "@/assets/homepageServices/gutter_cleaning_color.png"
+import houseWashingColor from "@/assets/homepageServices/house_washing_color.png"
+import roofWashingColor from "@/assets/homepageServices/roof_washing_color.png"
+import pressureWashingColor from "@/assets/homepageServices/pressure_washing_color.png"
+import highDustingColor from "@/assets/homepageServices/high_dusting_color.png"
+import lightFixturesColor from "@/assets/homepageServices/light_fixture_color.png"
+import screenCleansColor from "@/assets/homepageServices/screen_cleans_color.png"
+import skylightsColor from "@/assets/homepageServices/sky_light_color.png"
+import solarPanelsColor from "@/assets/homepageServices/solor_panels_color.png"
+import sealCoatingColor from "@/assets/homepageServices/seal_coating_color.png"
 import Cap from "@/assets/santaCap.png"
 import SantaBg from "@/assets/santa_bg.png"
 
@@ -23,7 +36,7 @@ import SantaBg from "@/assets/santa_bg.png"
 
 const Services = () => {
 
-
+const { city} = useGodlyContext();
   return (
     <div>
     <div className="flex flex-col items-center bg-[#262424]  min-h-screen px-6 py-24 gap-20">
@@ -45,7 +58,7 @@ const Services = () => {
         <h4 className="text-[#FDE4C8] text-7xl  tracking-wide relative  ">HOLIDAY Light <Image src={Cap} height={60} width={60} alt="cap" className="absolute -top-3 -left-10"></Image></h4>
         
         
-        <h1 className="text-[#FDE4C8] text-7xl tracking-wide  text-center relative">Installation <span className="absolute text-sm -bottom-5 -rotate-5 bg-[#FDE4C8] text-black px-2 w-30">SOUTH FLORIDA</span></h1>
+        <h1 className="text-[#FDE4C8] text-7xl tracking-wide  text-center relative">Installation <span className="absolute text-sm -bottom-5 -rotate-5 bg-[#FDE4C8] text-black px-2 w-30">{city}</span></h1>
         <p className="font-sans text-lg text-[#FDE4C8] text-center mt-6 w-120"> Christmas light installation, done for you. Forget the ladder and the hassle of storing lights each year. Let us light up your home or business once, and you will never want to go back to doing it yourself.</p>
         <Button className="hover:bg-white cursor-pointer bg-white text-black font-sans rounded-sm py-2 mt-5 mb-25">What We Offer</Button>
         </div >
@@ -60,67 +73,80 @@ export default Services;
 
 
 const services = [
-    {
-      name: "Exterior Windows",
-      image: exteriorWindow,
-      description: "It’s what we do best! Get rid of that nasty build-up of nature’s mildew and grime.",
-    },
-    {
-      name: "Interior Windows",
-      image: interiorWindow,
-      description: "Pet slobber, fingerprints, and so much more can leave residue that is tricky to get off.",
-    },
-    {
-      name: "Gutter Cleaning",
-      image: gutterCleaning,
-      description: "A thorough cleaning that is guaranteed to keep them flowing freely.",
-    },
-    {
-      name: "House Washing",
-      image: houseWashing,
-      description: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
-    },
-    {
-      name: "Roof Washing",
-      image: roofWashing,
-      description: "Removing all the debris from your roof is the easiest way to increase its longevity.",
-    },
-    {
-      name: "Pressure & Soft Washing",
-      image: pressureWashing,
-      description: "Get rid of the slippery film and gunk on your driveway, walkways, porches, pool areas, and more.",
-    },
-    {
-      name: "High Dusting",
-      image: highDusting,
-      description: "Eliminate the cobwebs and dust in those hard to reach corners.",
-    },
-    {
-      name: "Light Fixtures",
-      image: lightFixtures,
-      description: "Keep both your interior and exterior lighting bright with thorough cleanings of your lanterns, sconces, and more.",
-    },
-    {
-      name: "Screen Cleans",
-      image: screenCleans,
-      description: "Our special solution and professional equipment leaves window screens & pool screen enclosures looking brand new.",
-    },
-    {
-      name: "Skylights",
-      image: skylights,
-      description: "Nearly impossible and slightly dangerous to reach, leave it to Godly to keep your skylights in top-notch shape.",
-    },
-    {
-      name: "Solar Panels",
-      image: solarPanels,
-      description: "Dirty solar panels lead to less efficient energy absorption — keep them clean and running to their full potential.",
-    },
-    {
-      name: "Seal Coating",
-      image: sealCoating,
-      description: "Clean, sand, and seal your driveway/parking lot to protect against oils and other damaging elements.",
-    },
-  ]
+  {
+    name: "Exterior Windows",
+    image: exteriorWindow,
+    hoverImage: exteriorWindowColor,
+    description: "It’s what we do best! Get rid of that nasty build-up of nature’s mildew and grime.",
+  },
+  {
+    name: "Interior Windows",
+    image: interiorWindow,
+    hoverImage: interiorWindowColor,
+    description: "Pet slobber, fingerprints, and so much more can leave residue that is tricky to get off.",
+  },
+  {
+    name: "Gutter Cleaning",
+    image: gutterCleaning,
+    hoverImage: gutterCleaningColor,
+    description: "A thorough cleaning that is guaranteed to keep them flowing freely.",
+  },
+  {
+    name: "House Washing",
+    image: houseWashing,
+    hoverImage: houseWashingColor,
+    description: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+  },
+  {
+    name: "Roof Washing",
+    image: roofWashing,
+    hoverImage: roofWashingColor,
+    description: "Removing all the debris from your roof is the easiest way to increase its longevity.",
+  },
+  {
+    name: "Pressure & Soft Washing",
+    image: pressureWashing,
+    hoverImage: pressureWashingColor,
+    description: "Get rid of the slippery film and gunk on your driveway, walkways, porches, pool areas, and more.",
+  },
+  {
+    name: "High Dusting",
+    image: highDusting,
+    hoverImage: highDustingColor,
+    description: "Eliminate the cobwebs and dust in those hard to reach corners.",
+  },
+  {
+    name: "Light Fixtures",
+    image: lightFixtures,
+    hoverImage: lightFixturesColor,
+    description: "Keep both your interior and exterior lighting bright with thorough cleanings of your lanterns, sconces, and more.",
+  },
+  {
+    name: "Screen Cleans",
+    image: screenCleans,
+    hoverImage: screenCleansColor,
+    description: "Our special solution and professional equipment leaves window screens & pool screen enclosures looking brand new.",
+  },
+  {
+    name: "Skylights",
+    image: skylights,
+    hoverImage: skylightsColor,
+    description: "Nearly impossible and slightly dangerous to reach, leave it to Godly to keep your skylights in top-notch shape.",
+  },
+  {
+    name: "Solar Panels",
+    image: solarPanels,
+    hoverImage: solarPanelsColor,
+    description: "Dirty solar panels lead to less efficient energy absorption — keep them clean and running to their full potential.",
+  },
+  {
+    name: "Seal Coating",
+    image: sealCoating,
+    hoverImage: sealCoatingColor,
+    description: "Clean, sand, and seal your driveway/parking lot to protect against oils and other damaging elements.",
+  },
+];
+
   
   
   function ServicesGrid() {
@@ -133,13 +159,21 @@ const services = [
           className="group hover:border-[#382f2d] hover:bg-[#382f2d] bg-[#E9E5E4] rounded-sm transition-transform duration-300 hover:rotate-[3deg] relative"
         >
           <CardContent className="p-4 flex flex-col gap-3">
-            <Image
-              src={service.image}
-              alt={service.name}
-              width={40}
-              height={40}
-              
-            />
+          <div className="relative w-10 h-10">
+  <Image
+    src={service.image}
+    alt={service.name}
+    fill
+    className="object-contain group-hover:hidden"
+  />
+  <Image
+    src={service.hoverImage}
+    alt={`${service.name} color`}
+    fill
+    className="object-contain hidden group-hover:block"
+  />
+</div>
+
             <h3 className="text-lg font-normal group-hover:text-white">{service.name}</h3>
             <p className="text-sm text-muted-foreground group-hover:text-white">{service.description}</p>
         

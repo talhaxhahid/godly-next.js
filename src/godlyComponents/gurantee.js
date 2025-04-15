@@ -17,7 +17,7 @@ const Gurantee = () => {
         <h1 className="text-[#FFFFFF] text-5xl font-['luminaire-script'] ml-20 -mt-4">Guarantee</h1>
         </div>
         <div
-             className="flex w-full flex-col items-center  bg-cover bg-center bg-no-repeat min-h-screen px-6 py-12 gap-40 pb-20"
+             className="flex w-full flex-col items-center  bg-cover bg-center bg-no-repeat min-h-screen px-6 py-12 gap-40 pb-40 md:pb-40"
              style={{ backgroundImage: `url(${background.src})`, alignItems: 'center', justifyContent: 'center' }}>
 
 
