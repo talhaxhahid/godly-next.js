@@ -45,7 +45,7 @@ const ServiceNearYou = ({ slug }) => {
     <div className="fourstepprocess bg-[#262424]">
       <div className="fourstepprocess-inner">
         <div className="">
-          <h1 className=" text-[#FDE4C8] text-center text-6xl">Solar Panel</h1>
+          <h1 className=" text-[#FDE4C8] text-center text-6xl">{Services[slug]['hero'][0]}&nbsp;{Services[slug]['hero'][1]}</h1>
           <h4 className=" font-['luminaire-script'] text-4xl text-center text-white -mt-3 ">
             Near You
           </h4>
@@ -63,13 +63,15 @@ const ServiceNearYou = ({ slug }) => {
             Services[slug]['nearyou'].slice(0, 2).map((step, index) => (
               <div key={index} className="flex flex-col items-center ">
                 <div className="bg-[#CDB9A2] text-black p-3 rounded-md  relative z-10  w-64 min-h-60 ">
-                  <div className=" border-[1.5px] border-dashed text-[#2D2B2B] border-[#2D2B2B] rounded-md p-2 h-full">
-                    <div className="flex justify-center mb-4">{steps1[index].icon}</div>
+                  <div className=" border-[1.5px] border-dashed text-[#2D2B2B] border-[#2D2B2B] rounded-md p-2 h-full flex flex-col items-center justify-between">
+                    <div>
+                    <div className="flex justify-center mb-4">{steps2[index].icon}</div>
                     <div
                       className="text-center  text-xl mb-8"
                       style={{ marginBottom: "1rem" }}
                     >
                       {step.title}
+                    </div>
                     </div>
                     <p className="text-center font-sans text-sm ">
                       {step.text}
@@ -82,14 +84,16 @@ const ServiceNearYou = ({ slug }) => {
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 px-4 sm:px-6 md:px-8 relative z-10 py-5">
             {Services[slug]['nearyou'].slice(2, 5).map((step, index) => (
               <div key={index} className="flex flex-col items-center ">
-                <div className="bg-[#CDB9A2] text-black p-3 rounded-md  relative z-10  w-64 min-h-55 ">
-                  <div className=" border-[1.5px] border-dashed text-[#2D2B2B] border-[#2D2B2B] rounded-md p-2 h-full">
+                <div className="bg-[#CDB9A2] text-black p-3 rounded-md  relative z-10  w-64 min-h-60 ">
+                  <div className=" border-[1.5px] border-dashed text-[#2D2B2B] border-[#2D2B2B] rounded-md p-2 h-full flex flex-col items-center justify-between">
+                    <div>
                     <div className="flex justify-center mb-4">{steps2[index].icon}</div>
                     <div
                       className="text-center  text-xl mb-8"
                       style={{ marginBottom: "1rem" }}
                     >
                       {step.title}
+                    </div>
                     </div>
                     <p className="text-center font-sans text-sm ">
                       {step.text}
@@ -100,7 +104,7 @@ const ServiceNearYou = ({ slug }) => {
             ))}
           </div>
         </div>
-        <h1 className="text-white font-normal text-3xl tracking-wide w-120 text-center">Maximize energy Efficiency with our professional solar panel cleaning services.</h1>
+        <h1 className="text-white font-normal text-3xl tracking-wide w-120 text-center">Maximize energy <span className="font-['luminaire-script'] text-[#F3CA9E]">Efficiency</span> with our professional solar panel cleaning services.</h1>
 
       
       </div>

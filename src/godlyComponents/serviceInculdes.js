@@ -19,16 +19,16 @@ const ServiceIncludes = ({ slug }) => {
             <h4 className="text-5xl  font-normal text-[#191717] tracking-wide text-center w-150">WHAT <span className="text-[#AB8459] ">INCLUDED</span> <span className=" text-5xl "> IN OUR SOLAR PANEL CLEANING Service</span></h4>
             </div>
             
-            <div className="py-5 grid gap-6 px-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full max-w-screen-xl ">
+            <div className="py-5 flex flex-wrap gap-6 px-4 w-full max-w-screen-xl justify-center ">
                     {Services[slug]['included'].map((step, index) => (
-                        <div key={index} className={`  rounded-sm p-2 bg-size-[auto_10rem] bg-top-right bg-no-repeat ${index === 1 ? "bg-[#E7E3E0] text-black" : "bg-[#201E1E] text-[#FFFFFF]"} `} >
-                            <div className="flex flex-col justify-between items-center border-[#6A6464]  p-6 rounded-md border border-dashed  relative z-10  w-full min-h-65 gap-15 ">
+                        <div key={index} className={`  rounded-sm p-2 bg-size-[auto_10rem] bg-top-right ${Services[slug]['included'].length==5 ?"w-65":Services[slug]['included'].length==3 ?"w-70":"w-60"} min-h-60 bg-no-repeat ${index === 1 ? "bg-[#E7E3E0] text-black" : "bg-[#201E1E] text-[#FFFFFF]"} `} >
+                            <div className="flex flex-col justify-between items-center border-[#6A6464]  p-6 rounded-md border border-dashed  relative z-10  w-full  h-full gap-15 ">
                                    <div>
                                     <h5 className="text-md font-normal text-center "><span className="">{step.number}</span></h5>
                                     
                                     <div
-                                        className="text-center  text-2xl mb-8"
-                                        style={{ marginBottom: "1rem" }}
+                                        className="text-center  text-2xl mb-3"
+                                        
                                     >
                                         {step.title}
                                     </div>

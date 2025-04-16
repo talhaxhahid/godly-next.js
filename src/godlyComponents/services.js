@@ -39,7 +39,7 @@ const Services = () => {
 const { city} = useGodlyContext();
   return (
     <div>
-    <div className="flex flex-col items-center bg-[#262424]  min-h-screen px-6 py-24 gap-20">
+    <div className="flex flex-col items-center bg-[#231f1f]  min-h-screen px-6 py-24 gap-20">
         <div>
         <h1 className="text-[#F3CA9E] text-center text-xl font-['luminaire-script']  -mt-4 underline">We are</h1>
         <div className="flex gap-2 items-end justify-center">
@@ -51,7 +51,7 @@ const { city} = useGodlyContext();
         </div>
         <ServicesGrid/>
     </div>
-    <div className="bg-[#262424] p-6 bg-cover bg-bottom bg-no-repeat bg-blend-soft-light" style={{ backgroundImage: `url(${SantaBg.src})` }}>
+    <div className="bg-[#231f1f] p-6 bg-cover bg-bottom bg-no-repeat bg-blend-soft-light" style={{ backgroundImage: `url(${SantaBg.src})` }}>
     <div className="mb-15">
         
         <div className="flex flex-col gap-2 items-center justify-center ">

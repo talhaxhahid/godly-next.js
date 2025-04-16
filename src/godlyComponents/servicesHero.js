@@ -21,8 +21,8 @@ const ServicesHero = ({ slug }) => {
                         <Star size={12} color="#FFAC33" fill="#FFAC33" />
                         <Star size={12} color="#FFAC33" fill="#FFAC33" />
                         </div>
-            <h1 className="text-white text-6xl tracking-wide">  {Services[slug]['hero'][0]}</h1>
-            <h1 className="-mt-5 text-center"><span className=" font-['luminaire-script'] text-6xl text-[#FDE4C8]">{Services[slug]['hero'][1]} &nbsp;</span> <span className="text-[#FDE4C8]">{city}</span></h1>
+            <h1 className="text-white text-6xl tracking-wide text-center">  {Services[slug]['hero'][0]}</h1>
+            <h1 className="-mt-5 text-center tracking-wide"><span className=" font-['luminaire-script'] text-6xl text-[#FDE4C8]">{Services[slug]['hero'][1]} &nbsp;</span> <span className="text-[#FDE4C8]">{city}</span></h1>
             </div>
             <div className="bg-[#e7e3df] text-[#1c1c1c] rounded-sm p-2 min-h-[200px] relative">
                 <Image src={Services[slug]['hero'][2]}  alt="window"></Image>

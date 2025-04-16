@@ -10,7 +10,7 @@ const EssentialService = ({ slug }) => {
                     WHY KEEPING YOUR
                 </h4>
                 <h4 className="text-[#F3CA9E] text-7xl text-center tracking-wide">
-                    SOLAR PANELS CLEAN
+                {Services[slug]['hero'][0]}&nbsp;{Services[slug]['hero'][1]}
                 </h4>
                 <h1 className="text-white text-center text-6xl font-['luminaire-script'] -mt-4">
                     Is Essential?
@@ -18,16 +18,16 @@ const EssentialService = ({ slug }) => {
             </div>
 
             {/* Info Cards Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
+            <div className="flex flex-wrap gap-8 justify-center ">
                 {Services[slug]['essential'].map((point, index) => (
                     <div
                         key={index}
-                        className="bg-[#CBB7A0] p-2 rounded-md shadow-md  sm:w-[360px]"
+                        className="bg-[#CBB7A0] p-2 rounded-md shadow-md w-100 "
                     >
-                        <div className="rounded-md border-solid border-[1.7px] border-[#2D2B2B] p-3">
+                        <div className="rounded-md border-solid border-[1.7px] border-[#2D2B2B] p-3 h-full">
                         <h2 className="text-[#312E2C30] text-4xl font-bold">{point.number}</h2>
                         <h3 className="text-[#2D2B2B]  text-md mt-2">{point.title}</h3>
-                        <p className="text-black font-sans text-sm mt-1 text-[#2D2B2B]">{point.description}</p>
+                        <p className="text-black font-sans text-md mt-1 text-[#2D2B2B]">{point.text}</p>
                         </div>
                     </div>
                 ))}
