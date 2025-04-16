@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import background from "../assets/heroBanner.png";
