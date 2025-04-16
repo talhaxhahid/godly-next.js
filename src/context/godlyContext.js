@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from 'react';
 const GodlyContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [city, setCity] = useState("SUNRISE");
+  const [city, setCity] = useState("SOUTH FLORIDA");
   const [service, setService] = useState(null); 
 
   return (

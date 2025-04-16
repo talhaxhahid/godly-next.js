@@ -3,10 +3,11 @@ import "@/styles/fourstepprocess.css";
 import background from "../assets/heroBanner.png";
 import { Star } from 'lucide-react';
 import QuoteForm from './quoteForm';
+import { useGodlyContext } from '@/context/godlyContext';
 
 
 const Hero = () => {
-
+const { city} = useGodlyContext();
 
     return (
         
@@ -27,7 +28,7 @@ const Hero = () => {
             <Star size={12} color="#FFAC33" fill="#FFAC33" />
             <Star size={12} color="#FFAC33" fill="#FFAC33" />
             </div>
-            <h1 className="text-7xl text-white">Window cleaning <span className="font-['luminaire-script'] text-3xl">And</span> pressure Washing services In South florida</h1>
+            <h1 className="text-7xl text-white">Window cleaning <span className="font-['luminaire-script'] text-3xl">And</span> pressure Washing services In {city}</h1>
             <p className="text-white font-sans">we specialize in window washing, home washing, pressure washing, paver sealing and more.</p>
              
            </div>
