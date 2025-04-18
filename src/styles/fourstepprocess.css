@@ -1,40 +1,47 @@
-.fourstepprocess{
-    background-color: #231f1f;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    
+.fourstepprocess {
+  padding-top: 6rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 123px;
+  padding-right: 123px;
+  background-image: url("/assets/vintage-paper-16.jpg");
+  background-color: #252424;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply, normal;
 }
 
-.fourstepprocess-inner{
-    background-image: url('../assets/fourstep_bg.png');
-    min-height: 100vh;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.fourstepprocess-inner {
+  background-image: url("../assets/fourstep_bg.png");
+  min-height: 100vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.fourstepprocess-inner .heading{
-    font-weight: 400;
-    font-size: 54px;
-    text-align: center;
-    color: white;
+.fourstepprocess-inner .heading {
+  font-weight: 400;
+  font-size: 54px;
+  text-align: center;
+  color: white;
 }
-.stepcontainer{
-    padding: 8px;
-    box-shadow: 10px 10px 0 #FDE4C8;
+.stepcontainer {
+  padding: 8px;
+  box-shadow: 10px 10px 0 #fde4c8;
+}
+.stepcontainer-inner {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-}
-.stepcontainer-inner{
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.gurantee{
-    box-shadow: -3px 3px 0 #111111;
+.gurantee {
+  box-shadow: -3px 3px 0 #111111;
 }

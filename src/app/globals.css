@@ -26,6 +26,26 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "satoshi-regular";
+  src: url("../assets/fonts/Satoshi-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-bold";
+  src: url("../assets/fonts/Satoshi-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-black";
+  src: url("../assets/fonts/Satoshi-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-light";
+  src: url("../assets/fonts/Satoshi-Light.otf") format("truetype");
+}
+
 html,
 body {
   max-width: 100vw;
@@ -47,7 +67,7 @@ body {
 
 p {
   text-box-trim: both;
-  text-box-edge: cap;
+  /* text-box-edge:; */
 }
 
 a {
@@ -179,4 +199,110 @@ a {
 
 html {
   scroll-behavior: smooth;
+}
+
+.paper-bg-14 {
+  background-image: url("/assets/vintage-paper-14.jpg");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #ab8459;
+  background-blend-mode: screen, normal;
+}
+
+.paper-bg-8 {
+  background-image: url("/assets/vintage-paper-8.jpg");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e9c59c;
+  background-blend-mode: multiply, normal;
+}
+
+.paper-bg-16 {
+  background-image: url("/assets/vintage-paper-16.jpg");
+  background-color: #252424;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply, normal;
+}
+
+.card-number {
+  color: rgba(49, 46, 44, 0.19);
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(45, 43, 43, 0.2);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-heading {
+  color: #2d2b2b;
+  /* font-family: Inter; */
+  font-size: 22.89px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 27.468px */
+}
+
+.card-description {
+  color: #2d2b2b;
+  /* font-family: Inter; */
+  font-size: 22.89px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 27.468px */
+}
+
+.text-trim {
+  text-box-trim: trim-both;
+}
+
+.see-more-reviews {
+  color: #fff;
+  /* font-family: "Marlton Sans"; */
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.quote-button {
+  border-radius: 9px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(146, 59, 42, 0.6) 100%),
+    linear-gradient(180deg, #9b4531 0%, #943b2a 100%),
+    url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
+  background-blend-mode: normal, hard-light, normal;
+  box-shadow:
+    0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.289px 0px #992f12 inset,
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+  display: inline-flex;
+  padding: 26px 16px;
+  align-items: center;
+  gap: 10px;
+  border: 4px solid #933d29;
+  color: #fde4c8;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    opacity: 80%;
+    transform: scale(0.995);
+  }
 }

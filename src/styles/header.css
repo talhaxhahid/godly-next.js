@@ -23,10 +23,8 @@
   height: auto;
 }
 
-.getaquote{
-    width:120px;
-    height: auto;
-    transform: translateY(50px);
-    
+.getaquote {
+  width: 120px;
+  height: auto;
+  transform: translateY(50px);
 }
-
