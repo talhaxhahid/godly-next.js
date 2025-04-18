@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar } from "@/components/ui/calendar";
 // import vintage from "../assets/vintage.jpg";
+import cardBg from "../assets/card_bg.png";
+import Image from "next/image";
 import {
   Popover,
   PopoverContent,
@@ -145,8 +147,8 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="w-full  bg-[#fcf1dd] rounded-xl shadow-md border">
-        <div className="flex justify-between items-center px-12 py-8 h-[128px] rounded-t-xl bg-[#ecdec5] ">
+      <div className="w-full  bg-[#fcf1dd] rounded-xl shadow-md border relative">
+        <div className="flex justify-between items-center px-12 py-8 h-[128px] rounded-t-xl bg-[#ecdec5] relative z-20 ">
           <h2 className=" text-[64px] text-[#2D2B2B] font-normal tracking-wide">
             LET US CALL YOU!
           </h2>
@@ -211,9 +213,9 @@ export default function QuoteForm() {
               <div className="flex items-center space-x-2 w-full">
                 {formData.services.join(", ") || "Select Services"}
                 {showServices ? (
-                  <ChevronDown className="ms-auto" />
-                ) : (
                   <ChevronUp className="ms-auto" />
+                ) : (
+                  <ChevronDown className="ms-auto" />
                 )}
               </div>
             </button>
@@ -338,6 +340,11 @@ export default function QuoteForm() {
             </QuoteButton>
           </div>
         </div>
+        <Image
+          src={cardBg}
+          alt="cardBg"
+          className="absolute top-0 left-full -translate-y-[calc(50%_-_64px)] z-10 -translate-x-[calc(50%_+_64px)] rotate-45 scale-60"
+        />
       </div>
       {submitStatus === "error" && (
         <div className="mt-4 p-4 bg-red-100 text-red-700 rounded">

@@ -7,7 +7,17 @@ import Image from "next/image";
 const Gurantee = () => {
   return (
     <div className="paper-bg-16">
-      <div className="flex flex-col items-center  max-w-[1440px] mx-auto px-6 py-24 gap-30 ">
+      <div
+        className="flex flex-col items-center  max-w-[1440px] mx-auto px-6 py-24 gap-30"
+        style={{
+          backgroundImage: `url(${background.src})`,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="max-w-[1440px] mx-auto">
           <div className="flex gap-2 item-start">
             <h4 className="text-[#FFFFFF] text-3xl  tracking-wide mb-4 mt-3 text-trim">
@@ -29,15 +39,7 @@ const Gurantee = () => {
             Guarantee
           </h1>
         </div>
-        <div
-          className="flex w-full flex-col items-center  bg-cover bg-center bg-no-repeat min-h-screen  px-6 py-12 gap-40 pb-40 "
-          style={{
-            backgroundImage: `url(${background.src})`,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundSize: "cover",
-          }}
-        >
+        <div className="flex w-full flex-col items-center  bg-contain bg-center bg-no-repeat min-h-screen gap-40 ">
           <div className="h-60 min-w-[660px] relative">
             <div
               className="w-full h-full absolute -top-1 bg-cover bg-center bg-no-repeat rotate-10"

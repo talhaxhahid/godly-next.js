@@ -1,12 +1,13 @@
 // components/FreeEstimateButton.tsx
 import { Button } from "@/components/ui/button";
 
-export default function QuoteButton({ children, type, disabled }) {
+export default function QuoteButton({ children, type, disabled, onClick }) {
   return (
     <Button
       className="quote-button text-trim flex items-center justify-center gap-2"
       type={type}
       disabled={disabled}
+      onClick={onClick}
     >
       <span className="-mt-2">{children}</span>
       <svg

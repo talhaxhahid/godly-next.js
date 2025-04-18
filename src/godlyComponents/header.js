@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import "@/styles/header.css";
@@ -223,12 +223,21 @@ const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [citiesOpen, setCitiesOpen] = useState(false);
 
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div
       className="p-4 text-white godlyheader w-full"
       style={{ position: "fixed", top: "0", zIndex: "100" }}
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className=" flex flex-col md:flex-row items-center justify-between gap-4 w-full">
         <div className="flex items-center gap-[30px]">
           <div className="header-logo mb-2 md:mb-0">
             <Link href="/">

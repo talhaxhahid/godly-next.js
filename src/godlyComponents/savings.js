@@ -1,8 +1,19 @@
+"use client";
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import background from "../assets/texture.png";
 import { Check, X } from "lucide-react";
 import QuoteButton from "@/components/quoteButton";
+
+import { useState } from "react";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import QuoteForm from "@/godlyComponents/quoteForm";
 
 const Savings = () => {
   const steps = [
@@ -19,7 +30,7 @@ const Savings = () => {
       discount: "8% OFF",
     },
   ];
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div
       className="flex p-16 flex-col justify-items-center items-center  bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat"
@@ -60,7 +71,10 @@ const Savings = () => {
                   <div className="flex justify-center mb-4">
                     {FeatureList(index != 2)}
                   </div>
-                  <QuoteButton>Request a Quote</QuoteButton>
+                  <QuoteButton onClick={() => setIsOpen(true)}>
+                    Request a Quote
+                  </QuoteButton>
+
                   <div className="h-4 w-15 -rotate-45 bg-[#F3CA9ECC] absolute top-2 -left-6 z-10"></div>
                   <div className="h-4 w-15 -rotate-45 bg-[#F3CA9ECC] absolute bottom-2 -right-6 z-10"></div>
                 </div>
@@ -69,11 +83,25 @@ const Savings = () => {
           </div>
         </div>
       </div>
+      <FormPopup open={isOpen} onOpenChange={setIsOpen} />
     </div>
   );
 };
 
 export default Savings;
+
+const FormPopup = ({ open, onOpenChange }) => {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogHeader>
+        <DialogTitle className="hidden">Contact Us</DialogTitle>
+      </DialogHeader>
+      <DialogContent className="max-h-[90vh] overflow-y-auto max-w-[180vw] sm:max-w-[95vw] lg:max-w-[180vh] z-[9999] top-80 bg-transparent border-none">
+        <QuoteForm />
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 const FeatureList = (value) => {
   const features = [
