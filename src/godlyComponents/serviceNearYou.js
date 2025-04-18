@@ -1,43 +1,43 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import near1 from "@/assets/near1.png";
-import near2 from "@/assets/near2.png";
+// import near1 from "@/assets/near1.png";
+// import near2 from "@/assets/near2.png";
 import near3 from "@/assets/near3.png";
 import near4 from "@/assets/near4.png";
 import near5 from "@/assets/near5.png";
 import Services from "@/data/servicesData";
 const ServiceNearYou = ({ slug }) => {
-  const steps1 = [
-    {
-      number: "01",
-      icon: (
-        <Image
-          src={near1}
-          height={40}
-          width={40}
-          alt="scrub"
-          className="fourstepicon"
-        />
-      ),
-      title: "Scrub",
-      text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
-    },
-    {
-      number: "02",
-      icon: (
-        <Image
-          src={near2}
-          height={40}
-          width={40}
-          alt="squeegee"
-          className="fourstepicon"
-        />
-      ),
-      title: "Squeegee",
-      text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
-    },
-  ];
+  // const steps1 = [
+  //   {
+  //     number: "01",
+  //     icon: (
+  //       <Image
+  //         src={near1}
+  //         height={40}
+  //         width={40}
+  //         alt="scrub"
+  //         className="fourstepicon"
+  //       />
+  //     ),
+  //     title: "Scrub",
+  //     text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+  //   },
+  //   {
+  //     number: "02",
+  //     icon: (
+  //       <Image
+  //         src={near2}
+  //         height={40}
+  //         width={40}
+  //         alt="squeegee"
+  //         className="fourstepicon"
+  //       />
+  //     ),
+  //     title: "Squeegee",
+  //     text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+  //   },
+  // ];
   const steps2 = [
     {
       number: "03",
