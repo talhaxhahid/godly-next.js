@@ -8,7 +8,7 @@ const Gurantee = () => {
   return (
     <div className="paper-bg-16">
       <div
-        className="flex flex-col items-center  max-w-[1440px] mx-auto px-6 py-24 gap-30"
+        className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-24"
         style={{
           backgroundImage: `url(${background.src})`,
           alignItems: "center",
@@ -18,17 +18,17 @@ const Gurantee = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="max-w-[1440px] mx-auto">
-          <div className="flex gap-2 item-start">
-            <h4 className="text-[#FFFFFF] text-3xl  tracking-wide mb-4 mt-3 text-trim">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="item-start flex gap-2">
+            <h4 className="text-trim mt-3 mb-4 text-3xl tracking-wide text-[#FFFFFF]">
               THE
             </h4>
-            <h1 className="text-[#F3CA9E] text-[102px]  tracking-wide text-trim">
+            <h1 className="text-trim text-[102px] tracking-wide text-[#F3CA9E]">
               GODLY
             </h1>
           </div>
           <h1
-            className="text-[#FFFFFF] text-[64px] font-['luminaire-script'] ml-22 -mt-6 text-trim"
+            className="text-trim -mt-6 ml-22 font-['luminaire-script'] text-[64px] text-[#FFFFFF]"
             style={{
               WebkitTextStrokeWidth: "8px",
               strokeLinecap: "round",
@@ -39,17 +39,17 @@ const Gurantee = () => {
             Guarantee
           </h1>
         </div>
-        <div className="flex w-full flex-col items-center  bg-contain bg-center bg-no-repeat min-h-screen gap-40 ">
-          <div className="h-60 min-w-[660px] relative">
+        <div className="flex min-h-screen w-full flex-col items-center gap-40 bg-contain bg-center bg-no-repeat">
+          <div className="relative h-60 min-w-[660px]">
             <div
-              className="w-full h-full absolute -top-1 bg-cover bg-center bg-no-repeat rotate-10"
+              className="absolute -top-1 h-full w-full rotate-10 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
-            <div className=" min-w-[660px] rounded-md bg-[#CBB7A0]! paper-bg-8 p-2 shadow gurantee absolute top-0">
-              <div className="flex border border-black rounded-md w-full h-full p-2 justify-between items-center">
-                <div className="flex flex-col w-3/4 justify-between gap-6 ">
+            <div className="paper-bg-8 gurantee absolute top-0 min-w-[660px] rounded-md bg-[#CBB7A0]! p-2 shadow">
+              <div className="flex h-full w-full items-center justify-between rounded-md border border-black p-2">
+                <div className="flex w-3/4 flex-col justify-between gap-6">
                   <h1
-                    className="text-[#312E2C30] text-5xl card-number"
+                    className="card-number text-5xl text-[#312E2C30]"
                     style={{
                       WebkitTextStrokeWidth: "1px",
                       WebkitTextStrokeColor: "#d5d5d5",
@@ -58,30 +58,30 @@ const Gurantee = () => {
                   >
                     01.
                   </h1>
-                  <h4 className="text-black text-2xl font-['satoshi-bold']">
+                  <h4 className="font-['satoshi-bold'] text-2xl text-black">
                     We respect your time
                   </h4>
-                  <h5 className="font-['satoshi-regular'] text-2xl font-light  ">
+                  <h5 className="font-['satoshi-regular'] text-2xl font-light">
                     Time is valuable and should never be taken for granted, we
                     show up on time and maintain steady communication from
                     booking to completion.
                   </h5>
                 </div>
-                <Image src={barcode} alt="barcode" className="w-1/5 h-full" />
+                <Image src={barcode} alt="barcode" className="h-full w-1/5" />
               </div>
             </div>
           </div>
 
-          <div className="h-50 w-[450px] relative">
+          <div className="relative h-50 w-[450px]">
             <div
-              className="w-full h-full absolute -left-15 top-4 bg-cover bg-center bg-no-repeat -rotate-10"
+              className="absolute top-4 -left-15 h-full w-full -rotate-10 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
-            <div className="  rounded-md bg-[#CBB7A0] p-2 shadow gurantee absolute top-0">
-              <div className="flex border border-black rounded-md w-full h-full items-center justify-between p-2">
-                <div className="flex flex-col w-3/4 justify-between gap-6">
+            <div className="gurantee absolute top-0 rounded-md bg-[#CBB7A0] p-2 shadow">
+              <div className="flex h-full w-full items-center justify-between rounded-md border border-black p-2">
+                <div className="flex w-3/4 flex-col justify-between gap-6">
                   <h1
-                    className="text-[#312E2C30] text-5xl card-number"
+                    className="card-number text-5xl text-[#312E2C30]"
                     style={{
                       WebkitTextStrokeWidth: "1px",
                       WebkitTextStrokeColor: "#d5d5d5",
@@ -90,30 +90,30 @@ const Gurantee = () => {
                   >
                     02.
                   </h1>
-                  <h4 className="text-black text-2xl font-['satoshi-bold']">
+                  <h4 className="font-['satoshi-bold'] text-2xl text-black">
                     We keep our word
                   </h4>
-                  <h5 className="font-['satoshi-regular'] text-2xl font-light  ">
+                  <h5 className="font-['satoshi-regular'] text-2xl font-light">
                     If we say we&apos;re going to do something, we do it. Plain
                     and simple.
                   </h5>
                 </div>
 
-                <Image src={barcode} alt="barcode" className="w-1/4 h-full" />
+                <Image src={barcode} alt="barcode" className="h-full w-1/4" />
               </div>
             </div>
           </div>
 
-          <div className="h-50 min-w-[500px] relative ">
+          <div className="relative h-50 min-w-[500px]">
             <div
-              className="w-full h-full absolute -top-2 right-5 bg-cover bg-center bg-no-repeat rotate-5"
+              className="absolute -top-2 right-5 h-full w-full rotate-5 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
-            <div className=" min-w-[470px] rounded-md bg-[#CBB7A0] p-2  shadow gurantee absolute top-0">
-              <div className="flex border border-black rounded-md w-full h-full p-2">
-                <div className="flex flex-col w-3/4 justify-between gap-6">
+            <div className="gurantee absolute top-0 min-w-[470px] rounded-md bg-[#CBB7A0] p-2 shadow">
+              <div className="flex h-full w-full rounded-md border border-black p-2">
+                <div className="flex w-3/4 flex-col justify-between gap-6">
                   <h1
-                    className="text-[#312E2C30] text-5xl card-number"
+                    className="card-number text-5xl text-[#312E2C30]"
                     style={{
                       WebkitTextStrokeWidth: "1px",
                       WebkitTextStrokeColor: "#d5d5d5",
@@ -122,16 +122,16 @@ const Gurantee = () => {
                   >
                     03.
                   </h1>
-                  <h4 className="text-black text-2xl font-['satoshi-bold'] card-heading">
+                  <h4 className="card-heading font-['satoshi-bold'] text-2xl text-black">
                     We treat properties like our own
                   </h4>
-                  <h5 className="font-['satoshi-regular'] text-2xl font-light card-description ">
+                  <h5 className="card-description font-['satoshi-regular'] text-2xl font-light">
                     We respect every inch of your property, and strive to leave
                     it better than we found it.
                   </h5>
                 </div>
 
-                <Image src={barcode} alt="barcode" className="w-1/4 h-full" />
+                <Image src={barcode} alt="barcode" className="h-full w-1/4" />
               </div>
             </div>
           </div>

@@ -3,11 +3,11 @@ import "@/styles/fourstepprocess.css";
 
 const BlogsHero = () => {
   return (
-    <div className="bg-[#262424] p-16 flex flex-col items-center justify-center mt-20 ">
-      <h1 className="text-6xl text-[#FDE4C8] text-center border-b-4 border-double border-[#FDE4C8] text-shadow-[#AF8F6E] pb-2">
+    <div className="mt-20 flex flex-col items-center justify-center bg-[#262424] p-16">
+      <h1 className="border-b-4 border-double border-[#FDE4C8] pb-2 text-center text-6xl text-[#FDE4C8] text-shadow-[#AF8F6E]">
         Godly resources{" "}
       </h1>
-      <p className="text-lg font-sans text-[#FFFFFF94] text-center">
+      <p className="text-center font-sans text-lg text-[#FFFFFF94]">
         actionable ideas to help you make informed and smart choices.
       </p>
     </div>

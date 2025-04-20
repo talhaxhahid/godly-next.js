@@ -11,9 +11,9 @@ const BlogsSection = ({ noOfBlogs }) => {
   });
 
   return (
-    <div className="bg-[#fdf6ed] py-8 px-4 md:px-12">
-      <h2 className="text-xl font-bold text-gray-800 mb-6">LASTEST NEWS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="bg-[#fdf6ed] px-4 py-8 md:px-12">
+      <h2 className="mb-6 text-xl font-bold text-gray-800">LASTEST NEWS</h2>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {newsList.map((news, index) => (
           <div key={index}>
             <Link href="/blog/1">
@@ -22,10 +22,10 @@ const BlogsSection = ({ noOfBlogs }) => {
                 alt={news.title}
                 width={500}
                 height={300}
-                className="w-full h-auto object-cover"
+                className="h-auto w-full object-cover"
               />
-              <p className="text-gray-700 text-sm mt-2">{news.date}</p>
-              <p className="text-sm font-bold text-gray-800 mt-1 leading-snug">
+              <p className="mt-2 text-sm text-gray-700">{news.date}</p>
+              <p className="mt-1 text-sm leading-snug font-bold text-gray-800">
                 {news.title}
               </p>
             </Link>

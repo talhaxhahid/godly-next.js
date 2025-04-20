@@ -86,68 +86,64 @@ const ServiceNearYou = ({ slug }) => {
     <div className="fourstepprocess bg-[#262424]">
       <div className="fourstepprocess-inner">
         <div className="">
-          <h1 className=" text-[#FDE4C8] text-center text-6xl">
+          <h1 className="text-center text-6xl text-[#FDE4C8]">
             {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
           </h1>
-          <h4 className=" font-['luminaire-script'] text-4xl text-center text-white -mt-3 ">
+          <h4 className="-mt-3 text-center font-['luminaire-script'] text-4xl text-white">
             Near You
           </h4>
         </div>
 
         <div
-          className="text-white pb-16 pt-20"
+          className="pt-20 pb-16 text-white"
           // style={{ marginTop: "1rem", marginBottom: "3rem" }}
         >
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 px-4 sm:px-6 md:px-8 relative z-10 py-5">
+          <div className="relative z-10 flex flex-wrap justify-center gap-6 px-4 py-5 sm:gap-8 sm:px-6 md:gap-12 md:px-8">
             {Services[slug]["nearyou"].slice(0, 2).map((step, index) => (
-              <div key={index} className="flex flex-col items-center ">
-                <div className="bg-[#CDB9A2] text-black p-3 rounded-md  relative z-10  w-64 min-h-60 ">
-                  <div className=" border-[1.5px] border-dashed text-[#2D2B2B] border-[#2D2B2B] rounded-md p-2 h-full flex flex-col items-center justify-between">
+              <div key={index} className="flex flex-col items-center">
+                <div className="relative z-10 min-h-60 w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
+                  <div className="flex h-full flex-col items-center justify-between rounded-md border-[1.5px] border-dashed border-[#2D2B2B] p-2 text-[#2D2B2B]">
                     <div>
-                      <div className="flex justify-center mb-4">
+                      <div className="mb-4 flex justify-center">
                         {steps2[index].icon}
                       </div>
                       <div
-                        className="text-center  text-xl mb-8"
+                        className="mb-8 text-center text-xl"
                         style={{ marginBottom: "1rem" }}
                       >
                         {step.title}
                       </div>
                     </div>
-                    <p className="text-center font-sans text-sm ">
-                      {step.text}
-                    </p>
+                    <p className="text-center font-sans text-sm">{step.text}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 px-4 sm:px-6 md:px-8 relative z-10 py-5">
+          <div className="relative z-10 flex flex-wrap justify-center gap-6 px-4 py-5 sm:gap-8 sm:px-6 md:gap-12 md:px-8">
             {Services[slug]["nearyou"].slice(2, 5).map((step, index) => (
-              <div key={index} className="flex flex-col items-center ">
-                <div className="bg-[#CDB9A2] text-black p-3 rounded-md  relative z-10  w-64 min-h-60 ">
-                  <div className=" border-[1.5px] border-dashed text-[#2D2B2B] border-[#2D2B2B] rounded-md p-2 h-full flex flex-col items-center justify-between">
+              <div key={index} className="flex flex-col items-center">
+                <div className="relative z-10 min-h-60 w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
+                  <div className="flex h-full flex-col items-center justify-between rounded-md border-[1.5px] border-dashed border-[#2D2B2B] p-2 text-[#2D2B2B]">
                     <div>
-                      <div className="flex justify-center mb-4">
+                      <div className="mb-4 flex justify-center">
                         {steps2[index].icon}
                       </div>
                       <div
-                        className="text-center  text-xl mb-8"
+                        className="mb-8 text-center text-xl"
                         style={{ marginBottom: "1rem" }}
                       >
                         {step.title}
                       </div>
                     </div>
-                    <p className="text-center font-sans text-sm ">
-                      {step.text}
-                    </p>
+                    <p className="text-center font-sans text-sm">{step.text}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <h1 className="text-white font-normal text-3xl tracking-wide w-120 text-center">
+        <h1 className="w-120 text-center text-3xl font-normal tracking-wide text-white">
           Maximize energy{" "}
           <span className="font-['luminaire-script'] text-[#F3CA9E]">
             Efficiency

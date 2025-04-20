@@ -9,27 +9,27 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="paper-bg-16">
-      <div className=" px-[40px] py-[48px]  flex flex-col justify-start item-center gap-10 max-w-[1440px] mx-auto">
+      <div className="item-center mx-auto flex max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
         <div
-          className="bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat p-6 rounded-xl  "
+          className="rounded-xl bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply"
           style={{ backgroundImage: `url(${background.src})` }}
         >
-          <div className="flex flex-col md:flex-row justify-between  items-start  ">
-            <div className="flex flex-col md:flex-row  md:gap-30 items-start  ">
+          <div className="flex flex-col items-start justify-between md:flex-row">
+            <div className="flex flex-col items-start md:flex-row md:gap-30">
               {/* Left: Information */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-[#2D2B2B] font-normal uppercase">
+                <h3 className="font-normal text-[#2D2B2B] uppercase">
                   Information
                 </h3>
                 <Link
                   href="#faq"
-                  className="hover:underline text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   FAQ
                 </Link>
                 <Link
                   href="/blogs"
-                  className="hover:underline text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   Blog
                 </Link>
@@ -37,34 +37,34 @@ const Footer = () => {
 
               {/* Center: Menu */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-[#2D2B2B] font-normal uppercase">Menu</h3>
+                <h3 className="font-normal text-[#2D2B2B] uppercase">Menu</h3>
                 <Link
                   href="#services"
-                  className="hover:underline text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   Services
                 </Link>
                 <Link
                   href="/#about"
-                  className="hover:underline  text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   About us
                 </Link>
                 <Link
                   href="/#promise"
-                  className="hover:underline text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   Our promises
                 </Link>
                 <Link
                   href="/#process"
-                  className="hover:underline text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   Our process
                 </Link>
                 <a
                   href="#"
-                  className="hover:underline text-sm font-normal font-sans"
+                  className="font-sans text-sm font-normal hover:underline"
                 >
                   Holiday lighting
                 </a>
@@ -73,36 +73,36 @@ const Footer = () => {
 
             {/* Right: Contact Info */}
             <div className="flex flex-col gap-2 text-right md:items-end">
-              <p className="text-lg   font-normal ">954-751-4128</p>
-              <p className="text-sm    font-normal ">hello@godlywindows.com</p>
+              <p className="text-lg font-normal">954-751-4128</p>
+              <p className="text-sm font-normal">hello@godlywindows.com</p>
             </div>
           </div>
           <div
-            className="flex justify-between item-center"
+            className="item-center flex justify-between"
             style={{ paddingTop: "2rem" }}
           >
             <div className="flex gap-4 pt-4">
-              <div className="w-10 h-10 flex items-center justify-center bg-[#312E2C] rounded-full text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#312E2C] text-white">
                 <FaFacebookF />
               </div>
-              <div className="w-10 h-10 flex items-center justify-center bg-[#312E2C] rounded-full text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#312E2C] text-white">
                 <FaInstagram />
               </div>
             </div>
-            <div className="text-sm font-sans font-normal">
+            <div className="font-sans text-sm font-normal">
               <p>1901 Thornridge Cir. Shiloh,</p>
               <p>Hawaii 81063</p>
             </div>
           </div>
         </div>
         <div
-          className="flex justify-content-center align-center"
+          className="justify-content-center align-center flex"
           style={{ justifyContent: "center" }}
         >
           <Image
             src={logo}
             alt="logo"
-            className="w-40 h-auto object-contain object center"
+            className="object center h-auto w-40 object-contain"
           ></Image>
         </div>
       </div>

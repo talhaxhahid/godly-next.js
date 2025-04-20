@@ -20,7 +20,7 @@ const Faq = () => {
   return (
     <div
       id="faq"
-      className="flex flex-col items-center bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat  px-6 py-12"
+      className="flex flex-col items-center bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-6 py-12 bg-blend-multiply"
       style={{
         backgroundImage: `url(${background.src})`,
         alignItems: "center",
@@ -28,15 +28,15 @@ const Faq = () => {
       }}
     >
       <div
-        className="max-w-4xl w-full flex flex-col "
+        className="flex w-full max-w-4xl flex-col"
         style={{ alignItems: "center", justifyContent: "center" }}
       >
-        <h1 className="text-[#191717] text-8xl font-black tracking-wide">
+        <h1 className="text-8xl font-black tracking-wide text-[#191717]">
           FREQUENTLY
         </h1>
-        <h4 className="text-[#191717] text-2xl font-semibold tracking-wide">
+        <h4 className="text-2xl font-semibold tracking-wide text-[#191717]">
           ASKED{" "}
-          <span className="text-[#61503E] text-[64px] font-['luminaire-script'] ml-3 font-medium">
+          <span className="ml-3 font-['luminaire-script'] text-[64px] font-medium text-[#61503E]">
             Questions
           </span>
         </h4>
@@ -58,7 +58,7 @@ const Faq = () => {
                 <AccordionTrigger className="text-lg text-[#191717]">
                   Dolor ipsum amet?
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-[#191717] font-normal font-sans">
+                <AccordionContent className="font-sans text-sm font-normal text-[#191717]">
                   The essence of pain and pleasure is a complex tapestry woven
                   into the fabric of our lives, where each thread represents our
                   experiences, emotions, and memories. Pain often serves as a

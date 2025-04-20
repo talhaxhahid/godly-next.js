@@ -40,11 +40,11 @@ const FourStepProcess = () => {
       <div className="fourstepprocess-inner">
         <div className="flex flex-col items-center justify-center gap-44">
           <div className="heading relative flex flex-col gap-0">
-            <h1 className="tracking-[4px] p-0 m-0 text-trim">
+            <h1 className="text-trim m-0 p-0 tracking-[4px]">
               OUR 4 STEP PROCESS
             </h1>
             <h4
-              className="  transform rotate-[-11deg] font-light"
+              className="rotate-[-11deg] transform font-light"
               style={{
                 color: "#FDE4C8",
                 fontSize: "42px",
@@ -62,13 +62,13 @@ const FourStepProcess = () => {
             <h1 className="tracking-[4px]">RAINSHIELD TECH</h1>
           </div>
 
-          <div className="text-white pt-4 w-full flex flex-col gap-3">
+          <div className="flex w-full flex-col gap-3 pt-4 text-white">
             <div className="text-white">
-              <div className="flex justify-center items-center relative z-10">
+              <div className="relative z-10 flex items-center justify-center">
                 {steps.map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center">
-                      <div className="text-[#E7C6A4]  text-2xl mb-2">
+                      <div className="mb-2 text-2xl text-[#E7C6A4]">
                         {step.number}
                       </div>
                     </div>
@@ -76,7 +76,7 @@ const FourStepProcess = () => {
                     {/* Add the dotted line unless it's the last element */}
                     {index !== steps.length - 1 && (
                       <div
-                        className="h-0.5 w-65 border-t-2 border-dashed border-[#E7C6A4] "
+                        className="h-0.5 w-65 border-t-2 border-dashed border-[#E7C6A4]"
                         style={{ margin: "0px 15px" }}
                       ></div>
                     )}
@@ -84,13 +84,13 @@ const FourStepProcess = () => {
                 ))}
               </div>
             </div>
-            <div className="flex min-w-full flex-wrap justify-center gap-6 sm:gap-8 md:gap-8 px-4 sm:px-6 md:px-8 relative z-10">
+            <div className="relative z-10 flex min-w-full flex-wrap justify-center gap-6 px-4 sm:gap-8 sm:px-6 md:gap-8 md:px-8">
               {steps.map((step, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className="paper-bg-8 text-black p-3 rounded shadow relative z-10  w-64 stepcontainer">
-                    <div className="px-2 border-2 border-black flex flex-col gap-4 items-center justify-center min-h-[285px]">
+                  <div className="paper-bg-8 stepcontainer relative z-10 w-64 rounded p-3 text-black shadow">
+                    <div className="flex min-h-[285px] flex-col items-center justify-center gap-4 border-2 border-black px-2">
                       <div className="flex justify-center">{step.icon}</div>
-                      <div className="text-center font-['satoshi-black'] font-bold text-xl">
+                      <div className="text-center font-['satoshi-black'] text-xl font-bold">
                         {step.title}
                       </div>
                       <p className="text-center font-['satoshi-regular'] text-base">
@@ -103,14 +103,14 @@ const FourStepProcess = () => {
             </div>
           </div>
 
-          <div className="flex relative flex-col items-center justify-center gap-2 p-8">
+          <div className="relative flex flex-col items-center justify-center gap-2 p-8">
             <Badge
               text="7 day Sparkle Guarantee"
-              className="lowercase z-20 shadow-lg"
+              className="z-20 lowercase shadow-lg"
             />
             <Badge
               text="hard water stain removal"
-              className="rotate-[-10deg]! "
+              className="rotate-[-10deg]!"
             />
             <div className="absolute right-0 bottom-5 -rotate-5">
               <Icon />
@@ -126,16 +126,16 @@ const Badge = ({ text, className }) => (
   <div
     style={{ padding: "24px 16px" }}
     className={cn(
-      "flex items-center gap-2 bg-neutral-800 text-white lowercase px-4 py-2 rounded-md w-fit hover:rotate-[-10deg] rotate-2 transition-transform duration-300 cursor-pointer",
+      "flex w-fit rotate-2 cursor-pointer items-center gap-2 rounded-md bg-neutral-800 px-4 py-2 text-white lowercase transition-transform duration-300 hover:rotate-[-10deg]",
       className,
     )}
   >
-    <span className="text-yellow-400 h-7 w-7 flex item-center justify-center transform rotate-[-115deg]">
+    <span className="item-center flex h-7 w-7 rotate-[-115deg] transform justify-center text-yellow-400">
       <Image alt="spark" src={spark}></Image>
     </span>
-    <h6 className="text-4xl lowercase !text-transform-lowercase">
+    <h6 className="!text-transform-lowercase text-4xl lowercase">
       <span
-        className="text-[#E7C6A4] text-4xl"
+        className="text-4xl text-[#E7C6A4]"
         style={{ marginRight: "0.5rem", textDecoration: "underline" }}
       >
         FREE

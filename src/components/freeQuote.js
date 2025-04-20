@@ -17,7 +17,7 @@ export default function FreeQuoteButton() {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="cursor-pointer bg-[linear-gradient(to_bottom,#61503E,#AB8459)]  text-[#FDE4C8] px-6 py-6 border-3 border-[#61503E] text-lg font-normal rounded-lg  hover:bg-[#3a3a3a] transition"
+        className="cursor-pointer rounded-lg border-3 border-[#61503E] bg-[linear-gradient(to_bottom,#61503E,#AB8459)] px-6 py-6 text-lg font-normal text-[#FDE4C8] transition hover:bg-[#3a3a3a]"
       >
         GET A FREE QUOTE
         <ArrowRight
@@ -38,7 +38,7 @@ const FormPopup = ({ open, onOpenChange }) => {
       <DialogHeader>
         <DialogTitle className="hidden">Contact Us</DialogTitle>
       </DialogHeader>
-      <DialogContent className="max-h-[90vh] overflow-y-auto max-w-[180vw] sm:max-w-[95vw] lg:max-w-[180vh] z-[9999] top-80 bg-transparent border-none">
+      <DialogContent className="top-80 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto border-none bg-transparent sm:max-w-[95vw] lg:max-w-[180vh]">
         <QuoteForm />
       </DialogContent>
     </Dialog>

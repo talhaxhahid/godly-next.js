@@ -37,19 +37,19 @@ import Santa from "@/assets/santa.png";
 const Services = () => {
   const { city } = useGodlyContext();
   return (
-    <div className="relative paper-bg-16 ">
-      <div className="flex flex-col items-center  min-h-screen px-6 py-24 gap-20">
+    <div className="paper-bg-16 relative">
+      <div className="flex min-h-screen flex-col items-center gap-20 px-6 py-24">
         <div className="flex flex-col items-center justify-center gap-6">
-          <h1 className="text-[#FDE4C8] text-center text-xl font-['luminaire-script'] transform rotate-[-11deg]  underline">
+          <h1 className="rotate-[-11deg] transform text-center font-['luminaire-script'] text-xl text-[#FDE4C8] underline">
             We are
           </h1>
-          <div className="flex gap-2 items-center justify-center">
-            <h4 className="text-[#FFFFFF] text-7xl text-center  tracking-[4px]   max-w-[600px]">
+          <div className="flex items-center justify-center gap-2">
+            <h4 className="max-w-[600px] text-center text-7xl tracking-[4px] text-[#FFFFFF]">
               MORE THAN <span className="text-xl">JUST</span> WINDOWS WASHERS
             </h4>
           </div>
 
-          <p className="font-sans text-3xl text-[#FFFFFF94] text-center font-light ">
+          <p className="text-center font-sans text-3xl font-light text-[#FFFFFF94]">
             Godly can clean nearly all components of <br /> your home or
             building&apos;s exterior.
           </p>
@@ -57,20 +57,20 @@ const Services = () => {
         <ServicesGrid />
       </div>
       <div
-        className="paper-bg-16 flex flex-col items-center justify-center gap-20 p-6 bg-bottom bg-no-repeat bg-contain bg-blend-soft-light"
+        className="paper-bg-16 flex flex-col items-center justify-center gap-20 bg-contain bg-bottom bg-no-repeat p-6 bg-blend-soft-light"
         // style={{ backgroundImage: `url(${SantaBg.src})` }}
       >
         <Image
-          className="absolute opacity-25 "
+          className="absolute opacity-25"
           src={SantaBg}
           height={"80%"}
           width={"80%"}
           alt="cap"
         />
-        <div className="flex flex-col gap-9 items-center justify-center max-w-[942px] min-h-[70vh]">
-          <div className="flex flex-col gap-9 items-center justify-center ">
+        <div className="flex min-h-[70vh] max-w-[942px] flex-col items-center justify-center gap-9">
+          <div className="flex flex-col items-center justify-center gap-9">
             <div className="relative">
-              <h4 className="text-[#FDE4C8] text-9xl text-center leading-tight font-['satoshi-black'] tracking-wide relative  ">
+              <h4 className="relative text-center font-['satoshi-black'] text-9xl leading-tight tracking-wide text-[#FDE4C8]">
                 Holiday Light Installation
               </h4>
               <Image
@@ -78,37 +78,37 @@ const Services = () => {
                 height={102}
                 width={102}
                 alt="cap"
-                className="absolute -top-8 -left-3 pointer-events-none"
+                className="pointer-events-none absolute -top-8 -left-3"
               />
 
-              <div className="absolute text-sm bottom-0 right-15 rounded-[] text-black px-2 text-nowrap">
+              <div className="rounded-[] absolute right-15 bottom-0 px-2 text-sm text-nowrap text-black">
                 <div className="relative">
                   <Image
                     src={textWaveBg}
                     height={400}
                     width={400}
                     alt="cap"
-                    className="w-[calc(100%_+_32px)] absolute left-0 top-1/2 -translate-y-1/2 z-10"
+                    className="absolute top-1/2 left-0 z-10 w-[calc(100%_+_32px)] -translate-y-1/2"
                   />
-                  <p className="z-20 relative mx-2 -rotate-5 pb-0.5">{city}</p>
+                  <p className="relative z-20 mx-2 -rotate-5 pb-0.5">{city}</p>
                 </div>
               </div>
             </div>
-            <p className="font-['satoshi-light'] font-light tracking-wide text-lg text-[#FDE4C8] text-center max-w-[600px]">
+            <p className="max-w-[600px] text-center font-['satoshi-light'] text-lg font-light tracking-wide text-[#FDE4C8]">
               {" "}
               Christmas light installation, done for you. Forget the ladder and
               the hassle of storing lights each year. Let us light up your home
               or business once, and you will never want to go back to doing it
               yourself.
             </p>
-            <Button className="hover:bg-white cursor-pointer bg-white text-black font-sans rounded-sm py-2 mt-5 mb-25">
+            <Button className="mt-5 mb-25 cursor-pointer rounded-sm bg-white py-2 font-sans text-black hover:bg-white">
               What We Offer
             </Button>
           </div>
         </div>
       </div>
       <Image
-        className="absolute bottom-0 pointer-events-none"
+        className="pointer-events-none absolute bottom-0"
         src={Santa}
         height={"100%"}
         width={"100%"}
@@ -209,14 +209,14 @@ const services = [
 
 function ServicesGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 md:px-20 sm:px-10">
+    <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 sm:px-10 md:grid-cols-3 md:px-20">
       {services.map((service, idx) => (
         <Card
           key={idx}
-          className="group hover:border-[#382f2d] p-0 hover:bg-[#382f2d] bg-[#E9E5E4] rounded-sm transition-transform duration-300 hover:rotate-[3deg] relative"
+          className="group relative rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
         >
-          <CardContent className="px-4 py-8 max-w-[360px] flex flex-col gap-4">
-            <div className="relative w-12 h-12">
+          <CardContent className="flex max-w-[360px] flex-col gap-4 px-4 py-8">
+            <div className="relative h-12 w-12">
               <Image
                 src={service.image}
                 alt={service.name}
@@ -227,14 +227,14 @@ function ServicesGrid() {
                 src={service.hoverImage}
                 alt={`${service.name} color`}
                 fill
-                className="object-contain hidden group-hover:block"
+                className="hidden object-contain group-hover:block"
               />
             </div>
 
-            <h3 className="text-2xl font-bold text-[#1c1c1c] font-['satoshi-black'] group-hover:text-white">
+            <h3 className="font-['satoshi-black'] text-2xl font-bold text-[#1c1c1c] group-hover:text-white">
               {service.name}
             </h3>
-            <p className="text-base font-normal font-sans text-[#1f1d1d] group-hover:text-white">
+            <p className="font-sans text-base font-normal text-[#1f1d1d] group-hover:text-white">
               {service.description}
             </p>
 

@@ -34,53 +34,53 @@ const Promise = () => {
   return (
     <div
       id="promise"
-      className="flex gap-10 py-[150px] px-[86px] flex-col justify-items-center items-center  bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat"
+      className="flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-[86px] py-[150px] bg-blend-multiply"
       style={{ backgroundImage: `url(${background.src})` }}
     >
       <div
-        className="-rotate-2 flex flex-col items-center justify-center bg-contain bg-center bg-no-repeat h-40 w-140"
+        className="flex h-40 w-140 -rotate-2 flex-col items-center justify-center bg-contain bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${headingBg.src})` }}
       >
-        <h1 className="text-5xl font-normal text-[#191717] tracking-wide">
+        <h1 className="text-5xl font-normal tracking-wide text-[#191717]">
           old fashioned Values
         </h1>
-        <h4 className="text-3xl -mt-4 font-normal text-[#191717]">
-          <span className="underline &nbsp;">UNRIVALED</span>{" "}
-          <span className="text-[#B0906E] stroke stroke-4 stroke-white text-6xl font-['luminaire-script']">
+        <h4 className="-mt-4 text-3xl font-normal text-[#191717]">
+          <span className="&nbsp; underline">UNRIVALED</span>{" "}
+          <span className="stroke stroke-white stroke-4 font-['luminaire-script'] text-6xl text-[#B0906E]">
             Quality
           </span>
         </h4>
       </div>
       <Story />
       <div className="py-10">
-        <h1 className="text-5xl font-normal text-[#191717] tracking-wide text-center">
+        <h1 className="text-center text-5xl font-normal tracking-wide text-[#191717]">
           Delivering
         </h1>
-        <h4 className="text-5xl  font-normal text-[#191717] tracking-wide text-center">
-          <span className="underline text-[#61503E] ">Trustworthy</span>{" "}
-          <span className=" text-5xl ">Service</span>
+        <h4 className="text-center text-5xl font-normal tracking-wide text-[#191717]">
+          <span className="text-[#61503E] underline">Trustworthy</span>{" "}
+          <span className="text-5xl">Service</span>
         </h4>
       </div>
 
-      <div className="  flex flex-wrap justify-center gap-6 sm:gap-2 md:gap-8  sm:px-4  relative z-10">
+      <div className="relative z-10 flex flex-wrap justify-center gap-6 sm:gap-2 sm:px-4 md:gap-8">
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`  rounded-sm p-2 flex bg-size-[auto_10rem] w-full max-w-[350px] bg-top-right bg-no-repeat ${
+            className={`flex w-full max-w-[350px] rounded-sm bg-size-[auto_10rem] bg-top-right bg-no-repeat p-2 ${
               index === 1
                 ? "bg-[#E7E3E0] text-black"
                 : "bg-[#201E1E] text-[#FFFFFF]"
             } `}
             style={{ backgroundImage: `url(${step.icon.src})` }}
           >
-            <div className="flex flex-col justify-between items-start border-[#6A6464]  p-4 rounded-md border border-dashed  relative z-10   min-h-65 gap-15 ">
+            <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
               <div className="flex flex-col gap-8">
-                <h5 className="text-md font-normal ">
+                <h5 className="text-md font-normal">
                   <span className="">{step.number}</span>
                 </h5>
 
                 <div
-                  className="text-left max-w-[170px] text-4xl"
+                  className="max-w-[170px] text-left text-4xl"
                   style={{ marginBottom: "1rem" }}
                 >
                   {step.title}
@@ -88,7 +88,7 @@ const Promise = () => {
               </div>
 
               <p
-                className="text-left text-base font-['satoshi-light'] "
+                className="text-left font-['satoshi-light'] text-base"
                 style={{ fontFamily: "sans-serif" }}
               >
                 {step.text}
@@ -106,40 +106,40 @@ export default Promise;
 
 function Story() {
   return (
-    <div className="bg-[#1F1D1D] rounded-md  w-full max-w-[1100px] flex  p-4 gap-10 ">
-      <div className="flex-1 ">
-        <div className="bg-[#e7e3df] text-[#1c1c1c] rounded-sm p-2 min-h-[200px] relative">
+    <div className="flex w-full max-w-[1100px] gap-10 rounded-md bg-[#1F1D1D] p-4">
+      <div className="flex-1">
+        <div className="relative min-h-[200px] rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
           <Image src={windowCleaning} alt="window"></Image>
-          <p className="font-['luminaire-script'] text-base text-center">
+          <p className="text-center font-['luminaire-script'] text-base">
             Grandma & grandson
           </p>
-          <div className="h-3 w-18 -rotate-45 bg-[#F3CA9ECC] absolute top-2 -left-6 z-10"></div>
-          <div className="h-3 w-18 -rotate-45 bg-[#F3CA9ECC] absolute bottom-2 -right-6 z-10"></div>
+          <div className="absolute top-2 -left-6 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+          <div className="absolute -right-6 bottom-2 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
         </div>
       </div>
-      <div className="flex-1 flex flex-col p-3 gap-[40px] items-start justify-center">
-        <h1 className="text-white text-6xl">
-          <span className="text-[#F3CA9E] font-['marlton'] ">LOCAL &nbsp;</span>
+      <div className="flex flex-1 flex-col items-start justify-center gap-[40px] p-3">
+        <h1 className="text-6xl text-white">
+          <span className="font-['marlton'] text-[#F3CA9E]">LOCAL &nbsp;</span>
           FAMILY OWNED
         </h1>
-        <p className="text-[#A4A4A4] font-['satoshi-light'] text-lg text-justify">
+        <p className="text-justify font-['satoshi-light'] text-lg text-[#A4A4A4]">
           Godly is founded by{" "}
-          <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">
             Perfectionist
           </span>
           looking to bridge the gaps between honest blue-collar work, modern
-          <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">
             Craftsmanship
           </span>
           , and a fair price.
         </p>
-        <p className="text-[#A4A4A4] font-['satoshi-light'] text-lg text-justifys">
+        <p className="text-justifys font-['satoshi-light'] text-lg text-[#A4A4A4]">
           We want to &apos;reverse time&apos; back to when you
-          <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">Trusted</span> the
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">Trusted</span> the
           people working on your home or Business. Back to when the standard was
           to do exactly what you said you&apos;d do, rather than using it as
           merely a
-          <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">Guideline </span>.
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">Guideline </span>.
         </p>
       </div>
     </div>

@@ -150,15 +150,15 @@ const ServicePopup = ({ open, onOpenChange }) => {
         <DialogTitle className="hidden">Our Services</DialogTitle>
       </DialogHeader>
       <DialogContent
-        className=" max-h-[90vh] overflow-y-auto  max-w-[180vw] sm:max-w-[95vw] lg:max-w-[180vh] z-[9999] top-75 bg-[#faedde] bg-blend-multiply bg-cover bg-center bg-no-repeat"
+        className="top-75 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply sm:max-w-[95vw] lg:max-w-[180vh]"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+        <div className="grid w-full grid-cols-1 gap-6 pt-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Link href={"/services/" + service.link} key={index}>
               <div
                 key={index}
-                className="flex flex-col gap-1 border-b-[1.5px] gap-y-0 border-[#8d8477] p-4 py-0  transition-all min-h-18"
+                className="flex min-h-18 flex-col gap-1 gap-y-0 border-b-[1.5px] border-[#8d8477] p-4 py-0 transition-all"
               >
                 <div className="flex items-center justify-start gap-3">
                   <Image
@@ -167,11 +167,11 @@ const ServicePopup = ({ open, onOpenChange }) => {
                     width={20}
                     height={20}
                   />
-                  <h3 className="text-sm font-normal leading-tight">
+                  <h3 className="text-sm leading-tight font-normal">
                     {service.name}
                   </h3>
                 </div>
-                <p className="text-xs text-muted-foreground font-sans">
+                <p className="text-muted-foreground font-sans text-xs">
                   {service.description}
                 </p>
               </div>
@@ -191,14 +191,14 @@ const CitiesPopup = ({ open, onOpenChange }) => {
         <DialogTitle className="hidden">Our Services</DialogTitle>
       </DialogHeader>
       <DialogContent
-        className=" max-h-[90vh] overflow-y-auto  max-w-[180vw] sm:max-w-[95vw] lg:max-w-[180vh] z-[9999] top-65 bg-[#faedde] bg-blend-multiply bg-cover bg-center bg-no-repeat"
+        className="top-65 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply sm:max-w-[95vw] lg:max-w-[180vh]"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 gap-6 pt-6 gap-y-4">
+        <div className="grid w-full grid-cols-1 gap-6 gap-y-4 pt-6 sm:grid-cols-4 lg:grid-cols-5">
           {cities.map((city, index) => (
             <div
               key={index}
-              className="flex flex-col gap-1 border-b-1 border-[#8d8477]  p-4 py-1  transition-all cursor-pointer"
+              className="flex cursor-pointer flex-col gap-1 border-b-1 border-[#8d8477] p-4 py-1 transition-all"
               onClick={() => {
                 setCity(city);
                 onOpenChange(false);
@@ -206,7 +206,7 @@ const CitiesPopup = ({ open, onOpenChange }) => {
             >
               <div className="flex items-center justify-start gap-3">
                 <MapPin size={20} />
-                <h3 className="text-xs font-normal leading-tight text-[#2D2B2B]">
+                <h3 className="text-xs leading-tight font-normal text-[#2D2B2B]">
                   {city}
                 </h3>
               </div>
@@ -234,10 +234,10 @@ const Header = () => {
 
   return (
     <div
-      className="p-4 text-white godlyheader w-full"
+      className="godlyheader w-full p-4 text-white"
       style={{ position: "fixed", top: "0", zIndex: "100" }}
     >
-      <div className=" flex flex-col md:flex-row items-center justify-between gap-4 w-full">
+      <div className="flex w-full flex-col items-center justify-between gap-4 md:flex-row">
         <div className="flex items-center gap-[30px]">
           <div className="header-logo mb-2 md:mb-0">
             <Link href="/">
@@ -245,11 +245,11 @@ const Header = () => {
             </Link>
           </div>
           <nav>
-            <ul className="flex gap-x-6 text-[#FDE4C8] ">
+            <ul className="flex gap-x-6 text-[#FDE4C8]">
               <li>
                 <button
                   onClick={() => setServicesOpen(true)}
-                  className="hover:text-gray-300 text-md text-[#FDE4C8] flex gap-1 items-end"
+                  className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-gray-300"
                 >
                   SERVICES{" "}
                   <span>
@@ -260,7 +260,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#about"
-                  className="hover:text-gray-300 text-md text-[#FDE4C8]"
+                  className="text-md text-[#FDE4C8] hover:text-gray-300"
                 >
                   ABOUT US
                 </Link>
@@ -268,7 +268,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#promise"
-                  className="hover:text-gray-300 text-md text-[#FDE4C8]"
+                  className="text-md text-[#FDE4C8] hover:text-gray-300"
                 >
                   OUR PROMISE
                 </Link>
@@ -276,7 +276,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#process"
-                  className="hover:text-gray-300 text-md text-[#FDE4C8]"
+                  className="text-md text-[#FDE4C8] hover:text-gray-300"
                 >
                   OUR PROCESS
                 </Link>
@@ -289,10 +289,10 @@ const Header = () => {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setCitiesOpen(true)}
-              className="hover:text-gray-300 text-md text-[#FDE4C8] flex gap-1 items-end"
+              className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-gray-300"
             >
               <MapPinHouse strokeWidth={1.2} size={18} />
-              <div className="border-solid border-[#FDE4C8] border-b-1 font-sans text-xs font-semibold ">
+              <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">
                 {city}
               </div>{" "}
               <span>
@@ -300,12 +300,12 @@ const Header = () => {
               </span>
             </button>
             <div className="flex items-center gap-4 px-4 py-2 text-[#F3C99D]">
-              <div className="p-2 iconbox bg-[#1e1c1b] rounded-md border-solid border-[#403830] border-2">
-                <Phone className="text-[#F3C99D] w-6 h-10" strokeWidth={1.2} />
+              <div className="iconbox rounded-md border-2 border-solid border-[#403830] bg-[#1e1c1b] p-2">
+                <Phone className="h-10 w-6 text-[#F3C99D]" strokeWidth={1.2} />
               </div>
               <div>
-                <p className="text-xs font-normal leading-none">CALL US</p>
-                <p className="text-lg font-normal ">954-852-5236</p>
+                <p className="text-xs leading-none font-normal">CALL US</p>
+                <p className="text-lg font-normal">954-852-5236</p>
               </div>
             </div>
           </div>

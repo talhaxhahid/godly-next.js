@@ -147,20 +147,20 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="w-full  bg-[#fcf1dd] rounded-xl shadow-md border relative">
-        <div className="flex justify-between items-center px-12 py-8 h-[128px] rounded-t-xl bg-[#ecdec5] relative z-20 ">
-          <h2 className=" text-[64px] text-[#2D2B2B] font-normal tracking-wide">
+      <div className="relative w-full rounded-xl border bg-[#fcf1dd] shadow-md">
+        <div className="relative z-20 flex h-[128px] items-center justify-between rounded-t-xl bg-[#ecdec5] px-12 py-8">
+          <h2 className="text-[64px] font-normal tracking-wide text-[#2D2B2B]">
             LET US CALL YOU!
           </h2>
-          <p className="text-2xl text-right font-medium font-sans text-gray max-w-[367px]">
+          <p className="text-gray max-w-[367px] text-right font-sans text-2xl font-medium">
             Receive a call within 30 minutes
             <br /> during normal business hours.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-4 p-6">
+        <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-12 md:grid-rows-2">
           <div className="md:col-span-4">
-            <label className="block text-base font-normal font-sans mb-1">
+            <label className="mb-1 block font-sans text-base font-normal">
               Name
             </label>
             <Input
@@ -168,12 +168,12 @@ export default function QuoteForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className="bg-transparent text-2xl !border-b-1 border-t-0 border-r-0 border-l-0 border-black rounded-none px-0 focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl focus-visible:ring-0"
               required
             />
           </div>
           <div className="md:col-span-4">
-            <label className="block text-base font-normal font-sans mb-1">
+            <label className="mb-1 block font-sans text-base font-normal">
               Email
             </label>
             <Input
@@ -182,12 +182,12 @@ export default function QuoteForm() {
               placeholder="johndoe@email.com"
               value={formData.email}
               onChange={handleChange}
-              className="bg-transparent text-2xl! border-b-1 border-t-0 border-r-0 border-l-0 border-black rounded-none px-0 focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
               required
             />
           </div>
           <div className="md:col-span-4">
-            <label className="block text-base font-normal font-sans mb-1">
+            <label className="mb-1 block font-sans text-base font-normal">
               Phone Number
             </label>
             <Input
@@ -195,12 +195,12 @@ export default function QuoteForm() {
               placeholder="123-456-7890"
               value={formData.phone}
               onChange={handleChange}
-              className="bg-transparent text-2xl! border-b-1 border-t-0 border-r-0 border-l-0 border-black rounded-none px-0 focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
               required
             />
           </div>
-          <div className="md:col-span-6 relative" ref={servicesRef}>
-            <label className="block text-base font-normal font-sans mb-1 ">
+          <div className="relative md:col-span-6" ref={servicesRef}>
+            <label className="mb-1 block font-sans text-base font-normal">
               What services do you need?
             </label>
             <button
@@ -208,9 +208,9 @@ export default function QuoteForm() {
                 e.preventDefault();
                 setShowServices(!showServices);
               }}
-              className="bg-transparent text-2xl! border-b-1 w-full border-t-0 border-r-0 border-l-0 border-black rounded-none px-0 focus-visible:ring-0"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
             >
-              <div className="flex items-center space-x-2 w-full">
+              <div className="flex w-full items-center space-x-2">
                 {formData.services.join(", ") || "Select Services"}
                 {showServices ? (
                   <ChevronUp className="ms-auto" />
@@ -221,15 +221,15 @@ export default function QuoteForm() {
             </button>
 
             {showServices && (
-              <div className="absolute top-full rounded-lg right-0 w-[335px] shadow-xl z-50 paper-bg-14 p-6 flex flex-col gap-5">
+              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-[335px] flex-col gap-5 rounded-lg p-6 shadow-xl">
                 {servicesList.map((service) => (
                   <div
                     key={service.id}
-                    className="flex items-center cursor-pointer"
+                    className="flex cursor-pointer items-center"
                   >
                     <label
                       htmlFor={service.id}
-                      className="text-base font-normal cursor-pointer flex-1"
+                      className="flex-1 cursor-pointer text-base font-normal"
                     >
                       {service.name}
                     </label>
@@ -244,13 +244,13 @@ export default function QuoteForm() {
             )}
           </div>
 
-          <div className="md:col-span-4 flex flex-col justify-between">
-            <label className="block text-base font-normal font-sans mb-1">
+          <div className="flex flex-col justify-between md:col-span-4">
+            <label className="mb-1 block font-sans text-base font-normal">
               When do you need the work done by?
             </label>
             <Popover>
               <PopoverTrigger asChild>
-                <button className="w-full flex items-center bg-transparent border-b border-black text-left text-2xl focus:outline-none">
+                <button className="flex w-full items-center border-b border-black bg-transparent text-left text-2xl focus:outline-none">
                   {date ? (
                     format(date, "MM / dd / yyyy")
                   ) : (
@@ -292,7 +292,7 @@ export default function QuoteForm() {
                   </svg>
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-white">
+              <PopoverContent className="w-auto bg-white p-0">
                 <Calendar
                   mode="single"
                   selected={date}
@@ -304,7 +304,7 @@ export default function QuoteForm() {
           </div>
 
           <div className="md:col-span-2">
-            <label className="block text-base font-normal font-sans mb-1">
+            <label className="mb-1 block font-sans text-base font-normal">
               Zip Code
             </label>
             <Input
@@ -312,14 +312,14 @@ export default function QuoteForm() {
               placeholder="12345"
               value={formData.zipcode}
               onChange={handleChange}
-              className="bg-transparent text-2xl! border-b-1 border-t-0 border-r-0 border-l-0 border-black rounded-none px-0 focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
               required
             />
           </div>
         </div>
 
         <div className="flex items-center justify-between p-4">
-          <div className="flex items-center space-x-2 mt-4">
+          <div className="mt-4 flex items-center space-x-2">
             <Checkbox
               id="agree"
               name="agree"
@@ -328,7 +328,7 @@ export default function QuoteForm() {
                 setFormData((prev) => ({ ...prev, agree: checked }))
               }
             />
-            <label htmlFor="agree" className="text-sm font-sans">
+            <label htmlFor="agree" className="font-sans text-sm">
               I agree to get information text messages from Godly about my
               estimate and project
             </label>
@@ -343,39 +343,39 @@ export default function QuoteForm() {
         <Image
           src={cardBg}
           alt="cardBg"
-          className="absolute top-0 left-full -translate-y-[calc(50%_-_64px)] z-10 -translate-x-[calc(50%_+_64px)] rotate-45 scale-60"
+          className="absolute top-0 left-full z-10 -translate-x-[calc(50%_+_64px)] -translate-y-[calc(50%_-_64px)] scale-60 rotate-45"
         />
       </div>
       {submitStatus === "error" && (
-        <div className="mt-4 p-4 bg-red-100 text-red-700 rounded">
+        <div className="mt-4 rounded bg-red-100 p-4 text-red-700">
           Error submitting form. Please try again.
         </div>
       )}
       {submitStatus === "error-no-agree" && (
-        <div className="mt-4 p-4 bg-red-100 text-red-700 rounded">
+        <div className="mt-4 rounded bg-red-100 p-4 text-red-700">
           Please agree to the terms before submitting.
         </div>
       )}
       {submitStatus === "error-no-services" && (
-        <div className="mt-4 p-4 bg-red-100 text-red-700 rounded">
+        <div className="mt-4 rounded bg-red-100 p-4 text-red-700">
           Please select at least one service before submitting.
         </div>
       )}
 
       {showSuccessDialog && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-[#f9f0df] rounded-xl shadow-lg max-w-sm w-full text-center p-6">
-            <h2 className="text-3xl font-normal tracking-wide text-[#2D2B2B] mb-4">
+          <div className="w-full max-w-sm rounded-xl bg-[#f9f0df] p-6 text-center shadow-lg">
+            <h2 className="mb-4 text-3xl font-normal tracking-wide text-[#2D2B2B]">
               THANK YOU
             </h2>
-            <p className="text-[#2D2B2B] mb-6 font-sans">
+            <p className="mb-6 font-sans text-[#2D2B2B]">
               I agree to receive updates from Godly
               <br />
               about my estimate via text message
             </p>
             <button
               onClick={() => setShowSuccessDialog(false)}
-              className="bg-[#2D2B2B] text-white rounded-md px-8 py-2 font-semibold shadow hover:bg-[#1c1a1a] transition-all"
+              className="rounded-md bg-[#2D2B2B] px-8 py-2 font-semibold text-white shadow transition-all hover:bg-[#1c1a1a]"
             >
               DONE
             </button>

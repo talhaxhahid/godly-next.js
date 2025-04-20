@@ -33,50 +33,50 @@ const Savings = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className="flex p-16 flex-col justify-items-center items-center  bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat"
+      className="flex flex-col items-center justify-items-center bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
       style={{ backgroundImage: `url(${background.src})` }}
     >
-      <div className="flex p-16 flex-col max-w-[1440px] mx-auto justify-items-center items-center  bg-blend-multiply bg-cover bg-center bg-no-repeat">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
         <h1 className="text-6xl font-normal text-[#191717]">
           Huge Savings and{" "}
         </h1>
-        <h1 className="text-6xl mt-1 font-normal text-[#191717]">
+        <h1 className="mt-1 text-6xl font-normal text-[#191717]">
           always look great
         </h1>
         <div
-          className="text-white pb-16 pt-16"
+          className="pt-16 pb-16 text-white"
           // style={{ marginTop: "1rem", marginBottom: "3rem" }}
         >
-          <div className="flex flex-wrap justify-center gap-10 sm:gap-15 md:gap-25 px-4 sm:px-4 md:px-8 relative z-10">
+          <div className="relative z-10 flex flex-wrap justify-center gap-10 px-4 sm:gap-15 sm:px-4 md:gap-25 md:px-8">
             {steps.map((step, index) => (
               <div key={index} className="">
                 <div
                   className={
-                    "relative flex flex-col items-center justify-center text-black p-[48px] rounded-lg shadow z-10 w-70 bg-[#1F1D1D]"
+                    "relative z-10 flex w-70 flex-col items-center justify-center rounded-lg bg-[#1F1D1D] p-[48px] text-black shadow"
                   }
                 >
-                  <h5 className=" text-center mb-5 text-xl font-normal text-[#FFFFFF]">
+                  <h5 className="mb-5 text-center text-xl font-normal text-[#FFFFFF]">
                     {step.title}
                   </h5>
 
                   <div
-                    className="text-center text-[#FFFFFF] text-5xl  font-sans font-semibold"
+                    className="text-center font-sans text-5xl font-semibold text-[#FFFFFF]"
                     style={{ marginBottom: "1rem" }}
                   >
                     {step.discount}
                   </div>
-                  <p className="text-center text-white font-sans text-sm ">
+                  <p className="text-center font-sans text-sm text-white">
                     per cleaning
                   </p>
-                  <div className="flex justify-center mb-4">
+                  <div className="mb-4 flex justify-center">
                     {FeatureList(index != 2)}
                   </div>
                   <QuoteButton onClick={() => setIsOpen(true)}>
                     Request a Quote
                   </QuoteButton>
 
-                  <div className="h-4 w-15 -rotate-45 bg-[#F3CA9ECC] absolute top-2 -left-6 z-10"></div>
-                  <div className="h-4 w-15 -rotate-45 bg-[#F3CA9ECC] absolute bottom-2 -right-6 z-10"></div>
+                  <div className="absolute top-2 -left-6 z-10 h-4 w-15 -rotate-45 bg-[#F3CA9ECC]"></div>
+                  <div className="absolute -right-6 bottom-2 z-10 h-4 w-15 -rotate-45 bg-[#F3CA9ECC]"></div>
                 </div>
               </div>
             ))}
@@ -96,7 +96,7 @@ const FormPopup = ({ open, onOpenChange }) => {
       <DialogHeader>
         <DialogTitle className="hidden">Contact Us</DialogTitle>
       </DialogHeader>
-      <DialogContent className="max-h-[90vh] overflow-y-auto max-w-[180vw] sm:max-w-[95vw] lg:max-w-[180vh] z-[9999] top-80 bg-transparent border-none">
+      <DialogContent className="top-80 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto border-none bg-transparent sm:max-w-[95vw] lg:max-w-[180vh]">
         <QuoteForm />
       </DialogContent>
     </Dialog>
@@ -111,16 +111,16 @@ const FeatureList = (value) => {
   ];
 
   return (
-    <div className=" text-[#E8E6E3] py-12 space-y-6 font-sans">
+    <div className="space-y-6 py-12 font-sans text-[#E8E6E3]">
       {features.map((text, index) => (
         <div key={index} className="flex items-center space-x-4">
           {value ? (
-            <div className="bg-[#FFEBD7] rounded-full w-5 h-5 flex items-center justify-center">
-              <Check className="w-3 h-3 text-[#4B3A2F]" />
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FFEBD7]">
+              <Check className="h-3 w-3 text-[#4B3A2F]" />
             </div>
           ) : (
-            <div className="bg-[#EC6D62] rounded-full w-5 h-5 flex items-center justify-center">
-              <X className="w-3 h-3 text-[#4B3A2F]" />
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#EC6D62]">
+              <X className="h-3 w-3 text-[#4B3A2F]" />
             </div>
           )}
 

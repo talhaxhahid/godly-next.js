@@ -41,14 +41,14 @@ const OtherServices = () => {
   return (
     <div
       id="promise"
-      className="flex gap-10 p-24 flex-col justify-items-center justify-center items-center min-h-screen bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat"
+      className="flex min-h-screen flex-col items-center justify-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
       style={{ backgroundImage: `url(${background.src})` }}
     >
-      <h4 className="text-5xl py-10 font-normal text-[#191717] tracking-wide text-center w-4/5">
+      <h4 className="w-4/5 py-10 text-center text-5xl font-normal tracking-wide text-[#191717]">
         enhance your cleaning with other services we offer in {city}
       </h4>
 
-      <div className="py-5 grid gap-10 px-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full max-w-screen-xl ">
+      <div className="grid w-full max-w-screen-xl gap-10 px-4 py-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {steps.map((step, index) => (
           <Link href={"/services/" + step.link} key={index}>
             <div
@@ -59,19 +59,19 @@ const OtherServices = () => {
                   : "-rotate-[3deg] hover:rotate-0"
               }`}
             >
-              <div className="bg-[#e7e3df] flex flex-col justify-between text-[#1c1c1c] rounded-sm p-2 min-h-[250px] relative">
+              <div className="relative flex min-h-[250px] flex-col justify-between rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
                 <Image
                   src={step.Image}
                   style={{ objectFit: "cover" }}
                   alt="window"
                 ></Image>
-                <p className=" text-base text-center">{step.title}</p>
-                <p className="underline font-sans text-sm text-center">
+                <p className="text-center text-base">{step.title}</p>
+                <p className="text-center font-sans text-sm underline">
                   What We Offer
                 </p>
 
-                <div className="h-3 w-13 -rotate-45 bg-[#F3CA9ECC] absolute top-1 -left-5 z-10"></div>
-                <div className="h-3 w-13 -rotate-45 bg-[#F3CA9ECC] absolute bottom-1 -right-5 z-10"></div>
+                <div className="absolute top-1 -left-5 z-10 h-3 w-13 -rotate-45 bg-[#F3CA9ECC]"></div>
+                <div className="absolute -right-5 bottom-1 z-10 h-3 w-13 -rotate-45 bg-[#F3CA9ECC]"></div>
               </div>
             </div>
           </Link>
