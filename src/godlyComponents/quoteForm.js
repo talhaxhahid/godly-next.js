@@ -145,20 +145,20 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-3">
-      <div className="relative w-full rounded-xl border bg-[#fcf1dd] shadow-md">
-        <div className="relative z-20 flex h-[128px] items-center justify-between rounded-t-xl bg-[#ecdec5] px-12 py-8">
-          <h2 className="text-[64px] font-normal tracking-wide text-[#2D2B2B]">
+      <div className="paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen shadow-md">
+        <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-12 py-8">
+          <h2 className="-mt-[51px] text-[64px] font-normal tracking-[3.2px] text-[#2D2B2B]">
             LET US CALL YOU!
           </h2>
-          <p className="text-gray max-w-[367px] text-right font-sans text-2xl font-medium">
+          <p className="max-w-[367px] text-right font-[satoshi-medium] text-2xl font-medium text-[#2D2B2B]">
             Receive a call within 30 minutes
             <br /> during normal business hours.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-12 md:grid-rows-2">
+        <div className="grid grid-cols-1 gap-4 px-12 py-8 md:grid-cols-12 md:grid-rows-2">
           <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal">
+            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               Name
             </label>
             <Input
@@ -166,12 +166,12 @@ export default function QuoteForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl focus-visible:ring-0"
               required
             />
           </div>
           <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal">
+            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               Email
             </label>
             <Input
@@ -180,12 +180,12 @@ export default function QuoteForm() {
               placeholder="johndoe@email.com"
               value={formData.email}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
               required
             />
           </div>
           <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal">
+            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               Phone Number
             </label>
             <Input
@@ -193,12 +193,12 @@ export default function QuoteForm() {
               placeholder="123-456-7890"
               value={formData.phone}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
               required
             />
           </div>
           <div className="relative md:col-span-6" ref={servicesRef}>
-            <label className="mb-1 block font-sans text-base font-normal">
+            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               What services do you need?
             </label>
             <button
@@ -206,7 +206,7 @@ export default function QuoteForm() {
                 e.preventDefault();
                 setShowServices(!showServices);
               }}
-              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
             >
               <div className="flex w-full items-center space-x-2">
                 {formData.services.join(", ") || "Select Services"}
@@ -219,7 +219,7 @@ export default function QuoteForm() {
             </button>
 
             {showServices && (
-              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-[335px] flex-col gap-5 rounded-lg p-6 shadow-xl">
+              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-[335px] flex-col gap-5 rounded-lg bg-[#AB8459] p-6 shadow-xl">
                 {servicesList.map((service) => (
                   <div
                     key={service.id}
@@ -227,7 +227,7 @@ export default function QuoteForm() {
                   >
                     <label
                       htmlFor={service.id}
-                      className="flex-1 cursor-pointer text-base font-normal"
+                      className="flex-1 cursor-pointer text-base font-normal text-[#2D2B2B]"
                     >
                       {service.name}
                     </label>
@@ -235,6 +235,7 @@ export default function QuoteForm() {
                       id={service.id}
                       checked={formData.services.includes(service.name)}
                       onCheckedChange={() => handleServiceToggle(service.name)}
+                      className="size-[22px] bg-transparent"
                     />
                   </div>
                 ))}
@@ -243,12 +244,12 @@ export default function QuoteForm() {
           </div>
 
           <div className="flex flex-col justify-between md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal">
+            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               When do you need the work done by?
             </label>
             <Popover>
               <PopoverTrigger asChild>
-                <button className="flex w-full items-center border-b border-black bg-transparent text-left text-2xl focus:outline-none">
+                <button className="text-lef2 flex w-full items-center border-b border-black bg-transparent pb-2 text-2xl focus:outline-none">
                   {date ? (
                     format(date, "MM / dd / yyyy")
                   ) : (
@@ -302,7 +303,7 @@ export default function QuoteForm() {
           </div>
 
           <div className="md:col-span-2">
-            <label className="mb-1 block font-sans text-base font-normal">
+            <label className="mb-1 block pb-2 font-sans text-base font-normal text-[#312E2C]">
               Zip Code
             </label>
             <Input
@@ -310,23 +311,24 @@ export default function QuoteForm() {
               placeholder="12345"
               value={formData.zipcode}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 text-2xl! focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
               required
             />
           </div>
         </div>
 
-        <div className="flex items-center justify-between p-4">
-          <div className="mt-4 flex items-center space-x-2">
+        <div className="flex items-center justify-between px-12 pb-6">
+          <div className="mt-4 flex items-center space-x-3">
             <Checkbox
               id="agree"
               name="agree"
               checked={formData.agree}
+              className="size-[22px] bg-transparent"
               onCheckedChange={(checked) =>
                 setFormData((prev) => ({ ...prev, agree: checked }))
               }
             />
-            <label htmlFor="agree" className="font-sans text-sm">
+            <label htmlFor="agree" className="font-sans text-xl">
               I agree to get information text messages from Godly about my
               estimate and project
             </label>

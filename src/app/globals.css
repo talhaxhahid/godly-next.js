@@ -46,6 +46,11 @@
   src: url("../assets/fonts/Satoshi-Light.otf") format("truetype");
 }
 
+@font-face {
+  font-family: "satoshi-medium";
+  src: url("../assets/fonts/Satoshi-Medium.otf") format("truetype");
+}
+
 html,
 body {
   max-width: 100vw;
@@ -206,7 +211,6 @@ html {
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #ab8459;
   background-blend-mode: screen, normal;
 }
 
@@ -215,13 +219,11 @@ html {
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #e9c59c;
   background-blend-mode: multiply, normal;
 }
 
 .paper-bg-16 {
   background-image: url("/assets/vintage-paper-16.jpg");
-  background-color: #252424;
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -230,7 +232,6 @@ html {
 
 .card-number {
   color: rgba(49, 46, 44, 0.19);
-
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(45, 43, 43, 0.2);
   font-size: 64px;
@@ -277,7 +278,7 @@ html {
 }
 
 .quote-button {
-  border-radius: 9px;
+  /* border-radius: 9px;
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(146, 59, 42, 0.6) 100%),
     linear-gradient(180deg, #9b4531 0%, #943b2a 100%),
@@ -304,5 +305,60 @@ html {
   &:hover {
     opacity: 80%;
     transform: scale(0.995);
+  } */
+  display: inline-flex;
+  height: 61px;
+  padding: 22px 14px 22px 19px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 4px solid #933d29;
+  box-shadow:
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
+    0px 1px 1.4px 0px rgba(147, 61, 42, 0.69) inset;
+  position: relative;
+
+  color: #fde4c8;
+  span {
+    color: #fde4c8 !important;
   }
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+  background-color: rgb(147, 61, 42);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 80%;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 9px;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(146, 59, 42, 0.6) 100%),
+      linear-gradient(180deg, #9b4531 0%, #943b2a 100%),
+      url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
+    background-blend-mode: normal, hard-light, normal;
+    box-shadow:
+      0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
+      0px -9px 5.289px 0px #992f12 inset,
+      0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+  }
+}
+
+.font-sans {
+  font-family: "satoshi-medium", sans-serif;
 }

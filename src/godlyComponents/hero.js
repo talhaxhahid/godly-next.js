@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <div className="relative overflow-x-clip bg-[#1F1D1D]">
       <div
-        className="absolute top-[24px] left-0 h-[780px] w-full bg-[url('/path-to-image.jpg')] bg-cover bg-top bg-no-repeat"
+        className="absolute top-[24px] left-0 h-[900px] w-full bg-[url('/path-to-image.jpg')] bg-cover bg-top bg-no-repeat"
         style={{ backgroundImage: `url(${`/assets/heroBanner.png`})` }}
       >
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#1F1D1D]/0 to-[#1F1D1D]"></div>
@@ -18,7 +18,7 @@ const Hero = () => {
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-14 pb-32">
         <div className="flex min-h-[815px] flex-col justify-end gap-2 pb-10">
-          <div className="flex items-center justify-start gap-3">
+          <div className="mb-1 flex items-center justify-start gap-3">
             <h1 className="font-marlton text-trim -mt-1 text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
               TOP RATED
             </h1>
@@ -47,7 +47,7 @@ const Hero = () => {
               services In {city}
             </span>
           </h1>
-          <p className="mt-5 font-sans text-xl font-medium text-white">
+          <p className="mt-5 font-[satoshi-medium] text-xl font-medium text-white">
             we specialize in window washing, home washing, pressure washing,
             paver sealing and more.
           </p>

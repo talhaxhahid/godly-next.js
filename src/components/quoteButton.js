@@ -4,19 +4,19 @@ import { Button } from "@/components/ui/button";
 export default function QuoteButton({ children, type, disabled, onClick }) {
   return (
     <Button
-      className="quote-button text-trim flex items-center justify-center gap-2"
+      className="quote-button"
       type={type}
       disabled={disabled}
       onClick={onClick}
     >
-      <span className="-mt-2">{children}</span>
+      <span className="color-[#fde4c8]! text-trim z-10 -mt-2">{children}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="33"
         height="33"
         viewBox="0 0 33 33"
         fill="none"
-        className="size-[30px]"
+        className="z-10 size-[30px]"
       >
         <path
           fillRule="evenodd"
