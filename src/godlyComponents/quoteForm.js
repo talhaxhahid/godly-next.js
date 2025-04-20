@@ -1,11 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { React, useState, useRef, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar } from "@/components/ui/calendar";
-// import vintage from "../assets/vintage.jpg";
-import cardBg from "../assets/card_bg.png";
-import Image from "next/image";
 import {
   Popover,
   PopoverContent,
@@ -146,7 +144,7 @@ export default function QuoteForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mt-3">
       <div className="relative w-full rounded-xl border bg-[#fcf1dd] shadow-md">
         <div className="relative z-20 flex h-[128px] items-center justify-between rounded-t-xl bg-[#ecdec5] px-12 py-8">
           <h2 className="text-[64px] font-normal tracking-wide text-[#2D2B2B]">
@@ -340,10 +338,10 @@ export default function QuoteForm() {
             </QuoteButton>
           </div>
         </div>
-        <Image
-          src={cardBg}
+        <img
+          src={"/assets/tape-hero.png"}
           alt="cardBg"
-          className="absolute top-0 left-full z-10 -translate-x-[calc(50%_+_64px)] -translate-y-[calc(50%_-_64px)] scale-60 rotate-45"
+          className="absolute top-0 left-full z-10 h-[266.58px] w-[234.158px] -translate-x-[calc(50%_+_38px)] -translate-y-[calc(50%_-_48px)] rotate-[-17.311deg]"
         />
       </div>
       {submitStatus === "error" && (
