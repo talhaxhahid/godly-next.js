@@ -1,7 +1,6 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import background from "../assets/texture.png";
 import headingBg from "../assets/headingBg.png";
 import windowCleaning from "@/assets/windowCleaning.png";
 import img1 from "@/assets/rocket.png";
@@ -34,8 +33,7 @@ const Promise = () => {
   return (
     <div
       id="promise"
-      className="flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-[86px] py-[150px] bg-blend-multiply"
-      style={{ backgroundImage: `url(${background.src})` }}
+      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] px-[86px] py-[150px]"
     >
       <div
         className="flex h-40 w-140 -rotate-2 flex-col items-center justify-center bg-contain bg-center bg-no-repeat"

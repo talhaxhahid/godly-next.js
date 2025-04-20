@@ -384,3 +384,21 @@ html {
     z-index: 2;
   }
 }
+
+.with-text {
+  color: #fde4c8;
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: luminaire-script;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  text-shadow:
+    -2.22px -2.22px 0 #201e1e,
+    2.22px -2.22px 0 #201e1e,
+    -2.22px 2.22px 0 #201e1e,
+    2.22px 2.22px 0 #201e1e;
+}
