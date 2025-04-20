@@ -31,19 +31,19 @@ const Hero = () => {
             </div>
           </div>
           <h1 className="flex flex-wrap items-center gap-2">
-            <span className="-mt-4 flex items-center gap-2">
-              <span className="font-marlton text-trim items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
+            <span className="-mt-4 flex flex-wrap items-center gap-2">
+              <span className="font-marlton text-trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
                 Window cleaning
               </span>
-              <span className="mt-5 text-center font-['luminaire-script'] text-2xl text-[#FDE4C8]">
+              <span className="mt-5 shrink-0 text-center font-['luminaire-script'] text-2xl text-[#FDE4C8]">
                 And
               </span>
               <span></span>
-              <span className="font-marlton text-trim items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
+              <span className="font-marlton text-trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
                 pressure Washing
               </span>
             </span>
-            <span className="font-marlton text-trim -mt-[14px] items-center gap-2 text-[73.161px] font-normal tracking-[7.4] text-white">
+            <span className="font-marlton text-trim -mt-[14px] shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[7.4] text-white">
               services In {city}
             </span>
           </h1>

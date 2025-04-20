@@ -362,3 +362,25 @@ html {
 .font-sans {
   font-family: "satoshi-medium", sans-serif;
 }
+
+.text-grain {
+  position: relative;
+  z-index: 1;
+
+  /* Create mask effect with the pseudo-element */
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    background-image: url("/assets/grain.png");
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Add contrast to make grain more visible */
+    filter: contrast(150%) brightness(0.8);
+    /* Ensure the grain only applies to the text */
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+}

@@ -1,10 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import scrub from "../assets/scrub.png";
-import shield from "../assets/shield.png";
-import squeegee from "../assets/squeegee.png";
-import detail from "../assets/detail.png";
 import spark from "../assets/spark.png";
 import { cn } from "@/lib/utils";
 
@@ -12,109 +9,173 @@ const FourStepProcess = () => {
   const steps = [
     {
       number: "01",
-      icon: <Image src={scrub} alt="scrub" className="fourstepicon" />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="73"
+          height="73"
+          viewBox="0 0 73 73"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_2203_3848)">
+            <path
+              d="M72.5355 38.5952C72.5355 36.1224 70.5242 34.1111 68.0514 34.1111L18.9127 34.1113V30.4695C18.9127 28.7372 20.3215 27.3284 22.0539 27.3284H60.9416C64.3255 27.3284 67.0802 24.577 67.0802 21.1898C67.0802 17.8027 64.3256 15.0512 60.9386 15.0512L20.8909 15.0508C13.0438 15.0508 6.66243 21.4322 6.66243 29.2792V34.1111H5.67942C3.2066 34.1111 1.19531 36.1224 1.19531 38.5952C1.19531 40.4086 2.28048 41.9642 3.83299 42.6716V55.6801C3.83299 56.2047 4.10579 56.6873 4.55235 56.9601C4.79214 57.1069 5.0619 57.1788 5.33167 57.1788C5.56841 57.1788 5.80235 57.1219 6.018 57.0109L11.6469 54.1066L17.2789 57.0109C17.4976 57.1247 17.7315 57.1788 17.9652 57.1788C18.202 57.1788 18.4359 57.1219 18.6516 57.0109L24.2805 54.1066L29.9094 57.0109C30.1281 57.1247 30.362 57.1788 30.5957 57.1788C30.8325 57.1788 31.0664 57.1219 31.2821 57.0109L36.914 54.1066L42.543 57.0109C42.7617 57.1247 42.9986 57.1788 43.2293 57.1788C43.463 57.1788 43.7 57.1219 43.9156 57.0109L49.5445 54.1066L55.1735 57.0109C55.3922 57.1247 55.6292 57.1788 55.8598 57.1788C56.0965 57.1788 56.3363 57.1219 56.5553 57.0079L62.0824 54.1124L67.7024 57.0109C67.9183 57.1219 68.1551 57.1788 68.3887 57.1788C68.6585 57.1788 68.9313 57.107 69.1681 56.9601C69.6146 56.6873 69.8874 56.2047 69.8874 55.6801V42.6746C71.4442 41.9669 72.5352 40.4083 72.5352 38.5949L72.5355 38.5952ZM9.65697 29.2794C9.65697 23.0869 14.6956 18.0483 20.8881 18.0483H60.9358C62.6681 18.0483 64.0799 19.4571 64.0799 21.1894C64.0799 22.9218 62.6712 24.3305 60.9388 24.3305L22.0511 24.3308C18.6671 24.3308 15.9125 27.0853 15.9125 30.4694V34.1111L9.65703 34.1114L9.65697 29.2794ZM5.6766 37.1085H8.12832C8.13722 37.1085 8.14635 37.1146 8.15829 37.1146H17.4111C17.42 37.1146 17.4292 37.1085 17.4411 37.1085H68.0485C68.8666 37.1085 69.5352 37.7768 69.5352 38.5922C69.5322 39.4134 68.8639 40.082 68.0454 40.082L5.67642 40.0818C4.85826 40.0818 4.18967 39.4135 4.18967 38.595C4.18967 37.7769 4.85796 37.1085 5.67642 37.1085L5.6766 37.1085ZM54.3627 53.2193L51.0445 51.5077V43.0822H54.3627V53.2193ZM41.7288 53.2193L38.4106 51.5077V43.0822H41.7288V53.2193ZM29.0949 53.2193L25.7768 51.5077V43.0792H29.0949V53.2193ZM16.4641 53.2193L13.1431 51.5077V43.0792H16.4641V53.2193ZM6.82759 53.2193V43.0792H10.1458V51.5078L6.82759 53.2193ZM19.4614 53.2193V43.0792H22.7796V51.5078L19.4614 53.2193ZM32.0923 53.2193V43.0792H35.4105V51.5078L32.0923 53.2193ZM44.7262 53.2193V43.0792H48.0444V51.5078L44.7262 53.2193ZM57.36 53.2013V43.0792H60.5791V51.5108L57.36 53.2013ZM63.5765 51.5078V43.0792H66.8917V53.2193L63.5765 51.5078Z"
+              fill="black"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_2203_3848">
+              <rect
+                width="71.9366"
+                height="71.9366"
+                fill="white"
+                transform="translate(0.890625 0.144531)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+      ),
       title: "Scrub",
       text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
     },
     {
       number: "02",
-      icon: <Image src={squeegee} alt="squeegee" className="fourstepicon" />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="55"
+          height="55"
+          viewBox="0 0 55 55"
+          fill="none"
+        >
+          <path
+            d="M49.8742 5.23633V11.9563H5.07422V5.23633H49.8742ZM5.07422 18.6763H16.2742L20.7542 23.1563H22.9942V45.5563C22.9942 46.7445 23.4662 47.884 24.3064 48.7242C25.1465 49.5643 26.286 50.0363 27.4742 50.0363C28.6624 50.0363 29.8019 49.5643 30.6421 48.7242C31.4822 47.884 31.9542 46.7445 31.9542 45.5563V23.1563H34.1942L38.6742 18.6763H49.8742V14.1963H5.07422V18.6763Z"
+            fill="black"
+          />
+        </svg>
+      ),
       title: "Squeegee",
       text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
     },
     {
       number: "03",
-      icon: <Image src={detail} alt="detail" className="fourstepicon" />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="59"
+          height="59"
+          viewBox="0 0 59 59"
+          fill="none"
+        >
+          <path
+            d="M50.9531 51.6113L36.4531 37.1113M7.45313 25.028C7.45312 27.2495 7.89069 29.4493 8.74083 31.5017C9.59097 33.5541 10.837 35.419 12.4079 36.9899C13.9788 38.5607 15.8436 39.8068 17.8961 40.657C19.9485 41.5071 22.1483 41.9447 24.3698 41.9447C26.5913 41.9447 28.7911 41.5071 30.8435 40.657C32.8959 39.8068 34.7608 38.5607 36.3317 36.9899C37.9025 35.419 39.1486 33.5541 39.9988 31.5017C40.8489 29.4493 41.2865 27.2495 41.2865 25.028C41.2865 22.8065 40.8489 20.6067 39.9988 18.5543C39.1486 16.5018 37.9025 14.637 36.3317 13.0661C34.7608 11.4952 32.8959 10.2492 30.8435 9.39903C28.7911 8.54889 26.5913 8.11133 24.3698 8.11133C22.1483 8.11133 19.9485 8.54889 17.8961 9.39903C15.8436 10.2492 13.9788 11.4952 12.4079 13.0661C10.837 14.637 9.59097 16.5018 8.74083 18.5543C7.89069 20.6067 7.45312 22.8065 7.45313 25.028Z"
+            stroke="black"
+            stroke-width="4.83333"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      ),
       title: "Detail",
       text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
     },
     {
       number: "04",
-      icon: <Image src={shield} alt="shield" className="fourstepicon" />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="59"
+          height="59"
+          viewBox="0 0 59 59"
+          fill="none"
+        >
+          <path
+            d="M29.4076 54.0286C23.8089 52.6189 19.1867 49.4064 15.5407 44.391C11.8948 39.3756 10.0726 33.8076 10.0742 27.687V12.9453L29.4076 5.69531L48.7409 12.9453V27.687C48.7409 33.8092 46.9187 39.378 43.2744 44.3934C39.6301 49.4088 35.0078 52.6205 29.4076 54.0286ZM29.4076 48.9536C33.5964 47.6245 37.0603 44.9661 39.7992 40.9786C42.5381 36.9911 43.9076 32.5606 43.9076 27.687V16.2682L29.4076 10.8307L14.9076 16.2682V27.687C14.9076 32.5606 16.277 36.9911 19.0159 40.9786C21.7548 44.9661 25.2187 47.6245 29.4076 48.9536Z"
+            fill="black"
+          />
+        </svg>
+      ),
       title: "RainShield Tech",
       text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
     },
   ];
   return (
     <div className="fourstepprocess" id="about">
-      <div className="fourstepprocess-inner">
-        <div className="flex flex-col items-center justify-center gap-44">
-          <div className="heading relative flex flex-col gap-0">
-            <h1 className="text-trim m-0 p-0 tracking-[4px]">
+      <div className="fourstepprocess-inner relative flex flex-col items-center justify-center gap-44">
+        <div className="heading relative flex flex-col gap-0">
+          <div className="relative flex flex-col gap-0">
+            <h1
+              className="text-trim text-grain m-0 p-0 text-[64px] tracking-[3.84px]"
+              data-text="OUR 4 STEP PROCESS"
+            >
               OUR 4 STEP PROCESS
             </h1>
-            <h4
-              className="rotate-[-11deg] transform font-light"
-              style={{
-                color: "#FDE4C8",
-                fontSize: "42px",
-                marginTop: "-30px",
-                marginBottom: "-30px",
-                fontFamily: "luminaire-script",
-                WebkitTextStrokeWidth: "2px",
-                strokeLinecap: "round",
-                WebkitTextStrokeColor: "black",
-                paintOrder: "stroke",
-              }}
-            >
+            <h4 className="with-text-fourstepprocess absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transform text-center">
               With
             </h4>
-            <h1 className="tracking-[4px]">RAINSHIELD TECH</h1>
+            <h1
+              className="text-grain -mt-[12px] text-[64px] tracking-[3.84px]"
+              data-text="RAINSHIELD TECH"
+            >
+              RAINSHIELD TECH
+            </h1>
           </div>
+        </div>
 
-          <div className="flex w-full flex-col gap-3 pt-4 text-white">
-            <div className="text-white">
-              <div className="relative z-10 flex items-center justify-center">
-                {steps.map((step, index) => (
-                  <React.Fragment key={index}>
-                    <div className="flex flex-col items-center">
-                      <div className="mb-2 text-2xl text-[#E7C6A4]">
-                        {step.number}
-                      </div>
-                    </div>
-
-                    {/* Add the dotted line unless it's the last element */}
-                    {index !== steps.length - 1 && (
-                      <div
-                        className="h-0.5 w-65 border-t-2 border-dashed border-[#E7C6A4]"
-                        style={{ margin: "0px 15px" }}
-                      ></div>
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-            <div className="relative z-10 flex min-w-full flex-wrap justify-center gap-6 px-4 sm:gap-8 sm:px-6 md:gap-8 md:px-8">
+        <div className="flex w-full flex-col gap-3 pt-4 text-white">
+          <div className="text-white">
+            <div className="relative z-10 flex items-center justify-center gap-[40px]">
               {steps.map((step, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="paper-bg-8 stepcontainer relative z-10 w-64 rounded p-3 text-black shadow">
-                    <div className="flex min-h-[285px] flex-col items-center justify-center gap-4 border-2 border-black px-2">
-                      <div className="flex justify-center">{step.icon}</div>
-                      <div className="text-center font-['satoshi-black'] text-xl font-bold">
-                        {step.title}
-                      </div>
-                      <p className="text-center font-['satoshi-regular'] text-base">
-                        {step.text}
-                      </p>
+                <React.Fragment key={index}>
+                  <div className="flex flex-col items-center">
+                    <div className="mb-2 text-[36px] font-normal tracking-[3.24px] text-[#FDE4C8]">
+                      {step.number}
                     </div>
                   </div>
-                </div>
+
+                  {/* Add the dotted line unless it's the last element */}
+                  {index !== steps.length - 1 && (
+                    <img
+                      src={"/assets/dotted-line.png"}
+                      alt="dotted-line"
+                      className="w-[205px] object-cover"
+                    />
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </div>
+          <div className="relative z-10 flex min-w-full flex-wrap justify-center gap-[30px] pt-5">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div className="paper-bg-8 stepcontainer relative z-10 w-64 rounded bg-[#F4D9BB] p-3 text-black shadow">
+                  <div className="flex min-h-[285px] flex-col items-center justify-center gap-4 border-2 border-black px-2">
+                    <div className="flex justify-center">{step.icon}</div>
+                    <div className="text-center font-['satoshi-black'] text-[26px] font-[900] text-[#1C1C1C]">
+                      {step.title}
+                    </div>
+                    <p className="text-sans text-trim text-center font-['satoshi-regular'] font-normal text-[#1F1D1D]">
+                      {step.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          <div className="relative flex flex-col items-center justify-center gap-2 p-8">
-            <Badge
-              text="7 day Sparkle Guarantee"
-              className="z-20 lowercase shadow-lg"
-            />
-            <Badge
-              text="hard water stain removal"
-              className="rotate-[-10deg]!"
-            />
-            <div className="absolute right-0 bottom-5 -rotate-5">
-              <Icon />
-            </div>
+        <div className="relative -mt-4 mb-10 flex flex-col items-center justify-center gap-2 p-8">
+          <Badge
+            text="7 day Sparkle Guarantee"
+            className="hover:rotate z-20 rotate-[2.226deg]"
+          />
+          <Badge
+            text="hard water stain removal"
+            className="-mt-4 scale-95 rotate-[-3.582deg]"
+            starClassName={"rotate-[-81.053deg]"}
+          />
+          <div className="absolute right-2 -bottom-0 -rotate-5">
+            <Icon />
           </div>
         </div>
       </div>
@@ -122,25 +183,30 @@ const FourStepProcess = () => {
   );
 };
 
-const Badge = ({ text, className }) => (
+const Badge = ({ text, className, starClassName }) => (
   <div
     style={{ padding: "24px 16px" }}
     className={cn(
-      "flex w-fit rotate-2 cursor-pointer items-center gap-2 rounded-md bg-neutral-800 px-4 py-2 text-white lowercase transition-transform duration-300 hover:rotate-[-10deg]",
+      "flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-4 py-2 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C]",
       className,
     )}
   >
-    <span className="item-center flex h-7 w-7 rotate-[-115deg] transform justify-center text-yellow-400">
+    <span
+      className={cn(
+        `item-center flex size-[28.838px] rotate-[-115.867deg] transform justify-center text-yellow-400`,
+        starClassName,
+      )}
+    >
       <Image alt="spark" src={spark}></Image>
     </span>
-    <h6 className="!text-transform-lowercase text-4xl lowercase">
+    <h6 className="text-4xl">
       <span
-        className="text-4xl text-[#E7C6A4]"
-        style={{ marginRight: "0.5rem", textDecoration: "underline" }}
+        className="mr-4 border-b-3 border-[#f1caa0] font-sans text-4xl font-[900] text-[#f1caa0] uppercase"
+        data-text="FREE"
       >
         FREE
       </span>
-      <span className="font-sans font-bold">{text.toLowerCase()}</span>
+      <span className="font-sans font-bold">{text}</span>
     </h6>
   </div>
 );

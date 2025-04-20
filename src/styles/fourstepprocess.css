@@ -1,6 +1,5 @@
 .fourstepprocess {
-  padding-top: 6rem;
-  padding-top: 80px;
+  padding-top: 72px;
   padding-bottom: 80px;
   padding-left: 123px;
   padding-right: 123px;
@@ -14,15 +13,10 @@
 
 .fourstepprocess-inner {
   background-image: url("../assets/fourstep_bg.png");
-  min-height: 100vh;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-size: 50%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-size: 35%;
 }
 
 .fourstepprocess-inner .heading {
@@ -44,4 +38,22 @@
 
 .gurantee {
   box-shadow: -3px 3px 0 #111111;
+}
+
+.with-text-fourstepprocess {
+  color: #fde4c8;
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: luminaire-script;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  text-shadow:
+    -2.22px -2.22px 0 #201e1e,
+    2.22px -2.22px 0 #201e1e,
+    -2.22px 2.22px 0 #201e1e,
+    2.22px 2.22px 0 #201e1e;
 }
