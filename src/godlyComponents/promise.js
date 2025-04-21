@@ -1,7 +1,7 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import headingBg from "../assets/headingBg.png";
+import headingBg from "public/assets/Union.png";
 import windowCleaning from "@/assets/windowCleaning.png";
 import img1 from "@/assets/rocket.png";
 import img2 from "@/assets/plant.png";
@@ -36,15 +36,15 @@ const Promise = () => {
       className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] px-[86px] py-[150px]"
     >
       <div
-        className="flex h-40 w-140 -rotate-2 flex-col items-center justify-center bg-contain bg-center bg-no-repeat"
+        className="relative flex h-[210px] w-[758px] -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${headingBg.src})` }}
       >
-        <h1 className="text-5xl font-normal tracking-wide text-[#191717]">
+        <h1 className="text-trim -rotate-2 text-[64px] font-normal tracking-wide text-[#191717]">
           old fashioned Values
         </h1>
-        <h4 className="-mt-4 text-3xl font-normal text-[#191717]">
-          <span className="&nbsp; underline">UNRIVALED</span>{" "}
-          <span className="stroke stroke-white stroke-4 font-['luminaire-script'] text-6xl text-[#B0906E]">
+        <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-3xl font-normal text-[#191717]">
+          <span className="text-[32px] underline">UNRIVALED</span>{" "}
+          <span className="stroke text-trim stroke-white stroke-4 font-['luminaire-script'] text-[80px] text-[#B0906E]">
             Quality
           </span>
         </h4>
