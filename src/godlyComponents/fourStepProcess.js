@@ -206,7 +206,7 @@ const Badge = ({ text, className, starClassName }) => (
       >
         FREE
       </span>
-      <span className="font-sans font-bold">{text}</span>
+      <span className="font-sans text-[28px] font-bold">{text}</span>
     </h6>
   </div>
 );
