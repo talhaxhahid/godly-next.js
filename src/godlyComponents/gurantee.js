@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const Gurantee = () => {
   return (
-    <div className="paper-bg-16">
+    <div className="paper-bg-16 bg-[#2D2B2B]">
       <div
-        className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-24"
+        className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-[200px]"
         style={{
           backgroundImage: `url(${background.src})`,
           alignItems: "center",
@@ -23,12 +23,15 @@ const Gurantee = () => {
             <h4 className="text-trim mt-3 mb-4 text-3xl tracking-wide text-[#FFFFFF]">
               THE
             </h4>
-            <h1 className="text-trim text-[102px] tracking-wide text-[#F3CA9E]">
+            <h1
+              className="text-trim text-grain text-[102px] tracking-wide text-[#F3CA9E]"
+              data-text="GODLY"
+            >
               GODLY
             </h1>
           </div>
           <h1
-            className="text-trim -mt-6 ml-22 font-['luminaire-script'] text-[64px] text-[#FFFFFF]"
+            className="text-trim relative z-10 -mt-6 ml-22 font-['luminaire-script'] text-[64px] text-[#FFFFFF]"
             style={{
               WebkitTextStrokeWidth: "8px",
               strokeLinecap: "round",
@@ -42,7 +45,7 @@ const Gurantee = () => {
         <div className="flex min-h-screen w-full flex-col items-center gap-40 bg-contain bg-center bg-no-repeat">
           <div className="relative h-60 min-w-[660px]">
             <div
-              className="absolute -top-1 h-full w-full rotate-10 bg-cover bg-center bg-no-repeat"
+              className="absolute -top-1 h-full w-full rotate-[6deg] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
             <div className="paper-bg-8 gurantee absolute top-0 min-w-[660px] rounded-md bg-[#CBB7A0]! p-2 shadow">
@@ -61,7 +64,7 @@ const Gurantee = () => {
                   <h4 className="font-['satoshi-bold'] text-2xl text-black">
                     We respect your time
                   </h4>
-                  <h5 className="font-['satoshi-regular'] text-2xl font-light">
+                  <h5 className="font-['satoshi-regular'] text-2xl">
                     Time is valuable and should never be taken for granted, we
                     show up on time and maintain steady communication from
                     booking to completion.

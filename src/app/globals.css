@@ -277,89 +277,6 @@ html {
   text-underline-position: from-font;
 }
 
-/*.quote-button { */
-/* border-radius: 9px;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(146, 59, 42, 0.6) 100%),
-    linear-gradient(180deg, #9b4531 0%, #943b2a 100%),
-    url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
-  background-blend-mode: normal, hard-light, normal;
-  box-shadow:
-    0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
-    0px -9px 5.289px 0px #992f12 inset,
-    0px 17px 34px 0px rgba(9, 9, 9, 0.24);
-  display: inline-flex;
-  padding: 26px 16px;
-  align-items: center;
-  gap: 10px;
-  border: 4px solid #933d29;
-  color: #fde4c8;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: lowercase;
-  cursor: pointer;
-
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    opacity: 80%;
-    transform: scale(0.995);
-  } */ /*
-  display: inline-flex;
-  height: 61px;
-  padding: 22px 14px 22px 19px;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 11px;
-  border: 4px solid #933d29;
-  box-shadow:
-    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
-    0px 1px 1.4px 0px rgba(147, 61, 42, 0.69) inset;
-  position: relative;
-
-  color: #fde4c8;
-  span {
-    color: #fde4c8 !important;
-  }
-
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: lowercase;
-  background-color: rgb(147, 61, 42);
-
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    opacity: 80%;
-  }
-
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    border-radius: 9px;
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(146, 59, 42, 0.6) 100%),
-      linear-gradient(180deg, #9b4531 0%, #943b2a 100%),
-      url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
-    background-blend-mode: normal, hard-light, normal;
-    box-shadow:
-      0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
-      0px -9px 5.289px 0px #992f12 inset,
-      0px 17px 34px 0px rgba(9, 9, 9, 0.24);
-  }
-}
-  */
-
 .quote-button {
   position: relative;
   display: inline-flex;
@@ -368,13 +285,10 @@ html {
   text-transform: uppercase !important;
   justify-content: center;
   line-height: 61px; /* same as button height */
-
-  height: 61px;
-  width: 231px;
-  padding: 22px 16px;
+  background-color: red;
+  padding: 36px 22px;
   gap: 10px;
   border-radius: 9px;
-  border: 4px solid #933d29;
   color: #fde4c8;
   font-size: 24px;
   font-style: normal;
@@ -384,20 +298,30 @@ html {
   overflow: hidden;
   background-color: transparent; /* base color handled in ::before */
   transition: all 0.3s ease-in-out;
+  box-shadow:
+    0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.289px #992f12 inset,
+    0px 17px 34px rgba(9, 9, 9, 0.24),
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
+    0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset;
 
   &:hover {
     opacity: 0.8;
-    /* transform: scale(0.995); */
   }
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
+    border-radius: 9px;
+    border: 4px solid #933d29;
+    outline-style: solid;
+    outline-color: #933d29;
+    outline-width: 4px;
     /* border-radius: 0px; */
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(146, 59, 42, 0.6) 100%),
-      linear-gradient(180deg, #9b4531 0%, #943b2a 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #a14632 100%),
+      linear-gradient(180deg, #754034 0%, #943b2a 100%),
       url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
     background-blend-mode: normal, hard-light, normal;
     box-shadow:
@@ -456,4 +380,104 @@ html {
     2.22px -2.22px 0 #201e1e,
     -2.22px 2.22px 0 #201e1e,
     2.22px 2.22px 0 #201e1e;
+}
+
+.quality-text {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    margin-top: -8px;
+    text-shadow:
+      -2.22px -2.22px 0 #e7e3e0,
+      2.22px -2.22px 0 #e7e3e0,
+      -2.22px 2.22px 0 #e7e3e0,
+      2.22px 2.22px 0 #e7e3e0;
+  }
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    margin-top: -8px;
+    background-image: url("/assets/grain.png");
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Add contrast to make grain more visible */
+    filter: contrast(150%) brightness(0.8);
+    /* Ensure the grain only applies to the text */
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+}
+
+.estimate-button {
+  position: relative;
+  display: inline-flex;
+  /* font-family: "satoshi-regular", sans-serif; */
+  align-items: center;
+  text-transform: uppercase !important;
+  justify-content: center;
+  line-height: 61px; /* same as button height */
+  background-color: red;
+  padding: 36px 22px;
+  gap: 10px;
+  border-radius: 9px;
+  color: #c3b099;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: lowercase;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent; /* base color handled in ::before */
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.289px #992f12 inset,
+    0px 17px 34px rgba(9, 9, 9, 0.24),
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
+    0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset;
+
+  outline-style: solid;
+  outline-color: #584938;
+  outline-width: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    border-radius: 9px;
+    box-shadow:
+      0px 17px 34px 0px rgba(9, 9, 9, 0.24),
+      0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset,
+      0px -7px 3px rgba(0, 0, 0, 0.3) inset;
+    /* border-radius: 0px; */
+    border-radius: 9px;
+    border: 1px solid #232222;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(97, 80, 62, 0.6) 100%),
+      linear-gradient(180deg, #252525 100%, #262424 0%),
+      url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
+    background-blend-mode: normal, hard-light, normal;
+    box-shadow:
+      0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
+      0px -9px 5.289px 0px #343232 inset,
+      0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    color: #c3b099 !important;
+  }
 }

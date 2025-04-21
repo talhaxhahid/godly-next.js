@@ -124,25 +124,29 @@ const FourStepProcess = () => {
 
         <div className="flex w-full flex-col gap-3 pt-4 text-white">
           <div className="text-white">
-            <div className="relative z-10 flex items-center justify-center gap-[40px]">
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  <div className="flex flex-col items-center">
-                    <div className="mb-2 text-[36px] font-normal tracking-[3.24px] text-[#FDE4C8]">
-                      {step.number}
+            <div className="relative z-10 pb-2">
+              <div className="flex w-full items-center justify-between px-2">
+                {steps.map((step, index) => (
+                  <React.Fragment key={index}>
+                    <div className="flex flex-col items-center">
+                      <div className="mb-2 text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:text-3xl lg:text-[36px]">
+                        {step.number}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Add the dotted line unless it's the last element */}
-                  {index !== steps.length - 1 && (
-                    <img
-                      src={"/assets/dotted-line.png"}
-                      alt="dotted-line"
-                      className="w-[205px] object-cover"
-                    />
-                  )}
-                </React.Fragment>
-              ))}
+                    {/* Add the dotted line unless it's the last element */}
+                    {index !== steps.length - 1 && (
+                      <div className="mx-1 max-w-[205px] flex-grow md:mx-2 lg:mx-3">
+                        <img
+                          src={"/assets/dotted-line.png"}
+                          alt="dotted-line"
+                          className="h-auto w-full object-cover"
+                        />
+                      </div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
           </div>
           <div className="relative z-10 flex min-w-full flex-wrap justify-center gap-[30px] pt-5">
@@ -187,21 +191,25 @@ const Badge = ({ text, className, starClassName }) => (
   <div
     style={{ padding: "24px 16px" }}
     className={cn(
-      "flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-4 py-2 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C]",
+      "flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-4 py-2 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C] transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_45px_0px_#1C1C1C]",
       className,
     )}
   >
     <span
       className={cn(
-        `item-center flex size-[28.838px] rotate-[-115.867deg] transform justify-center text-yellow-400`,
+        `item-center flex size-[28.838px] rotate-[-115.867deg] transform justify-center text-yellow-400 transition-transform duration-500 group-hover:rotate-[244.133deg]`,
         starClassName,
       )}
     >
-      <Image alt="spark" src={spark}></Image>
+      <Image
+        alt="spark"
+        src={spark}
+        className="transition-transform duration-500 hover:rotate-[360deg]"
+      ></Image>
     </span>
-    <h6 className="text-4xl">
+    <h6 className="group relative text-4xl">
       <span
-        className="mr-4 border-b-3 border-[#f1caa0] font-sans text-4xl font-[900] text-[#f1caa0] uppercase"
+        className="mr-4 border-b-3 border-[#f1caa0] font-sans text-4xl font-[900] text-[#f1caa0] uppercase transition-all duration-300 hover:text-yellow-300"
         data-text="FREE"
       >
         FREE
@@ -210,6 +218,7 @@ const Badge = ({ text, className, starClassName }) => (
     </h6>
   </div>
 );
+
 export default FourStepProcess;
 
 const Icon = () => (

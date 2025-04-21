@@ -60,7 +60,7 @@ const CityTags = () => {
         width: window.innerWidth,
         height: 300,
         wireframes: false,
-        background: "#201e1c",
+        background: "#312e2c",
         showSleeping: false,
       },
     });

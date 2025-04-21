@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import background from "../assets/texture.png";
 import {
   Accordion,
   AccordionContent,
@@ -20,23 +19,24 @@ const Faq = () => {
   return (
     <div
       id="faq"
-      className="flex flex-col items-center bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-6 py-12 bg-blend-multiply"
-      style={{
-        backgroundImage: `url(${background.src})`,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      className="paper-bg-16 flex flex-col items-center bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-6 py-12"
     >
       <div
         className="flex w-full max-w-4xl flex-col"
         style={{ alignItems: "center", justifyContent: "center" }}
       >
-        <h1 className="text-8xl font-black tracking-wide text-[#191717]">
+        <h1
+          className="text-grain text-8xl font-black tracking-wide text-[#191717]"
+          data-text="FREQUENTLY"
+        >
           FREQUENTLY
         </h1>
         <h4 className="text-2xl font-semibold tracking-wide text-[#191717]">
-          ASKED{" "}
-          <span className="ml-3 font-['luminaire-script'] text-[64px] font-medium text-[#61503E]">
+          <span>ASKED</span>{" "}
+          <span
+            className="text-grain ml-3 font-['luminaire-script'] text-[64px] font-medium text-[#61503E]"
+            data-text="Questions"
+          >
             Questions
           </span>
         </h4>

@@ -8,26 +8,34 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
   return (
-    <div className="paper-bg-16">
-      <div className="paper-bg-16 mx-auto flex max-w-[1440px] flex-col items-center gap-20 bg-[#262424] px-6 py-25">
+    <div className="paper-bg-16 bg-[#2D2B2B] pb-40">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 py-25">
         <div className="relative flex w-full items-end justify-center">
           <div className="flex flex-col items-center justify-center gap-3">
             <div className="flex items-end gap-2">
-              <h1 className="text-trim text-6xl tracking-wide text-[#FFFFFF]">
+              <h1 className="text-trim text-[86px] tracking-wider text-[#FFFFFF]">
                 TRUSTED
               </h1>
-              <h4 className="text-trim text-xl tracking-wide text-[#FDE4C8]">
+              <h4 className="text-trim text-3xl tracking-wider text-[#FDE4C8]">
                 BY
               </h4>
             </div>
-            <h1 className="text-6xl tracking-wide text-white">
-              <span className="font-['luminaire-script'] text-5xl text-[#FDE4C8]">
+            <h1 className="-mt-9">
+              <span
+                className="text-grain mr-4 font-['luminaire-script'] text-5xl text-[#FDE4C8] before:inset-0"
+                data-text="Your"
+              >
                 Your
               </span>{" "}
-              neighbors
+              <span
+                className="text-grain text-trim text-[86px] tracking-wider text-[#FFFFFF]"
+                data-text="NEIGHBORS"
+              >
+                NEIGHBORS
+              </span>
             </h1>
           </div>
-          <div className="absolute right-0">
+          <div className="absolute right-0 bottom-4">
             <Button
               variant="link"
               className="see-more-reviews font-['marlton'] text-white underline"
@@ -115,7 +123,10 @@ function QuoteCarousel() {
                 <span className="font-semibold">We </span>
                 {item.quote.replace(/^We /, "")}
               </p>
-              <p className="text-base font-normal">{item.author}</p>
+              <div className="flex items-center gap-4">
+                <div className="size-[46px] rounded-full bg-[#D9D9D9]" />
+                <p className="-mt-2 text-base font-normal">{item.author}</p>
+              </div>
             </div>
           </div>
         ))}
