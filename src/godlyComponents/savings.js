@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import "@/styles/fourstepprocess.css";
-import background from "../assets/texture.png";
 import { Check, X } from "lucide-react";
 import QuoteButton from "@/components/quoteButton";
 
@@ -32,16 +31,19 @@ const Savings = () => {
   ];
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div
-      className="flex flex-col items-center justify-items-center bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
-      style={{ backgroundImage: `url(${background.src})` }}
-    >
+    <div className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
-        <h1 className="text-6xl font-normal text-[#191717]">
-          Huge Savings and{" "}
+        <h1
+          className="text-grain text-[64px] font-normal text-[#191717]"
+          data-text="HUGE SAVINGS AND"
+        >
+          HUGE SAVINGS AND
         </h1>
-        <h1 className="mt-1 text-6xl font-normal text-[#191717]">
-          always look great
+        <h1
+          className="text-grain -mt-8 text-[64px] font-normal text-[#191717] before:inset-0"
+          data-text="ALWAYS LOOK GREAT"
+        >
+          ALWAYS LOOK GREAT
         </h1>
         <div
           className="pt-16 pb-16 text-white"

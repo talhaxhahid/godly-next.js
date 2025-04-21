@@ -7,11 +7,8 @@ import Image from "next/image";
 
 const Location = () => {
   return (
-    <div className="paper-bg-16">
-      <div
-        className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-[#262424] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
-        style={{ backgroundImage: `url(${background.src})` }}
-      >
+    <div className="paper-bg-16 bg-[#262424]">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
         <h4 className="text-2xl font-normal tracking-wider text-[#FDE4C8]">
           PROUDLY SERVING
         </h4>
@@ -26,10 +23,10 @@ const Location = () => {
         </h4>
       </div>
       <div
-        className="flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
+        className="flex max-w-[1440px] flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <Image src={map} alt="map" className="h-full max-w-[1440px]" />
+        <Image src={map} alt="map" className="h-full w-full" />
 
         <SectionButton />
       </div>

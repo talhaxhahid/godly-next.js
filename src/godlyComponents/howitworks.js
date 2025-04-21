@@ -1,7 +1,6 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import background from "../assets/texture.png";
 import img1 from "@/assets/howitworks1.png";
 import img2 from "@/assets/howitworks2.png";
 import img3 from "@/assets/howitworks3.png";
@@ -32,11 +31,18 @@ const HowItWorks = () => {
   return (
     <div
       id="process"
-      className="flex flex-col items-center justify-items-center bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
-      style={{ backgroundImage: `url(${background.src})` }}
+      className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 pb-24 bg-blend-multiply"
     >
-      <h1 className="text-6xl font-normal text-[#191717]">HOW IT WORKS</h1>
-      <h4 className="mt-4 text-3xl font-normal text-[#61503E]">
+      <h1
+        className="text-grain text-[64px] font-normal text-[#191717]"
+        data-text="HOW IT WORKS"
+      >
+        HOW IT WORKS
+      </h1>
+      <h4
+        className="text-grain -mt-2 text-[32px] font-normal text-[#61503E]"
+        data-text="IN 3 SIMPLE STEPS"
+      >
         IN 3 SIMPLE STEPS
       </h4>
       <div
@@ -47,23 +53,24 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="relative z-10 w-80 rounded-md bg-[#e7e3e0] p-6 text-black shadow">
-                <h5 className="text-xl font-normal text-[#AE9D8A]">
-                  #<span className="font-[Stencil]">{step.number}</span>
+                <h5 className="text-[32px] font-normal text-[#AE9D8A]">
+                  #
+                  <span
+                    className="text-grain font-[Stencil]"
+                    data-text={step.number}
+                  >
+                    {step.number}
+                  </span>
                 </h5>
 
                 <div
-                  className="mb-8 text-left text-4xl"
+                  className="mt-2 text-left text-4xl"
                   style={{ marginBottom: "1rem" }}
                 >
                   {step.title}
                 </div>
                 <div className="mb-4 flex justify-center">{step.icon}</div>
-                <p
-                  className="text-left text-sm"
-                  style={{ fontFamily: "sans-serif" }}
-                >
-                  {step.text}
-                </p>
+                <p className="text-left font-sans text-sm">{step.text}</p>
               </div>
             </div>
           ))}

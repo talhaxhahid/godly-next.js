@@ -1,5 +1,4 @@
 import React from "react";
-import background from "../assets/texture.png";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
@@ -8,12 +7,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="paper-bg-16">
+    <div className="bg-[#312E2C]">
       <div className="item-center mx-auto flex max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
-        <div
-          className="rounded-xl bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply"
-          style={{ backgroundImage: `url(${background.src})` }}
-        >
+        <div className="paper-bg-16 rounded-xl bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply">
           <div className="flex flex-col items-start justify-between md:flex-row">
             <div className="flex flex-col items-start md:flex-row md:gap-30">
               {/* Left: Information */}
