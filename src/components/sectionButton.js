@@ -15,7 +15,7 @@ export default function SectionButton({ children }) {
   return (
     <>
       <Button onClick={() => setIsOpen(true)} className="estimate-button">
-        <span className="-mt-1">{children}</span>
+        <span className="">{children}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"

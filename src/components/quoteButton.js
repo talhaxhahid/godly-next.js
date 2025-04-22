@@ -9,7 +9,7 @@ export default function QuoteButton({ children, type, disabled, onClick }) {
       disabled={disabled}
       onClick={onClick}
     >
-      <span className="color-[#fde4c8]! text-trim z-10 -mt-2">{children}</span>
+      <span className="color-[#fde4c8]! text-trim z-10">{children}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="33"

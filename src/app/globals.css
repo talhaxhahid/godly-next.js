@@ -260,6 +260,7 @@ html {
 
 .text-trim {
   text-box-trim: trim-both;
+  /* text-box-edge: cap alphabetic; */
 }
 
 .see-more-reviews {
@@ -335,6 +336,8 @@ html {
     position: relative;
     z-index: 1;
     color: #fde4c8 !important;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
   }
 }
 
@@ -486,6 +489,9 @@ html {
   line-height: normal;
   /* text-transform: lowercase; */
   mix-blend-mode: difference;
+
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 /* SVG icon */
