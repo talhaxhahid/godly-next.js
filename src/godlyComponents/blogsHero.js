@@ -3,11 +3,20 @@ import "@/styles/fourstepprocess.css";
 
 const BlogsHero = () => {
   return (
-    <div className="mt-20 flex flex-col items-center justify-center bg-[#262424] p-16">
-      <h1 className="border-b-4 border-double border-[#FDE4C8] pb-2 text-center text-6xl text-[#FDE4C8] text-shadow-[#AF8F6E]">
-        Godly resources{" "}
-      </h1>
-      <p className="text-center font-sans text-lg text-[#FFFFFF94]">
+    <div className="flex flex-col items-center justify-center gap-[25px] bg-[#262424] p-16 py-[70px]">
+      <div className="flex flex-col gap-2">
+        <h1
+          className="text-center text-[96px] text-[#FDE4C8]"
+          style={{ textShadow: "4px 0px 0px #AF8F6E" }}
+        >
+          Godly resources
+        </h1>
+        <div className="flex flex-col gap-0.5">
+          <div className="h-[1px] w-[662px] bg-white" />
+          <div className="h-[3px] w-[662px] bg-white" />
+        </div>
+      </div>
+      <p className="text-center font-['satoshi-regular'] text-[24px] text-[#FFFFFF94]">
         actionable ideas to help you make informed and smart choices.
       </p>
     </div>

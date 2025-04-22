@@ -49,27 +49,28 @@ const Savings = () => {
           className="pt-16 pb-16 text-white"
           // style={{ marginTop: "1rem", marginBottom: "3rem" }}
         >
-          <div className="relative z-10 flex flex-wrap justify-center gap-10 px-4 sm:gap-15 sm:px-4 md:gap-25 md:px-8">
+          <div className="relative z-10 flex flex-wrap justify-center gap-[72px]">
             {steps.map((step, index) => (
               <div key={index} className="">
                 <div
                   className={
-                    "relative z-10 flex w-70 flex-col items-center justify-center rounded-lg bg-[#1F1D1D] p-[48px] text-black shadow"
+                    "relative z-10 flex flex-col items-center justify-center gap-12 self-stretch rounded-[20px] bg-[#1F1D1D] p-[48px] text-black shadow"
                   }
                 >
-                  <h5 className="mb-5 text-center text-xl font-normal text-[#FFFFFF]">
+                  <h5 className="text-center text-[32px] font-normal text-[#FFFFFF]">
                     {step.title}
                   </h5>
 
                   <div
-                    className="text-center font-sans text-5xl font-semibold text-[#FFFFFF]"
+                    className="flex flex-col gap-2 text-center font-['satoshi-bold'] text-[64px] font-semibold text-[#FFFFFF]"
                     style={{ marginBottom: "1rem" }}
                   >
                     {step.discount}
+                    <p className="text-center font-['satoshi-light'] text-[20px] text-white opacity-70">
+                      per cleaning
+                    </p>
                   </div>
-                  <p className="text-center font-sans text-sm text-white">
-                    per cleaning
-                  </p>
+
                   <div className="mb-4 flex justify-center">
                     {FeatureList(index != 2)}
                   </div>
@@ -77,8 +78,8 @@ const Savings = () => {
                     Request a Quote
                   </QuoteButton>
 
-                  <div className="absolute top-2 -left-6 z-10 h-4 w-15 -rotate-45 bg-[#F3CA9ECC]"></div>
-                  <div className="absolute -right-6 bottom-2 z-10 h-4 w-15 -rotate-45 bg-[#F3CA9ECC]"></div>
+                  <div className="absolute top-2 -left-8 z-10 h-4 w-25 -rotate-45 bg-[#F3CA9ECC]"></div>
+                  <div className="absolute -right-6 bottom-2 z-10 h-4 w-25 -rotate-45 bg-[#F3CA9ECC]"></div>
                 </div>
               </div>
             ))}
@@ -113,11 +114,11 @@ const FeatureList = (value) => {
   ];
 
   return (
-    <div className="space-y-6 py-12 font-sans text-[#E8E6E3]">
+    <div className="flex flex-col gap-6 py-12 font-['satoshi-regular'] text-xl text-[#E8E6E3]">
       {features.map((text, index) => (
         <div key={index} className="flex items-center space-x-4">
           {value ? (
-            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FFEBD7]">
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FFEBD7] font-['satoshi-light']">
               <Check className="h-3 w-3 text-[#4B3A2F]" />
             </div>
           ) : (

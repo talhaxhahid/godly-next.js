@@ -76,7 +76,7 @@ const HowItWorks = () => {
           ))}
         </div>
       </div>
-      <SectionButton />
+      <SectionButton>Get a Free Estimate</SectionButton>
     </div>
   );
 };

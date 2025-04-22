@@ -1,14 +1,27 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { useState, useEffect } from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-// import headingBg from "public/assets/Union.png";
+
 import ticketBg from "@/assets/ticket-bg.png";
-import windowCleaning from "@/assets/windowCleaning.png";
+
+import fam1 from "@/assets/fam-1.jpg";
+import fam2 from "@/assets/fam-2.jpg";
 import img1 from "@/assets/rocket.png";
 import img2 from "@/assets/plant.png";
 import img3 from "@/assets/eagle.png";
 import SectionButton from "@/components/sectionButton";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  // CarouselNext,
+  // CarouselPrevious,
+} from "@/components/ui/carousel";
+// import EstimateButton from "@/components/estimateButton";
 
 const steps = [
   {
@@ -136,7 +149,8 @@ const Promise = () => {
           </div>
         ))}
       </div>
-      <SectionButton />
+      <SectionButton>Get a Free Estimate</SectionButton>
+      {/* <EstimateButton /> */}
     </div>
   );
 };
@@ -144,6 +158,28 @@ const Promise = () => {
 export default Promise;
 
 function Story() {
+  const [api, setApi] = useState(null);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  // Setup event listeners for the carousel
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
   return (
     <div
       className="mt-12 flex w-full max-w-[1100px] gap-10 rounded-[12px] bg-[#1F1D1D] p-4"
@@ -152,14 +188,49 @@ function Story() {
           "0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25)",
       }}
     >
-      <div className="flex-1">
-        <div className="relative min-h-[200px] rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
-          <Image src={windowCleaning} alt="window"></Image>
-          <p className="text-center font-['luminaire-script'] text-base">
-            Grandma & grandson
-          </p>
-          <div className="absolute top-2 -left-6 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
-          <div className="absolute -right-6 bottom-2 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+      <div className="relative flex-1 overflow-visible">
+        <div className="absolute top-2 -left-6 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+        <div className="absolute -right-6 bottom-8 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+        <Carousel
+          className="carousel-dots pointer-none: w-full overflow-visible"
+          setApi={setApi}
+        >
+          <CarouselContent className="overflow-visible">
+            <CarouselItem className="overflow-visible">
+              <div className="relative min-h-[200px] overflow-visible rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
+                <Image
+                  src={fam1}
+                  alt="family"
+                  className="h-contain bg-full h-full overflow-clip"
+                />
+                <p className="text-center font-['luminaire-script'] text-base">
+                  Our family business
+                </p>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem>
+              <div className="relative min-h-[200px] rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
+                <Image src={fam2} alt="family" />
+                <p className="text-center font-['luminaire-script'] text-base">
+                  Quality service
+                </p>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
+
+        <div className="mt-4 flex justify-center gap-2">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                index === current ? "bg-[#F3CA9E]" : "bg-[#F3CA9E]/30"
+              }`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
       <div className="flex flex-1 flex-col items-start justify-center gap-[40px] p-3">

@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SectionButton from "@/components/sectionButton";
 
 const Faq = () => {
   const [expandedItem, setExpandedItem] = useState("item-1"); // Set default value to item-1
@@ -72,6 +73,7 @@ const Faq = () => {
           </Accordion>
         </div>
       </div>
+      <SectionButton>Schedule your solar panel cleaning today</SectionButton>
     </div>
   );
 };

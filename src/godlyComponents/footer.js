@@ -19,13 +19,13 @@ const Footer = () => {
                 </h3>
                 <Link
                   href="#faq"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   FAQ
                 </Link>
                 <Link
                   href="/blogs"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Blog
                 </Link>
@@ -36,31 +36,31 @@ const Footer = () => {
                 <h3 className="font-normal text-[#2D2B2B] uppercase">Menu</h3>
                 <Link
                   href="#services"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Services
                 </Link>
                 <Link
                   href="/#about"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   About us
                 </Link>
                 <Link
                   href="/#promise"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Our promises
                 </Link>
                 <Link
                   href="/#process"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Our process
                 </Link>
                 <a
                   href="#"
-                  className="font-sans text-sm font-normal hover:underline"
+                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Holiday lighting
                 </a>
@@ -69,8 +69,12 @@ const Footer = () => {
 
             {/* Right: Contact Info */}
             <div className="flex flex-col gap-2 text-right md:items-end">
-              <p className="text-lg font-normal">954-751-4128</p>
-              <p className="text-sm font-normal">hello@godlywindows.com</p>
+              <p className="font-['satoshi-regular'] text-lg font-normal">
+                954-751-4128
+              </p>
+              <p className="font-['satoshi-regular'] text-sm font-normal">
+                hello@godlywindows.com
+              </p>
             </div>
           </div>
           <div
@@ -85,7 +89,7 @@ const Footer = () => {
                 <FaInstagram />
               </div>
             </div>
-            <div className="font-sans text-sm font-normal">
+            <div className="font-['satoshi-regular'] text-sm font-normal">
               <p>1901 Thornridge Cir. Shiloh,</p>
               <p>Hawaii 81063</p>
             </div>

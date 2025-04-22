@@ -11,8 +11,10 @@ const BlogsSection = ({ noOfBlogs }) => {
   });
 
   return (
-    <div className="bg-[#fdf6ed] px-4 py-8 md:px-12">
-      <h2 className="mb-6 text-xl font-bold text-gray-800">LASTEST NEWS</h2>
+    <div className="flex flex-col gap-[40px] bg-[#fdf6ed] px-4 pb-12 md:px-12">
+      <h2 className="text-trim pt-[36px] text-[36px] font-bold text-gray-800">
+        LASTEST NEWS
+      </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {newsList.map((news, index) => (
           <div key={index}>

@@ -125,7 +125,7 @@ const FourStepProcess = () => {
         <div className="flex w-full flex-col gap-3 pt-4 text-white">
           <div className="text-white">
             <div className="relative z-10 pb-2">
-              <div className="flex w-full items-center justify-between px-2">
+              <div className="mx-auto flex w-fit items-center justify-between px-2">
                 {steps.map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center">

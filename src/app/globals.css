@@ -367,13 +367,14 @@ html {
 .with-text {
   color: #fde4c8;
   text-align: right;
-  leading-trim: both;
-  text-edge: cap;
-  font-family: luminaire-script;
+  /* leading-trim: trim-both; */
+  /* text-edge: cap; */
+  /* font-family: "satoshi-bold"; */
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  /* text-transform: uppercase; */
 
   text-shadow:
     -2.22px -2.22px 0 #201e1e,
@@ -419,65 +420,87 @@ html {
 
 .estimate-button {
   position: relative;
-  display: inline-flex;
-  /* font-family: "satoshi-regular", sans-serif; */
+  display: flex;
+  /* width: 262px; */
+  height: 61px;
+  padding: 22px 14px 22px 19px;
   align-items: center;
-  text-transform: uppercase !important;
-  justify-content: center;
-  line-height: 61px; /* same as button height */
-  background-color: red;
-  padding: 36px 22px;
   gap: 10px;
+  cursor: pointer;
+  /* Make sure we're not accidentally overriding the border */
+  border: none;
+  background: transparent;
+  z-index: 0;
+  box-shadow:
+    0px 1px 1.4px 0px #f7ebebb0 inset,
+    0px 17px 34px 0px #0909093d;
+}
+
+/* Ensure the ::before element has proper size and placement */
+.estimate-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Make sure z-index places it behind the content */
+  z-index: -2;
   border-radius: 9px;
-  color: #c3b099;
+  border: 4px solid #61503e;
+  box-shadow:
+    0px 1px 1.4px 0px #f7ebebb0 inset,
+    0px 17px 34px 0px #0909093d;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Inner container with background */
+.estimate-button::after {
+  content: "";
+  position: absolute;
+  inset: 4px; /* Account for the 4px border */
+  border-radius: 5px;
+  border: 1px solid #232222;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(97, 80, 62, 0.6) 60%),
+    linear-gradient(180deg, #323030 100%, #262424 40%),
+    url("/assets/vintage-paper-14.jpg") lightgray 0% / cover no-repeat;
+  background-blend-mode: normal, normal, normal;
+  box-shadow:
+    0px -7px 5.29px 0px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.29px 0px #343232 inset,
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+  z-index: -1;
+}
+
+/* Text content */
+.estimate-button span {
+  position: relative;
+  z-index: 2;
+  color: #fde4c8;
+  /* font-family: "Marlton Sans", sans-serif; Add fallback */
   font-size: 24px;
   font-style: normal;
+
   font-weight: 400;
-  text-transform: lowercase;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: transparent; /* base color handled in ::before */
-  transition: all 0.3s ease-in-out;
-  box-shadow:
-    0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
-    0px -9px 5.289px #992f12 inset,
-    0px 17px 34px rgba(9, 9, 9, 0.24),
-    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
-    0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset;
+  line-height: normal;
+  /* text-transform: lowercase; */
+  mix-blend-mode: difference;
+}
 
-  outline-style: solid;
-  outline-color: #584938;
-  outline-width: 4px;
+/* SVG icon */
+.estimate-button svg {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  z-index: 2;
+  fill: #d0bda6;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 4px;
-    border-radius: 9px;
-    box-shadow:
-      0px 17px 34px 0px rgba(9, 9, 9, 0.24),
-      0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset,
-      0px -7px 3px rgba(0, 0, 0, 0.3) inset;
-    /* border-radius: 0px; */
-    border-radius: 9px;
-    border: 1px solid #232222;
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(97, 80, 62, 0.6) 100%),
-      linear-gradient(180deg, #252525 100%, #262424 0%),
-      url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
-    background-blend-mode: normal, hard-light, normal;
-    box-shadow:
-      0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
-      0px -9px 5.289px 0px #343232 inset,
-      0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+.carousel-dots .dot {
+  background-color: #f3ca9e;
+}
 
-    z-index: 0;
-  }
-
-  span {
-    position: relative;
-    z-index: 1;
-    color: #c3b099 !important;
-  }
+.carousel-dots .dot-active {
+  background-color: #f3ca9e;
 }

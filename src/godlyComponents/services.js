@@ -16,7 +16,7 @@ const Services = () => {
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
       <div className="relative flex min-h-screen flex-col items-center gap-20 px-6 py-24">
         <div className="flex flex-col items-center justify-center gap-6">
-          <h1 className="with-text rotate-[-2.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline">
+          <h1 className="with-text rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline">
             We are
           </h1>
           <div className="flex flex-col items-center justify-center">
