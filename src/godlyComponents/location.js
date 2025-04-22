@@ -35,7 +35,7 @@ const Location = () => {
         </h4>
       </div>
       <div
-        className="flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
+        className="flex flex-col items-center justify-items-center gap-10 bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
         style={{ backgroundImage: `url(${background.src})` }}
       >
         <Image src={map} alt="map" className="h-full max-w-[1440px]" />
