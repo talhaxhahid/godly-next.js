@@ -8,7 +8,7 @@ const Gurantee = () => {
   return (
     <div className="paper-bg-16 bg-[#2D2B2B]">
       <div
-        className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-[200px]"
+        className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-[150px]"
         style={{
           backgroundImage: `url(${background.src})`,
           alignItems: "center",
@@ -49,13 +49,13 @@ const Gurantee = () => {
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
             <div className="paper-bg-8 gurantee absolute top-0 min-w-[660px] rounded-md bg-[#CBB7A0]! p-2 shadow">
-              <div className="flex h-full w-full items-center justify-between rounded-md border border-black p-2">
+              <div className="flex h-full w-full items-center justify-between rounded-md border border-black px-4 py-5">
                 <div className="flex w-3/4 flex-col justify-between gap-6">
                   <h1
-                    className="card-number text-5xl text-[#312E2C30]"
+                    className="card-number trim text-[rgba(49, 46, 44, 0.19)] text-5xl"
                     style={{
                       WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "#d5d5d5",
+                      WebkitTextStrokeColor: "rgba(45, 43, 43, 0.20)",
                       paintOrder: "stroke",
                     }}
                   >
@@ -75,19 +75,19 @@ const Gurantee = () => {
             </div>
           </div>
 
-          <div className="relative h-50 w-[450px]">
+          <div className="relative h-50 w-[505px]">
             <div
               className="absolute top-4 -left-15 h-full w-full -rotate-10 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
             <div className="gurantee absolute top-0 rounded-md bg-[#CBB7A0] p-2 shadow">
-              <div className="flex h-full w-full items-center justify-between rounded-md border border-black p-2">
+              <div className="flex h-full w-full items-center justify-between rounded-md border border-black px-4 py-5">
                 <div className="flex w-3/4 flex-col justify-between gap-6">
                   <h1
-                    className="card-number text-5xl text-[#312E2C30]"
+                    className="card-number trim text-[rgba(49, 46, 44, 0.19)] text-5xl"
                     style={{
                       WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "#d5d5d5",
+                      WebkitTextStrokeColor: "rgba(45, 43, 43, 0.20)",
                       paintOrder: "stroke",
                     }}
                   >
@@ -113,13 +113,13 @@ const Gurantee = () => {
               style={{ backgroundImage: `url(${cardBg.src})` }}
             ></div>
             <div className="gurantee absolute top-0 min-w-[470px] rounded-md bg-[#CBB7A0] p-2 shadow">
-              <div className="flex h-full w-full rounded-md border border-black p-2">
+              <div className="flex h-full w-full rounded-md border border-black px-4 py-5">
                 <div className="flex w-3/4 flex-col justify-between gap-6">
                   <h1
-                    className="card-number text-5xl text-[#312E2C30]"
+                    className="card-number trim text-[rgba(49, 46, 44, 0.19)] text-5xl"
                     style={{
                       WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "#d5d5d5",
+                      WebkitTextStrokeColor: "rgba(45, 43, 43, 0.20)",
                       paintOrder: "stroke",
                     }}
                   >

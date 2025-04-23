@@ -110,7 +110,7 @@ const FourStepProcess = () => {
             >
               OUR 4 STEP PROCESS
             </h4>
-            <h4 className="with-text-fourstepprocess absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transform text-center">
+            <h4 className="with-text-fourstepprocess trim absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transform text-center">
               With
             </h4>
             <h4

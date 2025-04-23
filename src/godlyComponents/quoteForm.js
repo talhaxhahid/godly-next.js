@@ -28,7 +28,7 @@ const servicesList = [
 ];
 
 export default function QuoteForm() {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -147,7 +147,7 @@ export default function QuoteForm() {
     <form onSubmit={handleSubmit} className="mt-3">
       <div className="paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen shadow-md">
         <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-12 py-8">
-          <h2 className="-mt-[51px] text-[64px] font-normal tracking-[3.2px] text-[#2D2B2B]">
+          <h2 className="trim text-[64px] font-normal tracking-[3.2px] text-[#2D2B2B]">
             LET US CALL YOU!
           </h2>
           <p className="max-w-[367px] text-right font-[satoshi-medium] text-2xl font-medium text-[#2D2B2B]">
@@ -165,7 +165,7 @@ export default function QuoteForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="John Doe"
+              placeholder="YOUR NAME"
               className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl focus-visible:ring-0"
               required
             />
@@ -177,7 +177,7 @@ export default function QuoteForm() {
             <Input
               name="email"
               type="email"
-              placeholder="johndoe@email.com"
+              placeholder="YOUR EMAIL"
               value={formData.email}
               onChange={handleChange}
               className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
@@ -190,7 +190,7 @@ export default function QuoteForm() {
             </label>
             <Input
               name="phone"
-              placeholder="123-456-7890"
+              placeholder="YOUR PHONE NUMBER"
               value={formData.phone}
               onChange={handleChange}
               className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
@@ -209,7 +209,13 @@ export default function QuoteForm() {
               className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
             >
               <div className="flex w-full items-center space-x-2">
-                {formData.services.join(", ") || "Select Services"}
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  {formData.services.join(", ") || (
+                    <span className="text-[rgba(49,46,44,0.20)]">
+                      Choose your service
+                    </span>
+                  )}
+                </p>
                 {showServices ? (
                   <ChevronUp className="ms-auto" />
                 ) : (
@@ -253,7 +259,9 @@ export default function QuoteForm() {
                   {date ? (
                     format(date, "MM / dd / yyyy")
                   ) : (
-                    <span>Pick a date</span>
+                    <span className="text-[rgba(49,46,44,0.20)]">
+                      Choose date
+                    </span>
                   )}
                   {/* <CalendarIcon className="inline ml-2 h-4 w-4 text-gray-500" /> */}
                   <svg
@@ -308,7 +316,7 @@ export default function QuoteForm() {
             </label>
             <Input
               name="zipcode"
-              placeholder="12345"
+              placeholder="YOUR ZIP CODE"
               value={formData.zipcode}
               onChange={handleChange}
               className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"

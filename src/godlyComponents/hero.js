@@ -17,12 +17,12 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-14 pb-32">
-        <div className="flex min-h-[815px] flex-col justify-end gap-2 pb-10">
-          <div className="mb-1 flex items-center justify-start gap-3">
-            <h1 className="font-marlton text-trim -mt-1 text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
+        <div className="flex min-h-[815px] flex-col justify-end gap-3 pb-10">
+          <div className="flex items-center justify-start gap-3">
+            <h1 className="font-marlton trim text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
               TOP RATED
             </h1>
-            <div className="text-trim flex items-center gap-[3.774px]">
+            <div className="trim flex items-center gap-[3.774px]">
               <Star />
               <Star />
               <Star />
@@ -30,24 +30,24 @@ const Hero = () => {
               <Star />
             </div>
           </div>
-          <h1 className="flex flex-wrap items-center gap-2">
-            <span className="-mt-4 flex flex-wrap items-center gap-2">
-              <span className="font-marlton text-trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
+          <h1 className="flex flex-wrap items-center gap-8">
+            <span className="flex flex-wrap items-center gap-2">
+              <span className="font-marlton trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
                 Window cleaning
               </span>
-              <span className="mt-5 shrink-0 text-center font-['luminaire-script'] text-2xl text-[#FDE4C8]">
+              <span className="shrink-0 text-center font-['luminaire-script'] text-2xl text-[#FDE4C8]">
                 And
               </span>
               <span></span>
-              <span className="font-marlton text-trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
+              <span className="font-marlton trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
                 pressure Washing
               </span>
             </span>
-            <span className="font-marlton text-trim -mt-[14px] shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[7.4] text-white">
+            <span className="font-marlton trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[7.4] text-white">
               services In {city}
             </span>
           </h1>
-          <p className="mt-5 font-[satoshi-medium] text-xl font-medium text-white">
+          <p className="font-[satoshi-medium] text-xl font-medium text-white">
             we specialize in window washing, home washing, pressure washing,
             paver sealing and more.
           </p>

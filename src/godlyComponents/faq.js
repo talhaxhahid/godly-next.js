@@ -20,7 +20,7 @@ const Faq = () => {
   return (
     <div
       id="faq"
-      className="paper-bg-16 flex flex-col items-center bg-[#efe5db] bg-cover bg-center bg-no-repeat px-6 py-12"
+      className="paper-bg-16 flex flex-col items-center bg-[#FDE4C8FD] bg-cover bg-center bg-no-repeat px-6 py-12"
     >
       <div
         className="flex w-full max-w-4xl flex-col"

@@ -13,6 +13,7 @@ import img1 from "@/assets/rocket.png";
 import img2 from "@/assets/plant.png";
 import img3 from "@/assets/eagle.png";
 import SectionButton from "@/components/sectionButton";
+import Autoplay from "embla-carousel-autoplay";
 
 import {
   Carousel,
@@ -101,22 +102,18 @@ const Promise = () => {
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`paper-bg-8 relative flex w-full max-w-[350px] rounded-[6px] p-2 ${
-              index === 1
-                ? "bg-[#E7E3E0] text-black"
-                : "bg-[#201E1E] text-[#FFFFFF]"
-            } `}
-            style={{
-              boxShadow:
-                index === 1
-                  ? "0px 3.015px 3.015px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset"
-                  : "0px 3.015px 3.015px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset",
-            }}
+            className={
+              "paper-bg-8 group relative flex w-full max-w-[350px] rounded-[6px] bg-[#201E1E] p-2 text-[#FFFFFF] hover:bg-[#E7E3E0] hover:text-black"
+            }
+            // style={{
+            //   boxShadow:
+            //     "0px 3.015px 3.015px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset",
+            // }}
           >
             <img
               src={step.icon.src}
               alt={step.title}
-              className="absolute top-0 right-0 h-[80%]"
+              className={`absolute top-0 right-0 h-[80%] ${index === 1 ? "filter-[invert(1)] group-hover:filter-[invert(0)]" : "group-hover:filter-[invert(1)]"}`}
             />
             <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
               <div className="flex flex-col gap-8">
@@ -194,6 +191,11 @@ function Story() {
         <Carousel
           className="carousel-dots pointer-none: w-full overflow-visible"
           setApi={setApi}
+          plugins={[
+            Autoplay({
+              delay: 2000,
+            }),
+          ]}
         >
           <CarouselContent className="overflow-visible">
             <CarouselItem className="overflow-visible">

@@ -249,7 +249,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => setServicesOpen(true)}
-                  className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-gray-300"
+                  className="text-md flex cursor-pointer items-end gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
                 >
                   SERVICES{" "}
                   <span>
@@ -260,7 +260,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#about"
-                  className="text-md text-[#FDE4C8] hover:text-gray-300"
+                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
                 >
                   ABOUT US
                 </Link>
@@ -268,7 +268,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#promise"
-                  className="text-md text-[#FDE4C8] hover:text-gray-300"
+                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
                 >
                   OUR PROMISE
                 </Link>
@@ -276,7 +276,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#process"
-                  className="text-md text-[#FDE4C8] hover:text-gray-300"
+                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
                 >
                   OUR PROCESS
                 </Link>
@@ -289,7 +289,7 @@ const Header = () => {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setCitiesOpen(true)}
-              className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-gray-300"
+              className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
             >
               <MapPinHouse strokeWidth={1.2} size={18} />
               <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">

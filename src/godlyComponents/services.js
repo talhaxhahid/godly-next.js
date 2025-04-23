@@ -9,7 +9,7 @@ import Image from "next/image";
 import textWaveBg from "@/assets/text-bg-wave.png";
 import Cap from "@/assets/santaCap.png";
 import Santa from "@/assets/santa.png";
-
+import Link from "next/link";
 const Services = () => {
   const { city } = useGodlyContext();
   return (
@@ -420,42 +420,49 @@ const services = [
   {
     name: "Exterior Windows",
     icon: <WindowIcon />,
+    link: "exterior_windows",
     description:
       "It’s what we do best! Get rid of that nasty build-up of nature’s mildew and grime.",
   },
   {
     name: "Interior Windows",
     icon: <WindowIcon />,
+    link: "interior_windows",
     description:
       "Pet slobber, fingerprints, and so much more can leave residue that is tricky to get off.",
   },
   {
     name: "Gutter Cleaning",
     icon: <GutterIcon />,
+    link: "gutter_cleaning",
     description:
       "A thorough cleaning that is guaranteed to keep them flowing freely.",
   },
   {
     name: "House Washing",
     icon: <HouseWashingIcon />,
+    link: "house_washing",
     description:
       "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
   },
   {
     name: "Roof Washing",
     icon: <RoofWashingIcon />,
+    link: "roof_washing",
     description:
       "Removing all the debris from your roof is the easiest way to increase its longevity.",
   },
   {
     name: "Pressure & Soft Washing",
     icon: <PressureWashingIcon />,
+    link: "pressure_washing",
     description:
       "Get rid of the slippery film and gunk on your driveway, walkways, porches, pool areas, and more.",
   },
   {
     name: "High Dusting",
     icon: <HighDustingIcon />,
+    link: "high_dusting",
     description:
       "Eliminate the cobwebs and dust in those hard to reach corners.",
   },
@@ -463,30 +470,35 @@ const services = [
     name: "Light Fixtures",
     image: "/assets/light-fixture.png",
     hoverImage: "/assets/light-fixture_colored.png",
+    link: "light_fixtures",
     description:
       "Keep both your interior and exterior lighting bright with thorough cleanings of your lanterns, sconces, and more.",
   },
   {
     name: "Screen Cleans",
     icon: <ScreenCleansIcon />,
+    link: "screen_cleans",
     description:
       "Our special solution and professional equipment leaves window screens & pool screen enclosures looking brand new.",
   },
   {
     name: "Skylights",
     icon: <SkylightsIcon />,
+    link: "skylights",
     description:
       "Nearly impossible and slightly dangerous to reach, leave it to Godly to keep your skylights in top-notch shape.",
   },
   {
     name: "Solar Panels",
     icon: <SolarPanelsIcon />,
+    link: "solar_panels",
     description:
       "Dirty solar panels lead to less efficient energy absorption — keep them clean and running to their full potential.",
   },
   {
     name: "Seal Coating",
     icon: <SealCoatingIcon />,
+    link: "seal_coating",
     description:
       "Clean, sand, and seal your driveway/parking lot to protect against oils and other damaging elements.",
   },
@@ -494,43 +506,59 @@ const services = [
 
 function ServicesGrid() {
   return (
-    <div className="z-20 mt-2.5 grid grid-cols-1 gap-7 sm:grid-cols-2 sm:px-10 md:grid-cols-3 md:px-20">
+    <div className="z-20 grid grid-cols-1 gap-7 sm:grid-cols-2 sm:px-10 md:grid-cols-3 md:px-20">
       {services.map((service, idx) => (
         <Card
           key={idx}
-          className="paper-bg-8 group relative rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
+          className="paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
         >
-          <CardContent className="flex max-w-[360px] flex-col gap-4 px-4 py-8 group-hover:text-white">
-            <div className="relative size-[50px]">
-              {service.icon ? (
-                service.icon
-              ) : (
-                <>
-                  <Image
-                    src={service.image}
-                    alt={service.name}
-                    fill
-                    className="object-contain group-hover:hidden"
-                  />
-                  <Image
-                    src={service.hoverImage}
-                    alt={`${service.name} color`}
-                    fill
-                    className="hidden object-contain group-hover:block"
-                  />
-                </>
-              )}
-            </div>
+          <CardContent className="flex aspect-[1783/1515] h-full max-h-[320px] p-0">
+            <div className="group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-4 py-8">
+              <div className="flex h-full flex-col gap-4">
+                <div className="relative size-[50px]">
+                  {service.icon ? (
+                    service.icon
+                  ) : (
+                    <>
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        className="object-contain group-hover:hidden"
+                      />
+                      <Image
+                        src={service.hoverImage}
+                        alt={`${service.name} color`}
+                        fill
+                        className="hidden object-contain group-hover:block"
+                      />
+                    </>
+                  )}
+                </div>
 
-            <h3 className="font-['satoshi-black'] text-[24px] font-bold text-[#1c1c1c] group-hover:text-white">
-              {service.name}
-            </h3>
-            <p className="font-[satoshi-regular] text-base font-normal text-[#1f1d1d] group-hover:text-white">
-              {service.description}
-            </p>
+                <h3 className="font-['satoshi-black'] text-[24px] font-bold text-[#1c1c1c] group-hover:text-white">
+                  {service.name}
+                </h3>
+                <p className="font-[satoshi-regular] text-base font-normal text-[#1f1d1d] group-hover:text-white">
+                  {service.description}
+                </p>
+              </div>
+              <div className="flex w-full items-center justify-end gap-4">
+                {service.link && (
+                  <Button className="pointer-cursor flex h-[46px] px-[18px] py-4 text-sm">
+                    <Link
+                      href={"/services/" + service.link}
+                      className="pointer-cursor trim font-['satoshi-regular'] text-[14px] font-bold text-[#FDE4C8]"
+                    >
+                      What we Offer
+                    </Link>
+                  </Button>
+                )}
+              </div>
 
-            <div className="absolute top-2 right-2 hidden group-hover:block">
-              <ServiceButton />
+              <div className="absolute top-2 right-2 hidden group-hover:block">
+                <ServiceButton />
+              </div>
             </div>
           </CardContent>
         </Card>
