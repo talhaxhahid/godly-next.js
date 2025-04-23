@@ -3,6 +3,7 @@ import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
 import spark from "../assets/spark.png";
+import drop from "../assets/drop.png";
 import { cn } from "@/lib/utils";
 
 const FourStepProcess = () => {
@@ -172,11 +173,13 @@ const FourStepProcess = () => {
           <Badge
             text="7 day Sparkle Guarantee"
             className="hover:rotate z-20 rotate-[2.226deg]"
+            image={spark}
           />
           <Badge
             text="hard water stain removal"
             className="-mt-4 scale-95 rotate-[-3.582deg]"
-            starClassName={"rotate-[-81.053deg]"}
+            starClassName={"rotate-0"}
+            image={drop}
           />
           <div className="absolute right-2 -bottom-0 -rotate-5">
             <Icon />
@@ -187,7 +190,7 @@ const FourStepProcess = () => {
   );
 };
 
-const Badge = ({ text, className, starClassName }) => (
+const Badge = ({ text, className, starClassName, image }) => (
   <div
     style={{ padding: "24px 16px" }}
     className={cn(
@@ -203,8 +206,8 @@ const Badge = ({ text, className, starClassName }) => (
     >
       <Image
         alt="spark"
-        src={spark}
-        className="transition-transform duration-500 hover:rotate-[360deg]"
+        src={image}
+        className="object-contain transition-transform duration-500 hover:rotate-[360deg]"
       ></Image>
     </span>
     <h6 className="group relative text-4xl">
