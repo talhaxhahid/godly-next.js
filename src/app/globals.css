@@ -587,3 +587,10 @@ html {
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
+
+.service-icon-hover:hover {
+  svg {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(5%) saturate(4022%)
+      hue-rotate(305deg) brightness(116%) contrast(99%);
+  }
+}

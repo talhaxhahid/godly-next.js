@@ -512,12 +512,12 @@ function ServicesGrid() {
           key={idx}
           className="paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
         >
-          <CardContent className="flex aspect-[1783/1515] h-full max-h-[320px] p-0">
+          <CardContent className="service-icon-hover flex aspect-[1783/1515] h-full max-h-[320px] p-0">
             <div className="group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-4 py-8">
               <div className="flex h-full flex-col gap-4">
                 <div className="relative size-[50px]">
                   {service.icon ? (
-                    service.icon
+                    <span>{service.icon}</span>
                   ) : (
                     <>
                       <Image
