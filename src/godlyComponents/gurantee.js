@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Gurantee = () => {
   return (
-    <div className="paper-bg-16 bg-[#2D2B2B]">
+    <div className="paper-bg-16 bg-[#262424]">
       <div
         className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-[150px]"
         style={{

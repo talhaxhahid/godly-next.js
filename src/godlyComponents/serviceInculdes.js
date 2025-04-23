@@ -7,13 +7,22 @@ const ServiceIncludes = ({ slug }) => {
   return (
     <div
       id="promise"
-      className="flex min-h-screen flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
+      className="flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
       style={{ backgroundImage: `url(${background.src})` }}
     >
       <div className="py-10">
-        <h4 className="w-150 text-center text-5xl font-normal tracking-wide text-[#191717]">
-          WHAT <span className="text-[#AB8459]">INCLUDED</span>{" "}
-          <span className="text-5xl"> IN OUR SOLAR PANEL CLEANING Service</span>
+        <h4
+          className="text-grain trim m-0 w-[854px] p-0 text-center text-[64px] font-normal tracking-wide text-[#191717]"
+          data-text="WHAT'S"
+        >
+          WHAT&apos;S{" "}
+          <span className="text-grain trim text-[#AB8459]" data-text="INCLUDED">
+            INCLUDED
+          </span>
+          <span className="trim text-grain text-[64px]">
+            {" "}
+            IN OUR {Services[slug]["hero"][0]} CLEANING Service
+          </span>
         </h4>
       </div>
 

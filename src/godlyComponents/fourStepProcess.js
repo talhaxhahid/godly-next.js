@@ -37,7 +37,7 @@ const FourStepProcess = () => {
         </svg>
       ),
       title: "Scrub",
-      text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+      text: "We scrub every inch of the glass with precision to break down stubborn grime, smudges, and buildup.",
     },
     {
       number: "02",
@@ -56,7 +56,7 @@ const FourStepProcess = () => {
         </svg>
       ),
       title: "Squeegee",
-      text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+      text: "We use pro-grade squeegees to remove all water and dirt, leaving a streak-free crystal-clear finish.",
     },
     {
       number: "03",
@@ -78,7 +78,7 @@ const FourStepProcess = () => {
         </svg>
       ),
       title: "Detail",
-      text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+      text: "We finish with a sharp eye, wiping edges and frames for a flawless, polished look from every angle.",
     },
     {
       number: "04",
@@ -97,7 +97,7 @@ const FourStepProcess = () => {
         </svg>
       ),
       title: "RainShield Tech",
-      text: "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+      text: "We apply own unique invisible technology that repels water and rain, keeping your windows cleaner for longer.",
     },
   ];
   return (

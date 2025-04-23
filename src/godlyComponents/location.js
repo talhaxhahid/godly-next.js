@@ -1,6 +1,5 @@
 import React from "react";
 
-import background from "../assets/texture.png";
 import map from "@/assets/map.png";
 import SectionButton from "@/components/sectionButton";
 import Image from "next/image";
@@ -10,7 +9,7 @@ const Location = () => {
     <div className="paper-bg-16 bg-[#262424]">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
         <h4
-          className="text-grain font-['Marlton'] text-2xl font-normal tracking-wider text-[#FDE4C8]"
+          className="text-grain trim font-['Marlton'] text-2xl font-normal tracking-wider text-[#FDE4C8]"
           data-text="PROUDLY SERVING"
         >
           PROUDLY SERVING
@@ -22,22 +21,19 @@ const Location = () => {
           THESE TOWNS
         </h1>
         <h4
-          className="text-grain mt-3 text-2xl font-normal tracking-wider text-white"
+          className="text-grain trim mt-3 text-2xl font-normal tracking-wider text-white"
           data-text="IN SOUTH FLORIDA"
         >
-          <span className="text-xl">IN</span> SOUTH{" "}
+          <span className="trim text-xl">IN</span> SOUTH{" "}
           <span
-            className="text-grain font-[luminaire-script] text-[32px] text-[#FDE4C8]"
+            className="text-grain trim font-[luminaire-script] text-[32px] text-[#FDE4C8]"
             data-text="Florida"
           >
             Florida
           </span>
         </h4>
       </div>
-      <div
-        className="flex flex-col items-center justify-items-center gap-10 bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply"
-        style={{ backgroundImage: `url(${background.src})` }}
-      >
+      <div className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
         <Image src={map} alt="map" className="h-full max-w-[1440px]" />
 
         <SectionButton>Get a Free Estimate</SectionButton>

@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
   return (
-    <div className="paper-bg-16 bg-[#2D2B2B] pb-40">
+    <div className="paper-bg-16 bg-[#262424] pb-40">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 py-25">
         <div className="relative flex w-full items-end justify-center">
           <div className="flex flex-col items-center justify-center gap-3">

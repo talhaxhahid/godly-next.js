@@ -89,11 +89,9 @@ const Services = () => {
               </div>
             </div>
             <p className="max-w-[600px] text-center font-['satoshi-light'] text-lg font-light tracking-wide text-[#FDE4C8]">
-              {" "}
-              Christmas light installation, done for you. Forget the ladder and
-              the hassle of storing lights each year. Let us light up your home
-              or business once, and you will never want to go back to doing it
-              yourself.
+              Christmas light installation, done for you. We design, install,
+              and store custom holiday lights for your home or business—so you
+              can shine without the hassle.
             </p>
             <Button className="flex h-auto cursor-pointer rounded-[6.32px] bg-white px-4 py-[18px] font-[satoshi-bold] text-sm text-[312E2C] hover:bg-white/80">
               What We Offer

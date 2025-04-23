@@ -8,6 +8,21 @@ import {
 } from "@/components/ui/accordion";
 import SectionButton from "@/components/sectionButton";
 
+const questions = [
+  "How often should I seal coat my driveway?",
+  "Can you seal coat commercial parking lots?",
+  "How long does the seal coating process take?",
+  "Will seal coating fix cracks in my driveway?",
+  "How soon can I drive on my driveway after seal coating?",
+];
+const answers = [
+  "We recommend seal coating every 2-3 years to maintain protection and appearance.",
+  "Yes! We provide seal coating for both residential and commercial properties.",
+  "Most jobs are completed in 4-6 hours, but drying time can take up to 24 hours before full use.",
+  "Yes, it will fix cracks in your driveway. However, it may not be the best solution for all types of cracks.",
+  "You can drive on your driveway immediately after seal coating.",
+];
+
 const Faq = () => {
   const [expandedItem, setExpandedItem] = useState("item-1"); // Set default value to item-1
 
@@ -20,7 +35,7 @@ const Faq = () => {
   return (
     <div
       id="faq"
-      className="paper-bg-16 flex flex-col items-center bg-[#FDE4C8FD] bg-cover bg-center bg-no-repeat px-6 py-12"
+      className="paper-bg-16 flex flex-col items-center gap-[98px] bg-[#efe5db] bg-cover bg-center bg-no-repeat px-6 py-12"
     >
       <div
         className="flex w-full max-w-4xl flex-col"
@@ -42,38 +57,32 @@ const Faq = () => {
           </span>
         </h4>
 
-        <div className="mt-10">
+        <div className="mt-10 w-full">
           <Accordion
             type="single"
             collapsible
             className="w-full space-y-2"
             value={expandedItem}
-            onValueChange={handleAccordionChange} // Handle change when an item is clicked
+            onValueChange={handleAccordionChange}
           >
-            {Array.from({ length: 5 }).map((_, i) => (
+            {questions.map((question, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i + 1}`}
                 className="border-b border-[#332B2B21]"
               >
                 <AccordionTrigger className="text-lg text-[#191717]">
-                  Dolor ipsum amet?
+                  {question}
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-sm font-normal text-[#191717]">
-                  The essence of pain and pleasure is a complex tapestry woven
-                  into the fabric of our lives, where each thread represents our
-                  experiences, emotions, and memories. Pain often serves as a
-                  poignant reminder of our limitations and vulnerabilities,
-                  while pleasure acts as a beacon of joy and fulfillment.
-                  Together, they create a profound balance that shapes our
-                  understanding of happiness and suffering.
+                  {answers[i]}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
       </div>
-      <SectionButton>Schedule your solar panel cleaning today</SectionButton>
+      <SectionButton>Get a Free Estimate</SectionButton>
     </div>
   );
 };

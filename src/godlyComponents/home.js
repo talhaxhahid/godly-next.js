@@ -9,6 +9,7 @@ import Testimonials from "./testimonials";
 import Promise from "./promise";
 import Hero from "./hero";
 import WebsiteLayout from "./websiteLayout";
+import TeamGallery from "./teamGallery";
 
 export default function GodlyHome() {
   return (
@@ -18,6 +19,7 @@ export default function GodlyHome() {
       <Services />
       <Promise />
       <Gurantee />
+      <TeamGallery />
       <Testimonials />
       <HowItWorks />
       <Savings />
