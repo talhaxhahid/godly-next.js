@@ -560,7 +560,7 @@ html {
   font-weight: 400;
   line-height: normal;
   /* text-transform: lowercase; */
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;

@@ -56,7 +56,7 @@ const services = [
     link: "house_washing",
     image: houseWashing,
     description:
-      "Wash away years of pollen, mold, rust, and dirt — bringing that shine back to your property’s exterior.",
+      "Wash away years of pollen, mold, rust, and dirt – bringing that shine back to your property’s exterior.",
   },
   {
     name: "Roof Washing",
@@ -91,7 +91,7 @@ const services = [
     link: "screen_cleans",
     image: screenCleans,
     description:
-      "Our special solution and professional equipment leaves window screens & pool screen enclosures looking brand new.",
+      "We’ll happily remove, clean, and even replace your screens if necessary.",
   },
   {
     name: "Skylights",
@@ -105,14 +105,14 @@ const services = [
     link: "solar_panels",
     image: solarPanels,
     description:
-      "Dirty solar panels lead to less efficient energy absorption — keep them clean and running to their full potential.",
+      "Dirty solar panels lead to less efficient energy absorption – keep them clean and running to their full potential. ",
   },
   {
     name: "Seal Coating",
     link: "seal_coating",
     image: sealCoating,
     description:
-      "Clean, sand, and seal your driveway/parking lot to protect against oils and other damaging elements.",
+      "Add a protective coating to your driveway/parking lot that protects against water, oils, and other damaging elements.",
   },
 ];
 const cities = [
@@ -150,30 +150,37 @@ const ServicePopup = ({ open, onOpenChange }) => {
         <DialogTitle className="hidden">Our Services</DialogTitle>
       </DialogHeader>
       <DialogContent
-        className="top-75 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply sm:max-w-[95vw] lg:max-w-[180vh]"
+        className="] top-75 z-[9999] w-full min-w-[1095px] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full grid-cols-1 gap-6 pt-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full min-w-[1045px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <Link href={"/services/" + service.link} key={index}>
+            <Link
+              href={"/services/" + service.link}
+              key={index}
+              className="hover:bg-[#2D2B2B]"
+            >
               <div
                 key={index}
-                className="flex min-h-18 flex-col gap-1 gap-y-0 border-b-[1.5px] border-[#8d8477] p-4 py-0 transition-all"
+                className="group flex min-h-18 flex-row items-start gap-[6px] gap-y-0 border-b-[1.5px] border-[#8d8477] text-[#2D2B2B] transition-all hover:text-[#FDE4C8]"
               >
-                <div className="flex items-center justify-start gap-3">
+                <div className="flex items-center justify-start gap-[6px]">
                   <Image
                     src={service.image}
                     alt={service.name}
-                    width={20}
-                    height={20}
+                    width={27}
+                    height={27}
+                    className="group-hover:filter-[invert(1)]"
                   />
+                </div>
+                <div className="flex flex-col gap-[6px]">
                   <h3 className="text-sm leading-tight font-normal">
                     {service.name}
                   </h3>
+                  <p className="font-['satoshi-light'] text-xs font-light">
+                    {service.description}
+                  </p>
                 </div>
-                <p className="text-muted-foreground font-sans text-xs">
-                  {service.description}
-                </p>
               </div>
             </Link>
           ))}
