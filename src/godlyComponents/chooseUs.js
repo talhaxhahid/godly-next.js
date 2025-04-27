@@ -10,12 +10,17 @@ import verifiedBadge from "@/assets/verifiedBadge.png";
 const ChooseUs = () => {
   return (
     <div>
-      <div className="flex min-h-screen flex-col items-center gap-20 bg-[#231f1f] px-6 py-24">
+      <div className="paper-bg-16 flex flex-col items-center gap-20 bg-[#262424] px-6 py-24">
         <div>
           <h1 className="-mt-4 text-center font-['luminaire-script'] text-xl text-[#F3CA9E] underline">
             Why
           </h1>
-          <h4 className="text-6xl tracking-wide text-[#FFFFFF]">Choose US</h4>
+          <h4
+            className="text-grain text-6xl tracking-wide text-[#FFFFFF]"
+            data-text="CHOOSE US"
+          >
+            Choose US
+          </h4>
         </div>
         <ServicesGrid />
       </div>
@@ -51,9 +56,9 @@ const services = [
 
 function ServicesGrid() {
   return (
-    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:px-10 md:grid-cols-4 md:px-20">
+    <div className="grid max-w-[1400px] grid-cols-1 gap-8 sm:grid-cols-2 sm:px-10 md:grid-cols-4 md:px-20">
       {services.map((service, idx) => (
-        <Card key={idx} className="rounded-sm bg-[#d5cdcb]">
+        <Card key={idx} className="paper-bg-8 rounded-sm bg-[#d5cdcb]">
           <CardContent className="flex flex-col gap-3 p-4">
             <Image
               src={service.image}
@@ -61,8 +66,10 @@ function ServicesGrid() {
               width={40}
               height={40}
             />
-            <h3 className="text-lg font-normal">{service.name}</h3>
-            <p className="font-sans text-sm text-[#1F1D1D]">
+            <h3 className="font-[satoshi-bold] text-lg font-normal">
+              {service.name}
+            </h3>
+            <p className="font-[satoshi-regular] text-sm text-[#1F1D1D]">
               {service.description}
             </p>
           </CardContent>

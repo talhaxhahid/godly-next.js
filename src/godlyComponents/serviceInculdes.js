@@ -2,20 +2,20 @@ import React from "react";
 import "@/styles/fourstepprocess.css";
 import background from "../assets/texture.png";
 import Services from "@/data/servicesData";
+import { cn } from "@/lib/utils";
 
 const ServiceIncludes = ({ slug }) => {
   return (
     <div
       id="promise"
-      className="flex flex-col items-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
+      className="flex flex-col items-center justify-items-center gap-16 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-[150px] py-[100px] bg-blend-multiply"
       style={{ backgroundImage: `url(${background.src})` }}
     >
       <div className="py-10">
-        <h4
-          className="text-grain trim m-0 w-[854px] p-0 text-center text-[64px] font-normal tracking-wide text-[#191717]"
-          data-text="WHAT'S"
-        >
-          WHAT&apos;S{" "}
+        <h4 className="trim m-0 w-full max-w-[854px] p-0 text-center text-[64px] font-normal tracking-wide text-[#191717] before:inset-0">
+          <span className="text-grain" data-text="WHAT'S">
+            WHAT&apos;S
+          </span>{" "}
           <span className="text-grain trim text-[#AB8459]" data-text="INCLUDED">
             INCLUDED
           </span>
@@ -26,27 +26,29 @@ const ServiceIncludes = ({ slug }) => {
         </h4>
       </div>
 
-      <div className="flex w-full max-w-screen-xl flex-wrap justify-center gap-6 px-4 py-5">
+      <div className="flex w-full justify-center gap-3 pb-20">
         {Services[slug]["included"].map((step, index) => (
           <div
             key={index}
-            className={`rounded-sm bg-size-[auto_10rem] bg-top-right p-2 ${Services[slug]["included"].length == 5 ? "w-65" : Services[slug]["included"].length == 3 ? "w-70" : "w-60"} min-h-60 bg-no-repeat ${index === 1 ? "bg-[#E7E3E0] text-black" : "bg-[#201E1E] text-[#FFFFFF]"} `}
+            className={`paper-bg-16 group min-h-[290px] w-full max-w-[272px] rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-3 hover:bg-[transparent]`}
           >
-            <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-6">
-              <div>
+            <div
+              className={cn(
+                "relative z-10 flex h-full w-full flex-col items-center justify-between rounded-md border-[#564839] p-6 text-white group-hover:border-[#6A6464] group-hover:text-[#2D2B2B]",
+                index % 2 === 1 ? "border border-dashed" : "border-none",
+              )}
+            >
+              <div className="flex flex-col items-center justify-center gap-[32px]">
                 <h5 className="text-md text-center font-normal">
-                  <span className="">{step.number}</span>
+                  <span className="trim">{step.number}</span>
                 </h5>
 
-                <div className="mb-3 text-center text-2xl">{step.title}</div>
+                <p className="trim text-grain text-center text-2xl text-white group-hover:text-[#2D2B2B] before:uppercase">
+                  {step.title}
+                </p>
               </div>
 
-              <p
-                className="text-center text-sm"
-                style={{ fontFamily: "sans-serif" }}
-              >
-                {step.text}
-              </p>
+              <p className="trim text-center text-base">{step.text}</p>
             </div>
           </div>
         ))}

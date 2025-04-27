@@ -7,6 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import SectionButton from "@/components/sectionButton";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const questions = [
   "How often should I seal coat my driveway?",
@@ -25,6 +27,7 @@ const answers = [
 
 const Faq = () => {
   const [expandedItem, setExpandedItem] = useState("item-1"); // Set default value to item-1
+  const pathname = usePathname();
 
   const handleAccordionChange = (value) => {
     if (value) {
@@ -35,7 +38,10 @@ const Faq = () => {
   return (
     <div
       id="faq"
-      className="paper-bg-16 flex flex-col items-center gap-[98px] bg-[#efe5db] bg-cover bg-center bg-no-repeat px-6 py-12"
+      className={cn(
+        "paper-bg-16 flex flex-col items-center gap-[98px] bg-[#ebded1] bg-cover bg-center bg-no-repeat px-6 py-12",
+        pathname.includes("/services") ? "bg-[#ffecd6]" : "",
+      )}
     >
       <div
         className="flex w-full max-w-4xl flex-col"

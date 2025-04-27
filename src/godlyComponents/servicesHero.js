@@ -10,7 +10,7 @@ import Services from "@/data/servicesData";
 const ServicesHero = ({ slug }) => {
   const { city } = useGodlyContext();
   return (
-    <div className="mt-20 flex flex-col items-center justify-center gap-20 bg-[#262424] p-16">
+    <div className="mt-20 flex flex-col items-center justify-center gap-20 bg-[#262424] px-[370px] py-[100px]">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-start gap-3">
           <h1 className="font-marlton trim text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
@@ -39,10 +39,16 @@ const ServicesHero = ({ slug }) => {
             </span>
           </div>
           <div className="relative flex w-full items-end">
-            <h1 className="trim absolute top-9 left-3 w-full rotate-[-6.668deg] text-end tracking-wide">
+            <h1 className="trim absolute top-9 left-3 z-10 w-full rotate-[-6.668deg] text-end tracking-wide">
               <span
-                className="trim text-grain font-nromal text-end font-['luminaire-script'] text-[88px] text-[#FDE4C8]"
+                className="trim text-grain relative z-10 text-end font-['luminaire-script'] text-[88px] font-normal text-[#FDE4C8]"
                 data-text={Services[slug]["hero"][1]}
+                style={{
+                  WebkitTextStrokeWidth: "2px",
+                  strokeLinecap: "round",
+                  WebkitTextStrokeColor: "#1F1D1D",
+                  paintOrder: "stroke",
+                }}
               >
                 {Services[slug]["hero"][1]} &nbsp;
               </span>
@@ -59,10 +65,10 @@ const ServicesHero = ({ slug }) => {
         <div className="absolute top-2 -left-6 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
         <div className="absolute -right-6 bottom-2 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
       </div>
-      <div className="w-150 text-center font-sans text-[#FFFFFF94]">
+      <div className="text-center font-['satoshi-regular'] leading-6 text-[#FFFFFF94]">
         <p>{Services[slug]["hero"][3]}</p>
       </div>
-      <FreeQuoteButton />
+      <FreeQuoteButton>Get a Free Quote</FreeQuoteButton>
     </div>
   );
 };

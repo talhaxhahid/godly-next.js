@@ -3,7 +3,6 @@ import { useGodlyContext } from "@/context/godlyContext";
 import React from "react";
 import Link from "next/link";
 import "@/styles/fourstepprocess.css";
-import background from "../assets/texture.png";
 import Image from "next/image";
 import Services1 from "@/assets/otherservices1.png";
 import Services2 from "@/assets/otherservices2.png";
@@ -41,8 +40,7 @@ const OtherServices = () => {
   return (
     <div
       id="promise"
-      className="flex min-h-screen flex-col items-center justify-center justify-items-center gap-10 bg-[#FDE4C8] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
-      style={{ backgroundImage: `url(${background.src})` }}
+      className="paper-bg-16 flex min-h-screen flex-col items-center justify-center justify-items-center gap-10 bg-[#ffecd6] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
     >
       <h4 className="w-4/5 py-10 text-center text-5xl font-normal tracking-wide text-[#191717]">
         enhance your cleaning with other services we offer in {city}

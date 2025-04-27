@@ -83,13 +83,26 @@ const ServiceNearYou = ({ slug }) => {
     },
   ];
   return (
-    <div className="fourstepprocess bg-[#262424]">
+    <div className="fourstepprocess paper-bg-16 bg-[#262424]">
       <div className="fourstepprocess-inner">
         <div className="">
-          <h1 className="text-center text-6xl text-[#FDE4C8]">
+          <h1
+            className="text-grain text-center text-6xl text-[#FDE4C8]"
+            data-text={
+              Services[slug]["hero"][0] + " " + Services[slug]["hero"][1]
+            }
+          >
             {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
           </h1>
-          <h4 className="-mt-3 text-center font-['luminaire-script'] text-4xl text-white">
+          <h4
+            className="z-10 -mt-3 text-center font-['luminaire-script'] text-4xl text-white"
+            style={{
+              WebkitTextStrokeWidth: "5px",
+              strokeLinecap: "round",
+              WebkitTextStrokeColor: "#1F1D1D",
+              paintOrder: "stroke",
+            }}
+          >
             Near You
           </h4>
         </div>
@@ -101,7 +114,7 @@ const ServiceNearYou = ({ slug }) => {
           <div className="relative z-10 flex flex-wrap justify-center gap-6 px-4 py-5 sm:gap-8 sm:px-6 md:gap-12 md:px-8">
             {Services[slug]["nearyou"].slice(0, 2).map((step, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="relative z-10 min-h-60 w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
+                <div className="relative z-10 w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
                   <div className="flex h-full flex-col items-center justify-between rounded-md border-[1.5px] border-dashed border-[#2D2B2B] p-2 text-[#2D2B2B]">
                     <div>
                       <div className="mb-4 flex justify-center">
@@ -143,7 +156,7 @@ const ServiceNearYou = ({ slug }) => {
             ))}
           </div>
         </div>
-        <h1 className="w-120 text-center text-3xl font-normal tracking-wide text-white">
+        <h1 className="mx-auto w-120 text-center text-3xl font-normal tracking-wide text-white">
           Maximize energy{" "}
           <span className="font-['luminaire-script'] text-[#F3CA9E]">
             Efficiency

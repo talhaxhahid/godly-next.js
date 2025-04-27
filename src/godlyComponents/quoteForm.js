@@ -14,6 +14,7 @@ import QuoteButton from "@/components/quoteButton";
 import Airtable from "airtable";
 import {} from "@/components/ui/dialog";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const servicesList = [
   { id: "exterior-window-cleaning", name: "Exterior Window Cleaning" },
@@ -27,7 +28,7 @@ const servicesList = [
   { id: "gutter-cleaning", name: "Gutter Cleaning" },
 ];
 
-export default function QuoteForm() {
+export default function QuoteForm({ isDialog }) {
   const [date, setDate] = useState();
   const [formData, setFormData] = useState({
     name: "",
@@ -144,13 +145,31 @@ export default function QuoteForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-3">
-      <div className="paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen shadow-md">
+    <form
+      onSubmit={handleSubmit}
+      className={cn("mt-3", isDialog ? "flex justify-center" : "")}
+    >
+      <div
+        className={cn(
+          "paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen shadow-md",
+          isDialog ? "max-w-[791px]" : "",
+        )}
+      >
         <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-12 py-8">
-          <h2 className="trim text-[64px] font-normal tracking-[3.2px] text-[#2D2B2B]">
+          <h2
+            className={cn(
+              "trim text-[64px] font-normal tracking-[3.2px] text-[#2D2B2B]",
+              isDialog ? "text-[40px]" : "",
+            )}
+          >
             LET US CALL YOU!
           </h2>
-          <p className="max-w-[367px] text-right font-[satoshi-medium] text-2xl font-medium text-[#2D2B2B]">
+          <p
+            className={cn(
+              "max-w-[367px] text-right font-[satoshi-medium] text-2xl font-medium text-[#2D2B2B]",
+              isDialog ? "text-[20px]" : "",
+            )}
+          >
             Receive a call within 30 minutes
             <br /> during normal business hours.
           </p>
@@ -197,7 +216,13 @@ export default function QuoteForm() {
               required
             />
           </div>
-          <div className="relative md:col-span-6" ref={servicesRef}>
+          <div
+            className={cn(
+              "relative md:col-span-6",
+              isDialog ? "md:col-span-5" : "",
+            )}
+            ref={servicesRef}
+          >
             <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               What services do you need?
             </label>
@@ -249,7 +274,12 @@ export default function QuoteForm() {
             )}
           </div>
 
-          <div className="flex flex-col justify-between md:col-span-4">
+          <div
+            className={cn(
+              "flex flex-col justify-between md:col-span-4",
+              isDialog ? "md:col-span-5" : "",
+            )}
+          >
             <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
               When do you need the work done by?
             </label>
@@ -336,14 +366,18 @@ export default function QuoteForm() {
                 setFormData((prev) => ({ ...prev, agree: checked }))
               }
             />
-            <label htmlFor="agree" className="font-sans text-xl">
+            <label htmlFor="agree" className={cn("font-sans text-xl")}>
               I agree to get information text messages from Godly about my
               estimate and project
             </label>
           </div>
 
           <div className="mt-6 text-right">
-            <QuoteButton type="submit" disabled={isSubmitting}>
+            <QuoteButton
+              type="submit"
+              disabled={isSubmitting}
+              className={isDialog && "estimate-button"}
+            >
               {isSubmitting ? "Submitting..." : "Request a Quote"}
             </QuoteButton>
           </div>
@@ -351,6 +385,7 @@ export default function QuoteForm() {
         <img
           src={"/assets/tape-hero.png"}
           alt="cardBg"
+          style={isDialog ? { display: "none" } : {}}
           className="absolute top-0 left-full z-10 h-[266.58px] w-[234.158px] -translate-x-[calc(50%_+_38px)] -translate-y-[calc(50%_-_48px)] rotate-[-17.311deg]"
         />
       </div>

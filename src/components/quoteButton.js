@@ -1,15 +1,22 @@
 // components/FreeEstimateButton.tsx
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export default function QuoteButton({ children, type, disabled, onClick }) {
+export default function QuoteButton({
+  children,
+  type,
+  disabled,
+  onClick,
+  className,
+}) {
   return (
     <Button
-      className="quote-button"
+      className={cn(className ? className : "quote-button")}
       type={type}
       disabled={disabled}
       onClick={onClick}
     >
-      <span className="color-[#fde4c8]! text-trim z-10">{children}</span>
+      <span className="color-[#fde4c8]! trim z-10">{children}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="33"
