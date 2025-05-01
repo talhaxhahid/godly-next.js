@@ -31,7 +31,7 @@ const Savings = () => {
   ];
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
+    <div className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#ebded1] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
         <h1
           className="text-grain text-[64px] font-normal text-[#191717]"
@@ -54,7 +54,7 @@ const Savings = () => {
               <div key={index} className="">
                 <div
                   className={
-                    "relative z-10 flex flex-col items-center justify-center gap-12 self-stretch rounded-[20px] bg-[#1F1D1D] p-[48px] text-black shadow"
+                    "relative z-10 flex flex-col items-center justify-center gap-12 self-stretch rounded-[20px] bg-[#1F1D1D] p-[48px] text-black shadow hover:bg-[#312E2C]"
                   }
                 >
                   <h5 className="text-center text-[32px] font-normal text-[#FFFFFF]">

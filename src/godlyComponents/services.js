@@ -93,7 +93,7 @@ const Services = () => {
               and store custom holiday lights for your home or business—so you
               can shine without the hassle.
             </p>
-            <Button className="flex h-auto cursor-pointer rounded-[6.32px] bg-white px-4 py-[18px] font-[satoshi-bold] text-sm text-[312E2C] hover:bg-white/80">
+            <Button className="trim flex h-auto cursor-pointer rounded-[6.32px] bg-white px-4 py-[14px] font-[satoshi-bold] text-sm text-[312E2C] hover:bg-white/80">
               What We Offer
             </Button>
           </div>

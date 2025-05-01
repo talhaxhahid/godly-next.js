@@ -31,7 +31,7 @@ const HowItWorks = () => {
   return (
     <div
       id="process"
-      className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 pb-24 bg-blend-multiply"
+      className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#ebded1] bg-cover bg-center bg-no-repeat p-16 pb-24 bg-blend-multiply"
     >
       <h1
         className="text-grain text-[64px] font-normal text-[#191717]"

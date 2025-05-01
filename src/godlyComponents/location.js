@@ -33,8 +33,8 @@ const Location = () => {
           </span>
         </h4>
       </div>
-      <div className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#efe5db] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
-        <Image src={map} alt="map" className="h-full max-w-[1440px]" />
+      <div className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ebded1] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
+        <Image src={map} alt="map" className="h-full max-w-[1140px]" />
 
         <SectionButton>Get a Free Estimate</SectionButton>
       </div>

@@ -153,7 +153,7 @@ const ServicePopup = ({ open, onOpenChange }) => {
         className="] top-75 z-[9999] w-full min-w-[1095px] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full min-w-[1045px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full min-w-[1045px] grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Link
               href={"/services/" + service.link}
@@ -201,19 +201,19 @@ const CitiesPopup = ({ open, onOpenChange }) => {
         className="top-65 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply sm:max-w-[95vw] lg:max-w-[180vh]"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full grid-cols-1 gap-6 gap-y-4 pt-6 sm:grid-cols-4 lg:grid-cols-5">
+        <div className="grid w-full grid-cols-1 gap-1 gap-y-4 sm:grid-cols-4 lg:grid-cols-5">
           {cities.map((city, index) => (
             <div
               key={index}
-              className="flex cursor-pointer flex-col gap-1 border-b-1 border-[#8d8477] p-4 py-1 transition-all"
+              className="group flex cursor-pointer flex-col gap-1 border-b-1 border-[#8d8477] p-4 py-1 transition-all hover:bg-[#2D2B2B]"
               onClick={() => {
                 setCity(city);
                 onOpenChange(false);
               }}
             >
               <div className="flex items-center justify-start gap-3">
-                <MapPin size={20} />
-                <h3 className="text-xs leading-tight font-normal text-[#2D2B2B]">
+                <MapPin className="group-hover:filter-[invert(1)]" size={20} />
+                <h3 className="text-xs leading-tight font-normal text-[#2D2B2B] group-hover:text-[#FDE4C8]">
                   {city}
                 </h3>
               </div>

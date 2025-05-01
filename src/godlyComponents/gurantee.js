@@ -14,7 +14,7 @@ const Gurantee = () => {
           alignItems: "center",
           justifyContent: "center",
           backgroundSize: "contain",
-          backgroundPosition: "center",
+          backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -42,7 +42,7 @@ const Gurantee = () => {
             Guarantee
           </h1>
         </div>
-        <div className="flex min-h-screen w-full flex-col items-center gap-40 bg-contain bg-center bg-no-repeat">
+        <div className="flex min-h-screen w-full flex-col items-center gap-[250px] bg-contain bg-center bg-no-repeat">
           <div className="relative h-60 min-w-[660px]">
             <div
               className="absolute -top-1 h-full w-full rotate-[6deg] bg-cover bg-center bg-no-repeat"
@@ -75,7 +75,7 @@ const Gurantee = () => {
             </div>
           </div>
 
-          <div className="relative h-50 w-[505px]">
+          <div className="relative h-50 w-[505px] rotate-2">
             <div
               className="absolute top-4 -left-15 h-full w-full -rotate-10 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
@@ -107,7 +107,7 @@ const Gurantee = () => {
             </div>
           </div>
 
-          <div className="relative h-50 min-w-[500px]">
+          <div className="relative h-50 min-w-[500px] rotate-2">
             <div
               className="absolute -top-2 right-5 h-full w-full rotate-5 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}

@@ -381,7 +381,7 @@ html {
   text-box-edge: cap alphabetic;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   &::before {
@@ -509,6 +509,9 @@ html {
   box-shadow:
     0px 1px 1.4px 0px #f7ebebb0 inset,
     0px 17px 34px 0px #0909093d;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 /* Ensure the ::before element has proper size and placement */
@@ -670,4 +673,15 @@ html {
   position: relative;
   z-index: 2;
   fill: #fde7cd;
+}
+
+.dashed-border-hover {
+  border: 1px solid transparent;
+  /* transition: all 0.1s ease; */
+}
+
+.dashed-border-hover:hover {
+  --dash-length: 22px;
+  --dash-gap: 5px;
+  border: 2px dashed #f1caa0;
 }

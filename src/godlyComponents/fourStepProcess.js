@@ -123,14 +123,14 @@ const FourStepProcess = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-3 pt-4 text-white">
+        <div className="flex w-full flex-col items-center gap-3 pt-4 text-white">
           <div className="text-white">
             <div className="relative z-10 pb-2">
               <div className="mx-auto flex w-fit items-center justify-between px-2">
                 {steps.map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center">
-                      <div className="mb-2 text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:text-3xl lg:text-[36px]">
+                      <div className="trim text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:text-3xl lg:text-[36px]">
                         {step.number}
                       </div>
                     </div>
@@ -192,23 +192,26 @@ const FourStepProcess = () => {
 
 const Badge = ({ text, className, starClassName, image }) => (
   <div
-    style={{ padding: "24px 16px" }}
+    style={{
+      padding: "24px 16px",
+    }}
     className={cn(
-      "flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-4 py-2 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C] transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_45px_0px_#1C1C1C]",
+      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-4 py-2 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C] hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C]",
       className,
+      "",
     )}
   >
     <span
       className={cn(
-        `item-center flex size-[28.838px] rotate-[-115.867deg] transform justify-center text-yellow-400 transition-transform duration-500 group-hover:rotate-[244.133deg]`,
+        `item-center flex size-[28.838px] rotate-[-115.867deg] transform justify-center text-yellow-400 transition-transform duration-500`,
         starClassName,
       )}
     >
       <Image
         alt="spark"
         src={image}
-        className="object-contain transition-transform duration-500 hover:rotate-[360deg]"
-      ></Image>
+        className="object-contain transition-transform duration-500"
+      />
     </span>
     <h6 className="group relative text-4xl">
       <span
@@ -217,7 +220,9 @@ const Badge = ({ text, className, starClassName, image }) => (
       >
         FREE
       </span>
-      <span className="font-sans text-[28px] font-bold">{text}</span>
+      <span className="font-sans text-[28px] font-bold group-hover:text-shadow-[0px_1px_2.9px_#FFF]">
+        {text}
+      </span>
     </h6>
   </div>
 );

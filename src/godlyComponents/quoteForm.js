@@ -20,12 +20,13 @@ const servicesList = [
   { id: "exterior-window-cleaning", name: "Exterior Window Cleaning" },
   { id: "house-washing", name: "House Washing" },
   { id: "seal-pavers", name: "Seal Pavers" },
-  { id: "screen-cleaning", name: "Screen Cleaning" },
-  { id: "interior-window-cleaning", name: "Interior Window Cleaning" },
+  // { id: "screen-cleaning", name: "Screen Cleaning" },
+  // { id: "interior-window-cleaning", name: "Interior Window Cleaning" },
   { id: "roof-washing", name: "Roof Washing" },
   { id: "pressure-washing", name: "Pressure Washing" },
-  { id: "light-fixture-cleaning", name: "Light Fixture Cleaning" },
-  { id: "gutter-cleaning", name: "Gutter Cleaning" },
+  // { id: "light-fixture-cleaning", name: "Light Fixture Cleaning" },
+  // { id: "gutter-cleaning", name: "Gutter Cleaning" },
+  { id: "other", name: "Other" },
 ];
 
 export default function QuoteForm({ isDialog }) {

@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import alex from "@/assets/alex.jpg";
+import Link from "next/link";
 
 const Testimonials = () => {
   return (
@@ -37,6 +38,9 @@ const Testimonials = () => {
               </span>
             </h1>
           </div>
+          <Link className="absolute right-0 text-2xl" href="#">
+            <span className="text-white underline">SEE MORE REVIEWS</span>
+          </Link>
         </div>
         <QuoteCarousel />
       </div>

@@ -16,8 +16,8 @@ const Footer = () => {
       <div className="item-center mx-auto flex max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
         <div
           className={cn(
-            "paper-bg-16 rounded-xl bg-[#efe5db] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply",
-            pathname.includes("/services") ? "bg-[#ffecd6]" : "",
+            "paper-bg-16 rounded-xl bg-[#ebded1] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply",
+            pathname.includes("/services") ? "bg-[#ebded1]" : "",
           )}
         >
           <div className="flex flex-col items-start justify-between md:flex-row">
