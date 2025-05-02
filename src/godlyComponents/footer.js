@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 const Footer = () => {
   const pathname = usePathname();
   return (
-    <div className="flex w-full flex-col bg-[#312E2C]">
+    <div className="hidden w-full flex-col bg-[#312E2C] md:flex">
       <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
         <div
           className={cn(
