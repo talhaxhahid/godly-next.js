@@ -10,44 +10,44 @@ const Hero = () => {
   return (
     <div className="relative overflow-x-clip bg-[#1F1D1D]">
       <div
-        className="absolute top-[24px] left-0 h-[900px] w-full bg-[url('/path-to-image.jpg')] bg-cover bg-top bg-no-repeat"
+        className="absolute top-[80px] left-0 h-[600px] w-full bg-[url('/path-to-image.jpg')] bg-cover bg-top bg-no-repeat md:top-[24px] md:h-[900px]"
         style={{ backgroundImage: `url(${`/assets/heroBanner.png`})` }}
       >
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#1F1D1D]/0 to-[#1F1D1D]"></div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-14 pb-32">
-        <div className="flex min-h-[815px] flex-col justify-end gap-3 pb-10">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-[20px] md:px-14 md:pb-32">
+        <div className="flex min-h-[600px] flex-col justify-end gap-3 pb-10 md:min-h-[815px]">
           <div className="flex items-center justify-start gap-3">
-            <h1 className="font-marlton trim text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
+            <h1 className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-[20.704px]">
               TOP RATED
             </h1>
             <div className="trim flex items-center gap-[3.774px]">
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
+              <Star className="h-[13px] w-[13px] md:h-[17px] md:w-[18px]" />
+              <Star className="md:h-[17px] md:w-[18px]" />
+              <Star className="md:h-[17px] md:w-[18px]" />
+              <Star className="md:h-[17px] md:w-[18px]" />
+              <Star className="md:h-[17px] md:w-[18px]" />
             </div>
           </div>
           <h1 className="flex flex-wrap items-center gap-8">
             <span className="flex flex-wrap items-center gap-2">
-              <span className="font-marlton trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
+              <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-[73.161px] md:tracking-[6.584px]">
                 Window cleaning
               </span>
-              <span className="shrink-0 text-center font-['luminaire-script'] text-2xl text-[#FDE4C8]">
+              <span className="shrink-0 text-center font-['luminaire-script'] text-[16px] text-[#FDE4C8] md:text-2xl">
                 And
               </span>
-              <span></span>
-              <span className="font-marlton trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[6.584px] text-white">
+              <span className="hidden md:block"></span>
+              <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-[73.161px] md:tracking-[6.584px]">
                 pressure Washing
               </span>
             </span>
-            <span className="font-marlton trim shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[7.4] text-white">
+            <span className="font-marlton trim hidden shrink-0 items-center gap-2 text-[73.161px] font-normal tracking-[3px] text-white md:block md:tracking-[7.4]">
               services In {city}
             </span>
           </h1>
-          <p className="font-[satoshi-medium] text-xl font-medium text-white">
+          <p className="font-['satoshi-regular'] text-sm font-medium text-white md:text-xl">
             we specialize in window washing, home washing, pressure washing,
             paver sealing and more.
           </p>

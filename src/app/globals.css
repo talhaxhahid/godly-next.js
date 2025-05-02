@@ -384,6 +384,12 @@ html {
     opacity: 0.9;
   }
 
+  @media (max-width: 768px) {
+    font-size: 18px;
+    padding: 16px 20px;
+    height: auto;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -511,6 +517,12 @@ html {
     0px 17px 34px 0px #0909093d;
   &:hover {
     opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    padding: 16px 20px;
+    height: auto;
   }
 }
 

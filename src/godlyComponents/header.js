@@ -150,10 +150,10 @@ const ServicePopup = ({ open, onOpenChange }) => {
         <DialogTitle className="hidden">Our Services</DialogTitle>
       </DialogHeader>
       <DialogContent
-        className="] top-75 z-[9999] w-full min-w-[1095px] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
+        className="top-75 z-[9999] w-full overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full min-w-[1045px] grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Link
               href={"/services/" + service.link}
@@ -162,7 +162,7 @@ const ServicePopup = ({ open, onOpenChange }) => {
             >
               <div
                 key={index}
-                className="group flex min-h-18 flex-row items-start gap-[6px] gap-y-0 border-b-[1.5px] border-[#8d8477] text-[#2D2B2B] transition-all hover:text-[#FDE4C8]"
+                className="group flex min-h-18 flex-row items-start gap-[6px] gap-y-0 border-b-[1.5px] border-[#8d8477] p-2 text-[#2D2B2B] transition-all hover:text-[#FDE4C8]"
               >
                 <div className="flex items-center justify-start gap-[6px]">
                   <Image
@@ -195,13 +195,13 @@ const CitiesPopup = ({ open, onOpenChange }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange} className="">
       <DialogHeader>
-        <DialogTitle className="hidden">Our Services</DialogTitle>
+        <DialogTitle className="hidden">Our Cities</DialogTitle>
       </DialogHeader>
       <DialogContent
-        className="top-65 z-[9999] max-h-[90vh] max-w-[180vw] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply sm:max-w-[95vw] lg:max-w-[180vh]"
+        className="top-65 z-[9999] max-h-[90vh] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
         style={{ backgroundImage: `url(${background.src})` }}
       >
-        <div className="grid w-full grid-cols-1 gap-1 gap-y-4 sm:grid-cols-4 lg:grid-cols-5">
+        <div className="xs:grid-cols-2 grid w-full grid-cols-1 gap-1 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {cities.map((city, index) => (
             <div
               key={index}
@@ -229,6 +229,7 @@ const Header = () => {
   const { city } = useGodlyContext();
   const [servicesOpen, setServicesOpen] = useState(false);
   const [citiesOpen, setCitiesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
@@ -245,13 +246,53 @@ const Header = () => {
       style={{ position: "fixed", top: "0", zIndex: "100" }}
     >
       <div className="flex w-full flex-col items-center justify-between gap-4 md:flex-row">
-        <div className="flex items-center gap-[30px]">
+        <div className="flex w-full items-center justify-between md:w-auto md:justify-start md:gap-[30px]">
           <div className="header-logo mb-2 md:mb-0">
             <Link href="/">
               <Image src={logo} alt="Logo" className="header-logo" />
             </Link>
           </div>
-          <nav>
+
+          {/* Mobile menu toggle button */}
+          <button
+            className="flex items-center justify-center md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+
+          {/* Desktop navigation */}
+          <nav className="hidden md:block">
             <ul className="flex gap-x-6 text-[#FDE4C8]">
               <li>
                 <button
@@ -292,7 +333,76 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className="flex items-center gap-5">
+        {/* Mobile navigation */}
+        {mobileMenuOpen && (
+          <nav className="w-full md:hidden">
+            <ul className="flex flex-col gap-y-4 text-[#FDE4C8]">
+              <li>
+                <button
+                  onClick={() => {
+                    setServicesOpen(true);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="text-md flex cursor-pointer items-center gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
+                >
+                  SERVICES <ChevronDown size={18} />
+                </button>
+              </li>
+              <li>
+                <Link
+                  href="/#about"
+                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  ABOUT US
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#promise"
+                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  OUR PROMISE
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#process"
+                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  OUR PROCESS
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setCitiesOpen(true);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="text-md flex items-center gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
+                >
+                  <MapPinHouse strokeWidth={1.2} size={18} />
+                  <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">
+                    {city}
+                  </div>{" "}
+                  <ChevronDown size={18} />
+                </button>
+              </li>
+              <li className="flex items-center gap-2 text-[#F3C99D]">
+                <Phone className="h-5 w-5 text-[#F3C99D]" strokeWidth={1.2} />
+                <span className="text-lg font-normal">954-852-5236</span>
+              </li>
+              <li className="pt-2">
+                <HeaderButton />
+              </li>
+            </ul>
+          </nav>
+        )}
+
+        {/* Desktop contact and buttons */}
+        <div className="hidden items-center gap-5 md:flex">
           <div className="flex items-center gap-1">
             <button
               onClick={() => setCitiesOpen(true)}

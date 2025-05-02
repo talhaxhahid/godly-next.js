@@ -156,29 +156,29 @@ export default function QuoteForm({ isDialog }) {
           isDialog ? "max-w-[791px]" : "",
         )}
       >
-        <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-12 py-8">
+        <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:px-12 md:py-8">
           <h2
             className={cn(
-              "trim text-[64px] font-normal tracking-[3.2px] text-[#2D2B2B]",
+              "trim min-w-[137px] text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:text-[64px] md:leading-normal md:tracking-[3.2px]",
               isDialog ? "text-[40px]" : "",
             )}
           >
-            LET US CALL YOU!
+            LET US CALL <br className="md:hidden" /> YOU!
           </h2>
           <p
             className={cn(
-              "max-w-[367px] text-right font-[satoshi-medium] text-2xl font-medium text-[#2D2B2B]",
+              "text-right font-['satoshi-regular'] text-[13px] font-medium text-[#2D2B2B] md:max-w-[367px] md:text-2xl",
               isDialog ? "text-[20px]" : "",
             )}
           >
             Receive a call within 30 minutes
-            <br /> during normal business hours.
+            <br className="hidden md:block" /> during normal business hours.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 px-12 py-8 md:grid-cols-12 md:grid-rows-2">
           <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
               Name
             </label>
             <Input
@@ -186,12 +186,12 @@ export default function QuoteForm({ isDialog }) {
               value={formData.name}
               onChange={handleChange}
               placeholder="YOUR NAME"
-              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl"
               required
             />
           </div>
           <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
               Email
             </label>
             <Input
@@ -200,12 +200,12 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR EMAIL"
               value={formData.email}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
               required
             />
           </div>
           <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
               Phone Number
             </label>
             <Input
@@ -213,7 +213,7 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR PHONE NUMBER"
               value={formData.phone}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
               required
             />
           </div>
@@ -224,7 +224,7 @@ export default function QuoteForm({ isDialog }) {
             )}
             ref={servicesRef}
           >
-            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
               What services do you need?
             </label>
             <button
@@ -232,7 +232,7 @@ export default function QuoteForm({ isDialog }) {
                 e.preventDefault();
                 setShowServices(!showServices);
               }}
-              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
             >
               <div className="flex w-full items-center space-x-2">
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
@@ -281,12 +281,12 @@ export default function QuoteForm({ isDialog }) {
               isDialog ? "md:col-span-5" : "",
             )}
           >
-            <label className="mb-1 block font-sans text-base font-normal text-[#312E2C]">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
               When do you need the work done by?
             </label>
             <Popover>
               <PopoverTrigger asChild>
-                <button className="text-lef2 flex w-full items-center border-b border-black bg-transparent pb-2 text-2xl focus:outline-none">
+                <button className="text-lef2 flex w-full items-center border-b border-black bg-transparent pb-2 text-base focus:outline-none md:text-2xl">
                   {date ? (
                     format(date, "MM / dd / yyyy")
                   ) : (
@@ -342,7 +342,7 @@ export default function QuoteForm({ isDialog }) {
           </div>
 
           <div className="md:col-span-2">
-            <label className="mb-1 block pb-2 font-sans text-base font-normal text-[#312E2C]">
+            <label className="mb-1 block pb-2 font-sans text-sm font-normal text-[#312E2C] md:text-base">
               Zip Code
             </label>
             <Input
@@ -350,30 +350,33 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR ZIP CODE"
               value={formData.zipcode}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-2xl! focus-visible:ring-0"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
               required
             />
           </div>
         </div>
 
-        <div className="flex items-center justify-between px-12 pb-6">
+        <div className="flex flex-col items-center justify-between px-12 pb-6 md:flex-row">
           <div className="mt-4 flex items-center space-x-3">
             <Checkbox
               id="agree"
               name="agree"
               checked={formData.agree}
-              className="size-[22px] bg-transparent"
+              className="size-[18px] bg-transparent md:size-[22px]"
               onCheckedChange={(checked) =>
                 setFormData((prev) => ({ ...prev, agree: checked }))
               }
             />
-            <label htmlFor="agree" className={cn("font-sans text-xl")}>
+            <label
+              htmlFor="agree"
+              className={cn("font-['satoshi-regular'] text-sm md:text-xl")}
+            >
               I agree to get information text messages from Godly about my
               estimate and project
             </label>
           </div>
 
-          <div className="mt-6 text-right">
+          <div className="mt-6 mb-6 text-right md:mb-0">
             <QuoteButton
               type="submit"
               disabled={isSubmitting}

@@ -48,15 +48,15 @@ const Faq = () => {
         style={{ alignItems: "center", justifyContent: "center" }}
       >
         <h1
-          className="text-grain text-8xl font-black tracking-wide text-[#191717]"
+          className="text-grain text-[32px] font-black tracking-wide text-[#191717] md:text-8xl"
           data-text="FREQUENTLY"
         >
           FREQUENTLY
         </h1>
-        <h4 className="text-2xl font-semibold tracking-wide text-[#191717]">
+        <h4 className="-mt-4 text-[24px] font-semibold tracking-wide text-[#191717] md:-mt-0 md:text-2xl">
           <span>ASKED</span>{" "}
           <span
-            className="text-grain ml-3 font-['luminaire-script'] text-[64px] font-medium text-[#61503E]"
+            className="text-grain ml-3 font-['luminaire-script'] text-[48px] font-medium text-[#61503E] md:text-[64px]"
             data-text="Questions"
           >
             Questions
@@ -77,10 +77,10 @@ const Faq = () => {
                 value={`item-${i + 1}`}
                 className="border-b border-[#332B2B21]"
               >
-                <AccordionTrigger className="text-lg text-[#191717]">
+                <AccordionTrigger className="text-lg text-[#2D2B2B]">
                   {question}
                 </AccordionTrigger>
-                <AccordionContent className="font-sans text-sm font-normal text-[#191717]">
+                <AccordionContent className="font-sans text-sm font-normal text-[#2D2B2B]">
                   {answers[i]}
                 </AccordionContent>
               </AccordionItem>

@@ -16,43 +16,38 @@ const Services = () => {
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
       <div className="relative flex min-h-screen flex-col items-center gap-20 px-6 py-24">
         <div className="flex flex-col items-center justify-center gap-6">
-          <h1 className="with-text rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline">
+          <h1 className="with-text hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline md:flex">
             We are
           </h1>
           <div className="flex flex-col items-center justify-center">
             <div className="text-trim flex items-end">
               <h4
-                className="text-grain font-marlton text-[64px] tracking-[3.84px] text-white"
+                className="text-grain font-marlton text-[32px] tracking-[3.84px] text-white md:text-[64px]"
                 data-text="MORE THAN"
               >
                 MORE THAN
               </h4>
               <span
-                className="text-grain ms-[21px] mb-3 text-[20px] tracking-[1.2px] text-white"
+                className="text-grain ms-2 mb-1 text-sm tracking-[1.2px] text-white md:ms-[21px] md:mb-3 md:text-[20px]"
                 data-text="JUST"
               >
                 JUST
               </span>
             </div>
             <h4
-              className="text-grain font-marlton -mt-8 text-[64px] tracking-[3.84px] text-white"
+              className="text-grain font-marlton -mt-4 text-[32px] tracking-[3.84px] text-white md:-mt-8 md:text-[64px]"
               data-text="WINDOW WASHERS"
             >
               WINDOW WASHERS
             </h4>
           </div>
 
-          <p className="text-trim text-center font-[satoshi-regular] text-[24px] leading-[115%] text-white/60">
+          <p className="text-trim hidden text-center font-[satoshi-regular] text-[24px] leading-[115%] text-white/60 md:block">
             Godly can clean nearly all components of <br /> your home or
             building&apos;s exterior.
           </p>
         </div>
         <ServicesGrid />
-        <img
-          src="/assets/holiday-bg-pattern.png"
-          alt="pattern"
-          className="absolute -bottom-64 left-1/2 h-[1024.645px] w-[1033px] -translate-x-1/2 object-cover"
-        />
       </div>
 
       <div className="paper-bg-16 flex flex-col items-center justify-center gap-20 overflow-clip bg-[#262424] bg-contain bg-bottom bg-no-repeat p-6 bg-blend-soft-light">
@@ -61,21 +56,21 @@ const Services = () => {
           src={"/assets/santa-bg-sparkle.png"}
           alt="cap"
         />
-        <div className="mt-4 mb-[220px] flex max-w-[741px] flex-col items-center justify-center gap-9">
+        <div className="mt-4 mb-[164px] flex flex-col items-center justify-center gap-9 md:mb-[220px] md:max-w-[741px]">
           <div className="flex flex-col items-center justify-center gap-[35px]">
             <div className="relative">
-              <h4 className="relative text-center font-['satoshi-black'] text-[96px] leading-[130%] text-[#FDE4C8]">
+              <h4 className="relative text-center font-['satoshi-black'] text-[32px] leading-[130%] text-[#FDE4C8] md:text-[96px]">
                 Holiday Light Installation
                 <Image
                   src={Cap}
                   height={102}
                   width={102}
                   alt="cap"
-                  className="pointer-events-none absolute -top-6 left-1"
+                  className="pointer-events-none absolute -top-11 left-6 scale-50 md:-top-6 md:-left-1 md:scale-100"
                 />
               </h4>
 
-              <div className="absolute right-15 bottom-0 px-2 text-sm text-nowrap text-black">
+              <div className="absolute right-15 bottom-0 hidden px-2 text-sm text-nowrap text-black md:block">
                 <div className="relative">
                   <Image
                     src={textWaveBg}
@@ -88,19 +83,20 @@ const Services = () => {
                 </div>
               </div>
             </div>
-            <p className="max-w-[600px] text-center font-['satoshi-light'] text-lg font-light tracking-wide text-[#FDE4C8]">
-              Christmas light installation, done for you. We design, install,
-              and store custom holiday lights for your home or business—so you
-              can shine without the hassle.
+            <p className="max-w-[600px] text-center font-['satoshi-light'] text-sm font-light tracking-wide text-[#FDE4C8] md:text-lg">
+              Christmas light installation, done for you. Forget the ladder and
+              the hassle of storing lights each year. Let us light up your home
+              or business once, and you&apos;ll never want to go back to doing
+              it yourself.
             </p>
-            <Button className="trim flex h-auto cursor-pointer rounded-[6.32px] bg-white px-4 py-[14px] font-[satoshi-bold] text-sm text-[312E2C] hover:bg-white/80">
+            <Button className="trim flex h-auto cursor-pointer rounded-[6.32px] bg-white p-3 font-[satoshi-bold] text-sm text-[10px] text-[312E2C] hover:bg-white/80 md:px-4 md:py-[14px]">
               What We Offer
             </Button>
           </div>
         </div>
       </div>
       <Image
-        className="pointer-events-none absolute bottom-6"
+        className="pointer-events-none absolute bottom-16 md:bottom-6"
         src={Santa}
         height={"100%"}
         width={"100%"}
@@ -504,14 +500,14 @@ const services = [
 
 function ServicesGrid() {
   return (
-    <div className="z-20 grid grid-cols-1 gap-7 sm:grid-cols-2 sm:px-10 md:grid-cols-3 md:px-20">
+    <div className="z-20 grid grid-cols-2 gap-3 sm:px-10 md:grid-cols-3 md:gap-7 md:px-20">
       {services.map((service, idx) => (
         <Card
           key={idx}
           className="paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
         >
-          <CardContent className="service-icon-hover flex aspect-[1783/1515] h-full max-h-[320px] p-0">
-            <div className="group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-4 py-8">
+          <CardContent className="service-icon-hover flex h-full p-0 md:aspect-[1783/1515] md:max-h-[320px]">
+            <div className="group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-3 py-6 md:px-4 md:py-8">
               <div className="flex h-full flex-col gap-4">
                 <div className="relative size-[50px]">
                   {service.icon ? (
@@ -534,16 +530,16 @@ function ServicesGrid() {
                   )}
                 </div>
 
-                <h3 className="font-['satoshi-black'] text-[24px] font-bold text-[#1c1c1c] group-hover:text-white">
+                <h3 className="font-['satoshi-black'] text-sm font-bold text-[#1c1c1c] group-hover:text-white md:text-[24px]">
                   {service.name}
                 </h3>
-                <p className="font-[satoshi-regular] text-base font-normal text-[#1f1d1d] group-hover:text-white">
+                <p className="font-[satoshi-regular] text-xs font-normal text-[#1f1d1d] group-hover:text-white md:text-base">
                   {service.description}
                 </p>
               </div>
               <div className="flex w-full items-center justify-end gap-4">
                 {service.link && (
-                  <Button className="pointer-cursor flex h-[46px] px-[18px] py-4 text-sm">
+                  <Button className="pointer-cursor flex p-3 text-[10px] md:h-[46px] md:px-[18px] md:py-4 md:text-sm">
                     <Link
                       href={"/services/" + service.link}
                       className="pointer-cursor trim font-['satoshi-regular'] text-[14px] font-bold text-[#FDE4C8]"

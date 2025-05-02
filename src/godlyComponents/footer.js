@@ -12,8 +12,8 @@ import { usePathname } from "next/navigation";
 const Footer = () => {
   const pathname = usePathname();
   return (
-    <div className="bg-[#312E2C]">
-      <div className="item-center mx-auto flex max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
+    <div className="flex w-full flex-col bg-[#312E2C]">
+      <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
         <div
           className={cn(
             "paper-bg-16 rounded-xl bg-[#ebded1] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply",
@@ -112,7 +112,7 @@ const Footer = () => {
           <Image
             src={logo}
             alt="logo"
-            className="object center h-auto w-40 object-contain"
+            className="object center h-auto w-[282px] object-contain"
           ></Image>
         </div>
       </div>

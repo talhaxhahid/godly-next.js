@@ -13,32 +13,35 @@ const Testimonials = () => {
   return (
     <div className="paper-bg-16 bg-[#262424] pb-40">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 py-25">
-        <div className="relative flex w-full items-end justify-center">
+        <div className="flex w-full flex-col gap-6 md:relative md:flex-row md:items-end md:justify-center">
           <div className="flex flex-col items-center justify-center gap-3">
             <div className="flex items-end gap-6">
-              <h1 className="text-trim text-[86px] tracking-wider text-[#FFFFFF]">
+              <h1 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
                 TRUSTED
               </h1>
-              <h4 className="text-trim text-3xl tracking-wider text-[#FDE4C8]">
+              <h4 className="trim md:text-trim text-[22px] tracking-wider text-[#FDE4C8] md:text-3xl">
                 BY
               </h4>
             </div>
-            <h1 className="-mt-9">
+            <h1 className="-mt-5 md:-mt-9">
               <span
-                className="text-grain mr-4 font-['luminaire-script'] text-[64px] text-[#FDE4C8] before:inset-0"
+                className="text-grain font-['luminaire-script'] text-base text-[#FDE4C8] md:mr-4 md:text-[64px] md:before:inset-0"
                 data-text="Your"
               >
                 Your
               </span>{" "}
               <span
-                className="text-grain text-trim text-[86px] tracking-wider text-[#FFFFFF]"
+                className="text-grain text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]"
                 data-text="NEIGHBORS"
               >
                 NEIGHBORS
               </span>
             </h1>
           </div>
-          <Link className="absolute right-0 text-2xl" href="#">
+          <Link
+            className="flex justify-end text-2xl md:absolute md:right-0 md:block"
+            href="#"
+          >
             <span className="text-white underline">SEE MORE REVIEWS</span>
           </Link>
         </div>
@@ -115,8 +118,8 @@ function QuoteCarousel() {
     <div className="w-full pt-0">
       <Slider {...settings}>
         {quotes.map((item, idx) => (
-          <div key={idx} className="px-2">
-            <div className="flex min-h-[200px] flex-col gap-6 rounded-md bg-[#dec9b4] px-4 py-6 text-[#1c1c1c]">
+          <div key={idx} className="max-w-fit md:px-2">
+            <div className="flex max-w-[284px] flex-col gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c] md:min-h-[200px] md:max-w-full md:px-4 md:py-6">
               <div className="flex items-center gap-4">
                 {/* <div className="size-[46px] rounded-full bg-[#D9D9D9]" /> */}
                 <img

@@ -104,9 +104,9 @@ const FourStepProcess = () => {
     <div className="fourstepprocess" id="about">
       <div className="fourstepprocess-inner relative flex flex-col items-center justify-center gap-44">
         <div className="heading relative flex flex-col gap-0">
-          <div className="relative flex flex-col gap-0">
+          <div className="relative flex flex-col gap-4 md:gap-0">
             <h4
-              className="text-trim text-grain m-0 p-0 text-[64px] tracking-[3.84px]"
+              className="text-trim text-grain m-0 p-0 text-[32px] tracking-[3.84px] md:text-[64px]"
               data-text="OUR 4 STEP PROCESS"
             >
               OUR 4 STEP PROCESS
@@ -115,7 +115,7 @@ const FourStepProcess = () => {
               With
             </h4>
             <h4
-              className="text-grain -mt-[12px] text-[64px] tracking-[3.84px]"
+              className="text-grain -mt-[12px] text-[32px] tracking-[3.84px] md:text-[64px]"
               data-text="RAINSHIELD TECH"
             >
               RAINSHIELD TECH
@@ -126,7 +126,7 @@ const FourStepProcess = () => {
         <div className="flex w-full flex-col items-center gap-3 pt-4 text-white">
           <div className="text-white">
             <div className="relative z-10 pb-2">
-              <div className="mx-auto flex w-fit items-center justify-between px-2">
+              <div className="mx-auto hidden w-fit items-center justify-between px-2 md:flex">
                 {steps.map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center">
@@ -150,16 +150,21 @@ const FourStepProcess = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-10 flex min-w-full flex-wrap justify-center gap-[30px] pt-5">
+          <div className="relative z-10 grid grid-cols-2 flex-wrap justify-center gap-[27px] pt-5 md:flex md:min-w-full md:gap-[30px]">
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="paper-bg-8 stepcontainer relative z-10 w-64 rounded bg-[#F4D9BB] p-3 text-black shadow">
-                  <div className="flex min-h-[285px] flex-col items-center justify-center gap-4 border-2 border-black px-2">
-                    <div className="flex justify-center">{step.icon}</div>
-                    <div className="text-center font-['satoshi-black'] text-[26px] font-[900] text-[#1C1C1C]">
+                <div className="trim pb-[18px] text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:hidden md:text-3xl lg:text-[36px]">
+                  {step.number}
+                </div>
+                <div className="paper-bg-8 stepcontainer relative z-10 rounded bg-[#F4D9BB] p-3 text-black shadow md:w-64">
+                  <div className="flex min-h-[180px] flex-col items-center justify-center gap-[20px] border-2 border-black px-2 md:min-h-[285px] md:gap-4">
+                    <div className="flex h-[42px] w-[42px] justify-center md:h-full md:w-full">
+                      {step.icon}
+                    </div>
+                    <div className="trim text-center font-['satoshi-black'] text-[16px] font-[900] text-[#1C1C1C] md:text-[26px]">
                       {step.title}
                     </div>
-                    <p className="text-sans text-trim text-center font-['satoshi-regular'] font-normal text-[#1F1D1D]">
+                    <p className="trim font-[] text-center font-['satoshi-regular'] text-[9.345px] text-[#1F1D1D] md:text-base">
                       {step.text}
                     </p>
                   </div>
@@ -181,7 +186,7 @@ const FourStepProcess = () => {
             starClassName={"rotate-0"}
             image={drop}
           />
-          <div className="absolute right-2 -bottom-0 -rotate-5">
+          <div className="absolute right-2 -bottom-2 scale-75 -rotate-5 md:-bottom-0 md:scale-100">
             <Icon />
           </div>
         </div>
@@ -192,35 +197,32 @@ const FourStepProcess = () => {
 
 const Badge = ({ text, className, starClassName, image }) => (
   <div
-    style={{
-      padding: "24px 16px",
-    }}
     className={cn(
-      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-4 py-2 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C] hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C]",
+      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-2 py-4 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C] hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C] md:px-4 md:py-6",
       className,
       "",
     )}
   >
     <span
       className={cn(
-        `item-center flex size-[28.838px] rotate-[-115.867deg] transform justify-center text-yellow-400 transition-transform duration-500`,
+        `item-center flex size-6 rotate-[-115.867deg] transform justify-center text-yellow-400 transition-transform duration-500 md:size-[28.838px]`,
         starClassName,
       )}
     >
       <Image
         alt="spark"
         src={image}
-        className="object-contain transition-transform duration-500"
+        className="size-6 object-contain transition-transform duration-500 md:h-auto md:w-auto"
       />
     </span>
-    <h6 className="group relative text-4xl">
+    <h6 className="group relative">
       <span
-        className="mr-4 border-b-3 border-[#f1caa0] font-sans text-4xl font-[900] text-[#f1caa0] uppercase transition-all duration-300 hover:text-yellow-300"
+        className="mr-4 border-b-3 border-[#f1caa0] font-sans text-base font-[900] text-[#f1caa0] uppercase transition-all duration-300 hover:text-yellow-300 md:text-4xl"
         data-text="FREE"
       >
         FREE
       </span>
-      <span className="font-sans text-[28px] font-bold group-hover:text-shadow-[0px_1px_2.9px_#FFF]">
+      <span className="font-sans text-base font-bold group-hover:text-shadow-[0px_1px_2.9px_#FFF] md:text-[28px]">
         {text}
       </span>
     </h6>

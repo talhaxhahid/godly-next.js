@@ -54,10 +54,10 @@ const Promise = () => {
   return (
     <div
       id="promise"
-      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[86px] py-[150px]"
+      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] py-[100px] md:px-[86px] md:py-[150px]"
     >
       <div
-        className="relative flex h-[210px] w-[758px] -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
+        className="relative flex h-[210px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:scale-100"
         style={{
           backgroundImage: `url(${ticketBg.src})`,
         }}
@@ -80,19 +80,22 @@ const Promise = () => {
       <Story />
       <div className="py-10">
         <h1
-          className="text-grain text-center text-[64px] font-normal tracking-wide text-[#191717]"
+          className="text-grain text-center text-4xl font-normal tracking-wide text-[#191717] md:text-[64px]"
           data-text="Delivering"
         >
           Delivering
         </h1>
-        <h4 className="-mt-6 text-center text-[64px] font-normal tracking-wide text-[#191717]">
+        <h4 className="text-center text-4xl font-normal tracking-wide text-[#191717] md:-mt-6 md:text-[64px]">
           <span
             className="text-grain text-[#61503E] underline"
             data-text="Trustworthy"
           >
             Trustworthy
           </span>{" "}
-          <span className="text-grain text-[64px]" data-text="Service">
+          <span
+            className="text-grain text-4xl md:text-[64px]"
+            data-text="Service"
+          >
             Service
           </span>
         </h4>
@@ -118,12 +121,7 @@ const Promise = () => {
             <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
               <div className="flex flex-col gap-8">
                 <h5 className="text-md font-normal">
-                  <span
-                    className="text-grain text-base"
-                    data-text={step.number}
-                  >
-                    {step.number}
-                  </span>
+                  <span className="text-base">{step.number}</span>
                 </h5>
 
                 <div
@@ -179,7 +177,7 @@ function Story() {
   }, [api]);
   return (
     <div
-      className="mt-12 flex w-full max-w-[1100px] gap-10 rounded-[12px] bg-[#1F1D1D] p-4"
+      className="mt-12 flex w-full max-w-[1100px] flex-col gap-[34px] rounded-[12px] bg-[#1F1D1D] p-4 md:flex-row md:gap-10"
       style={{
         boxShadow:
           "0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25)",
@@ -235,8 +233,8 @@ function Story() {
           ))}
         </div>
       </div>
-      <div className="flex flex-1 flex-col items-start justify-center gap-[40px] p-3">
-        <h1 className="text-6xl text-white">
+      <div className="flex flex-1 flex-col items-start justify-center gap-[34px] p-3 md:gap-[40px]">
+        <h1 className="text-4xl text-white md:text-6xl">
           <span
             className="text-grain font-['marlton'] text-[#F3CA9E]"
             data-text="LOCAL"
@@ -249,7 +247,7 @@ function Story() {
           </span>
         </h1>
         <p
-          className="text-justify text-base tracking-wide text-[#A4A4A4]"
+          className="text-justify text-sm tracking-wide text-[#A4A4A4] md:text-base"
           style={{
             fontFamily: "var(--font-inter)",
           }}
@@ -265,7 +263,7 @@ function Story() {
           , and a fair price.
         </p>
         <p
-          className="text-justify text-base tracking-wide text-[#A4A4A4]"
+          className="text-justify text-sm tracking-wide text-[#A4A4A4] md:text-base"
           style={{
             fontFamily: "var(--font-inter)",
           }}

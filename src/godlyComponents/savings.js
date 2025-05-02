@@ -31,7 +31,7 @@ const Savings = () => {
   ];
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#ebded1] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
+    <div className="paper-bg-16 flex hidden flex-col items-center justify-items-center bg-[#ebded1] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
         <h1
           className="text-grain text-[64px] font-normal text-[#191717]"

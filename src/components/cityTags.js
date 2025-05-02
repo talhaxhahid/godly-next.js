@@ -249,7 +249,7 @@ const CityTags = () => {
   }, [cities]);
 
   return (
-    <div className="paper-bg-16 flex w-full justify-center">
+    <div className="paper-bg-16 flex max-h-fit w-full justify-center">
       <div ref={sceneRef} className="w-full" />
     </div>
   );

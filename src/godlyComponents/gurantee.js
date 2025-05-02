@@ -20,18 +20,18 @@ const Gurantee = () => {
       >
         <div className="mx-auto max-w-[1440px]">
           <div className="item-start flex gap-2">
-            <h4 className="text-trim mt-3 mb-4 text-3xl tracking-wide text-[#FFFFFF]">
+            <h4 className="trim md:text-trim text-xs tracking-wide text-[#FFFFFF] md:mt-3 md:mb-4 md:text-3xl">
               THE
             </h4>
             <h1
-              className="text-trim text-grain text-[102px] tracking-wide text-[#F3CA9E]"
+              className="trim md:text-trim text-grain text-[48px] tracking-wide text-[#F3CA9E] md:text-[102px]"
               data-text="GODLY"
             >
               GODLY
             </h1>
           </div>
           <h1
-            className="text-trim relative z-10 -mt-6 ml-22 font-['luminaire-script'] text-[64px] text-[#FFFFFF]"
+            className="trim md:text-trim relative z-10 ml-15 font-['luminaire-script'] text-[27px] text-[#FFFFFF] md:-mt-6 md:ml-22 md:text-[64px]"
             style={{
               WebkitTextStrokeWidth: "8px",
               strokeLinecap: "round",
@@ -42,8 +42,8 @@ const Gurantee = () => {
             Guarantee
           </h1>
         </div>
-        <div className="flex min-h-screen w-full flex-col items-center gap-[250px] bg-contain bg-center bg-no-repeat">
-          <div className="relative h-60 min-w-[660px]">
+        <div className="flex min-h-screen w-full flex-col items-center gap-[240px] bg-contain bg-center bg-no-repeat md:gap-[250px]">
+          <div className="relative min-w-[660px] scale-40 md:h-60 md:scale-100">
             <div
               className="absolute -top-1 h-full w-full rotate-[6deg] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
@@ -75,7 +75,7 @@ const Gurantee = () => {
             </div>
           </div>
 
-          <div className="relative h-50 w-[505px] rotate-2">
+          <div className="relative w-[505px] scale-40 rotate-2 md:h-50 md:scale-100">
             <div
               className="absolute top-4 -left-15 h-full w-full -rotate-10 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
@@ -107,7 +107,7 @@ const Gurantee = () => {
             </div>
           </div>
 
-          <div className="relative h-50 min-w-[500px] rotate-2">
+          <div className="relative min-w-[500px] scale-40 rotate-2 md:h-50 md:scale-100">
             <div
               className="absolute -top-2 right-5 h-full w-full rotate-5 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${cardBg.src})` }}
