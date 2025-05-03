@@ -14,7 +14,7 @@ const Services = () => {
   const { city } = useGodlyContext();
   return (
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
-      <div className="relative flex min-h-screen flex-col items-center gap-[37px] px-6 py-24 md:gap-20">
+      <div className="relative flex min-h-screen flex-col items-center gap-[37px] px-6 md:gap-20 md:px-6 md:py-24">
         <div className="flex flex-col items-center justify-center gap-6">
           <h1 className="with-text hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline md:flex">
             We are
@@ -50,7 +50,7 @@ const Services = () => {
         <ServicesGrid />
       </div>
 
-      <div className="paper-bg-16 flex flex-col items-center justify-center gap-20 overflow-clip bg-[#262424] bg-contain bg-bottom bg-no-repeat p-6 bg-blend-soft-light">
+      <div className="paper-bg-16 flex flex-col items-center justify-center gap-20 overflow-clip bg-[#262424] bg-contain bg-bottom bg-no-repeat px-6 pt-[100px] bg-blend-soft-light md:p-6">
         <img
           className="pointer-events-none absolute overflow-clip object-contain opacity-25"
           src={"/assets/santa-bg-sparkle.png"}
