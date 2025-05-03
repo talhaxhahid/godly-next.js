@@ -1,6 +1,6 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
-import background from "../assets/texture.png";
+import background from "../assets/texture.webp";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
 

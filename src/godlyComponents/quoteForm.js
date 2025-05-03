@@ -387,7 +387,7 @@ export default function QuoteForm({ isDialog }) {
           </div>
         </div>
         <img
-          src={"/assets/tape-hero.png"}
+          src={"/assets/tape-hero.webp"}
           alt="cardBg"
           style={isDialog ? { display: "none" } : {}}
           className="absolute top-0 left-full z-10 h-[266.58px] w-[234.158px] -translate-x-[calc(50%_+_38px)] -translate-y-[calc(50%_-_48px)] rotate-[-17.311deg]"

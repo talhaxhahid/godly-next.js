@@ -1,6 +1,6 @@
 // components/LatestNews.tsx
 import Image from "next/image";
-import BlogsImage from "../assets/blogImage.jpg";
+import BlogsImage from "../assets/blogImage.webp";
 import Link from "next/link";
 
 const BlogsSection = ({ noOfBlogs }) => {

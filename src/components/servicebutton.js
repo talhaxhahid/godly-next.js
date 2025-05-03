@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import grainBg from "../assets/grain-bg.png";
+import grainBg from "../assets/grain-bg.webp";
 import Image from "next/image";
 import subtract from "../assets/subtract.svg";
 import {

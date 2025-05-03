@@ -10,8 +10,8 @@ const Hero = () => {
   return (
     <div className="relative overflow-x-clip bg-[#1F1D1D]">
       <div
-        className="absolute top-[80px] left-0 h-[600px] w-full bg-[url('/path-to-image.jpg')] bg-cover bg-top bg-no-repeat md:top-[24px] md:h-[900px]"
-        style={{ backgroundImage: `url(${`/assets/heroBanner.png`})` }}
+        className="absolute top-[80px] left-0 h-[600px] w-full bg-[url('/path-to-image.webp')] bg-cover bg-top bg-no-repeat md:top-[24px] md:h-[900px]"
+        style={{ backgroundImage: `url(${`/assets/heroBanner.webp`})` }}
       >
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#1F1D1D]/0 to-[#1F1D1D]"></div>
       </div>

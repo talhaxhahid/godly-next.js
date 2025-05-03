@@ -1,9 +1,9 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import img1 from "@/assets/howitworks1.png";
-import img2 from "@/assets/howitworks2.png";
-import img3 from "@/assets/howitworks3.png";
+import img1 from "@/assets/howitworks1.webp";
+import img2 from "@/assets/howitworks2.webp";
+import img3 from "@/assets/howitworks3.webp";
 import SectionButton from "@/components/sectionButton";
 
 const HowItWorks = () => {

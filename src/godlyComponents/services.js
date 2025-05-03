@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ServiceButton from "@/components/servicebutton";
 import Image from "next/image";
-import textWaveBg from "@/assets/text-bg-wave.png";
-import Cap from "@/assets/santaCap.png";
-import Santa from "@/assets/santa.png";
+import textWaveBg from "@/assets/text-bg-wave.webp";
+import Cap from "@/assets/santaCap.webp";
+import Santa from "@/assets/santa.webp";
 import Link from "next/link";
 const Services = () => {
   const { city } = useGodlyContext();
@@ -53,7 +53,7 @@ const Services = () => {
       <div className="paper-bg-16 flex flex-col items-center justify-center gap-20 overflow-clip bg-[#262424] bg-contain bg-bottom bg-no-repeat px-6 pt-[100px] bg-blend-soft-light md:p-6">
         <img
           className="pointer-events-none absolute overflow-clip object-contain opacity-25"
-          src={"/assets/santa-bg-sparkle.png"}
+          src={"/assets/santa-bg-sparkle.webp"}
           alt="cap"
         />
         <div className="mt-4 mb-[164px] flex flex-col items-center justify-center gap-9 md:mb-[220px] md:max-w-[741px]">
@@ -462,8 +462,8 @@ const services = [
   },
   {
     name: "Light Fixtures",
-    image: "/assets/light-fixture.png",
-    hoverImage: "/assets/light-fixture_colored.png",
+    image: "/assets/light-fixture.webp",
+    hoverImage: "/assets/light-fixture_colored.webp",
     link: "light_fixtures",
     description:
       "Keep both your interior and exterior lighting bright with thorough cleanings of your lanterns, sconces, and more.",

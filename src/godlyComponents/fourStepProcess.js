@@ -2,8 +2,8 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import spark from "../assets/spark.png";
-import drop from "../assets/drop.png";
+import spark from "../assets/spark.webp";
+import drop from "../assets/drop.webp";
 import { cn } from "@/lib/utils";
 
 const FourStepProcess = () => {
@@ -139,7 +139,7 @@ const FourStepProcess = () => {
                     {index !== steps.length - 1 && (
                       <div className="mx-1 max-w-[205px] flex-grow md:mx-2 lg:mx-3">
                         <img
-                          src={"/assets/dotted-line.png"}
+                          src={"/assets/dotted-line.webp"}
                           alt="dotted-line"
                           className="h-auto w-full object-cover"
                         />

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import alex from "@/assets/alex.jpg";
+import alex from "@/assets/alex.webp";
 import Link from "next/link";
 
 const Testimonials = () => {

@@ -1,12 +1,12 @@
-import service1 from "@/assets/serviceData/service1.png";
-import service2 from "@/assets/serviceData/service2.png";
-import service3 from "@/assets/serviceData/service3.png";
-import service4 from "@/assets/serviceData/service4.png";
-import service5 from "@/assets/serviceData/service5.png";
-import service6 from "@/assets/serviceData/service6.png";
-import service7 from "@/assets/serviceData/service7.png";
-import service8 from "@/assets/serviceData/service8.png";
-import service9 from "@/assets/serviceData/service9.png";
+import service1 from "@/assets/serviceData/service1.webp";
+import service2 from "@/assets/serviceData/service2.webp";
+import service3 from "@/assets/serviceData/service3.webp";
+import service4 from "@/assets/serviceData/service4.webp";
+import service5 from "@/assets/serviceData/service5.webp";
+import service6 from "@/assets/serviceData/service6.webp";
+import service7 from "@/assets/serviceData/service7.webp";
+import service8 from "@/assets/serviceData/service8.webp";
+import service9 from "@/assets/serviceData/service9.webp";
 
 const Services = {
   solar_panels: {

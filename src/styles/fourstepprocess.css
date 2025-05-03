@@ -3,7 +3,7 @@
   padding-bottom: 80px;
   padding-left: 123px;
   padding-right: 123px;
-  background-image: url("/assets/vintage-paper-16.jpg");
+  background-image: url("/assets/vintage-paper-16.webp");
   background-color: #252424;
   background-position: 50%;
   background-size: cover;
@@ -13,11 +13,13 @@
   @media (max-width: 768px) {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 
 .fourstepprocess-inner {
-  background-image: url("../assets/fourstep_bg.png");
+  background-image: url("../assets/fourstep_bg.webp");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

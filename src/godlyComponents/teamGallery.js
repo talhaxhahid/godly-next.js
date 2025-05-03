@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import pic1 from "@/assets/blue-collar/1.png";
-import pic2 from "@/assets/blue-collar/2.png";
-import pic3 from "@/assets/blue-collar/3.png";
-import pic4 from "@/assets/blue-collar/4.png";
-import pic5 from "@/assets/blue-collar/5.png";
-import pic6 from "@/assets/blue-collar/6.png";
-import pic7 from "@/assets/blue-collar/7.png";
-import pic8 from "@/assets/blue-collar/8.png";
-import pic9 from "@/assets/blue-collar/9.png";
-import pic10 from "@/assets/blue-collar/10.png";
+import pic1 from "@/assets/blue-collar/1.webp";
+import pic2 from "@/assets/blue-collar/2.webp";
+import pic3 from "@/assets/blue-collar/3.webp";
+import pic4 from "@/assets/blue-collar/4.webp";
+import pic5 from "@/assets/blue-collar/5.webp";
+import pic6 from "@/assets/blue-collar/6.webp";
+import pic7 from "@/assets/blue-collar/7.webp";
+import pic8 from "@/assets/blue-collar/8.webp";
+import pic9 from "@/assets/blue-collar/9.webp";
+import pic10 from "@/assets/blue-collar/10.webp";
 
 const teamImages = [
   { src: pic1, alt: "team", rotate: "-4.277deg" },

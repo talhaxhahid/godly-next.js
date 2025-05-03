@@ -2,10 +2,10 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import shield from "@/assets/shieldPlus.png";
-import paintBox from "@/assets/paintBox.png";
-import waterDrop from "@/assets/waterDrop.png";
-import verifiedBadge from "@/assets/verifiedBadge.png";
+import shield from "@/assets/shieldPlus.webp";
+import paintBox from "@/assets/paintBox.webp";
+import waterDrop from "@/assets/waterDrop.webp";
+import verifiedBadge from "@/assets/verifiedBadge.webp";
 
 const ChooseUs = () => {
   return (

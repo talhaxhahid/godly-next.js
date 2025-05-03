@@ -1,7 +1,7 @@
 // components/BlogsHeadline.tsx
 import Image from "next/image";
 import Link from "next/link";
-import windowCleaning from "@/assets/windowCleaning.png";
+import windowCleaning from "@/assets/windowCleaning.webp";
 
 const BlogsHeadline = () => {
   return (

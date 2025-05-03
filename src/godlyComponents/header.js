@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import "@/styles/header.css";
 import { Phone, ChevronDown, MapPinHouse, MapPin } from "lucide-react";
 import Link from "next/link";
 import HeaderButton from "@/components/HeaderButton";
-import background from "../assets/texture.png";
+import background from "../assets/texture.webp";
 import { useGodlyContext } from "@/context/godlyContext";
 
 import {
@@ -16,18 +16,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-import exteriorWindow from "@/assets/homepageServices/exterior_window.png";
-import interiorWindow from "@/assets/homepageServices/interior_window.png";
-import gutterCleaning from "@/assets/homepageServices/gutter_cleaning.png";
-import houseWashing from "@/assets/homepageServices/house_washing.png";
-import roofWashing from "@/assets/homepageServices/roof_washing.png";
-import pressureWashing from "@/assets/homepageServices/pressure_washing.png";
-import highDusting from "@/assets/homepageServices/high_dusting.png";
-import lightFixtures from "@/assets/homepageServices/light_fixtures.png";
-import screenCleans from "@/assets/homepageServices/screen_cleans.png";
-import skylights from "@/assets/homepageServices/sky_light.png";
-import solarPanels from "@/assets/homepageServices/solar_panels.png";
-import sealCoating from "@/assets/homepageServices/seal_coating.png";
+import exteriorWindow from "@/assets/homepageServices/exterior_window.webp";
+import interiorWindow from "@/assets/homepageServices/interior_window.webp";
+import gutterCleaning from "@/assets/homepageServices/gutter_cleaning.webp";
+import houseWashing from "@/assets/homepageServices/house_washing.webp";
+import roofWashing from "@/assets/homepageServices/roof_washing.webp";
+import pressureWashing from "@/assets/homepageServices/pressure_washing.webp";
+import highDusting from "@/assets/homepageServices/high_dusting.webp";
+import lightFixtures from "@/assets/homepageServices/light_fixtures.webp";
+import screenCleans from "@/assets/homepageServices/screen_cleans.webp";
+import skylights from "@/assets/homepageServices/sky_light.webp";
+import solarPanels from "@/assets/homepageServices/solar_panels.webp";
+import sealCoating from "@/assets/homepageServices/seal_coating.webp";
 
 const services = [
   {

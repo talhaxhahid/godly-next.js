@@ -1,11 +1,11 @@
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-// import near1 from "@/assets/near1.png";
-// import near2 from "@/assets/near2.png";
-import near3 from "@/assets/near3.png";
-import near4 from "@/assets/near4.png";
-import near5 from "@/assets/near5.png";
+// import near1 from "@/assets/near1.webp";
+// import near2 from "@/assets/near2.webp";
+import near3 from "@/assets/near3.webp";
+import near4 from "@/assets/near4.webp";
+import near5 from "@/assets/near5.webp";
 import Services from "@/data/servicesData";
 const ServiceNearYou = ({ slug }) => {
   // const steps1 = [

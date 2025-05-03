@@ -207,7 +207,7 @@ html {
 }
 
 .paper-bg-14 {
-  background-image: url("/assets/vintage-paper-14.jpg");
+  background-image: url("/assets/vintage-paper-14.webp");
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -215,7 +215,7 @@ html {
 }
 
 .paper-bg-8 {
-  background-image: url("/assets/vintage-paper-8.jpg");
+  background-image: url("/assets/vintage-paper-8.webp");
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -223,7 +223,7 @@ html {
 }
 
 .paper-bg-16 {
-  background-image: url("/assets/vintage-paper-16.jpg");
+  background-image: url("/assets/vintage-paper-16.webp");
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -321,7 +321,7 @@ html {
     background:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #a14632 100%),
       linear-gradient(180deg, #754034 0%, #943b2a 100%),
-      url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
+      url("/assets/vintage-paper-14.webp") lightgray 50% / cover no-repeat;
     background-blend-mode: normal, hard-light, normal;
     box-shadow:
       0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
@@ -403,7 +403,7 @@ html {
     background:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #a14632 100%),
       linear-gradient(180deg, #754034 0%, #943b2a 100%),
-      url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
+      url("/assets/vintage-paper-14.webp") lightgray 50% / cover no-repeat;
     background-blend-mode: normal, hard-light, normal;
     box-shadow:
       0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
@@ -431,7 +431,7 @@ html {
   &::before {
     content: attr(data-text);
     position: absolute;
-    background-image: url("/assets/grain.png");
+    background-image: url("/assets/grain.webp");
     background-position: center;
     background-size: cover;
     -webkit-background-clip: text;
@@ -485,7 +485,7 @@ html {
     position: absolute;
     inset: 0;
     margin-top: -8px;
-    background-image: url("/assets/grain.png");
+    background-image: url("/assets/grain.webp");
     background-position: center;
     background-size: cover;
     -webkit-background-clip: text;
@@ -554,7 +554,7 @@ html {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(97, 80, 62, 0.6) 60%),
     linear-gradient(180deg, #323030 100%, #262424 40%),
-    url("/assets/vintage-paper-14.jpg") lightgray 0% / cover no-repeat;
+    url("/assets/vintage-paper-14.webp") lightgray 0% / cover no-repeat;
   background-blend-mode: normal, normal, normal;
   box-shadow:
     0px -7px 5.29px 0px rgba(36, 34, 34, 0.33) inset,
@@ -651,7 +651,7 @@ html {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(171, 132, 89, 0.6) 100%),
     linear-gradient(180deg, #61503e 0%, #312e2c 100%),
-    url("/assets/vintage-paper-14.jpg") lightgray 50% / cover no-repeat;
+    url("/assets/vintage-paper-14.webp") lightgray 50% / cover no-repeat;
   background-blend-mode: normal, hard-light, normal;
   box-shadow:
     0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,

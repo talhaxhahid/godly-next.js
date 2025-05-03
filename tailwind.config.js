@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       // ... your other extensions
       backgroundImage: {
-        "vintage-pattern": 'url("../assets/vintage.jpg")',
+        "vintage-pattern": 'url("../assets/vintage.webp")',
       },
       backgroundPosition: {
         "header-position": "-8.5px -6.621px",

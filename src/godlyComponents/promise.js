@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
 
-import ticketBg from "@/assets/ticket-bg.png";
+import ticketBg from "@/assets/ticket-bg.webp";
 
-import fam1 from "@/assets/fam-1.jpg";
-import fam2 from "@/assets/fam-2.jpg";
-import img1 from "@/assets/rocket.png";
-import img2 from "@/assets/plant.png";
-import img3 from "@/assets/eagle.png";
+import fam1 from "@/assets/fam-1.webp";
+import fam2 from "@/assets/fam-2.webp";
+import img1 from "@/assets/rocket.webp";
+import img2 from "@/assets/plant.webp";
+import img3 from "@/assets/eagle.webp";
 import SectionButton from "@/components/sectionButton";
 import Autoplay from "embla-carousel-autoplay";
 

@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import Services1 from "@/assets/otherservices1.png";
-import Services2 from "@/assets/otherservices2.png";
+import Services1 from "@/assets/otherservices1.webp";
+import Services2 from "@/assets/otherservices2.webp";
 
 const steps = [
   {

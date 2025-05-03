@@ -1,6 +1,6 @@
 import React from "react";
 
-import map from "@/assets/map.png";
+import map from "@/assets/map.webp";
 import SectionButton from "@/components/sectionButton";
 import Image from "next/image";
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import Image from "next/image";
 import CityTags from "@/components/cityTags";
 import Link from "next/link";
