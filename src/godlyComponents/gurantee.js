@@ -1,4 +1,3 @@
-import background from "../assets/gurantee_bg.webp";
 import cardBg from "../assets/card_bg.webp";
 import React from "react";
 import barcode from "../assets/barcode.webp";
@@ -8,13 +7,11 @@ const Gurantee = () => {
   return (
     <div className="paper-bg-16 bg-[#262424]">
       <div
-        className="mx-auto flex max-w-[1440px] flex-col items-center gap-30 px-6 py-[150px]"
+        className={`mx-auto flex max-w-[1440px] flex-col items-center gap-30 bg-[url('/assets/guarantee_bg_mobile.png')] bg-[50%_250px] px-6 py-[150px] md:bg-[url('/assets/gurantee_bg.webp')] md:bg-bottom`}
         style={{
-          backgroundImage: `url(${background.src})`,
           alignItems: "center",
           justifyContent: "center",
           backgroundSize: "contain",
-          backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -42,7 +39,7 @@ const Gurantee = () => {
             Guarantee
           </h1>
         </div>
-        <div className="flex min-h-screen w-full flex-col items-center gap-[240px] bg-contain bg-center bg-no-repeat md:gap-[250px]">
+        <div className="flex w-full flex-col items-center gap-[240px] bg-contain bg-center bg-no-repeat md:min-h-screen md:gap-[250px]">
           <div className="relative min-w-[660px] scale-40 md:h-60 md:scale-100">
             <div
               className="absolute -top-1 h-full w-full rotate-[6deg] bg-cover bg-center bg-no-repeat"

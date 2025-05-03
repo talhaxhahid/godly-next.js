@@ -9,6 +9,14 @@ import "slick-carousel/slick/slick-theme.css";
 import alex from "@/assets/alex.webp";
 import Link from "next/link";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 const Testimonials = () => {
   return (
     <div className="paper-bg-16 bg-[#262424] md:pb-40">
@@ -46,6 +54,78 @@ const Testimonials = () => {
           </Link>
         </div>
         <QuoteCarousel />
+        {/* Mobile Carousel */}
+        <div className="w-full md:hidden">
+          {" "}
+          {/* Ensure container takes width */}
+          <Carousel
+            opts={{
+              align: "start", // Align items to the start
+              loop: true, // Enable looping
+            }}
+            className="w-full" // Carousel takes full width of its container
+          >
+            <CarouselContent className="-ml-4">
+              {" "}
+              {/* Use negative margin to help reveal next item */}
+              {quotes.map(
+                (
+                  item,
+                  index, // Use actual quotes data
+                ) => (
+                  <CarouselItem key={index} className="basis-5/6 pl-4">
+                    {" "}
+                    {/* Set item basis to less than full width and add padding */}
+                    {/* Replicate the quote card structure from the desktop version */}
+                    <div className="paper-bg-8 flex h-full flex-col gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c]">
+                      {" "}
+                      {/* Ensure card takes height if needed */}
+                      <div className="w-ful flex flex-col items-center justify-between gap-3">
+                        {/* <div
+                          className="trim ribbon text-grain bg-[#2D2B2B] px-[5.64px] py-[2.82px] text-sm font-medium tracking-wide text-white"
+                          data-text="SUNRISE"
+                        >
+                          SUNRISE
+                        </div> */}
+                        <div className="ribbon">SUNRISE</div>
+                        <div className="flex w-full items-center gap-[10px]">
+                          <img
+                            src={alex.src}
+                            alt="alex"
+                            className="size-[47px] rounded-full bg-[#D9D9D9] object-cover"
+                          />
+                          <div className="flex flex-col gap-2.5">
+                            <p className="trim text-base font-normal">
+                              {item.author}
+                            </p>
+                            <div className="flex items-center gap-1.5">
+                              <Star />
+                              <Star />
+                              <Star />
+                              <Star />
+                              <Star />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="mb-4 font-sans text-sm leading-relaxed font-normal">
+                        <span className="font-semibold">We </span>
+                        {item.quote.replace(/^We /, "")}
+                      </p>
+                    </div>
+                  </CarouselItem>
+                ),
+              )}
+            </CarouselContent>
+            {/* Position navigation buttons below the carousel */}
+            <div className="relative mt-16 h-16">
+              {" "}
+              {/* Container for buttons */}
+              <CarouselPrevious className="absolute left-1/2 size-[60px] -translate-x-[calc(100%+0.5rem)] transform rounded-full bg-white text-black" />
+              <CarouselNext className="absolute left-1/2 size-[60px] translate-x-[0.5rem] transform rounded-full bg-white text-black" />
+            </div>
+          </Carousel>
+        </div>
       </div>
     </div>
   );
@@ -115,17 +195,16 @@ function QuoteCarousel() {
   };
 
   return (
-    <div className="w-full pt-0">
+    <div className="hidden w-full pt-0 md:block">
       <Slider {...settings}>
         {quotes.map((item, idx) => (
           <div key={idx} className="max-w-fit md:px-2">
             <div className="flex max-w-[284px] flex-col gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c] md:min-h-[200px] md:max-w-full md:px-4 md:py-6">
               <div className="flex items-center gap-[10px] md:gap-4">
-                {/* <div className="size-[46px] rounded-full bg-[#D9D9D9]" /> */}
                 <img
                   src={alex.src}
                   alt="alex"
-                  className="size-[47.047px] rounded-full bg-[#D9D9D9] object-cover"
+                  className="size-[47px] rounded-full bg-[#D9D9D9] object-cover"
                 />
                 <div className="flex flex-col gap-2.5">
                   <p className="trim text-base font-normal">{item.author}</p>

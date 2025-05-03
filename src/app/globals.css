@@ -697,3 +697,83 @@ html {
   --dash-gap: 5px;
   border: 2px dashed #f1caa0;
 }
+
+/* Ribbon Component - Add to globals.css */
+.ribbon {
+  --c: #222; /* Background color - change as needed */
+  --r: 0.4em; /* Radius for the cutout */
+  --a: 6deg; /* Angle - 4 degrees as requested */
+  --d: 0.4em; /* Depth of the cutout */
+
+  /* font-size: 28px; */
+  font-weight: bold;
+  color: white;
+  background: var(--c);
+  padding-inline: 0.5em;
+  margin: calc(0.5lh + var(--r)) calc(1.2lh + var(--d));
+  /* line-height: 1.75; */
+  width: fit-content;
+  position: relative;
+  white-space: nowrap;
+}
+
+.ribbon:before,
+.ribbon:after {
+  content: "";
+  position: absolute;
+  width: calc(1lh + var(--d));
+  height: calc(1.5lh + var(--r));
+  border: solid var(--c);
+  box-sizing: border-box;
+}
+
+.ribbon:before {
+  left: 99%;
+  bottom: 0;
+  border-width: 0 1lh 1lh 0;
+  border-radius: 0 0 999px 0;
+  clip-path: polygon(
+    calc(999px * cos(var(--a)))
+      calc(100% - 1lh - var(--d) + 999px * sin(var(--a))),
+    999px 0,
+    100% 0,
+    calc(50% + var(--d) / 2) var(--r),
+    var(--d) 0,
+    0 0,
+    0 calc(100% - 1lh - var(--d))
+  );
+  transform-origin: 0 calc(100% - 1lh - var(--d));
+  rotate: calc(90deg - var(--a));
+}
+
+.ribbon:after {
+  right: 99%;
+  top: 0;
+  border-width: 1lh 0 0 1lh;
+  border-radius: 999px 0 0 0;
+  clip-path: polygon(
+    calc(100% - 999px * cos(var(--a)))
+      calc(1lh + var(--d) - 999px * sin(var(--a))),
+    -999px 100%,
+    0 100%,
+    calc(50% - var(--d) / 2) calc(100% - var(--r)),
+    calc(100% - var(--d)) 100%,
+    100% 100%,
+    100% calc(1lh + var(--d))
+  );
+  transform-origin: 100% calc(1lh + var(--d));
+  rotate: calc(90deg - var(--a));
+}
+
+/* Color variations - optional */
+.ribbon-blue {
+  --c: #2563eb; /* Tailwind blue-600 */
+}
+
+.ribbon-green {
+  --c: #16a34a; /* Tailwind green-600 */
+}
+
+.ribbon-red {
+  --c: #dc2626; /* Tailwind red-600 */
+}
