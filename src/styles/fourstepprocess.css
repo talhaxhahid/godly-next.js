@@ -67,5 +67,7 @@
 
   @media (max-width: 768px) {
     font-size: 24px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
   }
 }

@@ -57,7 +57,7 @@ const Promise = () => {
       className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] py-[100px] md:px-[86px] md:py-[150px]"
     >
       <div
-        className="relative flex h-[210px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:scale-100"
+        className="relative flex h-[200px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[210px] md:scale-100"
         style={{
           backgroundImage: `url(${ticketBg.src})`,
         }}
@@ -177,7 +177,7 @@ function Story() {
   }, [api]);
   return (
     <div
-      className="mt-12 flex w-full max-w-[1100px] flex-col gap-[34px] rounded-[12px] bg-[#1F1D1D] p-4 md:flex-row md:gap-10"
+      className="flex w-full max-w-[1100px] flex-col gap-[34px] rounded-[12px] bg-[#1F1D1D] p-4 md:mt-12 md:flex-row md:gap-10"
       style={{
         boxShadow:
           "0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25)",

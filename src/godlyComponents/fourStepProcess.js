@@ -102,7 +102,7 @@ const FourStepProcess = () => {
   ];
   return (
     <div className="fourstepprocess" id="about">
-      <div className="fourstepprocess-inner relative flex flex-col items-center justify-center gap-44">
+      <div className="fourstepprocess-inner relative flex flex-col items-center justify-center gap-[100px] md:gap-44">
         <div className="heading relative flex flex-col gap-0">
           <div className="relative flex flex-col gap-4 md:gap-0">
             <h4

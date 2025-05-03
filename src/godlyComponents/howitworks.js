@@ -31,39 +31,38 @@ const HowItWorks = () => {
   return (
     <div
       id="process"
-      className="paper-bg-16 flex flex-col items-center justify-items-center bg-[#ebded1] bg-cover bg-center bg-no-repeat px-[30px] py-[100px] bg-blend-multiply md:p-16 md:pb-24"
+      className="paper-bg-16 flex flex-col items-center justify-items-center gap-[70px] bg-[#ebded1] bg-cover bg-center bg-no-repeat px-[30px] py-[100px] bg-blend-multiply md:gap-0 md:p-16 md:pb-24"
     >
-      <h1
-        className="text-grain text-[38px] font-normal tracking-[2.28px] text-[#191717] md:text-[64px] md:tracking-normal"
-        data-text="HOW IT WORKS"
-      >
-        HOW IT WORKS
-      </h1>
-      <h4
-        className="text-grain -mt-2 text-[20px] font-normal tracking-[1.8px] text-[#61503E] md:text-[32px] md:tracking-normal"
-        data-text="IN 3 SIMPLE STEPS"
-      >
-        IN 3 SIMPLE STEPS
-      </h4>
+      <div className="flex flex-col items-center justify-center">
+        <h1
+          className="text-grain text-[38px] font-normal tracking-[2.28px] text-[#191717] md:text-[64px] md:tracking-normal"
+          data-text="HOW IT WORKS"
+        >
+          HOW IT WORKS
+        </h1>
+        <h4
+          className="text-grain -mt-2 text-[20px] font-normal tracking-[1.8px] text-[#61503E] md:text-[32px] md:tracking-normal"
+          data-text="IN 3 SIMPLE STEPS"
+        >
+          IN 3 SIMPLE STEPS
+        </h4>
+      </div>
       <div
-        className="pt-16 pb-16 text-white"
+        className="text-white md:pt-16 md:pb-16"
         // style={{ marginTop: "1rem", marginBottom: "3rem" }}
       >
         <div className="relative z-10 flex flex-wrap justify-center gap-6 sm:gap-2 md:gap-4 md:px-8">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="relative z-10 rounded-md bg-[#e7e3e0] p-6 text-black shadow md:w-80">
-                <h5 className="text-[32px] font-normal text-[#AE9D8A]">
+              <div className="relative z-10 flex flex-col gap-6 rounded-md bg-[#e7e3e0] p-6 text-black shadow md:w-80">
+                <h5 className="trim text-[32px] font-normal text-[#AE9D8A]">
                   #<span className="font-[Stencil]">{step.number}</span>
                 </h5>
 
-                <div
-                  className="mt-2 text-left text-4xl"
-                  style={{ marginBottom: "1rem" }}
-                >
+                <div className="text-left text-4xl md:mt-2 md:mb-4">
                   {step.title}
                 </div>
-                <div className="mb-4 flex justify-center">{step.icon}</div>
+                <div className="flex justify-center md:mb-4">{step.icon}</div>
                 <p className="text-left font-['satoshi-light'] md:text-sm">
                   {step.text}
                 </p>

@@ -39,7 +39,7 @@ const Hero = () => {
                 And
               </span>
               <span className="hidden md:block"></span>
-              <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-[73.161px] md:tracking-[6.584px]">
+              <span className="font-marlton trim mt-2 shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:mt-0 md:text-[73.161px] md:tracking-[6.584px]">
                 pressure Washing
               </span>
             </span>

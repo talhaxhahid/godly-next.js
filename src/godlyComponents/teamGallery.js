@@ -26,7 +26,7 @@ const teamImages = [
 
 const TeamGallery = () => {
   return (
-    <div className="paper-bg-16 flex flex-col items-center justify-center gap-[70px] bg-[#262424] py-[100px] md:py-[150px]">
+    <div className="paper-bg-16 flex flex-col items-center justify-center gap-[63px] bg-[#262424] py-[100px] md:gap-[70px] md:py-[150px]">
       <div className="flex flex-col items-center justify-center px-[40px]">
         <h1
           className="text-grain text-center text-[48px] text-[#F3CA9E] md:text-[102px] md:tracking-[9.18px]"

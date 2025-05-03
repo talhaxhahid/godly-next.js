@@ -14,7 +14,7 @@ const Services = () => {
   const { city } = useGodlyContext();
   return (
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
-      <div className="relative flex min-h-screen flex-col items-center gap-20 px-6 py-24">
+      <div className="relative flex min-h-screen flex-col items-center gap-[37px] px-6 py-24 md:gap-20">
         <div className="flex flex-col items-center justify-center gap-6">
           <h1 className="with-text hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline md:flex">
             We are
@@ -507,7 +507,7 @@ function ServicesGrid() {
           className="paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
         >
           <CardContent className="service-icon-hover flex h-full p-0 md:aspect-[1783/1515] md:max-h-[320px]">
-            <div className="group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-3 py-6 md:px-4 md:py-8">
+            <div className="md:group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-3 py-6 md:px-4 md:py-8">
               <div className="flex h-full flex-col gap-4">
                 <div className="relative size-[50px]">
                   {service.icon ? (
@@ -518,13 +518,13 @@ function ServicesGrid() {
                         src={service.image}
                         alt={service.name}
                         fill
-                        className="object-contain group-hover:hidden"
+                        className="object-contain md:group-hover:hidden"
                       />
                       <Image
                         src={service.hoverImage}
                         alt={`${service.name} color`}
                         fill
-                        className="hidden object-contain group-hover:block"
+                        className="hidden object-contain md:group-hover:block"
                       />
                     </>
                   )}
