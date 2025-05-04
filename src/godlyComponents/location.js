@@ -22,7 +22,7 @@ const Location = () => {
         </h1>
         <h4
           className="text-grain trim text-[32px] font-normal tracking-wider text-white md:mt-3 md:text-2xl"
-          data-text="IN SOUTH FLORIDA"
+          data-text="IN SOUTH "
         >
           <span className="trim text-32px] md:text-xl">IN</span> SOUTH{" "}
           <span

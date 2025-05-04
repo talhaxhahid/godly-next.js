@@ -123,7 +123,7 @@ const FourStepProcess = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-center gap-3 pt-4 text-white">
+        <div className="flex w-full flex-col items-center text-white md:gap-3 md:pt-4">
           <div className="text-white">
             <div className="relative z-10 pb-2">
               <div className="mx-auto hidden w-fit items-center justify-between px-2 md:flex">
@@ -150,7 +150,7 @@ const FourStepProcess = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-10 grid grid-cols-2 flex-wrap justify-center gap-[27px] pt-5 md:flex md:min-w-full md:gap-[30px]">
+          <div className="relative z-10 grid grid-cols-2 flex-wrap justify-center gap-[27px] md:flex md:min-w-full md:gap-[30px] md:pt-5">
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className="trim pb-[18px] text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:hidden md:text-3xl lg:text-[36px]">
@@ -174,7 +174,7 @@ const FourStepProcess = () => {
           </div>
         </div>
 
-        <div className="relative -mt-4 mb-10 flex flex-col items-center justify-center gap-2 p-8">
+        <div className="relative -mt-4 flex flex-col items-center justify-center gap-2 p-8 md:mb-10">
           <Badge
             text="7 day Sparkle Guarantee"
             className="hover:rotate z-20 rotate-[2.226deg]"

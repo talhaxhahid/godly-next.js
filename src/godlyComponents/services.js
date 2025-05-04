@@ -58,7 +58,7 @@ const Services = () => {
         />
         <div className="mt-4 mb-[164px] flex flex-col items-center justify-center gap-9 md:mb-[220px] md:max-w-[741px]">
           <div className="flex flex-col items-center justify-center gap-[35px]">
-            <div className="relative">
+            <div className="relative max-w-[359px] md:max-w-full md:min-w-full">
               <h4 className="relative text-center font-['satoshi-black'] text-[32px] leading-[130%] text-[#FDE4C8] md:text-[96px]">
                 Holiday Light Installation
                 <Image
@@ -83,7 +83,7 @@ const Services = () => {
                 </div>
               </div>
             </div>
-            <p className="max-w-[600px] text-center font-['satoshi-light'] text-sm font-light tracking-wide text-[#FDE4C8] md:text-lg">
+            <p className="max-w-[359px] text-center font-['satoshi-light'] text-sm font-light tracking-wide text-[#FDE4C8] md:max-w-[600px] md:text-lg">
               Christmas light installation, done for you. Forget the ladder and
               the hassle of storing lights each year. Let us light up your home
               or business once, and you&apos;ll never want to go back to doing

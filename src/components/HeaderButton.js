@@ -1,43 +1,20 @@
 import grainBg from "../assets/grain-bg.webp";
 import Image from "next/image";
 import subtract from "../assets/subtract.svg";
-import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import QuoteForm from "@/godlyComponents/quoteForm";
 
-const FormPopup = ({ open, onOpenChange }) => {
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogHeader>
-        <DialogTitle className="hidden">Contact Us</DialogTitle>
-      </DialogHeader>
-      <DialogContent className="sm:max-w-auto md:max-w-auto max-w-auto border-none bg-transparent">
-        <QuoteForm isDialog={true} />
-      </DialogContent>
-    </Dialog>
-  );
-};
-
-export default function HeaderButton() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function HeaderButton({ onClick }) {
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="cursor-pointer">
+      <button onClick={onClick} className="group cursor-pointer">
         <div>
           <div
             className="shadow-[0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset, 0px -1px 1.2px 0px rgba(255, 255, 255, 0.03), 0px 2px 2.6px 0px rgba(0, 0, 0, 0.30)] relative h-[14.4px] w-32 rounded-[3px] border-[0.4px] border-[#000] bg-[#1b1b1b] bg-repeat"
             style={{ backgroundImage: `url(${grainBg.src})` }}
           >
-            <div className="absolute bottom-1 left-1/2 max-w-[115px] flex-shrink-0 -translate-x-1/2 transition-all duration-300 group-hover:-bottom-5 group-hover:pt-5">
+            <div className="absolute bottom-1 left-1/2 max-w-[115px] flex-shrink-0 -translate-x-1/2 transition-all duration-300">
               <div className="h-[4px] w-[115px] border-b border-dashed border-[#2D2B2B] bg-[#F3CA9E69]" />
               <div
-                className="absolute left-1/2 flex h-16 w-[115px] -translate-x-1/2 transform items-center justify-center bg-[#F3CA9E] bg-repeat p-[3px] transition-transform duration-300 hover:translate-y-1 hover:shadow-lg"
+                className="absolute left-1/2 flex h-16 w-[115px] -translate-x-1/2 transform items-center justify-center bg-[#F3CA9E] bg-repeat p-[3px] transition-transform duration-300 hover:shadow-lg"
                 style={{ backgroundImage: `url(${grainBg.src})` }}
               >
                 <div className="flex h-full w-full flex-col justify-between rounded-[6px] border-[0.4px] border-[#000] p-[5px] transition-all duration-300">
@@ -72,8 +49,6 @@ export default function HeaderButton() {
           </div>
         </div>
       </button>
-
-      <FormPopup open={isOpen} onOpenChange={setIsOpen} />
     </>
   );
 }

@@ -148,19 +148,24 @@ export default function QuoteForm({ isDialog }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn("mt-3", isDialog ? "flex justify-center" : "")}
+      className={cn(
+        "md:mt-3",
+        isDialog
+          ? "relative top-7 mx-auto flex max-w-[390px] justify-center gap-0 md:max-w-[871px]"
+          : "",
+      )}
     >
       <div
         className={cn(
           "paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen shadow-md",
-          isDialog ? "max-w-[791px]" : "",
+          isDialog ? "max-w-[871px]" : "",
         )}
       >
         <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:px-12 md:py-8">
           <h2
             className={cn(
               "trim min-w-[137px] text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:text-[64px] md:leading-normal md:tracking-[3.2px]",
-              isDialog ? "text-[40px]" : "",
+              isDialog ? "text-[24px] md:text-[40px]" : "",
             )}
           >
             LET US CALL <br className="md:hidden" /> YOU!
@@ -168,7 +173,7 @@ export default function QuoteForm({ isDialog }) {
           <p
             className={cn(
               "text-right font-['satoshi-regular'] text-[13px] font-medium text-[#2D2B2B] md:max-w-[367px] md:text-2xl",
-              isDialog ? "text-[20px]" : "",
+              isDialog ? "text-[13px] md:text-[20px]" : "",
             )}
           >
             Receive a call within 30 minutes

@@ -7,7 +7,7 @@ const Gurantee = () => {
   return (
     <div className="paper-bg-16 bg-[#262424]">
       <div
-        className={`mx-auto flex max-w-[1440px] flex-col items-center gap-30 bg-[url('/assets/guarantee_bg_mobile.png')] bg-[50%_250px] px-6 py-[150px] md:bg-[url('/assets/gurantee_bg.webp')] md:bg-bottom`}
+        className={`mx-auto flex max-w-[1440px] flex-col items-center gap-30 bg-[url('/assets/guarantee_bg_mobile.png')] bg-[50%_170px] px-6 py-[100px] md:bg-[url('/assets/gurantee_bg.webp')] md:bg-bottom md:py-[150px]`}
         style={{
           alignItems: "center",
           justifyContent: "center",
@@ -17,11 +17,11 @@ const Gurantee = () => {
       >
         <div className="mx-auto max-w-[1440px]">
           <div className="item-start flex gap-2">
-            <h4 className="trim md:text-trim text-xs tracking-wide text-[#FFFFFF] md:mt-3 md:mb-4 md:text-3xl">
+            <h4 className="trim md:text-trim text-xs tracking-[1.08px] text-[#FFFFFF] md:mt-3 md:mb-4 md:text-3xl md:tracking-wide">
               THE
             </h4>
             <h1
-              className="trim md:text-trim text-grain text-[48px] tracking-wide text-[#F3CA9E] md:text-[102px]"
+              className="trim md:text-trim text-grain text-[48px] tracking-[4.32px] text-[#F3CA9E] md:text-[102px] md:tracking-wide"
               data-text="GODLY"
             >
               GODLY
@@ -39,7 +39,7 @@ const Gurantee = () => {
             Guarantee
           </h1>
         </div>
-        <div className="flex w-full flex-col items-center gap-[240px] bg-contain bg-center bg-no-repeat md:min-h-screen md:gap-[250px]">
+        <div className="flex w-full flex-col items-center gap-[220px] bg-contain bg-center bg-no-repeat md:min-h-screen md:gap-[250px]">
           <div className="relative min-w-[660px] scale-40 md:h-60 md:scale-100">
             <div
               className="absolute -top-1 h-full w-full rotate-[6deg] bg-cover bg-center bg-no-repeat"

@@ -22,7 +22,7 @@ const Testimonials = () => {
     <div className="paper-bg-16 bg-[#262424] md:pb-40">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 pb-[120px] md:px-6 md:py-25">
         <div className="flex w-full flex-col gap-[63px] md:relative md:flex-row md:items-end md:justify-center">
-          <div className="flex flex-col items-center justify-center gap-3">
+          <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex items-end gap-6">
               <h1 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
                 TRUSTED
@@ -199,8 +199,9 @@ function QuoteCarousel() {
       <Slider {...settings}>
         {quotes.map((item, idx) => (
           <div key={idx} className="max-w-fit md:px-2">
-            <div className="flex max-w-[284px] flex-col gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c] md:min-h-[200px] md:max-w-full md:px-4 md:py-6">
-              <div className="flex items-center gap-[10px] md:gap-4">
+            <div className="flex max-w-[284px] flex-col items-center gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c] md:min-h-[200px] md:max-w-full md:px-4 md:py-6">
+              <div className="ribbon">SUNRISE</div>
+              <div className="flex w-full items-center gap-[10px] md:gap-4">
                 <img
                   src={alex.src}
                   alt="alex"

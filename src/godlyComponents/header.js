@@ -1,21 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import logo from "@/assets/logo.webp";
-import "@/styles/header.css";
-import { Phone, ChevronDown, MapPinHouse, MapPin } from "lucide-react";
-import Link from "next/link";
-import HeaderButton from "@/components/HeaderButton";
-import background from "../assets/texture.webp";
-import { useGodlyContext } from "@/context/godlyContext";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+// Import the new components (adjust paths if necessary)
+import Logo from "./header/Logo";
+import MobileMenuToggle from "./header/MobileMenuToggle";
+import DesktopNav from "./header/DesktopNav";
+import MobileNav from "./header/MobileNav";
+import CitySelector from "./header/CitySelector";
+import PhoneNumber from "./header/PhoneNumber";
+import ServicePopup from "./header/ServicePopup";
+import CitiesPopup from "./header/CitiesPopup";
+import FormPopup from "./header/FormPopup";
+import HeaderButton from "@/components/HeaderButton"; // Keep this import
 
+// Keep data definitions or move to a separate file
 import exteriorWindow from "@/assets/homepageServices/exterior_window.webp";
 import interiorWindow from "@/assets/homepageServices/interior_window.webp";
 import gutterCleaning from "@/assets/homepageServices/gutter_cleaning.webp";
@@ -143,297 +141,100 @@ const cities = [
   "SOUTH FLORIDA",
 ];
 
-const ServicePopup = ({ open, onOpenChange }) => {
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange} className="">
-      <DialogHeader>
-        <DialogTitle className="hidden">Our Services</DialogTitle>
-      </DialogHeader>
-      <DialogContent
-        className="top-75 z-[9999] w-full overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
-        style={{ backgroundImage: `url(${background.src})` }}
-      >
-        <div className="grid w-full grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <Link
-              href={"/services/" + service.link}
-              key={index}
-              className="hover:bg-[#2D2B2B]"
-            >
-              <div
-                key={index}
-                className="group flex min-h-18 flex-row items-start gap-[6px] gap-y-0 border-b-[1.5px] border-[#8d8477] p-2 text-[#2D2B2B] transition-all hover:text-[#FDE4C8]"
-              >
-                <div className="flex items-center justify-start gap-[6px]">
-                  <Image
-                    src={service.image}
-                    alt={service.name}
-                    width={27}
-                    height={27}
-                    className="group-hover:filter-[invert(1)]"
-                  />
-                </div>
-                <div className="flex flex-col gap-[6px]">
-                  <h3 className="text-sm leading-tight font-normal">
-                    {service.name}
-                  </h3>
-                  <p className="font-['satoshi-light'] text-xs font-light">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-};
-const CitiesPopup = ({ open, onOpenChange }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { city, setCity } = useGodlyContext();
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange} className="">
-      <DialogHeader>
-        <DialogTitle className="hidden">Our Cities</DialogTitle>
-      </DialogHeader>
-      <DialogContent
-        className="top-65 z-[9999] max-h-[90vh] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
-        style={{ backgroundImage: `url(${background.src})` }}
-      >
-        <div className="xs:grid-cols-2 grid w-full grid-cols-1 gap-1 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {cities.map((city, index) => (
-            <div
-              key={index}
-              className="group flex cursor-pointer flex-col gap-1 border-b-1 border-[#8d8477] p-4 py-1 transition-all hover:bg-[#2D2B2B]"
-              onClick={() => {
-                setCity(city);
-                onOpenChange(false);
-              }}
-            >
-              <div className="flex items-center justify-start gap-3">
-                <MapPin className="group-hover:filter-[invert(1)]" size={20} />
-                <h3 className="text-xs leading-tight font-normal text-[#2D2B2B] group-hover:text-[#FDE4C8]">
-                  {city}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-};
-
 const Header = () => {
-  const { city } = useGodlyContext();
+  // Keep state definitions
   const [servicesOpen, setServicesOpen] = useState(false);
   const [citiesOpen, setCitiesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const [formPopupOpen, setFormPopupOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // Define handlers to pass down
+  const handleServicesClick = () => {
+    setServicesOpen(true);
+    setMobileMenuOpen(false); // Close mobile menu if open
+  };
+
+  const handleCitiesClick = () => {
+    setCitiesOpen(true);
+    setMobileMenuOpen(false); // Close mobile menu if open
+  };
+
+  const handleQuoteClick = () => {
+    setFormPopupOpen(true);
+    setMobileMenuOpen(false); // Close mobile menu if open
+  };
+
+  const handleMobileLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   if (!isClient) {
     return null;
   }
 
   return (
-    <div
-      className="godlyheader w-full p-4 text-white"
-      style={{ position: "fixed", top: "0", zIndex: "100" }}
-    >
-      <div className="flex w-full flex-col items-center justify-between gap-4 md:flex-row">
-        <div className="flex w-full items-center justify-between md:w-auto md:justify-start md:gap-[30px]">
-          <div className="header-logo mb-2 md:mb-0">
-            <Link href="/">
-              <Image src={logo} alt="Logo" className="header-logo" />
-            </Link>
+    <>
+      <div
+        className="godlyheader w-full bg-[#252323] p-4 text-white md:px-6 md:py-0"
+        style={{ position: "fixed", top: "0", zIndex: "100" }}
+      >
+        <div className="flex w-full flex-col items-center justify-between gap-4 bg-[#252323] md:flex-row">
+          {/* Left side: Logo, Mobile Toggle, Desktop Nav */}
+          <div className="flex w-full items-center justify-between bg-[#252323] md:max-h-[80px] md:w-auto md:justify-start md:gap-[30px]">
+            <Logo />
+            <MobileMenuToggle
+              isOpen={mobileMenuOpen}
+              onClick={toggleMobileMenu}
+            />
+            <DesktopNav onServicesClick={handleServicesClick} />
           </div>
 
-          {/* Mobile menu toggle button */}
-          <button
-            className="flex items-center justify-center md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <MobileNav
+              onServicesClick={handleServicesClick}
+              onCitiesClick={handleCitiesClick}
+              onQuoteClick={handleQuoteClick}
+              onLinkClick={handleMobileLinkClick}
+            />
+          )}
 
-          {/* Desktop navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex gap-x-6 text-[#FDE4C8]">
-              <li>
-                <button
-                  onClick={() => setServicesOpen(true)}
-                  className="text-md flex cursor-pointer items-end gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
-                >
-                  SERVICES{" "}
-                  <span>
-                    <ChevronDown size={18} />
-                  </span>
-                </button>
-              </li>
-              <li>
-                <Link
-                  href="/#about"
-                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
-                >
-                  ABOUT US
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#promise"
-                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
-                >
-                  OUR PROMISE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#process"
-                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
-                >
-                  OUR PROCESS
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        {/* Mobile navigation */}
-        {mobileMenuOpen && (
-          <nav className="w-full md:hidden">
-            <ul className="flex flex-col gap-y-4 text-[#FDE4C8]">
-              <li>
-                <button
-                  onClick={() => {
-                    setServicesOpen(true);
-                    setMobileMenuOpen(false);
-                  }}
-                  className="text-md flex cursor-pointer items-center gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
-                >
-                  SERVICES <ChevronDown size={18} />
-                </button>
-              </li>
-              <li>
-                <Link
-                  href="/#about"
-                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  ABOUT US
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#promise"
-                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  OUR PROMISE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#process"
-                  className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  OUR PROCESS
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    setCitiesOpen(true);
-                    setMobileMenuOpen(false);
-                  }}
-                  className="text-md flex items-center gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
-                >
-                  <MapPinHouse strokeWidth={1.2} size={18} />
-                  <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">
-                    {city}
-                  </div>{" "}
-                  <ChevronDown size={18} />
-                </button>
-              </li>
-              <li className="flex items-center gap-2 text-[#F3C99D]">
-                <Phone className="h-5 w-5 text-[#F3C99D]" strokeWidth={1.2} />
-                <span className="text-lg font-normal">954-852-5236</span>
-              </li>
-              <li className="pt-2">
-                <HeaderButton />
-              </li>
-            </ul>
-          </nav>
-        )}
-
-        {/* Desktop contact and buttons */}
-        <div className="hidden items-center gap-5 md:flex">
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => setCitiesOpen(true)}
-              className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
-            >
-              <MapPinHouse strokeWidth={1.2} size={18} />
-              <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">
-                {city}
-              </div>{" "}
-              <span>
-                <ChevronDown size={18} />
-              </span>
-            </button>
-            <div className="flex items-center gap-4 px-4 py-2 text-[#F3C99D]">
-              <div className="iconbox rounded-md border-2 border-solid border-[#403830] bg-[#1e1c1b] p-2">
-                <Phone className="h-10 w-6 text-[#F3C99D]" strokeWidth={1.2} />
-              </div>
-              <div>
-                <p className="text-xs leading-none font-normal">CALL US</p>
-                <p className="text-lg font-normal">954-852-5236</p>
-              </div>
+          {/* Right side: Desktop Contact Info & Quote Button */}
+          <div className="hidden items-center gap-5 md:flex">
+            <div className="flex items-center gap-1">
+              {/* Use CitySelector component */}
+              <CitySelector onClick={handleCitiesClick} />
+              {/* Use PhoneNumber component */}
+              <PhoneNumber />
             </div>
+            {/* Use HeaderButton component */}
+            <HeaderButton onClick={handleQuoteClick} />
           </div>
-          <HeaderButton />
         </div>
       </div>
 
-      {/* Services Popup */}
-      <ServicePopup open={servicesOpen} onOpenChange={setServicesOpen} />
-      <CitiesPopup open={citiesOpen} onOpenChange={setCitiesOpen} />
-    </div>
+      {/* Render Popups */}
+      <ServicePopup
+        open={servicesOpen}
+        onOpenChange={setServicesOpen}
+        services={services}
+      />
+      <CitiesPopup
+        open={citiesOpen}
+        onOpenChange={setCitiesOpen}
+        cities={cities}
+      />
+      <FormPopup open={formPopupOpen} onOpenChange={setFormPopupOpen} />
+    </>
   );
 };
 
