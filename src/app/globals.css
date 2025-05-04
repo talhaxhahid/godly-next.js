@@ -777,3 +777,7 @@ html {
 .ribbon-red {
   --c: #dc2626; /* Tailwind red-600 */
 }
+
+html body[data-scroll-locked]:not(#_):not(#_):not(#_) {
+  margin-right: 0px !important;
+}

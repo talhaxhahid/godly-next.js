@@ -1,10 +1,15 @@
 // src/godlyComponents/header/MobileMenuToggle.js
+import { cn } from "@/lib/utils";
 import React from "react";
 
-const MobileMenuToggle = ({ isOpen, onClick }) => {
+const MobileMenuToggle = ({ isOpen, onClick, hidden }) => {
   return (
     <button
-      className="flex items-center justify-center md:hidden"
+      className={cn(
+        "flex size-[28px] items-center justify-center rounded-full text-[#FDE4C8] md:hidden",
+        isOpen ? "mb-4 bg-[#FDE4C8] text-black" : "",
+        hidden ? "hidden" : "block",
+      )}
       onClick={onClick}
       aria-label={isOpen ? "Close menu" : "Open menu"}
       aria-expanded={isOpen}
@@ -12,7 +17,7 @@ const MobileMenuToggle = ({ isOpen, onClick }) => {
       {isOpen ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="size-[28px]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

@@ -12,7 +12,7 @@ const MobileNav = ({
   onLinkClick,
 }) => {
   return (
-    <nav className="h-full items-center md:hidden">
+    <nav className="mt-4 h-full items-center md:hidden">
       <ul className="flex flex-col items-center gap-y-4 text-[#FDE4C8]">
         <li>
           <button
@@ -49,7 +49,7 @@ const MobileNav = ({
             OUR PROCESS
           </Link>
         </li>
-        <li>
+        <li className="mt-8">
           {/* Use CitySelector component here */}
           <CitySelector onClick={onCitiesClick} isMobile={true} />
         </li>
@@ -57,7 +57,7 @@ const MobileNav = ({
           <Phone className="h-5 w-5 text-[#F3C99D]" strokeWidth={1.2} />
           <span className="text-lg font-normal">954-852-5236</span>
         </li>
-        <li className="pt-2">
+        <li className="mt-8 mb-32">
           <HeaderButton onClick={onQuoteClick} />
         </li>
       </ul>

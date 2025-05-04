@@ -194,18 +194,25 @@ const Header = () => {
             <MobileMenuToggle
               isOpen={mobileMenuOpen}
               onClick={toggleMobileMenu}
+              hidden={mobileMenuOpen}
             />
             <DesktopNav onServicesClick={handleServicesClick} />
           </div>
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <MobileNav
-              onServicesClick={handleServicesClick}
-              onCitiesClick={handleCitiesClick}
-              onQuoteClick={handleQuoteClick}
-              onLinkClick={handleMobileLinkClick}
-            />
+            <>
+              <MobileNav
+                onServicesClick={handleServicesClick}
+                onCitiesClick={handleCitiesClick}
+                onQuoteClick={handleQuoteClick}
+                onLinkClick={handleMobileLinkClick}
+              />
+              <MobileMenuToggle
+                isOpen={mobileMenuOpen}
+                onClick={toggleMobileMenu}
+              />
+            </>
           )}
 
           {/* Right side: Desktop Contact Info & Quote Button */}

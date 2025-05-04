@@ -5,7 +5,7 @@ import Faq from "./faq";
 
 export default function WebsiteLayout({ children }) {
   return (
-    <div className="websiteLayout">
+    <div className="flex min-h-screen flex-col bg-[#1e1c1b] antialiased">
       <Header />
       {children}
       <Faq />

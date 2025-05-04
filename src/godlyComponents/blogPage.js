@@ -8,7 +8,7 @@ import BlogsSection from "./blogsSection";
 const BlogPage = () => {
   return (
     <WebsiteLayout>
-      <div className="mt-20 flex w-full flex-col items-center justify-center bg-[#fef7ea] p-16 text-[#312E2C]">
+      <div className="mt-14 flex w-full flex-col items-center justify-center bg-[#fef7ea] p-16 text-[#312E2C]">
         <div className="flex w-3/4 flex-col items-center justify-center border-b-4 border-double border-black pb-8">
           <div className="mb-2 border-b-2 border-solid border-black pb-4">
             <h1 className="pb-2 text-center text-6xl text-shadow-[#AF8F6E]">

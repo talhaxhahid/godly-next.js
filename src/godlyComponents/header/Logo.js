@@ -6,7 +6,7 @@ import logo from "@/assets/logo.webp";
 
 const Logo = () => {
   return (
-    <div className="header-logo mb-2 md:mb-0">
+    <div className="header-logo md:mb-0">
       <Link href="/">
         <Image
           src={logo}

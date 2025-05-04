@@ -151,20 +151,20 @@ export default function QuoteForm({ isDialog }) {
       className={cn(
         "md:mt-3",
         isDialog
-          ? "relative top-7 mx-auto flex max-w-[390px] justify-center gap-0 md:max-w-[871px]"
+          ? "md:max-h-auto relative flex max-h-[calc(100vh-128px)] justify-center md:top-7 md:mx-auto md:flex md:max-w-[871px] md:justify-center md:gap-0"
           : "",
       )}
     >
       <div
         className={cn(
-          "paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen shadow-md",
-          isDialog ? "max-w-[871px]" : "",
+          "paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen md:shadow-md",
+          isDialog ? "overflow-y-auto" : "",
         )}
       >
-        <div className="paper-bg-14 relative z-20 flex h-[128px] items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:px-12 md:py-8">
+        <div className="paper-bg-14 relative z-20 grid grid-cols-2 items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:flex md:h-[128px] md:px-12 md:py-8">
           <h2
             className={cn(
-              "trim min-w-[137px] text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:text-[64px] md:leading-normal md:tracking-[3.2px]",
+              "trim text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:min-w-[137px] md:text-[64px] md:leading-normal md:tracking-[3.2px]",
               isDialog ? "text-[24px] md:text-[40px]" : "",
             )}
           >
@@ -256,7 +256,7 @@ export default function QuoteForm({ isDialog }) {
             </button>
 
             {showServices && (
-              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-[335px] flex-col gap-5 rounded-lg bg-[#AB8459] p-6 shadow-xl">
+              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-full flex-col gap-5 rounded-lg bg-[#AB8459] p-6 shadow-xl md:w-[335px]">
                 {servicesList.map((service) => (
                   <div
                     key={service.id}
@@ -335,7 +335,7 @@ export default function QuoteForm({ isDialog }) {
                   </svg>
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto bg-white p-0">
+              <PopoverContent className="z-100 w-auto bg-white p-0">
                 <Calendar
                   mode="single"
                   selected={date}

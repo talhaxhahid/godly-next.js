@@ -10,7 +10,7 @@ import Services from "@/data/servicesData";
 const ServicesHero = ({ slug }) => {
   const { city } = useGodlyContext();
   return (
-    <div className="mt-20 flex flex-col items-center justify-center gap-20 bg-[#262424] px-[370px] py-[100px]">
+    <div className="mt-14 flex flex-col items-center justify-center gap-20 bg-[#262424] px-[370px] py-[100px]">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-start gap-3">
           <h1 className="font-marlton trim text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
