@@ -47,7 +47,7 @@ const Testimonials = () => {
             </h1>
           </div>
           <Link
-            className="flex justify-end text-2xl md:absolute md:right-0 md:block"
+            className="flex justify-end text-base md:absolute md:right-0 md:block md:text-2xl"
             href="#"
           >
             <span className="text-white underline">SEE MORE REVIEWS</span>
@@ -121,8 +121,8 @@ const Testimonials = () => {
             <div className="relative mt-16 h-16">
               {" "}
               {/* Container for buttons */}
-              <CarouselPrevious className="absolute left-1/2 size-[60px] -translate-x-[calc(100%+0.5rem)] transform rounded-full bg-white text-black" />
-              <CarouselNext className="absolute left-1/2 size-[60px] translate-x-[0.5rem] transform rounded-full bg-white text-black" />
+              <CarouselPrevious className="absolute left-1/2 size-[60px] -translate-x-[calc(100%+1.25rem)] transform rounded-full bg-white text-black" />
+              <CarouselNext className="absolute left-1/2 size-[60px] translate-x-[1.25rem] transform rounded-full bg-white text-black" />
             </div>
           </Carousel>
         </div>

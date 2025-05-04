@@ -12,6 +12,7 @@ import ServicePopup from "./header/ServicePopup";
 import CitiesPopup from "./header/CitiesPopup";
 import FormPopup from "./header/FormPopup";
 import HeaderButton from "@/components/HeaderButton"; // Keep this import
+import { cn } from "@/lib/utils";
 
 // Keep data definitions or move to a separate file
 import exteriorWindow from "@/assets/homepageServices/exterior_window.webp";
@@ -183,13 +184,24 @@ const Header = () => {
 
   return (
     <>
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-[rgba(45,43,43,0.85)] backdrop-blur-[2px] md:hidden" // z-30, hidden on medium screens and up
+          onClick={toggleMobileMenu} // Close menu when overlay is clicked
+        ></div>
+      )}
       <div
         className="godlyheader w-full bg-[#252323] p-4 text-white md:px-6 md:py-0"
         style={{ position: "fixed", top: "0", zIndex: "100" }}
       >
         <div className="flex w-full flex-col items-center justify-between gap-4 bg-[#252323] md:flex-row">
           {/* Left side: Logo, Mobile Toggle, Desktop Nav */}
-          <div className="flex w-full items-center justify-between bg-[#252323] md:max-h-[80px] md:w-auto md:justify-start md:gap-[30px]">
+          <div
+            className={cn(
+              "flex w-full items-center justify-between bg-[#252323] md:max-h-[80px] md:w-auto md:justify-start md:gap-[30px]",
+              mobileMenuOpen ? "justify-center" : "",
+            )}
+          >
             <Logo />
             <MobileMenuToggle
               isOpen={mobileMenuOpen}
