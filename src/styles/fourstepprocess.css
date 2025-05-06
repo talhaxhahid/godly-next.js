@@ -71,5 +71,6 @@
     font-size: 24px;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+    margin-top: -4px;
   }
 }

@@ -8,15 +8,16 @@ import BlogsSection from "./blogsSection";
 const BlogPage = () => {
   return (
     <WebsiteLayout>
-      <div className="mt-14 flex w-full flex-col items-center justify-center bg-[#fef7ea] p-16 text-[#312E2C]">
-        <div className="flex w-3/4 flex-col items-center justify-center border-b-4 border-double border-black pb-8">
-          <div className="mb-2 border-b-2 border-solid border-black pb-4">
-            <h1 className="pb-2 text-center text-6xl text-shadow-[#AF8F6E]">
+      <div className="mt-17 flex w-full flex-col items-center justify-center bg-[#fef7ea] px-[30px] py-[45px] text-[#312E2C] md:mt-14 md:p-16">
+        <div className="flex flex-col items-center justify-center gap-3 border-b-4 border-double border-black pb-8 md:w-3/4">
+          <div className="flex w-full flex-col gap-3 md:mb-2 md:border-b-2 md:border-solid md:border-black md:pb-4">
+            <h1 className="text-center text-[32px] text-[#312E2C] text-shadow-[#AF8F6E] md:pb-2 md:text-6xl">
               News HEADLINE
             </h1>
-            <p className="mt-2 text-center text-sm text-gray-700">
+            <p className="text-center font-['satoshi-light'] text-sm text-[#373A44] md:mt-2">
               April 20th, 2026
             </p>
+            <div className="h-[1px] w-full bg-black" />
           </div>
           <div className="my-10 w-full border-8 border-[#6A64641F] shadow-md">
             <Image
@@ -25,7 +26,7 @@ const BlogPage = () => {
               className="h-auto w-full object-cover"
             />
           </div>
-          <p className="text-left font-sans text-lg">
+          <p className="text-left font-['satoshi-light'] text-lg">
             We aspire to transport you back to a time when trust was the
             cornerstone of every relationship, particularly within the realms of
             your home and business. Picture an era where commitments were not
@@ -55,7 +56,7 @@ const BlogPage = () => {
             confidence and peace of mind, knowing that your expectations will be
             met with sincerity and dedication.
           </p>
-          <p className="text-left font-sans text-lg">
+          <p className="text-left font-['satoshi-light'] text-lg">
             We aspire to transport you back to a time when trust was the
             cornerstone of every relationship, particularly within the realms of
             your home and business. Picture an era where commitments were not
@@ -85,21 +86,21 @@ const BlogPage = () => {
             confidence and peace of mind, knowing that your expectations will be
             met with sincerity and dedication.
           </p>
-          <div className="my-10 w-2/4 border-8 border-[#6A64641F] shadow-md">
+          <div className="border-8 border-[#6A64641F] shadow-md md:my-10 md:w-2/4">
             <Image
               src={windowCleaning} // Make sure to place the image in /public folder
               alt="Workers cleaning windows"
               className="h-auto w-full object-cover"
             />
           </div>
-          <div className="my-10 w-2/4 border-8 border-[#6A64641F] shadow-md">
+          <div className="border-8 border-[#6A64641F] shadow-md md:my-10 md:w-2/4">
             <Image
               src={windowCleaning} // Make sure to place the image in /public folder
               alt="Workers cleaning windows"
               className="h-auto w-full object-cover"
             />
           </div>
-          <p className="text-left font-sans text-lg">
+          <p className="text-left font-['satoshi-light'] text-lg">
             We aspire to transport you back to a time when trust was the
             cornerstone of every relationship, particularly within the realms of
             your home and business. Picture an era where commitments were not

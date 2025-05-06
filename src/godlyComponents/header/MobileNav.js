@@ -17,7 +17,7 @@ const MobileNav = ({
         <li>
           <button
             onClick={onServicesClick}
-            className="text-md flex cursor-pointer items-center gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-md trim flex cursor-pointer items-center gap-1 font-['marlton'] text-[#FDE4C8] hover:text-[#FFCA8F]"
           >
             SERVICES <ChevronDown size={18} />
           </button>

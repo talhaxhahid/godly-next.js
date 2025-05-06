@@ -6,13 +6,13 @@ const EssentialService = ({ slug }) => {
       {/* Heading Section */}
       <div>
         <h4
-          className="text-grain text-center text-xl tracking-wide text-[#FFFFFF]"
+          className="text-grain text-center text-base tracking-[1.35px] text-[#FFFFFF] md:text-xl md:tracking-wide"
           data-text="WHY KEEPING YOUR"
         >
           WHY KEEPING YOUR
         </h4>
         <h4
-          className="text-grain text-center text-7xl tracking-wide text-[#F3CA9E]"
+          className="text-grain text-center text-[32px] tracking-wide text-[#F3CA9E] md:text-7xl"
           data-text={
             Services[slug]["hero"][0] + " " + Services[slug]["hero"][1]
           }
@@ -20,7 +20,7 @@ const EssentialService = ({ slug }) => {
           {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
         </h4>
         <h1
-          className="relative z-10 -mt-2 text-center font-['luminaire-script'] text-6xl text-white"
+          className="relative z-10 text-center font-['luminaire-script'] text-xl text-white md:-mt-2 md:text-6xl"
           style={{
             WebkitTextStrokeWidth: "5px",
             strokeLinecap: "round",

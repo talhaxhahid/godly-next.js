@@ -10,14 +10,14 @@ import Services from "@/data/servicesData";
 const ServicesHero = ({ slug }) => {
   const { city } = useGodlyContext();
   return (
-    <div className="mt-14 flex flex-col items-center justify-center gap-20 bg-[#262424] px-[370px] py-[100px]">
+    <div className="mt-17 flex flex-col items-center justify-center gap-20 bg-[#262424] px-[30px] py-[42px] md:mt-14 md:px-[370px] md:py-[100px]">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-start gap-3">
-          <h1 className="font-marlton trim text-[20.704px] tracking-[2.07px] text-[#FDE4C8]">
+          <h1 className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-[20.704px]">
             TOP RATED
           </h1>
           <div className="trim flex items-center gap-[3.774px]">
-            <Star />
+            <Star className="" />
             <Star />
             <Star />
             <Star />
@@ -26,25 +26,25 @@ const ServicesHero = ({ slug }) => {
         </div>
         <div className="relative flex items-end">
           <h1
-            className="text-grain trim text-center text-[88px] tracking-[5.23px] text-white"
+            className="text-grain trim text-start text-[64px] tracking-[5.23px] text-white md:text-center md:text-[88px]"
             data-text={Services[slug]["hero"][0]}
           >
             {Services[slug]["hero"][0]}
           </h1>
         </div>
-        <div className="relative w-full">
+        <div className="flex w-full flex-col md:relative md:w-full">
           <div>
-            <span className="absolute -top-5 -right-30 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8]">
+            <span className="absolute top-60 right-25 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:-top-5 md:-right-40">
               {city}
             </span>
           </div>
           <div className="relative flex w-full items-end">
-            <h1 className="trim absolute top-9 left-3 z-10 w-full rotate-[-6.668deg] text-end tracking-wide">
+            <h1 className="trim absolute top-1 left-9 z-10 w-full rotate-[-6.668deg] text-end tracking-wide md:top-9 md:left-3">
               <span
-                className="trim text-grain relative z-10 text-end font-['luminaire-script'] text-[88px] font-normal text-[#FDE4C8]"
+                className="trim text-grain relative z-10 text-end font-['luminaire-script'] text-[48px] font-normal text-[#FDE4C8] md:text-[88px]"
                 data-text={Services[slug]["hero"][1]}
                 style={{
-                  WebkitTextStrokeWidth: "2px",
+                  WebkitTextStrokeWidth: "0.5px",
                   strokeLinecap: "round",
                   WebkitTextStrokeColor: "#1F1D1D",
                   paintOrder: "stroke",
@@ -56,7 +56,7 @@ const ServicesHero = ({ slug }) => {
           </div>
         </div>
       </div>
-
+      <div className="flex gap-3" />
       <div className="relative min-h-[200px] rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
         <Image src={Services[slug]["hero"][2]} alt="window"></Image>
         <p className="text-center font-['luminaire-script'] text-base">
@@ -65,7 +65,7 @@ const ServicesHero = ({ slug }) => {
         <div className="absolute top-2 -left-6 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
         <div className="absolute -right-6 bottom-2 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
       </div>
-      <div className="text-center font-['satoshi-regular'] leading-6 text-[#FFFFFF94]">
+      <div className="text-center font-['satoshi-regular'] leading-6 text-white md:text-[#FFFFFF94]">
         <p>{Services[slug]["hero"][3]}</p>
       </div>
       <FreeQuoteButton>Get a Free Quote</FreeQuoteButton>
