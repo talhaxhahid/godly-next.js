@@ -13,7 +13,7 @@ const Footer = () => {
   const pathname = usePathname();
   return (
     <div className="w-full flex-col bg-[#312E2C] md:flex">
-      <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-10 px-[40px] py-[48px]">
+      <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-10 px-6 py-[48px] md:px-[40px]">
         <div
           className={cn(
             "paper-bg-16 flex flex-col gap-[96px] rounded-xl bg-[#ebded1] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply",
@@ -90,7 +90,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="item-center flex justify-between">
-            <div className="flex gap-4">
+            <div className="flex gap-2 md:gap-4">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#312E2C] text-white">
                 <FaFacebookF />
               </div>

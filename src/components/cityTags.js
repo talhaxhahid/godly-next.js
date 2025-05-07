@@ -85,23 +85,7 @@ const CityTags = () => {
       { ...wallOptions, friction: 0.1 },
     );
 
-    const leftWall = Matter.Bodies.rectangle(
-      -10, // Left of visible area
-      250,
-      20,
-      300,
-      wallOptions,
-    );
-
-    const rightWall = Matter.Bodies.rectangle(
-      window.innerWidth - 5, // Right of visible area
-      250,
-      20,
-      300,
-      wallOptions,
-    );
-
-    Matter.World.add(world, [ground, leftWall, rightWall]);
+    Matter.World.add(world, [ground]);
 
     const mouse = Matter.Mouse.create(render.canvas);
     mouse.pixelRatio = window.devicePixelRatio || 1;
@@ -228,7 +212,6 @@ const CityTags = () => {
 
       // Update boundaries
       Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: 310 });
-      Matter.Body.setPosition(rightWall, { x: window.innerWidth + 50, y: 250 });
     };
     window.addEventListener("resize", handleResize);
 

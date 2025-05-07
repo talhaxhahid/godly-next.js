@@ -30,7 +30,7 @@ const ServiceIncludes = ({ slug }) => {
         </h4>
       </div>
 
-      <div className="grid w-full grid-cols-2 justify-center gap-[32px] md:flex md:gap-3 md:pb-20">
+      <div className="grid w-full grid-cols-2 justify-center gap-3 md:flex md:gap-[32px] md:pb-20">
         {Services[slug]["included"].map((step, index) => (
           <div
             key={index}

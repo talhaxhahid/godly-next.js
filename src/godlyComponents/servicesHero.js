@@ -26,14 +26,14 @@ const ServicesHero = ({ slug }) => {
         </div>
         <div className="relative flex items-end">
           <h1
-            className="text-grain trim text-start text-[64px] tracking-[5.23px] text-white md:text-center md:text-[88px]"
+            className="text-grain trim text-center text-[64px] leading-[60px] tracking-[5.23px] text-white md:text-center md:text-[88px] md:leading-normal"
             data-text={Services[slug]["hero"][0]}
           >
             {Services[slug]["hero"][0]}
           </h1>
         </div>
         <div className="flex w-full flex-col md:relative md:w-full">
-          <div>
+          <div className="hidden md:block">
             <span className="absolute top-60 right-25 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:-top-5 md:-right-40">
               {city}
             </span>
@@ -53,6 +53,9 @@ const ServicesHero = ({ slug }) => {
                 {Services[slug]["hero"][1]} &nbsp;
               </span>
             </h1>
+            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:-top-5 md:-right-40 md:hidden">
+              {city}
+            </span>
           </div>
         </div>
       </div>
