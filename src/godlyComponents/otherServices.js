@@ -40,13 +40,13 @@ const OtherServices = () => {
   return (
     <div
       id="promise"
-      className="paper-bg-16 flex min-h-screen flex-col items-center justify-center justify-items-center gap-10 bg-[#ffecd6] bg-cover bg-center bg-no-repeat p-24 bg-blend-multiply"
+      className="paper-bg-16 flex min-h-screen flex-col items-center justify-center justify-items-center gap-10 bg-[#ffecd6] bg-cover bg-center bg-no-repeat p-4 bg-blend-multiply md:p-24"
     >
-      <h4 className="w-4/5 py-10 text-center text-5xl font-normal tracking-wide text-[#191717]">
+      <h4 className="py-10 text-center text-[32px] font-normal tracking-wide text-[#191717] md:w-4/5 md:text-5xl">
         enhance your cleaning with other services we offer in {city}
       </h4>
 
-      <div className="grid w-full max-w-screen-xl gap-10 px-4 py-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid w-full max-w-screen-xl grid-cols-2 gap-10 px-4 py-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {steps.map((step, index) => (
           <Link href={"/services/" + step.link} key={index}>
             <div

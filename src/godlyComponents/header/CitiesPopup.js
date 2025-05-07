@@ -8,7 +8,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useGodlyContext } from "@/context/godlyContext";
-import background from "@/assets/texture.webp"; // Ensure correct path
 
 const CitiesPopup = ({ open, onOpenChange, cities }) => {
   const { setCity } = useGodlyContext();
@@ -18,11 +17,8 @@ const CitiesPopup = ({ open, onOpenChange, cities }) => {
       <DialogHeader>
         <DialogTitle className="hidden">Our Cities</DialogTitle>
       </DialogHeader>
-      <DialogContent
-        className="top-65 z-[9999] max-h-[90vh] overflow-y-auto bg-[#faedde] bg-cover bg-center bg-no-repeat bg-blend-multiply"
-        style={{ backgroundImage: `url(${background.src})` }}
-      >
-        <div className="xs:grid-cols-2 grid w-full grid-cols-1 gap-1 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <DialogContent className="paper-bg-16 z-100 overflow-y-auto border-none bg-transparent p-0 py-4 md:max-w-[871px]">
+        <div className="xs:grid-cols-2 grid max-h-[calc(100vh-128px)] w-full grid-cols-1 gap-1 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {cities.map((cityName, index) => (
             <div
               key={index}

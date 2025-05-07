@@ -6,6 +6,7 @@ import OtherServices from "./otherServices";
 import ChooseUs from "./chooseUs";
 import EssentialService from "./serviceEssential";
 import ServiceNearYou from "./serviceNearYou";
+import Faq from "./faq";
 
 export default function ServicesPage({ slug }) {
   return (
@@ -15,6 +16,7 @@ export default function ServicesPage({ slug }) {
       <EssentialService slug={slug} />
       <ServiceNearYou slug={slug} />
       <ChooseUs />
+      <Faq />
       <OtherServices />
     </WebsiteLayout>
   );

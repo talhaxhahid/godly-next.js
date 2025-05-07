@@ -33,20 +33,20 @@ const EssentialService = ({ slug }) => {
       </div>
 
       {/* Info Cards Section */}
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-3 md:gap-8">
         {Services[slug]["essential"].map((point, index) => (
           <div
             key={index}
-            className="paper-bg-8 w-100 rounded-md bg-[#E9E5E4] p-2 shadow-md"
+            className="paper-bg-8 min-h-[209px] rounded-[18px] bg-[#CBB7A0] p-2 shadow-md hover:bg-[#E9E5E4] md:max-h-full md:w-100"
           >
-            <div className="h-full rounded-md border-[1.7px] border-solid border-[#2D2B2B] px-3 py-2">
-              <h2 className="text-4xl font-bold text-[#312E2C30]">
+            <div className="flex h-full flex-col gap-4 rounded-[12px] border-[1.7px] border-solid border-[#2D2B2B] px-3 py-3">
+              <h2 className="stroke! trim stroke-[#2D2B2B33] stroke-1! text-[40px] font-bold text-[#312E2C30] hover:text-[#312E2C30]! md:text-4xl">
                 {point.number}
               </h2>
-              <h3 className="text-md mt-2 font-[satoshi-bold] text-[#2D2B2B]">
+              <h3 className="trim font-['satoshi-bold'] text-sm text-[#2D2B2B] md:mt-2 md:text-base">
                 {point.title}
               </h3>
-              <p className="text-md mt-1 font-[satoshi-medium] text-[#2D2B2B]">
+              <p className="trim font-[satoshi-medium] text-sm text-[#2D2B2B] md:mt-1 md:text-base">
                 {point.text}
               </p>
             </div>

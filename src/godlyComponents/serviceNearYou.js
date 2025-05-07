@@ -7,6 +7,7 @@ import near3 from "@/assets/near3.webp";
 import near4 from "@/assets/near4.webp";
 import near5 from "@/assets/near5.webp";
 import Services from "@/data/servicesData";
+import { cn } from "@/lib/utils";
 const ServiceNearYou = ({ slug }) => {
   // const steps1 = [
   //   {
@@ -87,7 +88,7 @@ const ServiceNearYou = ({ slug }) => {
       <div className="fourstepprocess-inner">
         <div className="">
           <h1
-            className="text-grain text-center text-6xl text-[#FDE4C8]"
+            className="text-grain text-center text-[32px] text-[#FDE4C8] md:text-6xl"
             data-text={
               Services[slug]["hero"][0] + " " + Services[slug]["hero"][1]
             }
@@ -107,8 +108,39 @@ const ServiceNearYou = ({ slug }) => {
           </h4>
         </div>
 
+        <div className="pt-20 pb-16 text-white md:hidden">
+          <div className="relative z-10 grid grid-cols-2 gap-3 px-4 py-5">
+            {Services[slug]["nearyou"].map((step, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "flex flex-col items-center",
+                  index === 0 && "col-span-2",
+                )}
+              >
+                <div className="relative z-10 h-full w-full rounded-md bg-[#CDB9A2] p-3 text-black">
+                  <div className="flex h-full flex-col items-center justify-between rounded-md border-[2px] border-dashed border-[#2D2B2B] p-2 text-[#2D2B2B]">
+                    <div>
+                      <div className="mb-4 flex justify-center">
+                        {steps2[index % steps2.length].icon}
+                      </div>
+                      <div
+                        className="mb-8 text-center text-sm"
+                        style={{ marginBottom: "1rem" }}
+                      >
+                        {step.title}
+                      </div>
+                    </div>
+                    <p className="text-center font-sans text-xs">{step.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div
-          className="pt-20 pb-16 text-white"
+          className="hidden pt-20 pb-16 text-white md:block"
           // style={{ marginTop: "1rem", marginBottom: "3rem" }}
         >
           <div className="relative z-10 flex flex-wrap justify-center gap-6 px-4 py-5 sm:gap-8 sm:px-6 md:gap-12 md:px-8">
@@ -156,7 +188,7 @@ const ServiceNearYou = ({ slug }) => {
             ))}
           </div>
         </div>
-        <h1 className="mx-auto w-120 text-center text-3xl font-normal tracking-wide text-white">
+        <h1 className="t mx-auto text-center text-xl font-normal tracking-wide text-white md:w-120 md:text-3xl">
           Maximize energy{" "}
           <span className="font-['luminaire-script'] text-[#F3CA9E]">
             Efficiency

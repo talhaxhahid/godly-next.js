@@ -8,12 +8,13 @@ import Faq from "./faq";
 export default function WebsiteLayout({ children }) {
   const pathname = usePathname();
   const isBlogsPage = pathname === "/blogs" || pathname.startsWith("/blog/");
+  const isServicesPage = pathname.startsWith("/services/");
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-[#1e1c1b] antialiased">
       <Header />
       {children}
-      {!isBlogsPage && <Faq />}
+      {!isBlogsPage && !isServicesPage && <Faq />}
       <Footer />
     </div>
   );

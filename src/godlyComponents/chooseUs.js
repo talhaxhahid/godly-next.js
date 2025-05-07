@@ -16,7 +16,7 @@ const ChooseUs = () => {
             Why
           </h1>
           <h4
-            className="text-grain text-6xl tracking-wide text-[#FFFFFF]"
+            className="text-grain text-[32px] tracking-wide text-[#FFFFFF] md:text-6xl"
             data-text="CHOOSE US"
           >
             Choose US
@@ -56,7 +56,7 @@ const services = [
 
 function ServicesGrid() {
   return (
-    <div className="grid max-w-[1400px] grid-cols-1 gap-8 sm:grid-cols-2 sm:px-10 md:grid-cols-4 md:px-20">
+    <div className="grid max-w-[1400px] grid-cols-2 gap-3 sm:px-10 md:grid-cols-4 md:gap-8 md:px-20">
       {services.map((service, idx) => (
         <Card key={idx} className="paper-bg-8 rounded-sm bg-[#d5cdcb]">
           <CardContent className="flex flex-col gap-3 p-4">
@@ -66,10 +66,10 @@ function ServicesGrid() {
               width={40}
               height={40}
             />
-            <h3 className="font-[satoshi-bold] text-lg font-normal">
+            <h3 className="font-[satoshi-bold] text-sm font-normal md:text-lg">
               {service.name}
             </h3>
-            <p className="font-[satoshi-regular] text-sm text-[#1F1D1D]">
+            <p className="font-[satoshi-regular] text-xs text-[#1F1D1D] md:text-sm">
               {service.description}
             </p>
           </CardContent>
