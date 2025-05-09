@@ -501,12 +501,9 @@ const services = [
 function ServicesGrid() {
   const [activeCard, setActiveCard] = React.useState(null);
 
-  const handleTouchStart = (idx) => {
-    setActiveCard(idx);
-  };
-
-  const handleTouchEnd = () => {
-    setActiveCard(null);
+  // Toggle card active state when clicked/tapped
+  const toggleCard = (idx) => {
+    setActiveCard((prevIdx) => (prevIdx === idx ? null : idx));
   };
 
   return (
@@ -517,8 +514,7 @@ function ServicesGrid() {
           <Card
             key={idx}
             className={`paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 ${isActive ? "rotate-[3deg] border-[#382f2d] bg-[#382f2d]" : ""} hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]`}
-            onTouchStart={() => handleTouchStart(idx)}
-            onTouchEnd={handleTouchEnd}
+            onClick={() => toggleCard(idx)}
           >
             <CardContent className="service-icon-hover flex h-full p-0 md:aspect-[1783/1515] md:max-h-[320px]">
               <div className="md:group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-3 py-6 md:px-4 md:py-8">
