@@ -7,26 +7,26 @@ import Image from "next/image";
 const Location = () => {
   return (
     <div className="paper-bg-16 bg-[#262424]">
-      <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-items-center gap-[15px] bg-cover bg-center bg-no-repeat py-[43px] bg-blend-multiply md:gap-0 md:p-16">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-center gap-[15px] bg-cover bg-center bg-no-repeat py-[43px] bg-blend-multiply md:gap-[14px] md:p-16">
         <h4
-          className="text-grain trim font-['Marlton'] text-base font-light tracking-[2.24px] text-[#FDE4C8] md:text-2xl md:font-normal md:tracking-wider"
+          className="text-grain trim !bg-[#FDE4C8] font-['Marlton'] text-base font-light tracking-[2.24px] md:text-2xl md:font-normal md:tracking-wider"
           data-text="PROUDLY SERVING"
         >
           PROUDLY SERVING
         </h4>
         <h1
-          className="text-grain trim text-[32px] font-normal tracking-[3.2px] text-white md:text-[64px] md:tracking-wider"
+          className="text-grain trim !bg-white text-[32px] font-normal tracking-[3.2px] md:text-[64px] md:tracking-wider"
           data-text="THESE TOWNS"
         >
           THESE TOWNS
         </h1>
         <h4
-          className="text-grain trim text-[32px] font-normal tracking-wider text-white md:mt-3 md:text-2xl"
+          className="text-grain trim md:t-0 !bg-white text-[32px] font-normal tracking-wider md:text-2xl"
           data-text="IN SOUTH "
         >
           <span className="trim text-32px] md:text-xl">IN</span> SOUTH{" "}
           <span
-            className="text-grain trim font-[luminaire-script] text-[20px] text-[#FDE4C8] md:text-[32px]"
+            className="text-grain trim !bg-[#FDE4C8] font-[luminaire-script] text-[20px] md:text-[32px]"
             data-text="Florida"
           >
             Florida

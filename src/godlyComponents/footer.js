@@ -7,17 +7,14 @@ import Image from "next/image";
 import CityTags from "@/components/cityTags";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  const pathname = usePathname();
   return (
     <div className="w-full flex-col bg-[#312E2C] md:flex">
       <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-10 px-6 py-[48px] md:px-[40px]">
         <div
           className={cn(
             "paper-bg-16 flex flex-col gap-[96px] rounded-xl bg-[#ebded1] bg-cover bg-center bg-no-repeat p-6 bg-blend-multiply",
-            pathname.includes("/services") ? "bg-[#ebded1]" : "",
           )}
         >
           <div className="flex flex-col items-start justify-between md:flex-row">
@@ -33,12 +30,12 @@ const Footer = () => {
                 >
                   FAQ
                 </Link>
-                <Link
+                {/* <Link
                   href="/blogs"
                   className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Blog
-                </Link>
+                </Link> */}
               </div>
 
               {/* Center: Menu */}

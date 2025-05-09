@@ -33,13 +33,13 @@ const Testimonials = () => {
             </div>
             <h1 className="-mt-5 md:-mt-9">
               <span
-                className="text-grain font-['luminaire-script'] text-base text-[#FDE4C8] md:mr-4 md:text-[64px] md:before:inset-0"
+                className="text-grain !bg-[#FDE4C8] font-['luminaire-script'] text-base md:mr-4 md:text-[64px] md:before:inset-0"
                 data-text="Your"
               >
                 Your
               </span>{" "}
               <span
-                className="text-grain text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]"
+                className="text-grain text-trim !bg-[#FFFFFF] text-[32px] tracking-wider md:text-[86px]"
                 data-text="NEIGHBORS"
               >
                 NEIGHBORS

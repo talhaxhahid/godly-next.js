@@ -40,7 +40,7 @@ const OtherServices = () => {
   return (
     <div
       id="promise"
-      className="paper-bg-16 flex flex-col items-center justify-center justify-items-center gap-10 bg-[#ffecd6] bg-cover bg-center bg-no-repeat p-4 bg-blend-multiply md:p-24 md:pt-0"
+      className="paper-bg-16 flex flex-col items-center justify-center justify-items-center gap-10 bg-[#ebded1] bg-cover bg-center bg-no-repeat p-4 bg-blend-multiply md:p-24 md:pt-0"
     >
       <h4 className="py-10 text-center text-[32px] font-normal tracking-wide text-[#191717] md:w-4/5 md:text-5xl">
         enhance your cleaning with other services we offer in {city}

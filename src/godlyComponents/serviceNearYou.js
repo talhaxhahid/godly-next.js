@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
@@ -8,7 +10,11 @@ import near4 from "@/assets/near4.webp";
 import near5 from "@/assets/near5.webp";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
+import { useGodlyContext } from "@/context/godlyContext";
+
 const ServiceNearYou = ({ slug }) => {
+  const { city } = useGodlyContext();
+
   // const steps1 = [
   //   {
   //     number: "01",
@@ -86,9 +92,9 @@ const ServiceNearYou = ({ slug }) => {
   return (
     <div className="fourstepprocess paper-bg-16 bg-[#262424]">
       <div className="fourstepprocess-inner">
-        <div className="">
+        <div className="w-full text-center">
           <h1
-            className="text-grain text-center text-[32px] text-[#FDE4C8] md:text-6xl"
+            className="text-grain mx-auto !bg-[#FDE4C8] text-center text-[32px] md:text-6xl"
             data-text={
               Services[slug]["hero"][0] + " " + Services[slug]["hero"][1]
             }
@@ -96,7 +102,7 @@ const ServiceNearYou = ({ slug }) => {
             {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
           </h1>
           <h4
-            className="z-10 -mt-3 text-center font-['luminaire-script'] text-4xl text-white"
+            className="z-10 flex items-center justify-center gap-1.5 text-center font-['luminaire-script'] text-[20px] text-white md:-mt-10 md:items-end md:gap-5 md:text-[64px]"
             style={{
               WebkitTextStrokeWidth: "5px",
               strokeLinecap: "round",
@@ -105,6 +111,9 @@ const ServiceNearYou = ({ slug }) => {
             }}
           >
             Near You
+            <span className="mt-1.5 inline-flex text-left font-['marlton'] text-[8px] tracking-[1px] text-[#FDE4C8] md:mb-2 md:max-w-[94px] md:text-base md:tracking-[2px]">
+              {city}
+            </span>
           </h4>
         </div>
 
@@ -146,7 +155,7 @@ const ServiceNearYou = ({ slug }) => {
           <div className="relative z-10 flex flex-wrap justify-center gap-6 px-4 py-5 sm:gap-8 sm:px-6 md:gap-12 md:px-8">
             {Services[slug]["nearyou"].slice(0, 2).map((step, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="relative z-10 w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
+                <div className="relative z-10 h-full w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
                   <div className="flex h-full flex-col items-center justify-between rounded-md border-[1.5px] border-dashed border-[#2D2B2B] p-2 text-[#2D2B2B]">
                     <div>
                       <div className="mb-4 flex justify-center">
@@ -168,7 +177,7 @@ const ServiceNearYou = ({ slug }) => {
           <div className="relative z-10 flex flex-wrap justify-center gap-6 px-4 py-5 sm:gap-8 sm:px-6 md:gap-12 md:px-8">
             {Services[slug]["nearyou"].slice(2, 5).map((step, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="relative z-10 min-h-60 w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
+                <div className="relative z-10 h-full w-64 rounded-md bg-[#CDB9A2] p-3 text-black">
                   <div className="flex h-full flex-col items-center justify-between rounded-md border-[1.5px] border-dashed border-[#2D2B2B] p-2 text-[#2D2B2B]">
                     <div>
                       <div className="mb-4 flex justify-center">

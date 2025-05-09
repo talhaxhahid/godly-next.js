@@ -22,20 +22,20 @@ const Services = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="text-trim flex items-end">
               <h4
-                className="text-grain font-marlton text-[32px] tracking-[3.84px] text-white md:text-[64px]"
+                className="text-grain font-marlton !bg-white text-[32px] tracking-[3.84px] md:text-[64px]"
                 data-text="MORE THAN"
               >
                 MORE THAN
               </h4>
               <span
-                className="text-grain ms-2 mb-1 text-sm tracking-[1.2px] text-white md:ms-[21px] md:mb-3 md:text-[20px]"
+                className="text-grain ms-2 mb-1 !bg-white text-sm tracking-[1.2px] md:ms-[21px] md:mb-3 md:text-[20px]"
                 data-text="JUST"
               >
                 JUST
               </span>
             </div>
             <h4
-              className="text-grain font-marlton -mt-4 text-[32px] tracking-[3.84px] text-white md:-mt-8 md:text-[64px]"
+              className="text-grain font-marlton -mt-4 !bg-white text-[32px] tracking-[3.84px] md:-mt-8 md:text-[64px]"
               data-text="WINDOW WASHERS"
             >
               WINDOW WASHERS

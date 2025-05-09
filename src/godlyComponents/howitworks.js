@@ -35,13 +35,13 @@ const HowItWorks = () => {
     >
       <div className="flex flex-col items-center justify-center">
         <h1
-          className="text-grain text-[38px] font-normal tracking-[2.28px] text-[#191717] md:text-[64px] md:tracking-normal"
+          className="text-grain !bg-[#191717] text-[38px] font-normal tracking-[2.28px] md:text-[64px] md:tracking-normal"
           data-text="HOW IT WORKS"
         >
           HOW IT WORKS
         </h1>
         <h4
-          className="text-grain -mt-2 text-[20px] font-normal tracking-[1.8px] text-[#61503E] md:text-[32px] md:tracking-normal"
+          className="text-grain -mt-2 !bg-[#61503E] text-[20px] font-normal tracking-[1.8px] md:text-[32px] md:tracking-normal"
           data-text="IN 3 SIMPLE STEPS"
         >
           IN 3 SIMPLE STEPS

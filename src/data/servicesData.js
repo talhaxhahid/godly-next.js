@@ -126,22 +126,22 @@ const Services = {
     ],
     essential: [
       {
-        number: "01",
+        number: "01.",
         title: "Enhanced Appearance",
         text: "Instantly boost the look of your property and curb appeal.",
       },
       {
-        number: "02",
+        number: "02.",
         title: "Increased Longevity",
         text: "Regular cleaning prevents glass degradation,Permanent stains and hard water buildup.",
       },
       {
-        number: "03",
+        number: "03.",
         title: "Enjoy Unobstructed Views",
         text: "Whether it’s the ocean, the skyline, or your garden, clean windows give you a crystal-clear view, free from streaks or dust.",
       },
       {
-        number: "04",
+        number: "04.",
         title: "Maximize Natural Light",
         text: "Dust, pollen, and grime on your windows reduce sunlight. Clean windows let in more light, brightening the room.",
       },

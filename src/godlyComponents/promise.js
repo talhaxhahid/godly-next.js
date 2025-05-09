@@ -78,22 +78,22 @@ const Promise = () => {
         </div>
       </div>
       <Story />
-      <div className="py-10">
+      <div className="flex flex-col items-center justify-center gap-10 py-10">
         <h1
-          className="text-grain text-center text-4xl font-normal tracking-wide text-[#191717] md:text-[64px]"
+          className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
           data-text="Delivering"
         >
           Delivering
         </h1>
-        <h4 className="text-center text-4xl font-normal tracking-wide text-[#191717] md:-mt-6 md:text-[64px]">
+        <h4 className="trim text-center text-4xl font-normal tracking-wide md:-mt-6 md:text-[64px]">
           <span
-            className="text-grain text-[#61503E] underline"
+            className="md:text-grain trim relative text-[#61503E] underline"
             data-text="Trustworthy"
           >
             Trustworthy
           </span>{" "}
           <span
-            className="text-grain text-4xl md:text-[64px]"
+            className="text-grain !bg-[#191717] text-4xl md:text-[64px]"
             data-text="Service"
           >
             Service
@@ -125,7 +125,7 @@ const Promise = () => {
                 </h5>
 
                 <div
-                  className="text-grain max-w-[170px] text-left text-4xl"
+                  className="text-grain max-w-[170px] !bg-white text-left text-4xl group-hover:bg-[#2D2B2B]!"
                   data-text={step.title}
                   style={{ marginBottom: "1rem" }}
                 >
@@ -134,7 +134,7 @@ const Promise = () => {
               </div>
 
               <p
-                className="text-grain text-left text-base"
+                className="text-grain !bg-white text-left text-base group-hover:bg-[#2D2B2B]!"
                 data-text={step.text}
                 style={{ fontFamily: "Inter" }}
               >
@@ -234,14 +234,14 @@ function Story() {
         </div>
       </div>
       <div className="flex flex-1 flex-col items-start justify-center gap-[34px] p-3 md:gap-[40px]">
-        <h1 className="text-4xl text-white md:text-6xl">
+        <h1 className="flex items-center gap-4 text-4xl text-white md:text-6xl">
           <span
-            className="text-grain font-['marlton'] text-[#F3CA9E]"
+            className="text-grain !bg-[#F3CA9E] font-['marlton']"
             data-text="LOCAL"
           >
             LOCAL
           </span>
-          <span className="text-grain" data-text=" FAMILY OWNED">
+          <span className="text-grain !bg-white" data-text=" FAMILY OWNED">
             {" "}
             FAMILY OWNED
           </span>

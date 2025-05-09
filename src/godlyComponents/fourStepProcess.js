@@ -106,7 +106,7 @@ const FourStepProcess = () => {
         <div className="heading relative flex flex-col gap-0">
           <div className="relative flex flex-col gap-4 md:gap-0">
             <h4
-              className="text-trim text-grain m-0 p-0 text-[32px] tracking-[3.84px] md:text-[64px]"
+              className="text-trim text-grain m-0 !bg-white p-0 text-[32px] tracking-[3.84px] md:text-[64px]"
               data-text="OUR 4 STEP PROCESS"
             >
               OUR 4 STEP PROCESS
@@ -115,7 +115,7 @@ const FourStepProcess = () => {
               With
             </h4>
             <h4
-              className="text-grain -mt-[12px] text-[32px] tracking-[3.84px] md:text-[64px]"
+              className="text-grain -mt-[12px] !bg-white text-[32px] tracking-[3.84px] md:text-[64px]"
               data-text="RAINSHIELD TECH"
             >
               RAINSHIELD TECH

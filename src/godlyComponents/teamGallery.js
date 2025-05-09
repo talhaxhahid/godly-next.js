@@ -29,7 +29,7 @@ const TeamGallery = () => {
     <div className="paper-bg-16 flex flex-col items-center justify-center gap-[63px] bg-[#262424] py-[100px] md:gap-[70px] md:py-[150px]">
       <div className="flex flex-col items-center justify-center px-[40px]">
         <h1
-          className="text-grain text-center text-[48px] text-[#F3CA9E] md:text-[102px] md:tracking-[9.18px]"
+          className="text-grain !bg-[#F3CA9E] text-center text-[48px] md:text-[102px] md:tracking-[9.18px]"
           data-text="BLUE COLLAR"
           style={{
             boxShadow:

@@ -21,7 +21,7 @@ const Gurantee = () => {
               THE
             </h4>
             <h1
-              className="trim md:text-trim text-grain text-[48px] tracking-[4.32px] text-[#F3CA9E] md:text-[102px] md:tracking-wide"
+              className="trim md:text-trim text-grain !bg-[#F3CA9E] text-[48px] tracking-[4.32px] md:text-[102px] md:tracking-wide"
               data-text="GODLY"
             >
               GODLY
