@@ -499,64 +499,87 @@ const services = [
 ];
 
 function ServicesGrid() {
+  const [activeCard, setActiveCard] = React.useState(null);
+
+  const handleTouchStart = (idx) => {
+    setActiveCard(idx);
+  };
+
+  const handleTouchEnd = () => {
+    setActiveCard(null);
+  };
+
   return (
     <div className="z-20 grid grid-cols-2 gap-3 sm:px-10 md:grid-cols-3 md:gap-7 md:px-20">
-      {services.map((service, idx) => (
-        <Card
-          key={idx}
-          className="paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]"
-        >
-          <CardContent className="service-icon-hover flex h-full p-0 md:aspect-[1783/1515] md:max-h-[320px]">
-            <div className="md:group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-3 py-6 md:px-4 md:py-8">
-              <div className="flex h-full flex-col gap-4">
-                <div className="relative size-[50px]">
-                  {service.icon ? (
-                    <span>{service.icon}</span>
-                  ) : (
-                    <>
-                      <Image
-                        src={service.image}
-                        alt={service.name}
-                        fill
-                        className="object-contain md:group-hover:hidden"
-                      />
-                      <Image
-                        src={service.hoverImage}
-                        alt={`${service.name} color`}
-                        fill
-                        className="hidden object-contain md:group-hover:block"
-                      />
-                    </>
+      {services.map((service, idx) => {
+        const isActive = activeCard === idx;
+        return (
+          <Card
+            key={idx}
+            className={`paper-bg-8 group relative flex h-full justify-between rounded-sm bg-[#E9E5E4] p-0 transition-transform duration-300 ${isActive ? "rotate-[3deg] border-[#382f2d] bg-[#382f2d]" : ""} hover:rotate-[3deg] hover:border-[#382f2d] hover:bg-[#382f2d]`}
+            onTouchStart={() => handleTouchStart(idx)}
+            onTouchEnd={handleTouchEnd}
+          >
+            <CardContent className="service-icon-hover flex h-full p-0 md:aspect-[1783/1515] md:max-h-[320px]">
+              <div className="md:group-hover:text-white1 flex h-full w-full flex-shrink-0 flex-col gap-6 px-3 py-6 md:px-4 md:py-8">
+                <div className="flex h-full flex-col gap-4">
+                  <div className="relative size-[50px]">
+                    {service.icon ? (
+                      <span className={`${isActive ? "text-white" : ""}`}>
+                        {service.icon}
+                      </span>
+                    ) : (
+                      <>
+                        <Image
+                          src={service.image}
+                          alt={service.name}
+                          fill
+                          className={`object-contain ${isActive ? "hidden" : ""} md:group-hover:hidden`}
+                        />
+                        <Image
+                          src={service.hoverImage}
+                          alt={`${service.name} color`}
+                          fill
+                          className={`${isActive ? "block" : "hidden"} object-contain md:group-hover:block`}
+                        />
+                      </>
+                    )}
+                  </div>
+
+                  <h3
+                    className={`font-['satoshi-black'] text-sm font-bold ${isActive ? "text-white" : "text-[#1c1c1c]"} group-hover:text-white md:text-[24px]`}
+                  >
+                    {service.name}
+                  </h3>
+                  <p
+                    className={`font-[satoshi-regular] text-xs font-normal ${isActive ? "text-white" : "text-[#1f1d1d]"} group-hover:text-white md:text-base`}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+                <div className="flex w-full items-center justify-end gap-4">
+                  {service.link && (
+                    <Button className="pointer-cursor flex p-3 text-[10px] md:h-[46px] md:px-[18px] md:py-4 md:text-sm">
+                      <Link
+                        href={"/services/" + service.link}
+                        className="pointer-cursor trim font-['satoshi-regular'] text-[14px] font-bold text-[#FDE4C8]"
+                      >
+                        What we Offer
+                      </Link>
+                    </Button>
                   )}
                 </div>
 
-                <h3 className="font-['satoshi-black'] text-sm font-bold text-[#1c1c1c] group-hover:text-white md:text-[24px]">
-                  {service.name}
-                </h3>
-                <p className="font-[satoshi-regular] text-xs font-normal text-[#1f1d1d] group-hover:text-white md:text-base">
-                  {service.description}
-                </p>
+                <div
+                  className={`absolute top-2 right-2 ${isActive ? "block" : "hidden"} group-hover:block`}
+                >
+                  <ServiceButton />
+                </div>
               </div>
-              <div className="flex w-full items-center justify-end gap-4">
-                {service.link && (
-                  <Button className="pointer-cursor flex p-3 text-[10px] md:h-[46px] md:px-[18px] md:py-4 md:text-sm">
-                    <Link
-                      href={"/services/" + service.link}
-                      className="pointer-cursor trim font-['satoshi-regular'] text-[14px] font-bold text-[#FDE4C8]"
-                    >
-                      What we Offer
-                    </Link>
-                  </Button>
-                )}
-              </div>
-
-              <div className="absolute top-2 right-2 hidden group-hover:block">
-                <ServiceButton />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+            </CardContent>
+          </Card>
+        );
+      })}
     </div>
   );
 }
