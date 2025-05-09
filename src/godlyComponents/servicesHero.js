@@ -3,7 +3,7 @@ import { useGodlyContext } from "@/context/godlyContext";
 import React from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-// import { Star } from "lucide-react";
+import { cn } from "@/lib/utils";
 import FreeQuoteButton from "@/components/freeQuote";
 import Services from "@/data/servicesData";
 
@@ -26,7 +26,10 @@ const ServicesHero = ({ slug }) => {
         </div>
         <div className="relative flex items-end">
           <h1
-            className="text-grain trim bg-white! pb-0! text-center text-[64px] leading-[60px] tracking-[5.23px] md:text-center md:text-[88px] md:leading-normal"
+            className={cn(
+              "text-grain trim bg-white! pb-0! text-center text-[64px] leading-[60px] tracking-[5.23px] md:text-center md:text-[88px] md:leading-normal",
+              Services[slug]["hero"][0].split(" ").length === 1 && "md:mr-24",
+            )}
             data-text={Services[slug]["hero"][0]}
           >
             {Services[slug]["hero"][0]}
@@ -39,9 +42,16 @@ const ServicesHero = ({ slug }) => {
             </span>
           </div>
           <div className="relative flex w-full items-end">
-            <h1 className="trim absolute top-1 left-9 z-10 w-full rotate-[-6.668deg] overflow-visible text-end tracking-wide md:top-9 md:left-3">
+            <h1
+              className={cn(
+                "trim absolute top-1 left-9 z-10 w-full rotate-[-6.668deg] overflow-visible text-end tracking-wide md:top-9 md:left-3",
+                Services[slug]["hero"][0].split(" ").length === 1 && "md:ms-12",
+              )}
+            >
               <span
-                className="text-grain z-10 inline-block bg-[#FDE4C8]! pb-7 text-end font-['luminaire-script'] text-[48px] font-normal md:text-[88px]"
+                className={cn(
+                  "text-grain z-10 inline-block bg-[#FDE4C8]! pb-7 text-end font-['luminaire-script'] text-[48px] font-normal md:text-[88px]",
+                )}
                 data-text={`${Services[slug]["hero"][1]} `}
                 style={{
                   WebkitTextStrokeWidth: "0.5px",

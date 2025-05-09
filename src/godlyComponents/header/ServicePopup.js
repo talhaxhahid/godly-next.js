@@ -9,8 +9,14 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { useGodlyContext } from "@/context/godlyContext";
+import { citiesMap } from "./CitiesPopup";
 
 const ServicePopup = ({ open, onOpenChange, services }) => {
+  const { city } = useGodlyContext();
+
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange} className="">
       <DialogHeader>
@@ -23,13 +29,15 @@ const ServicePopup = ({ open, onOpenChange, services }) => {
         <div className="md:max-h-auto grid max-h-[calc(100vh-128px)] w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Link
-              href={"/services/" + service.link}
+              href={`/${cityKey}/${service.link}`}
               key={index}
               className={cn(
                 "group border-b-[1.5px] border-[#8d8477] hover:bg-[#2D2B2B]",
                 index % 1 === 0 ? "md:mx-[20px]" : "",
               )}
-              onClick={() => onOpenChange(false)} // Close popup on link click
+              onClick={() => {
+                onOpenChange(false);
+              }} // Close popup on link click
             >
               <div
                 key={index} // Consider removing duplicate key if Link key is sufficient

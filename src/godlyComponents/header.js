@@ -115,34 +115,6 @@ const services = [
   },
 ];
 
-const cities = [
-  "WEST PALM BEACH",
-  "POMPANO BEACH",
-  "MIAMI",
-  "WESTON",
-  "HILLSBORO BEACH",
-  "DELRAY BEACH",
-  "FORT LAUDERDALE",
-  "MIRAMAR",
-  "DAVIE",
-  "LAUDERDALE-BY-THE-SEA",
-  "BOCA RATON",
-  "HOLLYWOOD",
-  "PEMBROKE PINES",
-  "PLANTATION",
-  "LIGHTHOUSE POINT",
-  "OAKLAND PARK",
-  "HALLANDALE BEACH",
-  "SOUTHWEST RANCHES",
-  "SUNRISE",
-  "DEERFIELD BEACH",
-  "TAMARAC",
-  "MARGATE",
-  "CORAL SPRINGS",
-  "PARKLAND",
-  "ROYAL PALM BEACH",
-];
-
 const Header = () => {
   // Keep state definitions
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -248,11 +220,7 @@ const Header = () => {
         onOpenChange={setServicesOpen}
         services={services}
       />
-      <CitiesPopup
-        open={citiesOpen}
-        onOpenChange={setCitiesOpen}
-        cities={cities}
-      />
+      <CitiesPopup open={citiesOpen} onOpenChange={setCitiesOpen} />
       <FormPopup open={formPopupOpen} onOpenChange={setFormPopupOpen} />
     </>
   );

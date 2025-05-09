@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import FourStepProcess from "./fourStepProcess";
 import HowItWorks from "./howitworks";
 import Location from "./location";
@@ -10,8 +12,20 @@ import Promise from "./promise";
 import Hero from "./hero";
 import WebsiteLayout from "./websiteLayout";
 import TeamGallery from "./teamGallery";
+import { useGodlyContext } from "@/context/godlyContext";
 
-export default function GodlyHome() {
+import { citiesMap } from "./header/CitiesPopup";
+
+export default function GodlyHome({ city }) {
+  const { setCity } = useGodlyContext();
+
+  useEffect(() => {
+    if (Object.keys(citiesMap).includes(city)) {
+      const formattedCity = citiesMap[city];
+      setCity(formattedCity);
+    }
+  }, [city, setCity]);
+
   return (
     <WebsiteLayout>
       <Hero />

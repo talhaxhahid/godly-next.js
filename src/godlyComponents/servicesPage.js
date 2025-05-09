@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import WebsiteLayout from "./websiteLayout";
 import ServicesHero from "./servicesHero";
@@ -7,8 +9,20 @@ import ChooseUs from "./chooseUs";
 import EssentialService from "./serviceEssential";
 import ServiceNearYou from "./serviceNearYou";
 import Faq from "./faq";
+import { useEffect } from "react";
+import { useGodlyContext } from "@/context/godlyContext";
 
-export default function ServicesPage({ slug }) {
+import { citiesMap } from "./header/CitiesPopup";
+
+export default function ServicesPage({ slug, city }) {
+  const { setCity } = useGodlyContext();
+
+  useEffect(() => {
+    if (Object.keys(citiesMap).includes(city)) {
+      const formattedCity = citiesMap[city];
+      setCity(formattedCity);
+    }
+  }, [city, setCity]);
   return (
     <WebsiteLayout>
       <ServicesHero slug={slug} />
