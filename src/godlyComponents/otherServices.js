@@ -6,6 +6,7 @@ import "@/styles/fourstepprocess.css";
 import Image from "next/image";
 import Services1 from "@/assets/otherservices1.webp";
 import Services2 from "@/assets/otherservices2.webp";
+import { citiesMap } from "./header/CitiesPopup";
 
 const steps = [
   {
@@ -38,6 +39,8 @@ const OtherServices = () => {
   const { city } = useGodlyContext();
   const [activeCard, setActiveCard] = useState(null);
 
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+
   const handleCardClick = (index, e) => {
     if (activeCard !== index) {
       e.preventDefault();
@@ -59,7 +62,7 @@ const OtherServices = () => {
       <div className="grid w-full max-w-screen-xl grid-cols-2 gap-10 px-4 py-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {steps.map((step, index) => (
           <Link
-            href={"/services/" + step.link}
+            href={`/${cityKey}/${step.link}`}
             key={index}
             onClick={(e) => handleCardClick(index, e)}
           >

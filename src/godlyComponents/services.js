@@ -10,6 +10,8 @@ import textWaveBg from "@/assets/text-bg-wave.webp";
 import Cap from "@/assets/santaCap.webp";
 import Santa from "@/assets/santa.webp";
 import Link from "next/link";
+import { citiesMap } from "./header/CitiesPopup";
+
 const Services = () => {
   const { city } = useGodlyContext();
   return (
@@ -506,6 +508,10 @@ function ServicesGrid() {
     setActiveCard((prevIdx) => (prevIdx === idx ? null : idx));
   };
 
+  const { city } = useGodlyContext();
+
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+
   return (
     <div className="z-20 grid grid-cols-2 gap-3 sm:px-10 md:grid-cols-3 md:gap-7 md:px-20">
       {services.map((service, idx) => {
@@ -557,7 +563,7 @@ function ServicesGrid() {
                   {service.link && (
                     <Button className="pointer-cursor flex p-3 text-[10px] md:h-[46px] md:px-[18px] md:py-4 md:text-sm">
                       <Link
-                        href={"/services/" + service.link}
+                        href={`/${cityKey}/${service.link}`}
                         className="pointer-cursor trim font-['satoshi-regular'] text-[14px] font-bold text-[#FDE4C8]"
                       >
                         What we Offer
