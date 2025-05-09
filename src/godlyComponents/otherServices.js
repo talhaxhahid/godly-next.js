@@ -1,6 +1,6 @@
 "use client";
 import { useGodlyContext } from "@/context/godlyContext";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
@@ -36,6 +36,16 @@ const steps = [
 
 const OtherServices = () => {
   const { city } = useGodlyContext();
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleCardClick = (index, e) => {
+    if (activeCard !== index) {
+      e.preventDefault();
+      setActiveCard(index);
+    } else {
+      setActiveCard(null);
+    }
+  };
 
   return (
     <div
@@ -48,13 +58,21 @@ const OtherServices = () => {
 
       <div className="grid w-full max-w-screen-xl grid-cols-2 gap-10 px-4 py-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {steps.map((step, index) => (
-          <Link href={"/services/" + step.link} key={index}>
+          <Link
+            href={"/services/" + step.link}
+            key={index}
+            onClick={(e) => handleCardClick(index, e)}
+          >
             <div
               key={index}
               className={`transform transition-transform duration-300 ${
                 index % 2 === 0
-                  ? "rotate-[3deg] hover:rotate-0"
-                  : "-rotate-[3deg] hover:rotate-0"
+                  ? activeCard === index
+                    ? "rotate-0"
+                    : "rotate-[3deg] hover:rotate-0"
+                  : activeCard === index
+                    ? "rotate-0"
+                    : "-rotate-[3deg] hover:rotate-0"
               }`}
             >
               <div className="relative flex min-h-[250px] flex-col justify-between rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">

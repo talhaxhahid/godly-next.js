@@ -1,7 +1,18 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
+
 const EssentialService = ({ slug }) => {
+  // Add state to track active card
+  const [activeCard, setActiveCard] = useState(null);
+
+  // Toggle function to handle touch interactions
+  const toggleCard = (index) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div className="paper-bg-16 flex flex-col items-center gap-20 bg-[#262424] px-6 py-24">
       {/* Heading Section */}
@@ -35,29 +46,41 @@ const EssentialService = ({ slug }) => {
 
       {/* Info Cards Section */}
       <div className="grid grid-cols-2 gap-3 md:gap-[24px]">
-        {Services[slug]["essential"].map((point, index) => (
-          <div
-            key={index}
-            className={cn(
-              "paper-bg-8 min-h-[209px] rounded-[18px] bg-[#CBB7A0] p-2 shadow-md hover:bg-[#E9E5E4] md:max-h-full md:w-100 md:min-w-[522px]",
-              index === Services[slug]["essential"].length - 1 &&
-                Services[slug]["essential"].length % 2 === 1 &&
-                "col-span-2 mx-auto max-w-1/2",
-            )}
-          >
-            <div className="flex h-full flex-grow flex-col gap-4 rounded-[12px] border-[1.7px] border-solid border-[#2D2B2B] px-3 py-3">
-              <h2 className="stroke! trim stroke-[#2D2B2B33] stroke-1! text-[40px] font-bold text-[#312E2C30] hover:text-[#312E2C30]! md:text-[64px]">
-                {point.number}
-              </h2>
-              <h3 className="trim font-['satoshi-bold'] text-sm text-[#2D2B2B] md:mt-2 md:text-[24px]">
-                {point.title}
-              </h3>
-              <p className="trim font-[satoshi-medium] text-sm text-[#2D2B2B] md:mt-1 md:text-[20px]">
-                {point.text}
-              </p>
+        {Services[slug]["essential"].map((point, index) => {
+          const isActive = activeCard === index;
+          return (
+            <div
+              key={index}
+              className={cn(
+                "paper-bg-8 min-h-[209px] rounded-[18px] p-2 shadow-md md:max-h-full md:w-100 md:min-w-[522px]",
+                isActive ? "bg-[#E9E5E4]" : "bg-[#CBB7A0]",
+                "hover:bg-[#E9E5E4]",
+                index === Services[slug]["essential"].length - 1 &&
+                  Services[slug]["essential"].length % 2 === 1 &&
+                  "col-span-2 mx-auto max-w-1/2",
+              )}
+              onClick={() => toggleCard(index)}
+            >
+              <div className="flex h-full flex-grow flex-col gap-4 rounded-[12px] border-[1.7px] border-solid border-[#2D2B2B] px-3 py-3">
+                <h2
+                  className={cn(
+                    "stroke! trim stroke-[#2D2B2B33] stroke-1! text-[40px] font-bold md:text-[64px]",
+                    isActive ? "text-[#312E2C30]" : "text-[#312E2C30]",
+                    "hover:text-[#312E2C30]!",
+                  )}
+                >
+                  {point.number}
+                </h2>
+                <h3 className="trim font-['satoshi-bold'] text-sm text-[#2D2B2B] md:mt-2 md:text-[24px]">
+                  {point.title}
+                </h3>
+                <p className="trim font-[satoshi-medium] text-sm text-[#2D2B2B] md:mt-1 md:text-[20px]">
+                  {point.text}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

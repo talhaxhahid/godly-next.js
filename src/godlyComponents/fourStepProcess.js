@@ -1,5 +1,7 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
 import spark from "../assets/spark.webp";
@@ -100,6 +102,19 @@ const FourStepProcess = () => {
       text: "We apply own unique invisible technology that repels water and rain, keeping your windows cleaner for longer.",
     },
   ];
+
+  // Add state to track active badges
+  const [activeBadges, setActiveBadges] = useState([false, false]);
+
+  // Toggle function to handle touch interactions for badges
+  const toggleBadge = (index) => {
+    setActiveBadges((prev) => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
   return (
     <div className="fourstepprocess" id="about">
       <div className="fourstepprocess-inner relative flex flex-col items-center justify-center gap-[100px] md:gap-44">
@@ -177,14 +192,22 @@ const FourStepProcess = () => {
         <div className="relative -mt-4 flex flex-col items-center justify-center gap-2 p-8 md:mb-10">
           <Badge
             text="7 day Sparkle Guarantee"
-            className="hover:rotate z-20 rotate-[2.226deg]"
+            className={`z-20 ${
+              activeBadges[0] ? "rotate-0" : "rotate-[2.226deg]"
+            } hover:rotate`}
             image={spark}
+            isActive={activeBadges[0]}
+            onClick={() => toggleBadge(0)}
           />
           <Badge
             text="hard water stain removal"
-            className="-mt-4 scale-95 rotate-[-3.582deg]"
+            className={`-mt-4 scale-95 ${
+              activeBadges[1] ? "rotate-0" : "rotate-[-3.582deg]"
+            }`}
             starClassName={"rotate-0"}
             image={drop}
+            isActive={activeBadges[1]}
+            onClick={() => toggleBadge(1)}
           />
           <div className="absolute right-2 -bottom-2 scale-75 -rotate-5 md:-bottom-0 md:scale-100">
             <Icon />
@@ -195,17 +218,29 @@ const FourStepProcess = () => {
   );
 };
 
-const Badge = ({ text, className, starClassName, image }) => (
+const Badge = ({
+  text,
+  className,
+  starClassName,
+  image,
+  isActive,
+  onClick,
+}) => (
   <div
     className={cn(
-      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] bg-[#2D2B2B] px-2 py-4 text-white shadow-[0px_4px_37.6px_0px_#1C1C1C] hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C] md:px-4 md:py-6",
+      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] px-2 py-4 shadow-[0px_4px_37.6px_0px_#1C1C1C] md:px-4 md:py-6",
+      isActive
+        ? "bg-[#111010] text-white shadow-[0px_4px_37px_0px_#1C1C1C]"
+        : "bg-[#2D2B2B] text-white",
+      "hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C]",
       className,
-      "",
     )}
+    onClick={onClick}
   >
     <span
       className={cn(
-        `item-center flex size-6 rotate-[-115.867deg] transform justify-center text-yellow-400 transition-transform duration-500 md:size-[28.838px]`,
+        `item-center flex size-6 transform justify-center text-yellow-400 transition-transform duration-500 md:size-[28.838px]`,
+        isActive ? "rotate-0" : "rotate-[-115.867deg]",
         starClassName,
       )}
     >
@@ -217,12 +252,18 @@ const Badge = ({ text, className, starClassName, image }) => (
     </span>
     <h6 className="group relative">
       <span
-        className="mr-4 border-b-3 border-[#f1caa0] font-sans text-base font-[900] text-[#f1caa0] uppercase transition-all duration-300 hover:text-yellow-300 md:text-4xl"
+        className={`mr-4 border-b-3 border-[#f1caa0] font-sans text-base font-[900] uppercase transition-all duration-300 md:text-4xl ${
+          isActive ? "text-yellow-300" : "text-[#f1caa0]"
+        } hover:text-yellow-300`}
         data-text="FREE"
       >
         FREE
       </span>
-      <span className="font-sans text-base font-bold group-hover:text-shadow-[0px_1px_2.9px_#FFF] md:text-[28px]">
+      <span
+        className={`font-sans text-base font-bold ${
+          isActive ? "text-shadow-[0px_1px_2.9px_#FFF]" : ""
+        } group-hover:text-shadow-[0px_1px_2.9px_#FFF] md:text-[28px]`}
+      >
         {text}
       </span>
     </h6>

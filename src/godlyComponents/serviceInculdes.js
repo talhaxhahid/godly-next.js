@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "@/styles/fourstepprocess.css";
 import background from "../assets/texture.webp";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
 
 const ServiceIncludes = ({ slug }) => {
+  // Add state to track active card
+  const [activeCard, setActiveCard] = useState(null);
+
+  // Toggle function to handle touch interactions
+  const toggleCard = (index) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div
       id="promise"
@@ -38,38 +46,56 @@ const ServiceIncludes = ({ slug }) => {
       </div>
 
       <div className="grid w-full grid-cols-2 justify-center gap-3 md:flex md:gap-[32px] md:pb-20">
-        {Services[slug]["included"].map((step, index) => (
-          <div
-            key={index}
-            className={cn(
-              `paper-bg-16 group min-h-[290px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-3 hover:bg-[transparent] md:max-w-[272px]`,
-              index === Services[slug]["included"].length - 1 &&
-                Services[slug]["included"].length % 2 === 1 &&
-                "col-span-2 mx-auto max-w-1/2 md:col-span-1 md:mx-0 md:max-w-[272px]",
-            )}
-          >
+        {Services[slug]["included"].map((step, index) => {
+          const isActive = activeCard === index;
+          return (
             <div
+              key={index}
               className={cn(
-                "relative z-10 flex h-full w-full flex-col items-center justify-between rounded-md border-[#564839] p-3 text-white group-hover:border group-hover:border-dashed group-hover:border-[#6A6464] group-hover:text-[#2D2B2B] md:p-6",
-                index % 2 === 1 ? "md:border md:border-dashed" : "border-none",
+                `paper-bg-16 group min-h-[290px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-3 md:max-w-[272px]`,
+                isActive ? "bg-[transparent]" : "",
+                "hover:bg-[transparent]",
+                index === Services[slug]["included"].length - 1 &&
+                  Services[slug]["included"].length % 2 === 1 &&
+                  "col-span-2 mx-auto max-w-1/2 md:col-span-1 md:mx-0 md:max-w-[272px]",
               )}
+              onClick={() => toggleCard(index)}
             >
-              <div className="flex flex-col items-center justify-center gap-[32px]">
-                <h5 className="text-md text-center font-normal">
-                  <span className="trim">{step.number}</span>
-                </h5>
+              <div
+                className={cn(
+                  "relative z-10 flex h-full w-full flex-col items-center justify-between rounded-md border-[#564839] p-3 text-white md:p-6",
+                  isActive
+                    ? "border border-dashed border-[#6A6464] text-[#2D2B2B]"
+                    : "",
+                  "group-hover:border group-hover:border-dashed group-hover:border-[#6A6464] group-hover:text-[#2D2B2B]",
+                  index % 2 === 1
+                    ? "md:border md:border-dashed"
+                    : "border-none",
+                )}
+              >
+                <div className="flex flex-col items-center justify-center gap-[32px]">
+                  <h5 className="text-md text-center font-normal">
+                    <span className="trim">{step.number}</span>
+                  </h5>
 
-                <p className="trim text-grain !bg-white text-center text-base group-hover:!bg-[#2D2B2B] before:uppercase md:text-2xl">
-                  {step.title}
+                  <p
+                    className={cn(
+                      "trim text-grain text-center text-base before:uppercase md:text-2xl",
+                      isActive ? "!bg-[#2D2B2B]" : "!bg-white",
+                      "group-hover:!bg-[#2D2B2B]",
+                    )}
+                  >
+                    {step.title}
+                  </p>
+                </div>
+
+                <p className="trim text-center text-xs md:text-base">
+                  {step.text}
                 </p>
               </div>
-
-              <p className="trim text-center text-xs md:text-base">
-                {step.text}
-              </p>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

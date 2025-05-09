@@ -51,6 +51,14 @@ const steps = [
 ];
 
 const Promise = () => {
+  // Add state to track active card
+  const [activeCard, setActiveCard] = useState(null);
+
+  // Toggle function to handle touch interactions
+  const toggleCard = (index) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div
       id="promise"
@@ -102,47 +110,61 @@ const Promise = () => {
       </div>
 
       <div className="relative z-10 flex flex-wrap justify-center gap-6 sm:gap-2 sm:px-4 md:gap-8">
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={
-              "paper-bg-8 group relative flex w-full max-w-[350px] rounded-[6px] bg-[#201E1E] p-2 text-[#FFFFFF] hover:bg-[#E7E3E0] hover:text-black"
-            }
-            // style={{
-            //   boxShadow:
-            //     "0px 3.015px 3.015px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset",
-            // }}
-          >
-            <img
-              src={step.icon.src}
-              alt={step.title}
-              className={`absolute top-0 right-0 h-[80%] ${index === 1 ? "filter-[invert(1)] group-hover:filter-[invert(0)]" : "group-hover:filter-[invert(1)]"}`}
-            />
-            <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
-              <div className="flex flex-col gap-8">
-                <h5 className="text-md font-normal">
-                  <span className="text-base">{step.number}</span>
-                </h5>
+        {steps.map((step, index) => {
+          const isActive = activeCard === index;
+          return (
+            <div
+              key={index}
+              className={
+                "paper-bg-8 group relative flex w-full max-w-[350px] rounded-[6px] p-2 " +
+                (isActive
+                  ? "bg-[#E7E3E0] text-black"
+                  : "bg-[#201E1E] text-[#FFFFFF]") +
+                " hover:bg-[#E7E3E0] hover:text-black"
+              }
+              onClick={() => toggleCard(index)}
+            >
+              <img
+                src={step.icon.src}
+                alt={step.title}
+                className={`absolute top-0 right-0 h-[80%] ${
+                  index === 1
+                    ? (isActive ? "filter-[invert(0)]" : "filter-[invert(1)]") +
+                      " group-hover:filter-[invert(0)]"
+                    : (isActive ? "filter-[invert(1)]" : "") +
+                      " group-hover:filter-[invert(1)]"
+                }`}
+              />
+              <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
+                <div className="flex flex-col gap-8">
+                  <h5 className="text-md font-normal">
+                    <span className="text-base">{step.number}</span>
+                  </h5>
 
-                <div
-                  className="text-grain max-w-[170px] !bg-white text-left text-4xl group-hover:bg-[#2D2B2B]!"
-                  data-text={step.title}
-                  style={{ marginBottom: "1rem" }}
-                >
-                  {step.title}
+                  <div
+                    className={`text-grain max-w-[170px] text-left text-4xl ${
+                      isActive ? "!bg-[#2D2B2B]" : "!bg-white"
+                    } group-hover:bg-[#2D2B2B]!`}
+                    data-text={step.title}
+                    style={{ marginBottom: "1rem" }}
+                  >
+                    {step.title}
+                  </div>
                 </div>
-              </div>
 
-              <p
-                className="text-grain !bg-white text-left text-base group-hover:bg-[#2D2B2B]!"
-                data-text={step.text}
-                style={{ fontFamily: "Inter" }}
-              >
-                {step.text}
-              </p>
+                <p
+                  className={`text-grain text-left text-base ${
+                    isActive ? "!bg-[#2D2B2B]" : "!bg-white"
+                  } group-hover:bg-[#2D2B2B]!`}
+                  data-text={step.text}
+                  style={{ fontFamily: "Inter" }}
+                >
+                  {step.text}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <SectionButton>Get a Free Estimate</SectionButton>
       {/* <EstimateButton /> */}
