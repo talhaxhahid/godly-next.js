@@ -138,7 +138,7 @@ const FourStepProcess = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-center text-white sm:gap-1 sm:pt-2 md:gap-2 md:pt-3 lg:gap-3 lg:pt-4 xl:gap-3 xl:pt-4">
+        <div className="flex w-full max-w-[1193px] flex-col items-center text-white sm:gap-1 sm:pt-2 md:gap-2 md:pt-3 lg:gap-3 lg:pt-4 xl:gap-3 xl:pt-4">
           <div className="text-white">
             <div className="relative z-10 pb-2">
               <div className="mx-auto hidden w-fit items-center justify-between px-2 md:flex">
