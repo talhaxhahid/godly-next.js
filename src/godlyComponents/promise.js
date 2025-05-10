@@ -62,24 +62,22 @@ const Promise = () => {
   return (
     <div
       id="promise"
-      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] sm:px-[40px] md:px-[86px] md:py-[150px] lg:px-[100px] lg:py-[170px] xl:px-[120px] xl:py-[180px]"
+      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] md:px-[86px] md:py-[150px]"
     >
       <div
-        className="relative flex h-[200px] w-[320px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat sm:w-[500px] sm:scale-75 md:h-[210px] md:w-[758px] md:scale-100 lg:h-[220px] lg:w-[800px] xl:h-[230px] xl:w-[850px]"
+        className="relative flex h-[200px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[210px] md:scale-100"
         style={{
           backgroundImage: `url(${ticketBg.src})`,
         }}
       >
         <div className="flex -translate-y-7 flex-col items-center gap-4">
-          <h1 className="text-trim -rotate-2 text-[48px] font-normal tracking-[5.76px] text-[#191717] sm:text-[56px] md:text-[64px] lg:text-[70px] xl:text-[76px]">
+          <h1 className="text-trim -rotate-2 text-[64px] font-normal tracking-[5.76px] text-[#191717]">
             old fashioned Values
           </h1>
-          <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-2xl font-normal text-[#191717] sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl">
-            <span className="text-[24px] underline sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px]">
-              UNRIVALED
-            </span>{" "}
+          <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-3xl font-normal text-[#191717]">
+            <span className="text-[32px] underline">UNRIVALED</span>{" "}
             <span
-              className="text-trim quality-text font-['luminaire-script'] text-[60px] text-[#B0906E] sm:text-[70px] md:text-[80px] lg:text-[90px] xl:text-[100px]"
+              className="text-trim quality-text font-['luminaire-script'] text-[80px] text-[#B0906E]"
               data-text="Quality"
             >
               Quality
