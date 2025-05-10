@@ -90,7 +90,7 @@ const ServiceNearYou = ({ slug }) => {
     },
   ];
   return (
-    <div className="fourstepprocess paper-bg-16 mb-8 bg-[#262424] md:mb-0">
+    <div className="fourstepprocess paper-bg-16 mb-10 bg-[#262424] md:mb-0">
       <div className="fourstepprocess-inner">
         <div className="w-full text-center">
           <h1
