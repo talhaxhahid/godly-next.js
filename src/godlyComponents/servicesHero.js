@@ -59,7 +59,7 @@ const ServicesHero = ({ slug }) => {
                 {Services[slug]["hero"][1]}
               </span>
             </h1>
-            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:hidden">
+            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base leading-tight font-[400] tracking-[2px] text-[#FDE4C8] md:hidden">
               {city}
             </span>
           </div>
@@ -70,9 +70,10 @@ const ServicesHero = ({ slug }) => {
         <Image
           src={Services[slug]["hero"][2]}
           alt="window"
-          width={1200}
-          height={1200}
-          className="h-full max-h-[165px] min-h-[165px] w-full max-w-[317px] min-w-[317px] object-cover sm:max-h-[210px] sm:min-h-[210px] sm:max-w-[400px] sm:min-w-[400px] md:max-h-[295px] md:min-h-[295px] md:max-w-[537px] md:min-w-[537px] lg:max-h-[350px] lg:min-h-[350px] lg:max-w-[600px] lg:min-w-[600px] xl:max-h-[400px] xl:min-h-[400px] xl:max-w-[650px] xl:min-w-[650px]"
+          // width={1200}
+          // height={1200}
+          className="max-w-xs md:max-w-md"
+          // className="h-full max-h-[165px] min-h-[165px] w-full max-w-[317px] min-w-[317px] object-cover sm:max-h-[210px] sm:min-h-[210px] sm:max-w-[400px] sm:min-w-[400px] md:max-h-[295px] md:min-h-[295px] md:max-w-[537px] md:min-w-[537px] lg:max-h-[350px] lg:min-h-[350px] lg:max-w-[600px] lg:min-w-[600px] xl:max-h-[400px] xl:min-h-[400px] xl:max-w-[650px] xl:min-w-[650px]"
         />
         <p className="text-center font-['luminaire-script'] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">
           {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
