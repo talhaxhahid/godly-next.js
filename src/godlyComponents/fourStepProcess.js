@@ -264,8 +264,10 @@ const Badge = ({
       </span>
       <span
         className={`font-sans text-base font-bold ${
-          isActive ? "text-shadow-[0px_1px_2.9px_#FFF]" : ""
-        } group-hover:text-shadow-[0px_1px_2.9px_#FFF] md:text-[28px]`}
+          isActive
+            ? "text-shadow-[0px_0px_1.75px_#FFF] md:text-shadow-[0px_1px_2.9px_#FFF]"
+            : ""
+        } group-hover:text-shadow-[0px_0px_1.75px_#FFF] md:text-[28px] md:group-hover:text-shadow-[0px_1px_2.9px_#FFF]`}
       >
         {text}
       </span>
