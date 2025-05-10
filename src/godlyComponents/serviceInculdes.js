@@ -45,16 +45,17 @@ const ServiceIncludes = ({ slug }) => {
         </h4>
       </div>
 
-      <div className="grid w-full grid-cols-2 flex-wrap justify-center gap-3 md:flex lg:gap-[36px] lg:pb-24 xl:flex-nowrap xl:gap-[40px] xl:pb-28">
+      <div className="grid w-full max-w-[1126px] grid-cols-2 flex-wrap justify-center gap-3 md:flex md:flex-wrap lg:pb-12">
         {Services[slug]["included"].map((step, index) => {
           const isActive = activeCard === index;
           return (
             <div
               key={index}
               className={cn(
-                `paper-bg-16 group min-h-[250px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-2 sm:min-h-[270px] sm:p-3 md:min-h-[290px] md:max-w-[272px] lg:min-h-[310px] lg:max-w-[300px] xl:min-h-[330px] xl:max-w-[320px]`,
+                `paper-bg-16 group min-h-[250px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-2 sm:min-h-[270px] sm:p-3 md:min-h-[290px] md:max-w-[272px]`,
                 isActive ? "bg-[transparent]" : "",
                 "hover:bg-[transparent]",
+                Services[slug]["included"].length === 5 && "md:max-w-[367px]",
                 index === Services[slug]["included"].length - 1 &&
                   Services[slug]["included"].length % 2 === 1 &&
                   "last:col-span-2",
