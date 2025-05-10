@@ -22,7 +22,7 @@ const Testimonials = () => {
     <div className="paper-bg-16 bg-[#262424] md:pb-40">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 pb-[120px] md:px-6 md:py-25">
         <div className="flex w-full flex-col gap-[63px] md:relative md:flex-row md:items-end md:justify-center">
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-6">
             <div className="flex items-end gap-6">
               <h1 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
                 TRUSTED
