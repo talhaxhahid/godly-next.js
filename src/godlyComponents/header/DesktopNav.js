@@ -10,7 +10,7 @@ const DesktopNav = ({ onServicesClick }) => {
         <li className="inline-flex items-center">
           <button
             onClick={onServicesClick}
-            className="flex cursor-pointer items-end gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
+            className="flex cursor-pointer items-center gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
           >
             SERVICES{" "}
             <span>
