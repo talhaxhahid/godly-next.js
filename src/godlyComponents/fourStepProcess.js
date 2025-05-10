@@ -119,18 +119,18 @@ const FourStepProcess = () => {
     <div className="fourstepprocess" id="about">
       <div className="fourstepprocess-inner relative flex flex-col items-center justify-center gap-[100px] md:gap-44">
         <div className="heading relative flex flex-col gap-0">
-          <div className="relative flex flex-col gap-4 md:gap-0">
+          <div className="relative flex flex-col items-center justify-center gap-0">
             <h4
-              className="text-trim text-grain m-0 !bg-white p-0 text-[32px] tracking-[3.84px] md:text-[64px]"
+              className="trim text-grain !bg-white text-[32px] tracking-[3.84px] md:text-[64px]"
               data-text="OUR 4 STEP PROCESS"
             >
               OUR 4 STEP PROCESS
             </h4>
-            <h4 className="with-text-fourstepprocess trim absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transform text-center">
+            <h4 className="with-text-fourstepprocess trim z-10 text-center!">
               With
             </h4>
             <h4
-              className="text-grain -mt-[12px] !bg-white text-[32px] tracking-[3.84px] md:text-[64px]"
+              className="text-grain trim !bg-white text-[24px] tracking-[3.84px] sm:text-[28px] md:text-[48px] lg:text-[56px] xl:text-[64px]"
               data-text="RAINSHIELD TECH"
             >
               RAINSHIELD TECH
@@ -138,21 +138,21 @@ const FourStepProcess = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-center text-white md:gap-3 md:pt-4">
+        <div className="flex w-full flex-col items-center text-white sm:gap-1 sm:pt-2 md:gap-2 md:pt-3 lg:gap-3 lg:pt-4 xl:gap-3 xl:pt-4">
           <div className="text-white">
             <div className="relative z-10 pb-2">
               <div className="mx-auto hidden w-fit items-center justify-between px-2 md:flex">
                 {steps.map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center">
-                      <div className="trim text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:text-3xl lg:text-[36px]">
+                      <div className="trim text-xl font-normal tracking-[3.24px] text-[#FDE4C8] sm:text-2xl md:text-2xl lg:text-3xl xl:text-[36px]">
                         {step.number}
                       </div>
                     </div>
 
                     {/* Add the dotted line unless it's the last element */}
                     {index !== steps.length - 1 && (
-                      <div className="mx-1 max-w-[205px] flex-grow md:mx-2 lg:mx-3">
+                      <div className="mx-1 max-w-[140px] flex-grow sm:mx-1 sm:max-w-[160px] md:mx-1.5 md:max-w-[180px] lg:mx-2 lg:max-w-[195px] xl:mx-3 xl:max-w-[205px]">
                         <img
                           src={"/assets/dotted-line.webp"}
                           alt="dotted-line"
@@ -165,21 +165,24 @@ const FourStepProcess = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-10 grid grid-cols-2 flex-wrap justify-center gap-[27px] md:flex md:min-w-full md:gap-[30px] md:pt-5">
+          <div className="relative z-10 grid grid-cols-2 justify-center gap-[27px] sm:gap-4 md:flex md:w-full md:grid-cols-4 md:flex-row md:flex-nowrap md:justify-between md:gap-3 md:pt-5 lg:gap-4 xl:gap-5">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="trim pb-[18px] text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:hidden md:text-3xl lg:text-[36px]">
+              <div
+                key={index}
+                className="flex flex-col items-center md:w-1/4 md:max-w-[230px] md:flex-shrink-0 xl:max-w-[250px]"
+              >
+                <div className="trim pb-[18px] text-2xl font-normal tracking-[3.24px] text-[#FDE4C8] md:hidden md:text-3xl xl:text-[36px]">
                   {step.number}
                 </div>
-                <div className="paper-bg-8 stepcontainer relative z-10 rounded bg-[#F4D9BB] p-3 text-black shadow md:w-64">
-                  <div className="flex min-h-[180px] flex-col items-center justify-center gap-[20px] border-2 border-black px-2 md:min-h-[285px] md:gap-4">
+                <div className="paper-bg-8 stepcontainer relative z-10 rounded bg-[#F4D9BB] p-3 text-black shadow md:w-full">
+                  <div className="flex min-h-[180px] flex-col items-center justify-center gap-[20px] border-2 border-black px-2 md:min-h-[250px] md:gap-4 lg:min-h-[285px]">
                     <div className="flex h-[42px] w-[42px] justify-center md:h-full md:w-full">
                       {step.icon}
                     </div>
-                    <div className="trim text-center font-['satoshi-black'] text-[16px] font-[900] text-[#1C1C1C] md:text-[26px]">
+                    <div className="trim text-center font-['satoshi-black'] text-[16px] font-[900] text-[#1C1C1C] md:text-[22px] lg:text-[26px]">
                       {step.title}
                     </div>
-                    <p className="trim font-[] text-center font-['satoshi-regular'] text-[9.345px] text-[#1F1D1D] md:text-base">
+                    <p className="trim font-[] text-center font-['satoshi-regular'] text-[9.345px] text-[#1F1D1D] md:text-sm lg:text-base">
                       {step.text}
                     </p>
                   </div>

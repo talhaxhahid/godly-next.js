@@ -10,7 +10,7 @@ const CitySelector = ({ onClick, isMobile = false }) => {
     return (
       <button
         onClick={onClick}
-        className="text-md flex items-center gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
+        className="flex items-center gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
       >
         <MapPinHouse strokeWidth={1.2} size={18} />
         <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">
@@ -25,7 +25,7 @@ const CitySelector = ({ onClick, isMobile = false }) => {
   return (
     <button
       onClick={onClick}
-      className="text-md flex items-end gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
+      className="flex items-end gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
     >
       <MapPinHouse strokeWidth={1.2} size={18} />
       <div className="border-b-1 border-solid border-[#FDE4C8] font-sans text-xs font-semibold">

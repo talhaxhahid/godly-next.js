@@ -5,7 +5,10 @@ import subtract from "../assets/subtract.svg";
 export default function HeaderButton({ onClick }) {
   return (
     <>
-      <button onClick={onClick} className="group cursor-pointer">
+      <button
+        onClick={onClick}
+        className="group scale-85 cursor-pointer xl:scale-100"
+      >
         <div>
           <div
             className="shadow-[0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset, 0px -1px 1.2px 0px rgba(255, 255, 255, 0.03), 0px 2px 2.6px 0px rgba(0, 0, 0, 0.30)] relative h-[14.4px] w-32 rounded-[3px] border-[0.4px] border-[#000] bg-[#1b1b1b] bg-repeat"

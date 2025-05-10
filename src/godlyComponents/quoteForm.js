@@ -12,7 +12,6 @@ import {
 import { format } from "date-fns";
 import QuoteButton from "@/components/quoteButton";
 import Airtable from "airtable";
-import {} from "@/components/ui/dialog";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -149,41 +148,46 @@ export default function QuoteForm({ isDialog }) {
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "md:mt-3",
+        "md:mt-2 xl:mt-3",
         isDialog
-          ? "md:max-h-auto relative flex max-h-[calc(100vh-128px)] justify-center md:top-7 md:mx-auto md:flex md:max-w-[871px] md:justify-center md:gap-0"
+          ? "xl:max-h-auto md:relative md:top-5 md:mx-auto md:flex md:max-h-[calc(100vh-100px)] md:w-full md:max-w-[1200px] md:justify-center md:gap-0 xl:top-7 xl:mx-auto xl:flex xl:max-h-[calc(100vh-128px)] xl:justify-center xl:gap-0"
           : "",
       )}
     >
       <div
         className={cn(
-          "paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen md:shadow-md",
-          isDialog ? "overflow-y-auto" : "",
+          "paper-bg-14 relative w-full rounded-[10px] border bg-[#F3CA9E] bg-blend-screen md:shadow-sm xl:shadow-md",
+          isDialog ? "md:overflow-y-auto xl:overflow-y-auto" : "",
         )}
       >
-        <div className="paper-bg-14 relative z-20 grid grid-cols-2 items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:flex md:h-[128px] md:px-12 md:py-8">
+        <div className="paper-bg-14 relative z-20 grid grid-cols-2 items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:flex md:h-[100px] md:px-10 md:py-6 xl:flex xl:h-[128px] xl:px-12 xl:py-8">
           <h2
             className={cn(
-              "trim text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:min-w-[137px] md:text-[64px] md:leading-normal md:tracking-[3.2px]",
-              isDialog ? "text-[24px] md:text-[40px]" : "",
+              "trim text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:min-w-[120px] md:text-4xl xl:min-w-[137px] xl:text-5xl xl:text-[40px]",
+              isDialog
+                ? "text-[24px] md:text-3xl xl:text-4xl xl:text-[40px]"
+                : "",
             )}
           >
             LET US CALL <br className="md:hidden" /> YOU!
           </h2>
           <p
             className={cn(
-              "text-right font-['satoshi-regular'] text-[13px] font-medium text-[#2D2B2B] md:max-w-[367px] md:text-2xl",
-              isDialog ? "text-[13px] md:text-[20px]" : "",
+              "text-right font-['satoshi-regular'] text-[13px] font-medium text-[#2D2B2B] md:max-w-[320px] md:text-lg xl:max-w-[367px] xl:text-2xl",
+              isDialog
+                ? "text-[13px] md:text-base xl:text-lg xl:text-[20px]"
+                : "",
             )}
           >
             Receive a call within 30 minutes
-            <br className="hidden md:block" /> during normal business hours.
+            <br className="hidden md:block xl:block" /> during normal business
+            hours.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 px-12 py-8 md:grid-cols-12 md:grid-rows-2">
-          <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
+        <div className="grid grid-cols-1 gap-4 px-12 py-8 md:grid-cols-6 md:grid-rows-2 xl:grid-cols-12">
+          <div className="md:col-span-2 xl:col-span-4">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Name
             </label>
             <Input
@@ -191,12 +195,12 @@ export default function QuoteForm({ isDialog }) {
               value={formData.name}
               onChange={handleChange}
               placeholder="YOUR NAME"
-              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl"
+              className="rounded-none border-t-0 border-r-0 !border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
               required
             />
           </div>
-          <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
+          <div className="md:col-span-2 xl:col-span-4">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Email
             </label>
             <Input
@@ -205,12 +209,12 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR EMAIL"
               value={formData.email}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
               required
             />
           </div>
-          <div className="md:col-span-4">
-            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
+          <div className="md:col-span-2 xl:col-span-4">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Phone Number
             </label>
             <Input
@@ -218,18 +222,18 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR PHONE NUMBER"
               value={formData.phone}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
               required
             />
           </div>
           <div
             className={cn(
-              "relative md:col-span-6",
-              isDialog ? "md:col-span-5" : "",
+              "relative md:col-span-3 xl:col-span-5",
+              isDialog ? "md:col-span-3" : "",
             )}
             ref={servicesRef}
           >
-            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               What services do you need?
             </label>
             <button
@@ -237,7 +241,7 @@ export default function QuoteForm({ isDialog }) {
                 e.preventDefault();
                 setShowServices(!showServices);
               }}
-              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
             >
               <div className="flex w-full items-center space-x-2">
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
@@ -256,7 +260,7 @@ export default function QuoteForm({ isDialog }) {
             </button>
 
             {showServices && (
-              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-full flex-col gap-5 rounded-lg bg-[#AB8459] p-6 shadow-xl md:w-[335px]">
+              <div className="paper-bg-14 absolute top-full right-0 z-50 flex w-full flex-col gap-5 rounded-lg bg-[#AB8459] p-6 shadow-xl md:w-[300px] xl:w-[335px]">
                 {servicesList.map((service) => (
                   <div
                     key={service.id}
@@ -282,16 +286,16 @@ export default function QuoteForm({ isDialog }) {
 
           <div
             className={cn(
-              "flex flex-col justify-between md:col-span-4",
-              isDialog ? "md:col-span-5" : "",
+              "flex flex-col justify-between md:col-span-2 xl:col-span-4",
+              isDialog ? "md:col-span-2" : "",
             )}
           >
-            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-base">
+            <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               When do you need the work done by?
             </label>
             <Popover>
               <PopoverTrigger asChild>
-                <button className="text-lef2 flex w-full items-center border-b border-black bg-transparent pb-2 text-base focus:outline-none md:text-2xl">
+                <button className="text-lef2 flex w-full items-center border-b border-black bg-transparent pb-2 text-base focus:outline-none md:text-xl xl:text-2xl">
                   {date ? (
                     format(date, "MM / dd / yyyy")
                   ) : (
@@ -346,8 +350,8 @@ export default function QuoteForm({ isDialog }) {
             </Popover>
           </div>
 
-          <div className="md:col-span-2">
-            <label className="mb-1 block pb-2 font-sans text-sm font-normal text-[#312E2C] md:text-base">
+          <div className="md:col-span-1 xl:col-span-2">
+            <label className="mb-1 block pb-2 font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Zip Code
             </label>
             <Input
@@ -355,7 +359,7 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR ZIP CODE"
               value={formData.zipcode}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-2xl!"
+              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
               required
             />
           </div>
@@ -367,14 +371,16 @@ export default function QuoteForm({ isDialog }) {
               id="agree"
               name="agree"
               checked={formData.agree}
-              className="size-[18px] bg-transparent md:size-[22px]"
+              className="size-[18px] bg-transparent md:size-[16px] xl:size-[22px]"
               onCheckedChange={(checked) =>
                 setFormData((prev) => ({ ...prev, agree: checked }))
               }
             />
             <label
               htmlFor="agree"
-              className={cn("font-['satoshi-regular'] text-sm md:text-xl")}
+              className={cn(
+                "font-['satoshi-regular'] text-sm md:text-base xl:text-xl",
+              )}
             >
               I agree to get information text messages from Godly about my
               estimate and project

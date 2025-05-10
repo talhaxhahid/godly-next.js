@@ -62,22 +62,24 @@ const Promise = () => {
   return (
     <div
       id="promise"
-      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] md:px-[86px] md:py-[150px]"
+      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] sm:px-[40px] md:px-[86px] md:py-[150px] lg:px-[100px] lg:py-[170px] xl:px-[120px] xl:py-[180px]"
     >
       <div
-        className="relative flex h-[200px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[210px] md:scale-100"
+        className="relative flex h-[200px] w-[320px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat sm:w-[500px] sm:scale-75 md:h-[210px] md:w-[758px] md:scale-100 lg:h-[220px] lg:w-[800px] xl:h-[230px] xl:w-[850px]"
         style={{
           backgroundImage: `url(${ticketBg.src})`,
         }}
       >
         <div className="flex -translate-y-7 flex-col items-center gap-4">
-          <h1 className="text-trim -rotate-2 text-[64px] font-normal tracking-[5.76px] text-[#191717]">
+          <h1 className="text-trim -rotate-2 text-[48px] font-normal tracking-[5.76px] text-[#191717] sm:text-[56px] md:text-[64px] lg:text-[70px] xl:text-[76px]">
             old fashioned Values
           </h1>
-          <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-3xl font-normal text-[#191717]">
-            <span className="text-[32px] underline">UNRIVALED</span>{" "}
+          <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-2xl font-normal text-[#191717] sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl">
+            <span className="text-[24px] underline sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px]">
+              UNRIVALED
+            </span>{" "}
             <span
-              className="text-trim quality-text font-['luminaire-script'] text-[80px] text-[#B0906E]"
+              className="text-trim quality-text font-['luminaire-script'] text-[60px] text-[#B0906E] sm:text-[70px] md:text-[80px] lg:text-[90px] xl:text-[100px]"
               data-text="Quality"
             >
               Quality
@@ -137,7 +139,7 @@ const Promise = () => {
               />
               <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
                 <div className="flex flex-col gap-8">
-                  <h5 className="text-md font-normal">
+                  <h5 className="text-base font-normal">
                     <span className="text-base">{step.number}</span>
                   </h5>
 
@@ -205,11 +207,9 @@ function Story() {
           "0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25)",
       }}
     >
-      <div className="relative flex-1 overflow-visible">
-        <div className="absolute top-2 -left-6 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
-        <div className="absolute -right-6 bottom-8 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+      <div className="relative overflow-visible">
         <Carousel
-          className="carousel-dots pointer-none: w-full overflow-visible"
+          className="carousel-dots pointer-none: relative w-full overflow-visible"
           setApi={setApi}
           plugins={[
             Autoplay({
@@ -217,6 +217,8 @@ function Story() {
             }),
           ]}
         >
+          <div className="absolute top-2 -left-6 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+          <div className="absolute -right-6 bottom-2 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
           <CarouselContent className="overflow-visible">
             <CarouselItem className="overflow-visible">
               <div className="relative min-h-[200px] overflow-visible rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
@@ -263,9 +265,19 @@ function Story() {
           >
             LOCAL
           </span>
-          <span className="text-grain !bg-white" data-text=" FAMILY OWNED">
+          <span
+            className="text-grain !bg-white font-['marlton']"
+            data-text="FAMILY"
+          >
             {" "}
-            FAMILY OWNED
+            FAMILY
+          </span>
+          <span
+            className="text-grain !bg-white font-['marlton']"
+            data-text="OWNED"
+          >
+            {" "}
+            OWNED
           </span>
         </h1>
         <p

@@ -4,34 +4,37 @@ import React, { useState } from "react";
 import Link from "next/link";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import Services1 from "@/assets/otherservices1.webp";
-import Services2 from "@/assets/otherservices2.webp";
 import { citiesMap } from "./header/CitiesPopup";
+
+import service10 from "@/assets/serviceData/service10.webp";
+import service12 from "@/assets/serviceData/service12.webp";
+import service2 from "@/assets/serviceData/service2.webp";
+import service9 from "@/assets/serviceData/service9.webp";
 
 const steps = [
   {
     number: "01",
     title: "Screen Cleaning",
     link: "screen_cleans",
-    Image: Services1,
+    Image: service10,
   },
   {
     number: "02",
     title: "Exterior Window Cleaning",
     link: "exterior_windows",
-    Image: Services2,
+    Image: service2,
   },
   {
     number: "03",
     title: "SKYLIGHT CLEANING",
     link: "skylights",
-    Image: Services2,
+    Image: service9,
   },
   {
     number: "04",
     title: "HIGH DUSTING",
     link: "high_dusting",
-    Image: Services2,
+    Image: service12,
   },
 ];
 
@@ -55,7 +58,7 @@ const OtherServices = () => {
       id="promise"
       className="paper-bg-16 flex flex-col items-center justify-center justify-items-center gap-10 bg-[#ebded1] bg-cover bg-center bg-no-repeat p-4 bg-blend-multiply md:p-24 md:pt-0"
     >
-      <h4 className="py-10 text-center text-[32px] font-normal tracking-wide text-[#191717] md:w-4/5 md:text-5xl">
+      <h4 className="py-10 text-center text-[32px] font-normal tracking-wide text-[#191717] md:max-w-[1144px] md:text-5xl">
         enhance your cleaning with other services we offer in {city}
       </h4>
 
@@ -78,14 +81,19 @@ const OtherServices = () => {
                     : "-rotate-[3deg] hover:rotate-0"
               }`}
             >
-              <div className="relative flex min-h-[250px] flex-col justify-between rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
+              <div className="relative flex flex-col justify-between gap-3 rounded-sm bg-[#e7e3df] p-[6.5] pb-[13px] text-[#1c1c1c] md:min-h-[250px] md:gap-4 md:p-2.5 md:pb-[18px]">
                 <Image
                   src={step.Image}
                   style={{ objectFit: "cover" }}
                   alt="window"
-                ></Image>
-                <p className="text-center text-base">{step.title}</p>
-                <p className="text-center font-sans text-sm underline">
+                  width={500}
+                  height={500}
+                  className="h-full max-h-[145px] min-h-[145px] w-full object-cover md:max-h-[223px] md:min-h-[223px]"
+                />
+                <p className="trim text-center text-sm md:text-[22px]">
+                  {step.title}
+                </p>
+                <p className="trim text-center font-sans text-xs underline md:text-base">
                   What We Offer
                 </p>
 

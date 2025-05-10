@@ -50,7 +50,7 @@ const Faq = () => {
         >
           FREQUENTLY
         </h1>
-        <h4 className="-mt-4 text-[24px] font-semibold tracking-wide text-[#191717] md:-mt-10 md:text-2xl">
+        <h4 className="text-[24px] font-semibold tracking-wide text-[#191717] md:text-2xl">
           <span>ASKED</span>{" "}
           <span
             className="text-grain ml-3 !bg-[#61503E] font-['luminaire-script'] text-[48px] font-medium md:text-[64px]"

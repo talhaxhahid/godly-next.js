@@ -28,16 +28,16 @@ const ServiceIncludes = ({ slug }) => {
             INCLUDED
           </span>{" "}
           <span
-            className="trim text-grain !bg-[#191717] text-[36px] md:text-[64px]"
+            className="trim text-grain !bg-[#191717] text-[36px] sm:text-[42px] md:text-[64px] lg:text-[72px] xl:text-[80px]"
             data-text="IN OUR"
           >
             IN OUR
           </span>{" "}
-          <span className="hidden md:inline-block">
+          <span className="hidden sm:inline-block">
             {Services[slug]["hero"][0]} CLEANING
           </span>{" "}
           <span
-            className="trim text-grain !bg-[#191717] text-[36px] md:text-[64px]"
+            className="trim text-grain !bg-[#191717] text-[36px] sm:text-[42px] md:text-[64px] lg:text-[72px] xl:text-[80px]"
             data-text="SERVICE"
           >
             Service
@@ -45,19 +45,19 @@ const ServiceIncludes = ({ slug }) => {
         </h4>
       </div>
 
-      <div className="grid w-full grid-cols-2 justify-center gap-3 md:flex md:gap-[32px] md:pb-20">
+      <div className="grid w-full grid-cols-2 flex-wrap justify-center gap-3 md:flex lg:gap-[36px] lg:pb-24 xl:flex-nowrap xl:gap-[40px] xl:pb-28">
         {Services[slug]["included"].map((step, index) => {
           const isActive = activeCard === index;
           return (
             <div
               key={index}
               className={cn(
-                `paper-bg-16 group min-h-[290px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-3 md:max-w-[272px]`,
+                `paper-bg-16 group min-h-[250px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-2 sm:min-h-[270px] sm:p-3 md:min-h-[290px] md:max-w-[272px] lg:min-h-[310px] lg:max-w-[300px] xl:min-h-[330px] xl:max-w-[320px]`,
                 isActive ? "bg-[transparent]" : "",
                 "hover:bg-[transparent]",
                 index === Services[slug]["included"].length - 1 &&
                   Services[slug]["included"].length % 2 === 1 &&
-                  "col-span-2 mx-auto max-w-1/2 md:col-span-1 md:mx-0 md:max-w-[272px]",
+                  "last:col-span-2",
               )}
               onClick={() => toggleCard(index)}
             >
@@ -74,7 +74,7 @@ const ServiceIncludes = ({ slug }) => {
                 )}
               >
                 <div className="flex flex-col items-center justify-center gap-[32px]">
-                  <h5 className="text-md text-center font-normal">
+                  <h5 className="text-center text-base font-normal">
                     <span className="trim">{step.number}</span>
                   </h5>
 

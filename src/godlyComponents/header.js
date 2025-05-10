@@ -171,7 +171,7 @@ const Header = () => {
           {/* Left side: Logo, Mobile Toggle, Desktop Nav */}
           <div
             className={cn(
-              "flex w-full items-center justify-between bg-[#252323] md:max-h-[80px] md:w-auto md:justify-start md:gap-[30px]",
+              "flex w-full items-center justify-between bg-[#252323] md:max-h-[80px] md:w-auto md:justify-start md:gap-[15px] xl:gap-[30px]",
               mobileMenuOpen ? "justify-center" : "",
             )}
           >
@@ -201,7 +201,7 @@ const Header = () => {
           )}
 
           {/* Right side: Desktop Contact Info & Quote Button */}
-          <div className="hidden items-center gap-5 md:flex">
+          <div className="hidden items-center md:flex xl:gap-5">
             <div className="flex items-center gap-1">
               {/* Use CitySelector component */}
               <CitySelector onClick={handleCitiesClick} />

@@ -99,7 +99,7 @@ const FormPopup = ({ open, onOpenChange }) => {
       <DialogHeader>
         <DialogTitle className="hidden">Contact Us</DialogTitle>
       </DialogHeader>
-      <DialogContent className="z-100 border-none bg-transparent p-0 md:max-w-[871px]">
+      <DialogContent className="z-100 border-none bg-transparent p-0 md:max-w-[1200px]">
         <QuoteForm isDialog={true} />
       </DialogContent>
     </Dialog>

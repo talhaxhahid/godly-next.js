@@ -10,7 +10,7 @@ import Services from "@/data/servicesData";
 const ServicesHero = ({ slug }) => {
   const { city } = useGodlyContext();
   return (
-    <div className="paper-bg-16 mt-17 flex flex-col items-center justify-center gap-20 bg-[#252525] px-[30px] py-[42px] md:mt-14 md:px-[370px] md:py-[100px]">
+    <div className="paper-bg-16 mt-17 flex flex-col items-center justify-center gap-20 bg-[#252525] px-[30px] py-[42px] md:mt-14 md:py-[100px]">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-start gap-3">
           <h1 className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-[20.704px]">
@@ -63,22 +63,28 @@ const ServicesHero = ({ slug }) => {
                 {Services[slug]["hero"][1]} &nbsp;
               </span>
             </h1>
-            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:-top-5 md:-right-40 md:hidden">
+            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] sm:top-5 sm:right-0 sm:max-w-[110px] sm:text-base md:-top-5 md:-right-40 md:hidden md:max-w-[120px] md:text-base lg:-top-6 lg:-right-44 lg:max-w-[130px] lg:text-lg xl:-top-7 xl:-right-48 xl:max-w-[140px] xl:text-xl">
               {city}
             </span>
           </div>
         </div>
       </div>
-      <div className="flex gap-3" />
-      <div className="relative min-h-[200px] rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
-        <Image src={Services[slug]["hero"][2]} alt="window"></Image>
-        <p className="text-center font-['luminaire-script'] text-base">
+      <div className="flex gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-7" />
+      <div className="relative rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c] sm:p-2.5 md:p-3 lg:p-3.5 xl:p-4">
+        <Image
+          src={Services[slug]["hero"][2]}
+          alt="window"
+          width={1200}
+          height={1200}
+          className="h-full max-h-[165px] min-h-[165px] w-full max-w-[317px] min-w-[317px] object-cover sm:max-h-[210px] sm:min-h-[210px] sm:max-w-[400px] sm:min-w-[400px] md:max-h-[295px] md:min-h-[295px] md:max-w-[537px] md:min-w-[537px] lg:max-h-[350px] lg:min-h-[350px] lg:max-w-[600px] lg:min-w-[600px] xl:max-h-[400px] xl:min-h-[400px] xl:max-w-[650px] xl:min-w-[650px]"
+        />
+        <p className="text-center font-['luminaire-script'] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">
           {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
         </p>
-        <div className="absolute top-2 -left-6 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
-        <div className="absolute -right-6 bottom-2 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+        <div className="absolute top-2 -left-6 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC] sm:top-2 sm:-left-6 sm:h-3 sm:w-20 md:top-2 md:-left-6 md:h-3 md:w-22 lg:top-3 lg:-left-7 lg:h-4 lg:w-24 xl:top-4 xl:-left-8 xl:h-5 xl:w-26"></div>
+        <div className="absolute -right-6 bottom-2 z-10 h-3 w-18 -rotate-45 bg-[#F3CA9ECC] sm:-right-6 sm:bottom-2 sm:h-3 sm:w-20 md:-right-6 md:bottom-2 md:h-3 md:w-22 lg:-right-7 lg:bottom-3 lg:h-4 lg:w-24 xl:-right-8 xl:bottom-4 xl:h-5 xl:w-26"></div>
       </div>
-      <div className="text-left font-['satoshi-regular'] leading-6 text-white md:max-w-[700px] md:text-center md:text-[#FFFFFF94]">
+      <div className="text-left font-['satoshi-regular'] text-sm leading-6 text-white sm:max-w-none sm:text-left sm:text-base sm:leading-6 sm:text-white md:max-w-[700px] md:text-center md:text-base md:leading-7 md:text-[#FFFFFF94] lg:max-w-[800px] lg:text-center lg:text-lg lg:leading-7 lg:text-[#FFFFFF94] xl:max-w-[900px] xl:text-center xl:text-xl xl:leading-8 xl:text-[#FFFFFF94]">
         <p>{Services[slug]["hero"][3]}</p>
       </div>
       <FreeQuoteButton>Get a Free Quote</FreeQuoteButton>

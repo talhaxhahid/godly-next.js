@@ -17,7 +17,7 @@ const MobileNav = ({
         <li>
           <button
             onClick={onServicesClick}
-            className="text-md trim flex cursor-pointer items-center gap-1 font-['marlton'] text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="trim flex cursor-pointer items-center gap-1 font-['marlton'] text-base text-[#FDE4C8] hover:text-[#FFCA8F]"
           >
             SERVICES <ChevronDown size={18} />
           </button>
@@ -25,7 +25,7 @@ const MobileNav = ({
         <li>
           <Link
             href="/#about"
-            className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-base text-[#FDE4C8] hover:text-[#FFCA8F]"
             onClick={onLinkClick}
           >
             ABOUT US
@@ -34,7 +34,7 @@ const MobileNav = ({
         <li>
           <Link
             href="/#promise"
-            className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-base text-[#FDE4C8] hover:text-[#FFCA8F]"
             onClick={onLinkClick}
           >
             OUR PROMISE
@@ -43,7 +43,7 @@ const MobileNav = ({
         <li>
           <Link
             href="/#process"
-            className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-base text-[#FDE4C8] hover:text-[#FFCA8F]"
             onClick={onLinkClick}
           >
             OUR PROCESS

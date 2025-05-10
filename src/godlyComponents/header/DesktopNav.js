@@ -6,11 +6,11 @@ import { ChevronDown } from "lucide-react";
 const DesktopNav = ({ onServicesClick }) => {
   return (
     <nav className="hidden bg-[#252323] md:block">
-      <ul className="flex gap-x-6 text-[#FDE4C8]">
-        <li>
+      <ul className="flex gap-x-3 text-[#FDE4C8] xl:gap-x-6">
+        <li className="inline-flex items-center">
           <button
             onClick={onServicesClick}
-            className="text-md flex cursor-pointer items-end gap-1 text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="flex cursor-pointer items-end gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
           >
             SERVICES{" "}
             <span>
@@ -21,7 +21,7 @@ const DesktopNav = ({ onServicesClick }) => {
         <li>
           <Link
             href="/#about"
-            className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
           >
             ABOUT US
           </Link>
@@ -29,7 +29,7 @@ const DesktopNav = ({ onServicesClick }) => {
         <li>
           <Link
             href="/#promise"
-            className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
           >
             OUR PROMISE
           </Link>
@@ -37,7 +37,7 @@ const DesktopNav = ({ onServicesClick }) => {
         <li>
           <Link
             href="/#process"
-            className="text-md text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
           >
             OUR PROCESS
           </Link>

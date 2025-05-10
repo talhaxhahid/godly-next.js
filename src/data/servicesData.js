@@ -7,6 +7,9 @@ import service6 from "@/assets/serviceData/service6.webp";
 import service7 from "@/assets/serviceData/service7.webp";
 import service8 from "@/assets/serviceData/service8.webp";
 import service9 from "@/assets/serviceData/service9.webp";
+import service10 from "@/assets/serviceData/service10.webp";
+import service11 from "@/assets/serviceData/service11.webp";
+import service12 from "@/assets/serviceData/service12.webp";
 
 const Services = {
   solar_panels: {
@@ -94,7 +97,7 @@ const Services = {
     hero: [
       "Exterior Window",
       "Cleaning",
-      service1,
+      service2,
       "This is our jam. We specialize in residential and commercial window cleaning services in south florida. We offer a 100% money back guarantee on all of our cleaning services.",
     ],
     included: [
@@ -180,7 +183,7 @@ const Services = {
     hero: [
       "Interior Window",
       "Cleaning",
-      service1,
+      service3,
       "This is where we shine. We specialize in residential and commercial window cleaning services in south florida. We offer a 100% money back guarantee on all of our cleaning services.",
     ],
     included: [
@@ -251,7 +254,7 @@ const Services = {
     hero: [
       "Gutter",
       "Cleaning",
-      service2,
+      service4,
       "Clogged gutters can cause water damage, roof leaks, and sometimes foundation issues. Our south florida gutter cleaning service ensures that leaves, and other types of debris buildup are removed so water can flow freely.",
     ],
     included: [
@@ -322,7 +325,7 @@ const Services = {
     hero: [
       "House",
       "Washing",
-      service3,
+      service5,
       "Over time, your home’s exterior accumulate layers of pollen, dirt, mold, and mildew, making it look old and run down. Our house washing service gently removes these contaminants using soft-washing techniques that clean effectively without damaging your home’s finish.",
     ],
     included: [
@@ -403,7 +406,7 @@ const Services = {
     hero: [
       "Roof",
       "Washing",
-      service4,
+      service6,
       "Moss, algae, leaves, and other natural debris can cause roof deterioration, which is often a costly fix. Our roof washing service safely removes these elements and extends the life of your roof. We use specialized cleaning methods to ensure no damage.",
     ],
     included: [
@@ -482,7 +485,7 @@ const Services = {
     hero: [
       "Pressure",
       "Washing",
-      service5,
+      service7,
       "Over time, concrete, stone, and brick surfaces collect grime and become slippery. Our professional pressure and soft washing services remove dirt, algae, and buildup—restoring your surfaces and improving safety and curb appeal. We use the right tools to clean driveways, patios, walkways, and pool areas quickly and effectively.",
     ],
     included: [
@@ -561,7 +564,7 @@ const Services = {
     hero: [
       "Paver",
       "Sealing",
-      service6,
+      service8,
       "Pavers fade, stain, and shift over time due to weather, moisture, and wear. Our professional brick and concrete paver sealing service protects your driveway, patio, or walkway—enhancing color, preventing damage, and keeping your outdoor surfaces looking like new.",
     ],
     included: [
@@ -640,7 +643,7 @@ const Services = {
     hero: [
       "Light Fixture",
       "Cleaning",
-      service7,
+      service9,
       "Over time, dust and grime can limit the brightness of your light fixtures, reducing their effectiveness. Our light fixture cleaning service ensures your interior and exterior lights shine to their full potential by carefully removing dirt from chandeliers, sconces, lanterns, and more.",
     ],
     included: [
@@ -719,7 +722,7 @@ const Services = {
     hero: [
       "Screen",
       "Cleaning",
-      service8,
+      service10,
       "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
@@ -877,7 +880,7 @@ const Services = {
     hero: [
       "Holiday Light",
       "Installation",
-      service8,
+      service11,
       "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
@@ -956,7 +959,7 @@ const Services = {
     hero: [
       "High",
       "Dusting",
-      service8,
+      service12,
       "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
