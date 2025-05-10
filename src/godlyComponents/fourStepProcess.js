@@ -109,9 +109,12 @@ const FourStepProcess = () => {
   // Toggle function to handle touch interactions for badges
   const toggleBadge = (index) => {
     setActiveBadges((prev) => {
-      const newState = [...prev];
-      newState[index] = !newState[index];
-      return newState;
+      // If the clicked badge is already active, deactivate all badges
+      if (prev[index]) {
+        return prev.map(() => false);
+      }
+      // Otherwise, deactivate all badges and activate only the clicked one
+      return prev.map((_, i) => i === index);
     });
   };
 
@@ -195,18 +198,16 @@ const FourStepProcess = () => {
         <div className="relative -mt-4 flex flex-col items-center justify-center gap-2 p-8 md:mb-10">
           <Badge
             text="7 day Sparkle Guarantee"
-            className={`z-20 ${
-              activeBadges[0] ? "rotate-0" : "rotate-[2.226deg]"
-            } hover:rotate`}
+            className={`sparks z-20 ${"rotate-[2.226deg]"} hover:rotate`}
+            sparks
             image={spark}
             isActive={activeBadges[0]}
             onClick={() => toggleBadge(0)}
           />
           <Badge
             text="hard water stain removal"
-            className={`-mt-4 scale-95 ${
-              activeBadges[1] ? "rotate-0" : "rotate-[-3.582deg]"
-            }`}
+            className={`-mt-4 scale-95 ${"rotate-[-3.582deg]"}`}
+            drops
             starClassName={"rotate-0"}
             image={drop}
             isActive={activeBadges[1]}
@@ -226,38 +227,84 @@ const Badge = ({
   className,
   starClassName,
   image,
+  sparks,
+  drops,
   isActive,
   onClick,
 }) => (
   <div
     className={cn(
-      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] px-2 py-4 shadow-[0px_4px_37.6px_0px_#1C1C1C] md:px-4 md:py-6",
+      "dashed-border-hover group flex w-fit cursor-pointer items-center gap-2 rounded-[6px] px-2 py-4 shadow-[0px_4px_37.6px_0px_#1C1C1C] transition-transform duration-300 ease-in-out md:px-4 md:py-6",
       isActive
-        ? "bg-[#111010] text-white shadow-[0px_4px_37px_0px_#1C1C1C]"
+        ? "dashed-border transform-[translate(-4px,-12px)] bg-[#111010] text-white shadow-[0px_4px_37px_0px_#1C1C1C]"
         : "bg-[#2D2B2B] text-white",
-      "hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C]",
+      "hover:transform-[translate(-4px,-12px)] hover:bg-[#111010] hover:shadow-[0px_4px_37px_0px_#1C1C1C]",
       className,
     )}
     onClick={onClick}
   >
     <span
       className={cn(
-        `item-center flex size-6 transform justify-center text-yellow-400 transition-transform duration-500 md:size-[28.838px]`,
-        isActive ? "rotate-0" : "rotate-[-115.867deg]",
+        `item-center relative flex size-6 transform justify-center text-yellow-400 transition-all duration-500 md:size-[28.838px]`,
+        isActive ? "" : "",
         starClassName,
       )}
     >
+      {sparks && (
+        <>
+          <Image
+            alt="spark"
+            src={image}
+            className={cn(
+              "absolute -top-1 left-0.5 size-2.5 rotate-[15deg] object-contain opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100",
+              isActive ? "opacity-100" : "",
+            )}
+          />
+          <Image
+            alt="spark"
+            src={image}
+            className={cn(
+              "absolute top-0.5 right-0 size-2 rotate-[-15deg] object-contain opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100",
+              isActive ? "opacity-100" : "",
+            )}
+          />
+        </>
+      )}
+      {drops && (
+        <>
+          <Image
+            alt="spark"
+            src={image}
+            className={cn(
+              "absolute top-0 size-2.5 -translate-x-3.5 object-contain opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100",
+              isActive ? "opacity-100" : "",
+            )}
+          />
+          <Image
+            alt="spark"
+            src={image}
+            className={cn(
+              "absolute bottom-0 size-2 translate-x-4 object-contain opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100",
+              isActive ? "opacity-100" : "",
+            )}
+          />
+        </>
+      )}
       <Image
         alt="spark"
         src={image}
-        className="size-6 object-contain transition-transform duration-500 md:h-auto md:w-auto"
+        className={cn(
+          "relative z-20 size-6 object-contain transition-transform duration-500 md:h-auto md:w-auto",
+          sparks && "group-hover:rotate-[15deg]",
+          isActive ? "rotate-[15deg]" : "",
+        )}
       />
     </span>
     <h6 className="group relative">
       <span
-        className={`mr-4 border-b-3 border-[#f1caa0] font-sans text-base font-[900] uppercase transition-all duration-300 md:text-4xl ${
-          isActive ? "text-yellow-300" : "text-[#f1caa0]"
-        } hover:text-yellow-300`}
+        className={`mr-4 border-b-3 border-[#f1caa0] font-sans text-base font-[900] text-[#f1caa0] uppercase transition-all duration-300 md:text-4xl ${
+          isActive ? "" : "text-[#f1caa0]"
+        } `}
         data-text="FREE"
       >
         FREE

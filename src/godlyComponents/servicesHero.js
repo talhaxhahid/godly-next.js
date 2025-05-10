@@ -26,12 +26,27 @@ const ServicesHero = ({ slug }) => {
         </div>
         <h1
           className={cn(
-            "text-grain trim bg-white! pb-0! text-center text-[64px] leading-[60px] tracking-[5.23px] md:text-center md:text-[88px] md:leading-normal",
+            "text-grain trim flex flex-col flex-wrap items-center bg-white! pb-0! text-center text-[64px] tracking-[5.23px] md:flex-row md:text-center md:text-[88px] md:leading-normal",
             Services[slug]["hero"][0].split(" ").length === 1 && "md:mr-24",
           )}
           data-text={Services[slug]["hero"][0]}
         >
-          {Services[slug]["hero"][0]}
+          <span className="hidden md:inline-block">
+            {Services[slug]["hero"][0]}
+          </span>
+          <div className="md:hidden">
+            {Services[slug]["hero"][0].split(" ").map((word, index) => (
+              <span
+                key={index}
+                className={cn(
+                  "trim block",
+                  Services[slug]["hero"].length > 1 && "last:mt-4 md:last:mt-0",
+                )}
+              >
+                {word}
+              </span>
+            ))}
+          </div>
         </h1>
         <div className="flex w-full flex-col md:relative md:w-full">
           <div className="relative flex w-full items-end">

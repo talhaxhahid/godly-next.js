@@ -20,7 +20,7 @@ const ServiceIncludes = ({ slug }) => {
       style={{ backgroundImage: `url(${background.src})` }}
     >
       <div className="max-w-[312px] md:w-full md:max-w-[854px] md:py-10">
-        <h4 className="trim m-0 w-full p-0 text-center text-[36px] font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px]">
+        <h4 className="trim m-0 w-full p-0 text-center text-[36px] leading-4 font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px] md:leading-normal">
           <span className="text-grain !bg-[#191717]" data-text="WHAT'S">
             WHAT&apos;S
           </span>{" "}
@@ -28,16 +28,16 @@ const ServiceIncludes = ({ slug }) => {
             INCLUDED
           </span>{" "}
           <span
-            className="trim text-grain !bg-[#191717] text-[36px] sm:text-[42px] md:text-[64px] lg:text-[72px] xl:text-[80px]"
+            className="trim m-0 w-full p-0 text-center text-[36px] font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px]"
             data-text="IN OUR"
           >
             IN OUR
           </span>{" "}
-          <span className="hidden sm:inline-block">
+          <span className="trim hidden sm:inline-block">
             {Services[slug]["hero"][0]} CLEANING
           </span>{" "}
           <span
-            className="trim text-grain !bg-[#191717] text-[36px] sm:text-[42px] md:text-[64px] lg:text-[72px] xl:text-[80px]"
+            className="trim m-0 w-full p-0 text-center text-[36px] font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px]"
             data-text="SERVICE"
           >
             Service
@@ -70,7 +70,7 @@ const ServiceIncludes = ({ slug }) => {
                   "group-hover:border group-hover:border-dashed group-hover:border-[#6A6464] group-hover:text-[#2D2B2B]",
                   index % 2 === 1
                     ? "md:border md:border-dashed"
-                    : "border-none",
+                    : "md:border-none",
                 )}
               >
                 <div className="flex flex-col items-center justify-center gap-[32px]">

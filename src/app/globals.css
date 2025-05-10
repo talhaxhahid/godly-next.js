@@ -717,6 +717,12 @@ html {
   border: 2px dashed #f1caa0;
 }
 
+.dashed-border {
+  --dash-length: 22px;
+  --dash-gap: 5px;
+  border: 2px dashed #f1caa0;
+}
+
 /* Ribbon Component - Add to globals.css */
 .ribbon {
   --c: #222; /* Background color - change as needed */
