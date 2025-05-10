@@ -159,19 +159,19 @@ const Header = () => {
     <>
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-30 bg-[rgba(45,43,43,0.85)] backdrop-blur-[2px] md:hidden" // z-30, hidden on medium screens and up
+          className="fixed inset-0 z-30 bg-[rgba(45,43,43,0.85)] backdrop-blur-[2px] lg:hidden" // z-30, hidden on medium screens and up
           onClick={toggleMobileMenu} // Close menu when overlay is clicked
         ></div>
       )}
       <div
-        className="godlyheader w-full bg-[#252323] p-4 text-white md:px-6 md:py-0"
+        className="godlyheader w-full bg-[#252323] p-4 text-white lg:px-6 lg:py-0"
         style={{ position: "fixed", top: "0", zIndex: "100" }}
       >
-        <div className="flex w-full flex-col items-center justify-between gap-4 bg-[#252323] md:flex-row">
+        <div className="flex w-full flex-col items-center justify-between gap-4 bg-[#252323] lg:flex-row">
           {/* Left side: Logo, Mobile Toggle, Desktop Nav */}
           <div
             className={cn(
-              "flex w-full items-center justify-between bg-[#252323] md:max-h-[80px] md:w-auto md:justify-start md:gap-[15px] xl:gap-[30px]",
+              "flex w-full items-center justify-between bg-[#252323] lg:max-h-[80px] lg:w-auto lg:justify-start lg:gap-[30px]",
               mobileMenuOpen ? "justify-center" : "",
             )}
           >
@@ -201,7 +201,7 @@ const Header = () => {
           )}
 
           {/* Right side: Desktop Contact Info & Quote Button */}
-          <div className="hidden items-center md:flex xl:gap-5">
+          <div className="hidden items-center lg:flex lg:gap-5">
             <div className="flex items-center gap-1">
               {/* Use CitySelector component */}
               <CitySelector onClick={handleCitiesClick} />

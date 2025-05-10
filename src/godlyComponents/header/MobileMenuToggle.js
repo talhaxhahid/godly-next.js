@@ -6,7 +6,7 @@ const MobileMenuToggle = ({ isOpen, onClick, hidden }) => {
   return (
     <button
       className={cn(
-        "flex size-[28px] items-center justify-center rounded-full text-[#FDE4C8] md:hidden",
+        "flex size-[28px] items-center justify-center rounded-full text-[#FDE4C8] lg:hidden",
         isOpen ? "mb-4 bg-[#FDE4C8] text-black" : "",
         hidden ? "hidden" : "block",
       )}

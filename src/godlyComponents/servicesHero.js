@@ -24,33 +24,29 @@ const ServicesHero = ({ slug }) => {
             <Star />
           </div>
         </div>
-        <div className="relative flex items-end">
-          <h1
-            className={cn(
-              "text-grain trim bg-white! pb-0! text-center text-[64px] leading-[60px] tracking-[5.23px] md:text-center md:text-[88px] md:leading-normal",
-              Services[slug]["hero"][0].split(" ").length === 1 && "md:mr-24",
-            )}
-            data-text={Services[slug]["hero"][0]}
-          >
-            {Services[slug]["hero"][0]}
-          </h1>
-        </div>
+        <h1
+          className={cn(
+            "text-grain trim bg-white! pb-0! text-center text-[64px] leading-[60px] tracking-[5.23px] md:text-center md:text-[88px] md:leading-normal",
+            Services[slug]["hero"][0].split(" ").length === 1 && "md:mr-24",
+          )}
+          data-text={Services[slug]["hero"][0]}
+        >
+          {Services[slug]["hero"][0]}
+        </h1>
         <div className="flex w-full flex-col md:relative md:w-full">
-          <div className="hidden md:block">
-            <span className="absolute top-60 right-25 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:-top-5 md:-right-40">
-              {city}
-            </span>
-          </div>
           <div className="relative flex w-full items-end">
             <h1
               className={cn(
-                "trim absolute top-1 left-9 z-10 w-full rotate-[-6.668deg] overflow-visible text-end tracking-wide md:top-9 md:left-3",
+                "trim absolute top-1 left-0 z-10 max-h-fit w-full rotate-[-6.668deg] overflow-visible text-end tracking-wide md:top-9 md:left-3",
                 Services[slug]["hero"][0].split(" ").length === 1 && "md:ms-12",
               )}
             >
+              <span className="absolute top-60 right-25 hidden max-w-[100px] rotate-[6.668deg] text-left font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:-top-5 md:-right-30 md:block">
+                {city}
+              </span>
               <span
                 className={cn(
-                  "text-grain z-10 inline-block bg-[#FDE4C8]! pb-7 text-end font-['luminaire-script'] text-[48px] font-normal md:text-[88px]",
+                  "text-grain trim z-10 inline-block bg-[#FDE4C8]! pb-6 text-end font-['luminaire-script'] text-[48px] font-normal md:pb-12 md:text-[88px]",
                 )}
                 data-text={`${Services[slug]["hero"][1]} `}
                 style={{
@@ -60,10 +56,10 @@ const ServicesHero = ({ slug }) => {
                   paintOrder: "stroke",
                 }}
               >
-                {Services[slug]["hero"][1]} &nbsp;
+                {Services[slug]["hero"][1]}
               </span>
             </h1>
-            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] sm:top-5 sm:right-0 sm:max-w-[110px] sm:text-base md:-top-5 md:-right-40 md:hidden md:max-w-[120px] md:text-base lg:-top-6 lg:-right-44 lg:max-w-[130px] lg:text-lg xl:-top-7 xl:-right-48 xl:max-w-[140px] xl:text-xl">
+            <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base font-[400] tracking-[2px] text-[#FDE4C8] md:hidden">
               {city}
             </span>
           </div>

@@ -16,6 +16,8 @@ import { servicesData } from "./servicesData";
 
 const Services = () => {
   const { city } = useGodlyContext();
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+
   return (
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
       <div className="relative flex min-h-screen flex-col items-center gap-[37px] px-6 sm:px-8 md:gap-20 md:px-6 md:py-24 lg:px-10 lg:py-28 xl:px-12 xl:py-32">
@@ -74,7 +76,7 @@ const Services = () => {
                 />
               </h4>
 
-              <div className="absolute right-15 bottom-0 hidden px-2 text-sm text-nowrap text-black md:block">
+              <div className="absolute right-15 -bottom-5 px-2 text-xs text-nowrap text-black md:right-15 md:bottom-0 md:text-sm">
                 <div className="relative">
                   <Image
                     src={textWaveBg}
@@ -93,9 +95,11 @@ const Services = () => {
               or business once, and you&apos;ll never want to go back to doing
               it yourself.
             </p>
-            <Button className="trim flex h-auto cursor-pointer rounded-[6.32px] bg-white p-3 font-[satoshi-bold] text-sm text-[10px] text-[312E2C] hover:bg-white/80 md:px-4 md:py-[14px] md:text-sm">
-              What We Offer
-            </Button>
+            <Link href={`/${cityKey}/holiday_light_installation`}>
+              <Button className="trim flex h-auto cursor-pointer rounded-[6.32px] bg-white p-3 font-[satoshi-bold] text-sm text-[10px] text-[312E2C] hover:bg-white/80 md:px-4 md:py-[14px] md:text-sm">
+                What We Offer
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

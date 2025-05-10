@@ -12,7 +12,7 @@ const MobileNav = ({
   onLinkClick,
 }) => {
   return (
-    <nav className="mt-4 h-full items-center md:hidden">
+    <nav className="mt-4 h-full items-center lg:hidden">
       <ul className="flex flex-col items-center gap-y-4 text-[#FDE4C8]">
         <li>
           <button

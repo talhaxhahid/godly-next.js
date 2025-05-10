@@ -29,19 +29,22 @@ const Hero = () => {
           </div>
           <h1 className="flex flex-wrap items-center gap-4 xl:gap-8">
             <span className="flex flex-wrap items-center gap-2">
-              <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-4xl md:tracking-[6.584px] xl:text-[73.161px]">
+              <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-4xl md:tracking-[6.584px] xl:text-[64px] 2xl:text-[73.161px]">
                 Window cleaning
               </span>
               <span className="shrink-0 text-center font-['luminaire-script'] text-[16px] text-[#FDE4C8] md:text-lg xl:text-2xl">
                 And
               </span>
               <span className="hidden md:block"></span>
-              <span className="font-marlton trim mt-2 shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:mt-0 md:text-4xl md:tracking-[6.584px] xl:text-[73.161px]">
+              <span className="font-marlton trim mt-2 shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:mt-0 md:text-4xl md:tracking-[6.584px] xl:text-[64px] 2xl:text-[73.161px]">
                 pressure Washing
               </span>
             </span>
-            <span className="font-marlton trim hidden shrink-0 items-center gap-2 text-4xl font-normal tracking-[3px] text-white md:block md:tracking-[7.4] xl:text-[73.161px]">
-              services In {city}
+            <span className="font-marlton trim shrink-0 items-center gap-2 text-4xl font-normal tracking-[3px] text-white md:block md:tracking-[7.4] xl:text-[64px] 2xl:text-[73.161px]">
+              services In
+            </span>
+            <span className="font-marlton trim shrink-0 items-center gap-2 text-4xl font-normal tracking-[3px] text-white md:block md:tracking-[7.4] xl:text-[64px] 2xl:text-[73.161px]">
+              {city}
             </span>
           </h1>
           <p className="font-['satoshi-regular'] text-sm font-medium text-white md:text-base xl:text-xl">

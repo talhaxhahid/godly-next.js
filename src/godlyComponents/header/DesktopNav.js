@@ -5,12 +5,12 @@ import { ChevronDown } from "lucide-react";
 
 const DesktopNav = ({ onServicesClick }) => {
   return (
-    <nav className="hidden bg-[#252323] md:block">
+    <nav className="hidden bg-[#252323] lg:block">
       <ul className="flex gap-x-3 text-[#FDE4C8] xl:gap-x-6">
         <li className="inline-flex items-center">
           <button
             onClick={onServicesClick}
-            className="flex cursor-pointer items-center gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] xl:text-base"
+            className="flex cursor-pointer items-center gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] md:items-end xl:text-base"
           >
             SERVICES{" "}
             <span>
