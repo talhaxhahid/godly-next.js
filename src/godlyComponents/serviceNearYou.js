@@ -90,7 +90,7 @@ const ServiceNearYou = ({ slug }) => {
     },
   ];
   return (
-    <div className="fourstepprocess paper-bg-16 bg-[#262424]">
+    <div className="fourstepprocess paper-bg-16 mb-8 bg-[#262424] md:mb-0">
       <div className="fourstepprocess-inner">
         <div className="w-full text-center">
           <h1
@@ -117,7 +117,7 @@ const ServiceNearYou = ({ slug }) => {
           </h4>
         </div>
 
-        <div className="pt-20 pb-16 text-white md:hidden">
+        <div className="pt-20 pb-6 text-white md:hidden md:pb-16">
           <div className="relative z-10 grid grid-cols-2 gap-3 px-4 py-5">
             {Services[slug]["nearyou"].map((step, index) => (
               <div
