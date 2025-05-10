@@ -86,7 +86,7 @@ const Promise = () => {
         </div>
       </div>
       <Story />
-      <div className="flex flex-col items-center justify-center gap-10 py-10">
+      <div className="flex flex-col items-center justify-center gap-4 py-10 md:gap-10">
         <h1
           className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
           data-text="Delivering"
@@ -101,7 +101,7 @@ const Promise = () => {
             Trustworthy
           </span>{" "}
           <span
-            className="text-grain !bg-[#191717] text-4xl md:text-[64px]"
+            className="text-grain trim !bg-[#191717] text-4xl md:text-[64px]"
             data-text="Service"
           >
             Service

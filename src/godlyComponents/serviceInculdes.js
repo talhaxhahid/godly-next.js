@@ -33,7 +33,7 @@ const ServiceIncludes = ({ slug }) => {
           >
             IN OUR
           </span>{" "}
-          <span className="trim hidden sm:inline-block">
+          <span className="trim hidden md:inline-block">
             {Services[slug]["hero"][0]} CLEANING
           </span>{" "}
           <span
