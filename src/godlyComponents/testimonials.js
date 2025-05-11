@@ -162,7 +162,7 @@ const reviews = [
     author: "Mike Donoghue",
     location: "Ft. Lauderdale, Fl",
     content:
-      "Moses and his crew were detail oriented and great to work with. After he started I added cleaning my patio screens and they did a fantastic job. I was so happy I have set him up to come on scheduled intervals. your needs might be different but I am near the ocean so I have quarterly. My experience with service in Florida has been poor in general and Moses is one to give me faith in good service once again. Haha, did not mean to pun with “faith”. I asked why the business name…..he responded because my name is Moses. All around good experience.",
+      "Moses and his crew were detail-oriented and great to work with. I added patio screen cleaning to the job, and they excelled. I'm so pleased I've scheduled regular cleanings—quarterly since I'm near the ocean. Service in Florida has generally disappointed me, but Moses restores my faith in good service. Funny enough, the business is named after him. Overall, a great experience.",
     image: "/assets/mike.png",
   },
 ];
