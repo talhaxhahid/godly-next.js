@@ -90,7 +90,7 @@ const ServiceNearYou = ({ slug }) => {
     },
   ];
   return (
-    <div className="fourstepprocess paper-bg-16 mb-10 bg-[#262424] md:mb-0">
+    <div className="fourstepprocess paper-bg-16 bg-[#262424] pb-24! md:pb-0">
       <div className="fourstepprocess-inner">
         <div className="w-full text-center">
           <h1
@@ -197,7 +197,7 @@ const ServiceNearYou = ({ slug }) => {
             ))}
           </div>
         </div>
-        <h1 className="t mx-auto text-center text-xl font-normal tracking-wide text-white md:w-120 md:text-3xl">
+        <h1 className="trim mx-auto max-w-[343.5px] text-center text-xl font-normal tracking-wide text-white md:w-120 md:max-w-fit md:text-3xl">
           Maximize energy{" "}
           <span className="font-['luminaire-script'] text-[#F3CA9E]">
             Efficiency

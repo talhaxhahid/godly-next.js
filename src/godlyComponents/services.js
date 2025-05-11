@@ -22,7 +22,7 @@ const Services = () => {
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
       <div className="relative flex min-h-screen flex-col items-center gap-[37px] px-6 sm:px-8 md:gap-20 md:px-6 md:py-24 lg:px-10 lg:py-28 xl:px-12 xl:py-32">
         <div className="flex flex-col items-center justify-center gap-6">
-          <h1 className="with-text hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline sm:text-[26px] md:flex md:text-[28px] lg:text-[30px] xl:text-[32px]">
+          <h1 className="with-text trim hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline sm:text-[26px] md:flex md:text-[28px] lg:text-[30px] xl:text-[32px]">
             We are
           </h1>
           <div className="flex flex-col items-center justify-center">
@@ -41,7 +41,7 @@ const Services = () => {
               </span>
             </div>
             <h4
-              className="text-grain font-marlton -mt-4 !bg-white text-[32px] tracking-[3.84px] sm:text-[40px] md:-mt-8 md:text-[64px] lg:-mt-9 lg:text-[72px] xl:-mt-10 xl:text-[80px]"
+              className="text-grain font-marlton -mt-2 !bg-white text-[32px] tracking-[3.84px] sm:text-[40px] md:-mt-5 md:text-[64px] lg:text-[72px] xl:text-[80px]"
               data-text="WINDOW WASHERS"
             >
               WINDOW WASHERS

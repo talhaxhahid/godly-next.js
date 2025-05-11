@@ -1,12 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
-import Slider from "react-slick";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import alex from "@/assets/alex.webp";
 import Link from "next/link";
 
 import {
@@ -19,7 +13,7 @@ import {
 
 const Testimonials = () => {
   return (
-    <div className="paper-bg-16 bg-[#262424] md:pb-40">
+    <div className="paper-bg-16 bg-[#262424]">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 pb-[120px] md:px-6 md:py-25">
         <div className="flex w-full flex-col gap-[63px] md:relative md:flex-row md:items-end md:justify-center">
           <div className="flex flex-col items-center justify-center gap-6 md:gap-6">
@@ -33,7 +27,7 @@ const Testimonials = () => {
             </div>
             <h1 className="-mt-5 md:-mt-9">
               <span
-                className="text-grain !bg-[#FDE4C8] font-['luminaire-script'] text-base md:mr-4 md:text-[64px] md:before:inset-0"
+                className="text-grain !bg-[#FDE4C8] font-['luminaire-script'] text-base md:mr-4 md:ps-2 md:pb-2 md:text-[64px] md:before:inset-0"
                 data-text="Your"
               >
                 Your
@@ -53,74 +47,49 @@ const Testimonials = () => {
             <span className="text-white underline">SEE MORE REVIEWS</span>
           </Link>
         </div>
-        <QuoteCarousel />
-        {/* Mobile Carousel */}
-        <div className="w-full md:hidden">
-          {" "}
-          {/* Ensure container takes width */}
+        <div className="max-w-screen-[1920px] mx-auto w-full pb-20 md:pb-40">
           <Carousel
             opts={{
-              align: "start", // Align items to the start
-              loop: true, // Enable looping
+              align: "start",
+              loop: true,
             }}
-            className="w-full" // Carousel takes full width of its container
+            className="w-full"
           >
-            <CarouselContent className="-ml-4">
-              {" "}
-              {/* Use negative margin to help reveal next item */}
-              {quotes.map(
-                (
-                  item,
-                  index, // Use actual quotes data
-                ) => (
-                  <CarouselItem key={index} className="basis-5/6 pl-4">
-                    {" "}
-                    {/* Set item basis to less than full width and add padding */}
-                    {/* Replicate the quote card structure from the desktop version */}
-                    <div className="paper-bg-8 flex h-full flex-col gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c]">
-                      {" "}
-                      {/* Ensure card takes height if needed */}
-                      <div className="w-ful flex flex-col items-center justify-between gap-3">
-                        {/* <div
-                          className="trim ribbon text-grain bg-[#2D2B2B] px-[5.64px] py-[2.82px] text-sm font-medium tracking-wide text-white"
-                          data-text="SUNRISE"
-                        >
-                          SUNRISE
-                        </div> */}
-                        <div className="ribbon">SUNRISE</div>
-                        <div className="flex w-full items-center gap-[10px]">
-                          <img
-                            src={alex.src}
-                            alt="alex"
-                            className="size-[47px] rounded-full bg-[#D9D9D9] object-cover"
-                          />
-                          <div className="flex flex-col gap-2.5">
-                            <p className="trim text-base font-normal">
-                              {item.author}
-                            </p>
-                            <div className="flex items-center gap-1.5">
-                              <Star />
-                              <Star />
-                              <Star />
-                              <Star />
-                              <Star />
-                            </div>
+            <CarouselContent>
+              {reviews.map((item, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-5/6 pl-4 md:basis-[25%]"
+                >
+                  <div className="paper-bg-8 flex h-full flex-col gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c]">
+                    <div className="flex w-full flex-col items-center justify-between gap-3">
+                      <div className="ribbon">{item.location}</div>
+                      <div className="flex w-full items-center gap-[10px]">
+                        <img
+                          src={item.image}
+                          alt={item.author}
+                          className="size-[47px] rounded-full bg-[#D9D9D9] object-cover"
+                        />
+                        <div className="flex flex-col gap-2.5">
+                          <p className="trim text-base font-normal">
+                            {item.author}
+                          </p>
+                          <div className="flex items-center gap-1.5">
+                            {Array.from({ length: 5 }, (_, i) => (
+                              <Star key={i} />
+                            ))}
                           </div>
                         </div>
                       </div>
-                      <p className="mb-4 font-sans text-sm leading-relaxed font-normal">
-                        <span className="font-semibold">We </span>
-                        {item.quote.replace(/^We /, "")}
-                      </p>
                     </div>
-                  </CarouselItem>
-                ),
-              )}
+                    <p className="mb-4 font-sans text-sm leading-relaxed font-normal">
+                      {item.content}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
             </CarouselContent>
-            {/* Position navigation buttons below the carousel */}
             <div className="relative mt-16 h-16">
-              {" "}
-              {/* Container for buttons */}
               <CarouselPrevious className="absolute left-1/2 size-[60px] -translate-x-[calc(100%+1.25rem)] transform rounded-full bg-white text-black" />
               <CarouselNext className="absolute left-1/2 size-[60px] translate-x-[1.25rem] transform rounded-full bg-white text-black" />
             </div>
@@ -133,102 +102,70 @@ const Testimonials = () => {
 
 export default Testimonials;
 
-const quotes = new Array(6).fill({
-  quote:
-    "We want to ‘reverse time’ back to when you trusted the people working on your home or business. Back to when the standard was to do exactly what you said you’d do, rather than using it as merely a guideline.",
-  author: "ANDREW GARFIELD",
-});
-
-function SampleNextArrow(props) {
-  const { onClick } = props;
-  return (
-    <Button
-      onClick={onClick}
-      className="!absolute bottom-[-70px] left-1/2 z-10 ml-3 h-10 w-10 rounded-full bg-white p-2 text-black hover:bg-[#dec9b4]"
-    >
-      <ChevronRight />
-    </Button>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { onClick } = props;
-  return (
-    <Button
-      onClick={onClick}
-      className="!absolute bottom-[-70px] left-1/2 z-10 -ml-13 h-10 w-10 rounded-full bg-white p-2 text-black hover:bg-[#dec9b4]"
-    >
-      <ChevronLeft />
-    </Button>
-  );
-}
-
-function QuoteCarousel() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
-  return (
-    <div className="hidden w-full pt-0 md:block">
-      <Slider {...settings}>
-        {quotes.map((item, idx) => (
-          <div key={idx} className="max-w-fit md:px-2">
-            <div className="flex max-w-[284px] flex-col items-center gap-6 rounded-md bg-[#dec9b4] p-6 text-[#1c1c1c] md:min-h-[200px] md:max-w-full md:px-4 md:py-6">
-              <div className="ribbon">SUNRISE</div>
-              <div className="flex w-full items-center gap-[10px] md:gap-4">
-                <img
-                  src={alex.src}
-                  alt="alex"
-                  className="size-[47px] rounded-full bg-[#D9D9D9] object-cover"
-                />
-                <div className="flex flex-col gap-2.5">
-                  <p className="trim text-base font-normal">{item.author}</p>
-                  <div className="flex items-center gap-1.5">
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                  </div>
-                </div>
-              </div>
-              <p className="mb-4 font-sans text-sm leading-relaxed font-normal">
-                <span className="font-semibold">We </span>
-                {item.quote.replace(/^We /, "")}
-              </p>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
-}
+const reviews = [
+  {
+    author: "Stacey Downs",
+    location: "Coral Springs, Fl",
+    content:
+      "Extremely pleased with the results of my windows. They were very professional and informative. I highly recommend Moses Godly Windows!",
+    image: "/assets/stacey.png",
+  },
+  {
+    author: "Lilly Thomas",
+    location: "Lighthouse Point, Fl",
+    content:
+      "Extremely pleased with the results of my windows. They were very professional and informative. I highly recommend Moses Godly Windows!",
+    image: "/assets/lily.png",
+  },
+  {
+    author: "Julie Candella",
+    location: "Ft. Lauderdale",
+    content:
+      "Amazing and professional service by Moses and his team today they completed the entire house inside and out driveways, and awnings & made sure everything was clean, including garbage cans and then put furniture and everything back the way it was exactly. Plus more. We are looking forward to having our Christmas lights as well.",
+    image: "/assets/julie.png",
+  },
+  {
+    author: "Heather Roach",
+    location: "Ft. Lauderdale, Fl",
+    content:
+      "The window washing service was prompt, professional, and left every pane sparkling clean. They paid attention to detail and even cleaned hard-to-reach areas without any streaks. I’m impressed with the results and would definitely hire them again! 🙌",
+    image: "/assets/heather.png",
+  },
+  {
+    author: "Phillip Smoak",
+    location: "Parkland, Fl",
+    content:
+      "These guys are amazing. They clean our windows every three months and always do a great job. It’s not easy finding great honest work, super glad I found them.",
+    image: "/assets/phillip.png",
+  },
+  {
+    author: "Sliding Door Dr.",
+    location: "Boca Raton, Fl",
+    content:
+      "I install glass and these are the only guys I use and recommend. They know what they're doing and if you have impact glass you better use someone that knows.",
+    image: "/assets/sliding.png",
+  },
+  {
+    author: "Daniela D",
+    location: "Boca Raton, Fl",
+    content:
+      "The best window company I’ve used. Was referred by a friend and they did a great job. The one thing I loved was how they use something on the glass so that my windows barely get wet when it rains. Just call them and you’ll see why I’m leaving a review. Great guys.",
+    image: "/assets/daniela.png",
+  },
+  {
+    author: "Kelly Grana-Barton",
+    location: "Ft. Lauderdale, Fl",
+    content: "The best!!! Don’t call anyone else for window washing.",
+    image: "/assets/kelly.png",
+  },
+  {
+    author: "Mike Donoghue",
+    location: "Ft. Lauderdale, Fl",
+    content:
+      "Moses and his crew were detail oriented and great to work with. After he started I added cleaning my patio screens and they did a fantastic job. I was so happy I have set him up to come on scheduled intervals. your needs might be different but I am near the ocean so I have quarterly. My experience with service in Florida has been poor in general and Moses is one to give me faith in good service once again. Haha, did not mean to pun with “faith”. I asked why the business name…..he responded because my name is Moses. All around good experience.",
+    image: "/assets/mike.png",
+  },
+];
 
 const Star = () => {
   return (

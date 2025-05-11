@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="flex flex-col items-start justify-between md:flex-row">
             <div className="flex w-full items-start justify-between md:flex-row md:justify-start md:gap-30">
               {/* Left: Information */}
-              <div className="flex flex-col gap-2">
+              {/* <div className="flex flex-col gap-2">
                 <h3 className="font-normal tracking-[0.64px] text-[#312E2C] uppercase opacity-60 md:opacity-100">
                   Information
                 </h3>
@@ -30,13 +30,13 @@ const Footer = () => {
                 >
                   FAQ
                 </Link>
-                {/* <Link
+                 <Link
                   href="/blogs"
                   className="font-['satoshi-regular'] text-sm font-normal hover:underline"
                 >
                   Blog
-                </Link> */}
-              </div>
+                </Link>
+              </div> */}
 
               {/* Center: Menu */}
               <div className="flex flex-col gap-2">

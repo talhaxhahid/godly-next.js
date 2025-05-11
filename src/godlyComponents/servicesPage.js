@@ -8,7 +8,7 @@ import OtherServices from "./otherServices";
 import ChooseUs from "./chooseUs";
 import EssentialService from "./serviceEssential";
 import ServiceNearYou from "./serviceNearYou";
-import Faq from "./faq";
+// import Faq from "./faq";
 import { useEffect } from "react";
 import { useGodlyContext } from "@/context/godlyContext";
 
@@ -30,7 +30,7 @@ export default function ServicesPage({ slug, city }) {
       <EssentialService slug={slug} />
       <ServiceNearYou slug={slug} />
       <ChooseUs />
-      <Faq />
+      {/* <Faq /> */}
       <OtherServices />
     </WebsiteLayout>
   );

@@ -14,11 +14,11 @@ const EssentialService = ({ slug }) => {
   };
 
   return (
-    <div className="paper-bg-16 flex flex-col items-center gap-16 bg-[#262424] px-4 py-16 sm:gap-18 sm:px-5 sm:py-20 md:gap-20 md:px-6 md:py-24 lg:gap-24 lg:px-8 lg:py-28 xl:gap-28 xl:px-10 xl:py-32">
+    <div className="paper-bg-16 flex flex-col items-center gap-16 bg-[#262424] px-4 py-16 pt-24 sm:gap-18 sm:px-5 sm:py-20 md:gap-20 md:px-6 md:py-24 lg:gap-24 lg:px-8 lg:py-28 xl:gap-28 xl:px-10 xl:py-32">
       {/* Heading Section */}
-      <div className="flex flex-col items-center justify-center gap-1 sm:gap-3 md:gap-5 lg:gap-6 xl:gap-7">
+      <div className="flex flex-col items-center justify-center gap-1 md:gap-5">
         <h4
-          className="text-grain !bg-[#FFFFFF] text-center text-base tracking-[1.35px] sm:text-lg sm:tracking-[1.5px] md:text-xl md:tracking-wide lg:text-2xl lg:tracking-wider xl:text-3xl xl:tracking-widest"
+          className="text-grain trim !bg-[#FFFFFF] text-center text-base tracking-[1.35px] sm:text-lg sm:tracking-[1.5px] md:text-xl md:tracking-wide lg:text-2xl lg:tracking-wider xl:text-3xl xl:tracking-widest"
           data-text="WHY KEEPING YOUR"
         >
           WHY KEEPING YOUR
@@ -32,7 +32,7 @@ const EssentialService = ({ slug }) => {
           {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
         </h4>
         <h1
-          className="relative z-10 text-center font-['luminaire-script'] text-xl text-white sm:text-2xl md:-mt-7 md:text-6xl lg:text-[72px] xl:text-[80px]"
+          className="trim relative z-10 text-center font-['luminaire-script'] text-xl text-white sm:text-2xl md:-mt-5 md:text-6xl lg:text-[72px] xl:text-[80px]"
           style={{
             WebkitTextStrokeWidth: "5px",
             strokeLinecap: "round",

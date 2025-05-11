@@ -56,9 +56,9 @@ const OtherServices = () => {
   return (
     <div
       id="promise"
-      className="paper-bg-16 flex flex-col items-center justify-center justify-items-center gap-10 bg-[#ebded1] bg-cover bg-center bg-no-repeat p-4 bg-blend-multiply md:p-24 md:pt-0"
+      className="paper-bg-16 flex flex-col items-center justify-center justify-items-center gap-10 bg-[#ebded1] bg-cover bg-center bg-no-repeat p-4 pb-24 bg-blend-multiply md:p-24 md:pt-0 md:pb-42"
     >
-      <h4 className="py-10 text-center text-[32px] font-normal tracking-wide text-[#191717] md:max-w-[1144px] md:text-5xl">
+      <h4 className="trim py-10 text-center text-[32px] leading-tight font-normal tracking-wide text-[#191717] md:max-w-[1200px] md:text-[64px]">
         enhance your cleaning with other services we offer in {city}
       </h4>
 

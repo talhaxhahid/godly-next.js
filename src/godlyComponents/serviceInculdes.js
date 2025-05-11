@@ -19,28 +19,25 @@ const ServiceIncludes = ({ slug }) => {
       className="flex flex-col items-center justify-items-center gap-[55px] bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-[30px] py-[100px] bg-blend-multiply md:gap-16 md:px-[24px] md:py-[100px]"
       style={{ backgroundImage: `url(${background.src})` }}
     >
-      <div className="max-w-[312px] md:w-full md:max-w-[854px] md:py-10">
-        <h4 className="trim m-0 w-full p-0 text-center text-[36px] leading-4 font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px] md:leading-normal">
+      <div className="md:w-full md:max-w-[854px] md:py-10">
+        <h4 className="trim m-0 w-full p-0 text-center text-[36px] leading-tight font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px] md:leading-tight">
           <span className="text-grain !bg-[#191717]" data-text="WHAT'S">
             WHAT&apos;S
           </span>{" "}
-          <span className="text-grain trim !bg-[#AB8459]" data-text="INCLUDED">
+          <span className="text-grain !bg-[#AB8459]" data-text="INCLUDED">
             INCLUDED
           </span>{" "}
-          <span
-            className="trim m-0 w-full p-0 text-center text-[36px] font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px]"
-            data-text="IN OUR"
-          >
+          <span className="text-grain !bg-[#191717]" data-text="IN OUR">
             IN OUR
           </span>{" "}
-          <span className="trim hidden md:inline-block">
+          <span
+            className="text-grain hidden !bg-[#191717] md:inline-block"
+            data-text={`${Services[slug]["hero"][0]} CLEANING`}
+          >
             {Services[slug]["hero"][0]} CLEANING
           </span>{" "}
-          <span
-            className="trim m-0 w-full p-0 text-center text-[36px] font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px]"
-            data-text="SERVICE"
-          >
-            Service
+          <span className="text-grain !bg-[#191717]" data-text="SERVICE">
+            SERVICE
           </span>
         </h4>
       </div>
@@ -69,9 +66,6 @@ const ServiceIncludes = ({ slug }) => {
                     ? "border border-dashed border-[#6A6464] text-[#2D2B2B]"
                     : "",
                   "group-hover:border group-hover:border-dashed group-hover:border-[#6A6464] group-hover:text-[#2D2B2B]",
-                  index % 2 === 1
-                    ? "md:border md:border-dashed"
-                    : "md:border-none",
                 )}
               >
                 <div className="flex flex-col items-center justify-center gap-[32px]">
