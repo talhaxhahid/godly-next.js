@@ -1,34 +1,49 @@
 import React from "react";
 
-import background from "../assets/texture.png";
-import map from "@/assets/map.png";
+import map from "@/assets/map.webp";
 import SectionButton from "@/components/sectionButton";
-
+import Image from "next/image";
 
 const Location = () => {
+  return (
+    <div className="paper-bg-16 bg-[#262424]">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-center gap-[15px] bg-cover bg-center bg-no-repeat py-[43px] bg-blend-multiply md:gap-[14px] md:p-16">
+        <h4
+          className="text-grain trim !bg-[#FDE4C8] font-['Marlton'] text-base font-light tracking-[2.24px] md:text-2xl md:font-normal md:tracking-wider"
+          data-text="PROUDLY SERVING"
+        >
+          PROUDLY SERVING
+        </h4>
+        <h1
+          className="text-grain trim !bg-white text-[32px] font-normal tracking-[3.2px] md:text-[64px] md:tracking-wider"
+          data-text="THESE TOWNS"
+        >
+          THESE TOWNS
+        </h1>
+        <h4
+          className="text-grain trim md:t-0 !bg-white text-[32px] font-normal tracking-wider md:text-2xl"
+          data-text="IN SOUTH "
+        >
+          <span className="trim text-32px] md:text-xl">IN</span> SOUTH{" "}
+          <span
+            className="text-grain trim !bg-[#FDE4C8] font-[luminaire-script] text-[20px] md:text-[32px]"
+            data-text="Florida"
+          >
+            Florida
+          </span>
+        </h4>
+      </div>
+      <div className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ebded1] bg-cover bg-center bg-no-repeat p-16 bg-blend-multiply">
+        <Image
+          src={map}
+          alt="map"
+          className="h-full max-w-[345px] md:max-w-[1140px]"
+        />
 
-
-
-
-    return (
-        <div>
-            <div className="flex p-16 flex-col justify-items-center items-center min-h-[40vh] bg-[#262424] bg-blend-multiply bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background.src})` }}>
-                <h4 className="text-[#FDE4C8] text-xl font-normal tracking-wider">PROUDLY SERVING</h4>
-                <h1 className="text-white text-6xl font-normal tracking-wider">THESE TOWNS</h1>
-                <h4 className="text-white text-2xl mt-3 font-normal tracking-wider"><span className="text-xl">IN</span> SOUTH <span className="text-[#FDE4C8] font-[luminaire-script]">Florida</span></h4>
-
-
-
-
-            </div>
-            <div className="flex flex-col gap-10 justify-items-center items-center min-h-[100vh] p-16 bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background.src})` }}>
-                <div className="w-600 h-100 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: `url(${map.src})` }}></div>
-                <SectionButton/>
-            </div>
-            
-        </div>
-    );
-
-}
+        <SectionButton>Get a Free Estimate</SectionButton>
+      </div>
+    </div>
+  );
+};
 
 export default Location;

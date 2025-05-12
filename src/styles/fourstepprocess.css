@@ -1,40 +1,183 @@
-.fourstepprocess{
-    background-color: #231f1f;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    
+.fourstepprocess {
+  padding-top: 72px;
+  padding-bottom: 80px;
+  padding-left: 123px;
+  padding-right: 123px;
+  background-image: url("/assets/vintage-paper-16.webp");
+  background-color: #252424;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply, normal;
+
+  @media (max-width: 640px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
 }
 
-.fourstepprocess-inner{
-    background-image: url('../assets/fourstep_bg.png');
-    min-height: 100vh;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.fourstepprocess-inner {
+  background-image: url("../assets/fourstep_bg.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 35%;
+
+  @media (max-width: 640px) {
+    background-size: 120%;
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    background-size: 100%;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    background-size: 70%;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    background-size: 50%;
+  }
 }
 
-.fourstepprocess-inner .heading{
-    font-weight: 400;
-    font-size: 54px;
-    text-align: center;
-    color: white;
-}
-.stepcontainer{
-    padding: 8px;
-    box-shadow: 10px 10px 0 #FDE4C8;
+.fourstepprocess-inner .heading {
+  font-weight: 400;
+  font-size: 54px;
+  text-align: center;
+  color: white;
 
-}
-.stepcontainer-inner{
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
+  @media (max-width: 640px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 38px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: 46px;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 50px;
+  }
 }
 
-.gurantee{
-    box-shadow: -3px 3px 0 #111111;
+.stepcontainer {
+  padding: 8px;
+  box-shadow: 10px 10px 0 #fde4c8;
+
+  @media (max-width: 640px) {
+    padding: 6px;
+    box-shadow: 6px 6px 0 #fde4c8;
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    box-shadow: 8px 8px 0 #fde4c8;
+  }
+}
+
+.stepcontainer-inner {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  @media (max-width: 640px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+.gurantee {
+  box-shadow: -3px 3px 0 #111111;
+
+  @media (max-width: 640px) {
+    box-shadow: -2px 2px 0 #111111;
+  }
+}
+
+.with-text-fourstepprocess {
+  color: #fde4c8;
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: luminaire-script;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  text-shadow:
+    -2.22px -2.22px 0 #201e1e,
+    2.22px -2.22px 0 #201e1e,
+    -2.22px 2.22px 0 #201e1e,
+    2.22px 2.22px 0 #201e1e;
+
+  @media (max-width: 640px) {
+    font-size: 22px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    margin-top: -4px;
+    text-shadow:
+      -1.5px -1.5px 0 #201e1e,
+      1.5px -1.5px 0 #201e1e,
+      -1.5px 1.5px 0 #201e1e,
+      1.5px 1.5px 0 #201e1e;
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 24px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    margin-top: -4px;
+    text-shadow:
+      -1.8px -1.8px 0 #201e1e,
+      1.8px -1.8px 0 #201e1e,
+      -1.8px 1.8px 0 #201e1e,
+      1.8px 1.8px 0 #201e1e;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: 30px;
+    text-shadow:
+      -2px -2px 0 #201e1e,
+      2px -2px 0 #201e1e,
+      -2px 2px 0 #201e1e,
+      2px 2px 0 #201e1e;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 34px;
+    text-shadow:
+      -2.1px -2.1px 0 #201e1e,
+      2.1px -2.1px 0 #201e1e,
+      -2.1px 2.1px 0 #201e1e,
+      2.1px 2.1px 0 #201e1e;
+  }
 }

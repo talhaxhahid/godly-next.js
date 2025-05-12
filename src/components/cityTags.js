@@ -1,24 +1,49 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
-import Matter from 'matter-js';
+import React, { useEffect, useMemo, useRef } from "react";
+import Matter from "matter-js";
 
 const CityTags = () => {
   const sceneRef = useRef(null);
   const engineRef = useRef(null);
   const renderRef = useRef(null);
   const runnerRef = useRef(null);
-  
-  const cities = [
-    "LAUDERDALE-BY-THE-SEL", "WELLINGTON", "PEMBROKE PINES", "WORTH PALM BEACH",
-    "COGNIT CRESK", "POUNDED BEACH", "BOTAL PALM BEACH", "MARGATE", "TANJOLIC",
-    "NIPPTER", "ROYAL PALM BEACH", "OAKLAND PARK", "SUNRISE",
-    "CORALLIGHTROUSE POINT SPRINGS", "ROPE A BATCH", "LUNDERNAL", "PLANTATION",
-    "JOHN HOSSE POWN", "WESTON", "PALM BEACH GARDENS", "HIRAJAR", "CORAL SPRINGS",
-    "WEST PALM BEACH", "PEMBROKE PINES", "SUNRISE", "OBLARY BEACH", "WILLINGLEBEACH"
-  ];
+
+  const cities = useMemo(() => {
+    return [
+      "LAUDERDALE-BY-THE-SEA",
+      "WELLINGTON",
+      "PEMBROKE PINES",
+      "DEERFIELD BEACH",
+      "NORTH PALM BEACH",
+      "COCONUT CREEK",
+      "CORAL SPRINGS",
+      "POMPANO BEACH",
+      "TAMARAC",
+      "HILLSBORO BEACH",
+      "MIAMI",
+      "ROYAL PALM BEACH",
+      "MARGATE",
+      "JUPITER",
+      "BOCA RATON",
+      "OAKLAND PARK",
+      "SUNRISE",
+      "LIGHTHOUSE POINT",
+      "SOUTHWEST RANCHES",
+      "FORT LAUDERDALE",
+      "PLANTATION",
+      "DAVIE",
+      "WESTON",
+      "PALM BEACH GARDENS",
+      "MIRAMAR",
+      "WEST PALM BEACH",
+      "HOLLYWOOD",
+      "DELRAY BEACH",
+      "HALLANDALE BEACH",
+    ];
+  }, []);
 
   const getRandomColor = () => {
-    return Math.random() < 0.5 ? '#FFFFFF' : '#F3C99D';
+    return Math.random() < 0.5 ? "#FFFFFF" : "#F3C99D";
   };
 
   useEffect(() => {
@@ -35,9 +60,9 @@ const CityTags = () => {
         width: window.innerWidth,
         height: 300,
         wireframes: false,
-        background: '#2D2B2B',
-        showSleeping: false
-      }
+        background: "#312e2c",
+        showSleeping: false,
+      },
     });
     const render = renderRef.current;
 
@@ -57,32 +82,32 @@ const CityTags = () => {
       310, // Just below the visible area
       window.innerWidth + 100,
       20,
-      { ...wallOptions, friction: 0.1 }
+      { ...wallOptions, friction: 0.1 },
     );
 
-    const leftWall = Matter.Bodies.rectangle(
-      -10, // Left of visible area
-      250,
-      20,
-      300,
-      wallOptions
-    );
+    Matter.World.add(world, [ground]);
 
-    const rightWall = Matter.Bodies.rectangle(
-      window.innerWidth -5, // Right of visible area
-      250,
-      20,
-      300,
-      wallOptions
-    );
+    const mouse = Matter.Mouse.create(render.canvas);
+    mouse.pixelRatio = window.devicePixelRatio || 1;
 
-    Matter.World.add(world, [ground, leftWall, rightWall]);
+    const mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: {
+          visible: false,
+        },
+      },
+    });
+
+    Matter.World.add(world, mouseConstraint);
+    render.mouse = mouse;
 
     // Create pill-shaped bodies
-    const bodies = cities.map(city => {
+    const bodies = cities.map((city) => {
       const width = city.length * 8 + 40; // Constrained width
       const height = 40;
-      
+
       const body = Matter.Bodies.rectangle(
         Math.random() * (window.innerWidth - 200) + 100, // Random x within bounds
         Math.random() * 100 + 50, // Random y starting position
@@ -96,20 +121,20 @@ const CityTags = () => {
           angle: Math.random() * 0.2 - 0.1,
           render: {
             fillStyle: getRandomColor(),
-            strokeStyle: '#ccc',
+            strokeStyle: "#ccc",
             lineWidth: 1,
-            visible: true // Important: make sure this is true
+            visible: true, // Important: make sure this is true
           },
-          chamfer: { radius: height / 2 } // Creates pill shape
-        }
+          chamfer: { radius: height / 2 }, // Creates pill shape
+        },
       );
-      
+
       // Store custom properties
       body.label = city;
       body.width = width;
       body.height = height;
       body.render.visible = true; // Ensure visibility
-      
+
       return body;
     });
 
@@ -118,14 +143,14 @@ const CityTags = () => {
     // Custom rendering for pill shapes
     const afterRender = () => {
       const context = render.context;
-      context.font = 'normal 1rem Marlton';
-      context.textAlign = 'center';
-      context.textBaseline = 'middle';
+      context.font = "normal 1rem Marlton";
+      context.textAlign = "center";
+      context.textBaseline = "middle";
 
-      bodies.forEach(body => {
+      bodies.forEach((body) => {
         const { position, angle, label, width, height } = body;
         const radius = height / 2;
-        
+
         context.save();
         context.translate(position.x, position.y);
         context.rotate(angle);
@@ -133,14 +158,26 @@ const CityTags = () => {
         // Draw pill shape
         context.beginPath();
         // Left semicircle
-        context.arc(-width/2 + radius, 0, radius, Math.PI/2, Math.PI*3/2);
+        context.arc(
+          -width / 2 + radius,
+          0,
+          radius,
+          Math.PI / 2,
+          (Math.PI * 3) / 2,
+        );
         // Top line
-        context.lineTo(width/2 - radius, -radius);
+        context.lineTo(width / 2 - radius, -radius);
         // Right semicircle
-        context.arc(width/2 - radius, 0, radius, Math.PI*3/2, Math.PI/2);
+        context.arc(
+          width / 2 - radius,
+          0,
+          radius,
+          (Math.PI * 3) / 2,
+          Math.PI / 2,
+        );
         // Bottom line
-        context.lineTo(-width/2 + radius, radius);
-        
+        context.lineTo(-width / 2 + radius, radius);
+
         context.fillStyle = body.render.fillStyle;
         context.fill();
         context.strokeStyle = body.render.strokeStyle;
@@ -148,19 +185,19 @@ const CityTags = () => {
         context.stroke();
 
         // Draw text
-        context.fillStyle = '#000000';
+        context.fillStyle = "#000000";
         context.fillText(label, 0, 0);
-        
+
         context.restore();
       });
     };
 
     // Add the custom render callback
-    Matter.Events.on(render, 'afterRender', afterRender);
+    Matter.Events.on(render, "afterRender", afterRender);
 
     // Prevent bodies from sleeping
-    Matter.Events.on(engine, 'beforeUpdate', () => {
-      Matter.Composite.allBodies(world).forEach(body => {
+    Matter.Events.on(engine, "beforeUpdate", () => {
+      Matter.Composite.allBodies(world).forEach((body) => {
         if (body.isSleeping) {
           Matter.Sleeping.set(body, false);
         }
@@ -172,19 +209,18 @@ const CityTags = () => {
       render.options.width = window.innerWidth;
       render.options.height = 300;
       Matter.Render.setPixelRatio(render, window.devicePixelRatio);
-      
+
       // Update boundaries
       Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: 310 });
-      Matter.Body.setPosition(rightWall, { x: window.innerWidth + 50, y: 250 });
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Initial render
     handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      Matter.Events.off(render, 'afterRender', afterRender);
+      window.removeEventListener("resize", handleResize);
+      Matter.Events.off(render, "afterRender", afterRender);
       Matter.Render.stop(render);
       Matter.Runner.stop(runner);
       Matter.World.clear(world, false);
@@ -193,10 +229,10 @@ const CityTags = () => {
         render.canvas.remove();
       }
     };
-  }, []);
+  }, [cities]);
 
   return (
-    <div className="flex justify-center w-full">
+    <div className="paper-bg-16 flex max-h-fit w-full justify-center">
       <div ref={sceneRef} className="w-full" />
     </div>
   );

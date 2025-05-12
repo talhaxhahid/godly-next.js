@@ -1,115 +1,313 @@
+"use client";
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { useState, useEffect } from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
-import background from "../assets/texture.png";
-import headingBg from "../assets/headingBg.png";
-import windowCleaning from "@/assets/windowCleaning.png";
-import img1 from "@/assets/rocket.png";
-import img2 from "@/assets/plant.png";
-import img3 from "@/assets/eagle.png";
+
+import ticketBg from "@/assets/ticket-bg.webp";
+
+import fam1 from "@/assets/fam-1.webp";
+import fam2 from "@/assets/fam-2.webp";
+import img1 from "@/assets/rocket.webp";
+import img2 from "@/assets/plant.webp";
+import img3 from "@/assets/eagle.webp";
 import SectionButton from "@/components/sectionButton";
+import Autoplay from "embla-carousel-autoplay";
 
-    const steps = [
-        {
-            number: "01",
-            icon: img1,
-            title: "QUICK ESTIMATES",
-            text: "We offer free estimates within 24 hours for all jobs.",
-        },
-        {
-            number: "02",
-            icon: img2,
-            title: "FULLY INSURED",
-            text: "No need to worry, we are insured up to $2M plus workers comp.",
-        },
-        {
-            number: "03",
-            icon: img3,
-            title: "BUILT ON INTEGRITY",
-            text: "If you’re ever dissatisfied with our service, we won’t stop until we’ve made it right.",
-        },
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  // CarouselNext,
+  // CarouselPrevious,
+} from "@/components/ui/carousel";
+// import EstimateButton from "@/components/estimateButton";
 
-    ];
-
+const steps = [
+  {
+    number: "01",
+    icon: img1,
+    title: "QUICK ESTIMATES",
+    text: (
+      <>
+        We offer free estimates within{" "}
+        <span className="font-bold">24 hours</span> for all jobs.
+      </>
+    ),
+  },
+  {
+    number: "02",
+    icon: img2,
+    title: "FULLY INSURED",
+    text: "No need to worry, we are insured up to $2M plus workers comp.",
+  },
+  {
+    number: "03",
+    icon: img3,
+    title: "BUILT ON INTEGRITY",
+    text: "If you’re ever dissatisfied with our service, we won’t stop until we’ve made it right.",
+  },
+];
 
 const Promise = () => {
+  // Add state to track active card
+  const [activeCard, setActiveCard] = useState(null);
 
+  // Toggle function to handle touch interactions
+  const toggleCard = (index) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
 
-
-    return (
-        <div id="promise"
-            className="flex gap-10 p-24 flex-col justify-items-center items-center min-h-screen bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background.src})` }}>
-            
-            <div className="-rotate-2 flex flex-col items-center justify-center bg-contain bg-center bg-no-repeat h-40 w-140" style={{ backgroundImage: `url(${headingBg.src})` }}>
-            <h1 className="text-5xl font-normal text-[#191717] tracking-wide">old fashioned Values</h1>
-            <h4 className="text-3xl -mt-4 font-normal text-[#191717]"><span className="underline &nbsp;">UNRIVALED</span> <span className="text-[#B0906E] text-6xl font-['luminaire-script']">Quality</span></h4>
-            </div>
-            <Story/>
-            <div className="py-10">
-            <h1 className="text-5xl font-normal text-[#191717] tracking-wide text-center">Delivering</h1>
-            <h4 className="text-5xl  font-normal text-[#191717] tracking-wide text-center"><span className="underline text-[#61503E] ">Trustworthy</span> <span className=" text-5xl ">Service</span></h4>
-            </div>
-            
-            <div className=" py-5 flex flex-wrap justify-center gap-6 sm:gap-2 md:gap-4 px-4 sm:px-4 md:px-8 relative z-10">
-                    {steps.map((step, index) => (
-                        <div key={index} className={`  rounded-sm p-2 bg-size-[auto_10rem] bg-top-right bg-no-repeat ${index === 1 ? "bg-[#E7E3E0] text-black" : "bg-[#201E1E] text-[#FFFFFF]"} `} style={{ backgroundImage: `url(${step.icon.src})` }}>
-                            <div className="flex flex-col justify-between items-start border-[#6A6464]  p-6 rounded-md border border-dashed  relative z-10  w-70 min-h-65 gap-15 ">
-                                   <div>
-                                    <h5 className="text-md font-normal "><span className="">{step.number}</span></h5>
-                                    
-                                    <div
-                                        className="text-left  text-2xl mb-8"
-                                        style={{ marginBottom: "1rem" }}
-                                    >
-                                        {step.title}
-                                    </div>
-                                    </div>
-                                    
-                                    <p
-                                        className="text-left text-sm "
-                                        style={{ fontFamily: "sans-serif" }}
-                                    >
-                                        {step.text}
-                                    </p>
-                                
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            <SectionButton/>
-            
-
+  return (
+    <div
+      id="promise"
+      className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] md:px-[86px] md:py-[150px]"
+    >
+      <div
+        className="relative flex h-[200px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[210px] md:scale-100"
+        style={{
+          backgroundImage: `url(${ticketBg.src})`,
+        }}
+      >
+        <div className="flex -translate-y-7 flex-col items-center gap-4">
+          <h1 className="text-trim -rotate-2 text-[64px] font-normal tracking-[5.76px] text-[#191717]">
+            old fashioned Values
+          </h1>
+          <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-3xl font-normal text-[#191717]">
+            <span className="text-[32px] underline">UNRIVALED</span>{" "}
+            <span
+              className="text-trim quality-text font-['luminaire-script'] text-[80px] text-[#B0906E]"
+              data-text="Quality"
+            >
+              Quality
+            </span>
+          </h4>
         </div>
-    );
+      </div>
+      <Story />
+      <div className="flex flex-col items-center justify-center gap-4 py-10 md:gap-10">
+        <h1
+          className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
+          data-text="Delivering"
+        >
+          Delivering
+        </h1>
+        <h4 className="trim text-center text-4xl font-normal tracking-wide md:-mt-6 md:text-[64px]">
+          <span
+            className="md:text-grain trim relative text-[#61503E] underline"
+            data-text="Trustworthy"
+          >
+            Trustworthy
+          </span>{" "}
+          <span
+            className="text-grain trim !bg-[#191717] text-4xl md:text-[64px]"
+            data-text="Service"
+          >
+            Service
+          </span>
+        </h4>
+      </div>
 
-}
+      <div className="relative z-10 flex flex-wrap justify-center gap-6 sm:gap-2 sm:px-4 md:gap-8">
+        {steps.map((step, index) => {
+          const isActive = activeCard === index;
+          return (
+            <div
+              key={index}
+              className={
+                "paper-bg-8 group relative flex w-full max-w-[350px] rounded-[6px] p-2 " +
+                (isActive
+                  ? "bg-[#E7E3E0] text-black"
+                  : "bg-[#201E1E] text-[#FFFFFF]") +
+                " hover:bg-[#E7E3E0] hover:text-black"
+              }
+              onClick={() => toggleCard(index)}
+            >
+              <img
+                src={step.icon.src}
+                alt={step.title}
+                className={`absolute top-0 right-0 h-[80%] ${
+                  index === 1
+                    ? (isActive ? "filter-[invert(0)]" : "filter-[invert(1)]") +
+                      " group-hover:filter-[invert(0)]"
+                    : (isActive ? "filter-[invert(1)]" : "") +
+                      " group-hover:filter-[invert(1)]"
+                }`}
+              />
+              <div className="relative z-10 flex min-h-65 flex-col items-start justify-between gap-15 rounded-md border border-dashed border-[#6A6464] p-4">
+                <div className="flex flex-col gap-8">
+                  <h5 className="text-base font-normal">
+                    <span className="text-base">{step.number}</span>
+                  </h5>
+
+                  <div
+                    className={`text-grain max-w-[170px] text-left text-4xl ${
+                      isActive ? "!bg-[#2D2B2B]" : "!bg-white"
+                    } group-hover:bg-[#2D2B2B]!`}
+                    data-text={step.title}
+                    style={{ marginBottom: "1rem" }}
+                  >
+                    {step.title}
+                  </div>
+                </div>
+
+                <p
+                  className={`text-grain text-left text-base ${
+                    isActive ? "!bg-[#2D2B2B]" : "!bg-white"
+                  } group-hover:bg-[#2D2B2B]!`}
+                  data-text={step.text}
+                  style={{ fontFamily: "Inter" }}
+                >
+                  {step.text}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <SectionButton>Get a Free Estimate</SectionButton>
+      {/* <EstimateButton /> */}
+    </div>
+  );
+};
 
 export default Promise;
 
+function Story() {
+  const [api, setApi] = useState(null);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
-function Story(){
-    return(
+  // Setup event listeners for the carousel
+  useEffect(() => {
+    if (!api) return;
 
-        <div className="bg-[#1F1D1D] rounded-md  w-full flex  p-4 gap-10 ">
-            <div className="flex-1 ">
-            <div className="bg-[#e7e3df] text-[#1c1c1c] rounded-sm p-2 min-h-[200px] relative">
-                <Image src={windowCleaning}  alt="window"></Image>
-                <p className="font-['luminaire-script'] text-base text-center">Grandma & grandson</p>
-                <div className="h-3 w-18 -rotate-45 bg-[#F3CA9ECC] absolute top-2 -left-6 z-10"></div>
-                <div className="h-3 w-18 -rotate-45 bg-[#F3CA9ECC] absolute bottom-2 -right-6 z-10"></div>
+    setCount(api.scrollSnapList().length);
+
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+  return (
+    <div
+      className="flex w-full max-w-[1100px] flex-col gap-[34px] rounded-[12px] bg-[#1F1D1D] p-4 md:mt-12 md:flex-row md:gap-10"
+      style={{
+        boxShadow:
+          "0px 4px 4px 0px rgba(255, 255, 255, 0.30) inset, 0px 3.015px 3.015px 0px rgba(0, 0, 0, 0.25)",
+      }}
+    >
+      <div className="relative overflow-visible">
+        <Carousel
+          className="carousel-dots pointer-none: relative w-full overflow-visible"
+          setApi={setApi}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            }),
+          ]}
+        >
+          <div className="absolute top-2 -left-6 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+          <div className="absolute -right-6 bottom-2 z-50 h-3 w-18 -rotate-45 bg-[#F3CA9ECC]"></div>
+          <CarouselContent className="overflow-visible">
+            <CarouselItem className="overflow-visible">
+              <div className="relative min-h-[200px] overflow-visible rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
+                <Image
+                  src={fam1}
+                  alt="family"
+                  className="h-contain bg-full h-full overflow-clip"
+                />
+                <p className="text-center font-['luminaire-script'] text-base">
+                  Our family business
+                </p>
               </div>
-            </div>
-            <div className="flex-1 p-3 ">
-                <h1 className="text-white text-4xl mb-3"><span className="text-[#F3CA9E]">LOCAL &nbsp;</span>FAMILY OWNED</h1>
-                <p className="text-[#A4A4A4] font-sans">Godly is founded by <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">Perfectionist</span>  looking to bridge the gaps between honest blue-collar work, modern <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">Craftsmanship</span>, and a fair price.</p>
-                <br/>
-                <p className="text-[#A4A4A4] font-sans">We want to ‘reverse time’ back to when you <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">Trusted</span> the people working on your home or Business. Back to when the standard was to do exactly what you said you’d do, rather than using it as merely a <span className="text-[#F3CA9E] bg-[#2D2B2B] px-1">Guideline </span>.</p>
+            </CarouselItem>
 
-            </div>
+            <CarouselItem>
+              <div className="relative min-h-[200px] rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c]">
+                <Image src={fam2} alt="family" />
+                <p className="text-center font-['luminaire-script'] text-base">
+                  Quality service
+                </p>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
 
+        <div className="mt-4 flex justify-center gap-2">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                index === current ? "bg-[#F3CA9E]" : "bg-[#F3CA9E]/30"
+              }`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
-
-
-    );
+      </div>
+      <div className="flex flex-1 flex-col items-start justify-center gap-[34px] p-3 md:gap-[40px]">
+        <h1 className="flex items-center gap-4 text-4xl text-white md:text-6xl">
+          <span
+            className="text-grain !bg-[#F3CA9E] font-['marlton']"
+            data-text="LOCAL"
+          >
+            LOCAL
+          </span>
+          <span
+            className="text-grain !bg-white font-['marlton']"
+            data-text="FAMILY"
+          >
+            {" "}
+            FAMILY
+          </span>
+          <span
+            className="text-grain !bg-white font-['marlton']"
+            data-text="OWNED"
+          >
+            {" "}
+            OWNED
+          </span>
+        </h1>
+        <p
+          className="text-justify text-sm tracking-wide text-[#A4A4A4] md:text-base"
+          style={{
+            fontFamily: "var(--font-inter)",
+          }}
+        >
+          Godly is founded by{" "}
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">
+            Perfectionist
+          </span>
+          looking to bridge the gaps between honest blue-collar work, modern
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">
+            Craftsmanship
+          </span>
+          , and a fair price.
+        </p>
+        <p
+          className="text-justify text-sm tracking-wide text-[#A4A4A4] md:text-base"
+          style={{
+            fontFamily: "var(--font-inter)",
+          }}
+        >
+          We want to ‘reverse time’ back to when you
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">Trusted</span> the
+          people working on your home or Business. Back to when the standard was
+          to do exactly what you said you&apos;d do, rather than using it as
+          merely a
+          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">Guideline </span>.
+        </p>
+      </div>
+    </div>
+  );
 }
-

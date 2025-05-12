@@ -26,6 +26,31 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "satoshi-regular";
+  src: url("../assets/fonts/Satoshi-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-bold";
+  src: url("../assets/fonts/Satoshi-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-black";
+  src: url("../assets/fonts/Satoshi-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-light";
+  src: url("../assets/fonts/Satoshi-Light.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi-medium";
+  src: url("../assets/fonts/Satoshi-Medium.otf") format("truetype");
+}
+
 html,
 body {
   max-width: 100vw;
@@ -47,7 +72,7 @@ body {
 
 p {
   text-box-trim: both;
-  text-box-edge: cap;
+  /* text-box-edge:; */
 }
 
 a {
@@ -179,4 +204,613 @@ a {
 
 html {
   scroll-behavior: smooth;
+}
+
+.paper-bg-14 {
+  background-image: url("/assets/vintage-paper-14.webp");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: screen, normal;
+}
+
+.paper-bg-8 {
+  background-image: url("/assets/vintage-paper-8.webp");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply, normal;
+}
+
+.paper-bg-16 {
+  background-image: url("/assets/vintage-paper-16.webp");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply, normal;
+}
+
+.card-number {
+  color: rgba(49, 46, 44, 0.19);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(45, 43, 43, 0.2);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-heading {
+  color: #2d2b2b;
+  /* font-family: Inter; */
+  font-size: 22.89px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 27.468px */
+}
+
+.card-description {
+  color: #2d2b2b;
+  /* font-family: Inter; */
+  font-size: 22.89px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 27.468px */
+}
+
+.text-trim {
+  text-box-trim: trim-both;
+  /* text-box-edge: cap alphabetic; */
+}
+
+.see-more-reviews {
+  color: #fff;
+  /* font-family: "Marlton Sans"; */
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+/* .quote-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase !important;
+  justify-content: center;
+  line-height: 61px; 
+  background-color: red;
+  padding: 36px 22px;
+  gap: 10px;
+  border-radius: 9px;
+  color: #fde4c8;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: lowercase;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent; 
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.289px #992f12 inset,
+    0px 17px 34px rgba(9, 9, 9, 0.24),
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
+    0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9px;
+    border: 4px solid #933d29;
+    outline-style: solid;
+    outline-color: #933d29;
+    outline-width: 4px;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #a14632 100%),
+      linear-gradient(180deg, #754034 0%, #943b2a 100%),
+      url("/assets/vintage-paper-14.webp") lightgray 50% / cover no-repeat;
+    background-blend-mode: normal, hard-light, normal;
+    box-shadow:
+      0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
+      0px -9px 5.289px #992f12 inset,
+      0px 17px 34px rgba(9, 9, 9, 0.24);
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9px;
+    box-shadow:
+      0px -7px 5.289px #853826 inset,
+      0px -9px 5.289px #992f12 inset,
+      0px 17px 34px #783220;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    color: #fde4c8 !important;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+} */
+
+.quote-button {
+  position: relative;
+  display: inline-flex;
+  /* font-family: "satoshi-regular", sans-serif; */
+  align-items: center;
+  text-transform: uppercase !important;
+  justify-content: center;
+  line-height: 61px; /* same as button height */
+  background-color: red;
+  padding: 36px 22px;
+  gap: 10px;
+  border-radius: 9px;
+  color: #fde4c8;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: lowercase;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent; /* base color handled in ::before */
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.289px #992f12 inset,
+    0px 17px 34px rgba(9, 9, 9, 0.24),
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24),
+    0px 1px 1.4px 0px rgba(247, 235, 235, 0.69) inset;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    padding: 16px 20px;
+    height: auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9px;
+    border: 4px solid #933d29;
+    outline-style: solid;
+    outline-color: #933d29;
+    outline-width: 4px;
+    /* border-radius: 0px; */
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #a14632 100%),
+      linear-gradient(180deg, #754034 0%, #943b2a 100%),
+      url("/assets/vintage-paper-14.webp") lightgray 50% / cover no-repeat;
+    background-blend-mode: normal, hard-light, normal;
+    box-shadow:
+      0px -7px 5.289px rgba(36, 34, 34, 0.33) inset,
+      0px -9px 5.289px #992f12 inset,
+      0px 17px 34px rgba(9, 9, 9, 0.24);
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    color: #fde4c8 !important;
+  }
+}
+
+.font-sans {
+  font-family: "satoshi-medium", sans-serif;
+}
+
+/* .text-grain {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    background-image: url("/assets/grain.webp");
+    background-position: center;
+    background-size: contain;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+} */
+
+.text-grain {
+  background: url("/assets/grain.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fde4c8; /* Fallback color */
+
+  /* padding-bottom: 0.3em; Add padding to accommodate descenders */
+  display: inline-block; /* Ensures the padding is respected */
+  line-height: 1.3; /* Increase line height */
+  overflow: visible; /* Ensure text isn't cut off */
+}
+
+/* Ensure the parent container allows overflow */
+.trim {
+  overflow: visible !important;
+}
+
+.with-text {
+  color: #fde4c8;
+  text-align: right;
+  /* leading-trim: trim-both; */
+  /* text-edge: cap; */
+  /* font-family: "satoshi-bold"; */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* text-transform: uppercase; */
+
+  text-shadow:
+    -2.22px -2.22px 0 #201e1e,
+    2.22px -2.22px 0 #201e1e,
+    -2.22px 2.22px 0 #201e1e,
+    2.22px 2.22px 0 #201e1e;
+}
+
+.quality-text {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    margin-top: -8px;
+    text-shadow:
+      -2.22px -2.22px 0 #e7e3e0,
+      2.22px -2.22px 0 #e7e3e0,
+      -2.22px 2.22px 0 #e7e3e0,
+      2.22px 2.22px 0 #e7e3e0;
+  }
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    margin-top: -8px;
+    background-image: url("/assets/grain.webp");
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Add contrast to make grain more visible */
+    filter: contrast(150%) brightness(0.8);
+    /* Ensure the grain only applies to the text */
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+}
+
+.estimate-button {
+  position: relative;
+  display: flex;
+  /* width: 262px; */
+  height: 61px;
+  padding: 22px 14px 22px 19px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  /* Make sure we're not accidentally overriding the border */
+  border: none;
+  background: transparent;
+  z-index: 0;
+  box-shadow:
+    0px 1px 1.4px 0px #f7ebebb0 inset,
+    0px 17px 34px 0px #0909093d;
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    padding: 16px 20px;
+    height: auto;
+  }
+}
+
+/* Ensure the ::before element has proper size and placement */
+.estimate-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Make sure z-index places it behind the content */
+  z-index: -2;
+  border-radius: 9px;
+  border: 4px solid #61503e;
+  box-shadow:
+    0px 1px 1.4px 0px #f7ebebb0 inset,
+    0px 17px 34px 0px #0909093d;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Inner container with background */
+.estimate-button::after {
+  content: "";
+  position: absolute;
+  inset: 4px; /* Account for the 4px border */
+  border-radius: 5px;
+  border: 1px solid #232222;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(97, 80, 62, 0.6) 60%),
+    linear-gradient(180deg, #323030 100%, #262424 40%),
+    url("/assets/vintage-paper-14.webp") lightgray 0% / cover no-repeat;
+  background-blend-mode: normal, normal, normal;
+  box-shadow:
+    0px -7px 5.29px 0px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.29px 0px #343232 inset,
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+  z-index: -1;
+}
+
+/* Text content */
+.estimate-button span {
+  position: relative;
+  z-index: 2;
+  color: #fde4c8;
+  /* font-family: "Marlton Sans", sans-serif; Add fallback */
+  font-size: 24px;
+  font-style: normal;
+
+  font-weight: 400;
+  line-height: normal;
+  /* text-transform: lowercase; */
+  /* mix-blend-mode: difference; */
+
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+/* SVG icon */
+.estimate-button svg {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  z-index: 2;
+  fill: #d0bda6;
+}
+
+.carousel-dots .dot {
+  background-color: #f3ca9e;
+}
+
+.carousel-dots .dot-active {
+  background-color: #f3ca9e;
+}
+
+.trim {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.service-icon-hover:hover {
+  svg {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(5%) saturate(4022%)
+      hue-rotate(305deg) brightness(116%) contrast(99%);
+  }
+}
+
+.free-button {
+  position: relative;
+  display: flex;
+  /* width: 262px; */
+  height: 61px;
+  padding: 22px 14px 22px 19px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  /* Make sure we're not accidentally overriding the border */
+  border: none;
+  background: transparent;
+  z-index: 0;
+}
+
+/* Ensure the ::before element has proper size and placement */
+.free-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Make sure z-index places it behind the content */
+  z-index: -2;
+  border-radius: 9px;
+  border: 4px solid #ab8459;
+
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Inner container with background */
+.free-button::after {
+  content: "";
+  position: absolute;
+  inset: 4px; /* Account for the 4px border */
+
+  border-radius: 5px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(171, 132, 89, 0.6) 100%),
+    linear-gradient(180deg, #61503e 0%, #312e2c 100%),
+    url("/assets/vintage-paper-14.webp") lightgray 50% / cover no-repeat;
+  background-blend-mode: normal, hard-light, normal;
+  box-shadow:
+    0px -7px 5.289px 0px rgba(36, 34, 34, 0.33) inset,
+    0px -9px 5.289px 0px rgba(97, 80, 62, 0.3) inset,
+    0px 17px 34px 0px rgba(9, 9, 9, 0.24);
+  z-index: -1;
+}
+
+/* Text content */
+.free-button span {
+  position: relative;
+  z-index: 5;
+  color: #fde4c8 !important;
+
+  font-size: 24px;
+  font-style: normal;
+
+  font-weight: 400;
+  line-height: normal;
+
+  mix-blend-mode: normal;
+
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+/* SVG icon */
+.free-button svg {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  z-index: 2;
+  fill: #fde7cd;
+}
+
+.dashed-border-hover {
+  border: 1px solid transparent;
+  /* transition: all 0.1s ease; */
+}
+
+.dashed-border-hover:hover {
+  --dash-length: 22px;
+  --dash-gap: 5px;
+  border: 2px dashed #f1caa0;
+}
+
+.dashed-border {
+  --dash-length: 22px;
+  --dash-gap: 5px;
+  border: 2px dashed #f1caa0;
+}
+
+/* Ribbon Component - Add to globals.css */
+.ribbon {
+  --c: #222; /* Background color - change as needed */
+  --r: 0.4em; /* Radius for the cutout */
+  --a: 6deg; /* Angle - 4 degrees as requested */
+  --d: 0.4em; /* Depth of the cutout */
+
+  /* font-size: 28px; */
+  font-weight: bold;
+  color: white;
+  background: var(--c);
+  padding-inline: 0.5em;
+  margin: calc(0.5lh + var(--r)) calc(1.2lh + var(--d));
+  /* line-height: 1.75; */
+  width: fit-content;
+  position: relative;
+  white-space: nowrap;
+}
+
+.ribbon:before,
+.ribbon:after {
+  content: "";
+  position: absolute;
+  width: calc(1lh + var(--d));
+  height: calc(1.5lh + var(--r));
+  border: solid var(--c);
+  box-sizing: border-box;
+}
+
+.ribbon:before {
+  left: 99%;
+  bottom: 0;
+  border-width: 0 1lh 1lh 0;
+  border-radius: 0 0 999px 0;
+  clip-path: polygon(
+    calc(999px * cos(var(--a)))
+      calc(100% - 1lh - var(--d) + 999px * sin(var(--a))),
+    999px 0,
+    100% 0,
+    calc(50% + var(--d) / 2) var(--r),
+    var(--d) 0,
+    0 0,
+    0 calc(100% - 1lh - var(--d))
+  );
+  transform-origin: 0 calc(100% - 1lh - var(--d));
+  rotate: calc(90deg - var(--a));
+}
+
+.ribbon:after {
+  right: 99%;
+  top: 0;
+  border-width: 1lh 0 0 1lh;
+  border-radius: 999px 0 0 0;
+  clip-path: polygon(
+    calc(100% - 999px * cos(var(--a)))
+      calc(1lh + var(--d) - 999px * sin(var(--a))),
+    -999px 100%,
+    0 100%,
+    calc(50% - var(--d) / 2) calc(100% - var(--r)),
+    calc(100% - var(--d)) 100%,
+    100% 100%,
+    100% calc(1lh + var(--d))
+  );
+  transform-origin: 100% calc(1lh + var(--d));
+  rotate: calc(90deg - var(--a));
+}
+
+/* Color variations - optional */
+.ribbon-blue {
+  --c: #2563eb; /* Tailwind blue-600 */
+}
+
+.ribbon-green {
+  --c: #16a34a; /* Tailwind green-600 */
+}
+
+.ribbon-red {
+  --c: #dc2626; /* Tailwind red-600 */
+}
+
+html body[data-scroll-locked]:not(#_):not(#_):not(#_) {
+  margin-right: 0px !important;
+}
+
+.hero-banner-bg {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 35.59%, #1f1d1d 66.5%),
+    linear-gradient(270deg, #1f1d1d 0%, rgba(0, 0, 0, 0) 53.56%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    #1f1d1d;
 }

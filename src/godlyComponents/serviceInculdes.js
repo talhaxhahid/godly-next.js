@@ -1,60 +1,99 @@
-import React from "react";
+import React, { useState } from "react";
 import "@/styles/fourstepprocess.css";
-import background from "../assets/texture.png";
+import background from "../assets/texture.webp";
 import Services from "@/data/servicesData";
-
-
-
-
+import { cn } from "@/lib/utils";
 
 const ServiceIncludes = ({ slug }) => {
+  // Add state to track active card
+  const [activeCard, setActiveCard] = useState(null);
 
+  // Toggle function to handle touch interactions
+  const toggleCard = (index) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
 
+  return (
+    <div
+      id="promise"
+      className="flex flex-col items-center justify-items-center gap-[55px] bg-[#FDE4C8] bg-cover bg-center bg-no-repeat px-[30px] py-[100px] bg-blend-multiply md:gap-16 md:px-[24px] md:py-[100px]"
+      style={{ backgroundImage: `url(${background.src})` }}
+    >
+      <div className="md:w-full md:max-w-[854px] md:py-10">
+        <h4 className="trim m-0 w-full p-0 text-center text-[36px] leading-tight font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px] md:leading-tight">
+          <span className="text-grain !bg-[#191717]" data-text="WHAT'S">
+            WHAT&apos;S
+          </span>{" "}
+          <span className="text-grain !bg-[#AB8459]" data-text="INCLUDED">
+            INCLUDED
+          </span>{" "}
+          <span className="text-grain !bg-[#191717]" data-text="IN OUR">
+            IN OUR
+          </span>{" "}
+          <span
+            className="text-grain hidden !bg-[#191717] md:inline-block"
+            data-text={`${Services[slug]["hero"][0]} CLEANING`}
+          >
+            {Services[slug]["hero"][0]} CLEANING
+          </span>{" "}
+          <span className="text-grain !bg-[#191717]" data-text="SERVICE">
+            SERVICE
+          </span>
+        </h4>
+      </div>
 
-    return (
-        <div id="promise"
-            className="flex gap-10 p-24 flex-col justify-items-center items-center min-h-screen bg-[#FDE4C8] bg-blend-multiply bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background.src})` }}>
-           
-            <div className="py-10">
-            <h4 className="text-5xl  font-normal text-[#191717] tracking-wide text-center w-150">WHAT <span className="text-[#AB8459] ">INCLUDED</span> <span className=" text-5xl "> IN OUR SOLAR PANEL CLEANING Service</span></h4>
-            </div>
-            
-            <div className="py-5 flex flex-wrap gap-6 px-4 w-full max-w-screen-xl justify-center ">
-                    {Services[slug]['included'].map((step, index) => (
-                        <div key={index} className={`  rounded-sm p-2 bg-size-[auto_10rem] bg-top-right ${Services[slug]['included'].length==5 ?"w-65":Services[slug]['included'].length==3 ?"w-70":"w-60"} min-h-60 bg-no-repeat ${index === 1 ? "bg-[#E7E3E0] text-black" : "bg-[#201E1E] text-[#FFFFFF]"} `} >
-                            <div className="flex flex-col justify-between items-center border-[#6A6464]  p-6 rounded-md border border-dashed  relative z-10  w-full  h-full gap-15 ">
-                                   <div>
-                                    <h5 className="text-md font-normal text-center "><span className="">{step.number}</span></h5>
-                                    
-                                    <div
-                                        className="text-center  text-2xl mb-3"
-                                        
-                                    >
-                                        {step.title}
-                                    </div>
-                                    </div>
-                                    
-                                    <p
-                                        className="text-center text-sm "
-                                        style={{ fontFamily: "sans-serif" }}
-                                    >
-                                        {step.text}
-                                    </p>
-                                
-                            </div>
-                        </div>
-                    ))}
+      <div className="grid w-full max-w-[1126px] grid-cols-2 flex-wrap justify-center gap-3 md:flex md:flex-wrap lg:pb-12">
+        {Services[slug]["included"].map((step, index) => {
+          const isActive = activeCard === index;
+          return (
+            <div
+              key={index}
+              className={cn(
+                `paper-bg-16 group min-h-[250px] w-full rounded-sm bg-[#312E2C] bg-size-[auto_10rem] bg-top-right p-2 sm:min-h-[270px] sm:p-3 md:min-h-[290px] md:max-w-[272px]`,
+                isActive ? "bg-[transparent]" : "",
+                "hover:bg-[transparent]",
+                Services[slug]["included"].length === 5 && "md:max-w-[367px]",
+                index === Services[slug]["included"].length - 1 &&
+                  Services[slug]["included"].length % 2 === 1 &&
+                  "last:col-span-2",
+              )}
+              onClick={() => toggleCard(index)}
+            >
+              <div
+                className={cn(
+                  "relative z-10 flex h-full w-full flex-col items-center justify-between rounded-md border-[#564839] p-3 text-white md:p-6",
+                  isActive
+                    ? "border border-dashed border-[#6A6464] text-[#2D2B2B]"
+                    : "",
+                  "group-hover:border group-hover:border-dashed group-hover:border-[#6A6464] group-hover:text-[#2D2B2B]",
+                )}
+              >
+                <div className="flex flex-col items-center justify-center gap-[32px]">
+                  <h5 className="text-center text-base font-normal">
+                    <span className="trim">{step.number}</span>
+                  </h5>
+
+                  <p
+                    className={cn(
+                      "trim text-grain text-center text-base before:uppercase md:text-2xl",
+                      isActive ? "!bg-[#2D2B2B]" : "!bg-white",
+                      "group-hover:!bg-[#2D2B2B]",
+                    )}
+                  >
+                    {step.title}
+                  </p>
                 </div>
-            
-            
 
-        </div>
-    );
-
-}
+                <p className="trim text-center text-xs md:text-base">
+                  {step.text}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default ServiceIncludes;
-
-
-
-
