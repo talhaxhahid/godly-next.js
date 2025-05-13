@@ -10,19 +10,21 @@ import { cn } from "@/lib/utils";
 import { useGodlyContext } from "@/context/godlyContext";
 import { citiesMap } from "./header/CitiesPopup";
 
-const getAddress = (city) => {
-  const cityToCheck = city.toUpperCase();
+// const getAddress = (city) => {
+const getAddress = () => {
+  // const cityToCheck = city.toUpperCase();
 
   // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
-  if (
-    ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
-      cityToCheck,
-    )
-  ) {
-    return "USA";
-  } else {
-    return "1901 Thornridge Cir. Shiloh, Hawaii 81063";
-  }
+  // if (
+  //   ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
+  //     cityToCheck,
+  //   )
+  // ) {
+  //   return "USA";
+  // } else {
+  //   return "1901 Thornridge Cir. Shiloh, Hawaii 81063";
+  // }
+  return "1901 Thornridge Cir. Shiloh, Hawaii 81063";
 };
 
 export const getPhoneNumber = (city) => {
