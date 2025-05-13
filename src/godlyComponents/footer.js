@@ -7,8 +7,59 @@ import Image from "next/image";
 import CityTags from "@/components/cityTags";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  // Get city from URL directly (format: boca_raton)
+  const getCityFromUrl = () => {
+    if (pathname) {
+      const pathSegments = pathname.split("/");
+      // The city is expected to be the first segment after the leading slash
+      if (pathSegments.length > 1 && pathSegments[1]) {
+        return pathSegments[1];
+      }
+    }
+    return "south_florida"; // Default
+  };
+
+  const urlCity = getCityFromUrl();
+
+  // Define phone numbers for different cities
+  const getPhoneNumber = () => {
+    const cityToCheck = urlCity.replace(/_/g, " ").toUpperCase();
+
+    // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
+    if (
+      ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
+        cityToCheck,
+      )
+    ) {
+      return "561-826-4461";
+    }
+    // Coral Springs, Parkland, Sunrise, Margate, Tamarac
+    else if (
+      ["CORAL SPRINGS", "PARKLAND", "SUNRISE", "MARGATE", "TAMARAC"].includes(
+        cityToCheck,
+      )
+    ) {
+      return "954-856-2066";
+    }
+    // Weston, Southwest Ranches, Pembroke Pines
+    else if (
+      ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
+    ) {
+      return "954-738-3421";
+    }
+    // Default phone number for all other cities
+    else {
+      return "954-852-5236";
+    }
+  };
+
+  const phoneNumber = getPhoneNumber();
+
   return (
     <div className="w-full flex-col bg-[#312E2C] md:flex">
       <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-10 px-6 py-[48px] md:px-[40px]">
@@ -67,19 +118,19 @@ const Footer = () => {
                 >
                   Our process
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  href={`/${urlCity}/holiday_light_installation` || "#holiday"}
                   className="font-['satoshi-regular'] text-base font-normal hover:underline md:text-sm"
                 >
                   Holiday lighting
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* Right: Contact Info */}
             <div className="hidden flex-col gap-2 text-right md:flex md:items-end">
               <p className="font-['satoshi-regular'] text-lg font-normal">
-                954-751-4128
+                <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
               </p>
               <p className="font-['satoshi-regular'] text-sm font-normal">
                 hello@godlywindows.com
@@ -89,10 +140,14 @@ const Footer = () => {
           <div className="item-center flex justify-between">
             <div className="flex gap-2 md:gap-4">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#312E2C] text-white">
-                <FaFacebookF />
+                <Link href="https://facebook.com/godlywindows">
+                  <FaFacebookF />
+                </Link>
               </div>
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#312E2C] text-white">
-                <FaInstagram />
+                <Link href="https://instagram.com/godlywindows">
+                  <FaInstagram />
+                </Link>
               </div>
             </div>
             <div className="font-['satoshi-regular'] text-sm font-normal text-[#312E2C]">

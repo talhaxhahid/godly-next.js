@@ -56,7 +56,10 @@ const Services = () => {
         <ServicesGrid />
       </div>
 
-      <div className="paper-bg-16 flex flex-col items-center justify-center gap-20 overflow-clip bg-[#262424] bg-contain bg-bottom bg-no-repeat px-6 pt-[100px] bg-blend-soft-light md:p-6">
+      <div
+        id="holiday"
+        className="paper-bg-16 flex flex-col items-center justify-center gap-20 overflow-clip bg-[#262424] bg-contain bg-bottom bg-no-repeat px-6 pt-[100px] bg-blend-soft-light md:p-6"
+      >
         <img
           className="pointer-events-none absolute overflow-clip object-contain opacity-25"
           src={"/assets/santa-bg-sparkle.webp"}
