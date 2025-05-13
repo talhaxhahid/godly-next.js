@@ -7,58 +7,62 @@ import Image from "next/image";
 import CityTags from "@/components/cityTags";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { useGodlyContext } from "@/context/godlyContext";
+import { citiesMap } from "./header/CitiesPopup";
+
+const getAddress = (city) => {
+  const cityToCheck = city.toUpperCase();
+
+  // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
+  if (
+    ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
+      cityToCheck,
+    )
+  ) {
+    return "USA";
+  } else {
+    return "1901 Thornridge Cir. Shiloh, Hawaii 81063";
+  }
+};
+
+export const getPhoneNumber = (city) => {
+  const cityToCheck = city.toUpperCase();
+
+  // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
+  if (
+    ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
+      cityToCheck,
+    )
+  ) {
+    return "561-826-4461";
+  }
+  // Coral Springs, Parkland, Sunrise, Margate, Tamarac
+  else if (
+    ["CORAL SPRINGS", "PARKLAND", "SUNRISE", "MARGATE", "TAMARAC"].includes(
+      cityToCheck,
+    )
+  ) {
+    return "954-856-2066";
+  }
+  // Weston, Southwest Ranches, Pembroke Pines
+  else if (
+    ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
+  ) {
+    return "954-738-3421";
+  }
+  // Default phone number for all other cities
+  else {
+    return "954-852-5236";
+  }
+};
 
 const Footer = () => {
-  const pathname = usePathname();
+  const { city } = useGodlyContext();
 
-  // Get city from URL directly (format: boca_raton)
-  const getCityFromUrl = () => {
-    if (pathname) {
-      const pathSegments = pathname.split("/");
-      // The city is expected to be the first segment after the leading slash
-      if (pathSegments.length > 1 && pathSegments[1]) {
-        return pathSegments[1];
-      }
-    }
-    return "south_florida"; // Default
-  };
+  const phoneNumber = getPhoneNumber(city);
+  const address = getAddress(city);
 
-  const urlCity = getCityFromUrl();
-
-  // Define phone numbers for different cities
-  const getPhoneNumber = () => {
-    const cityToCheck = urlCity.replace(/_/g, " ").toUpperCase();
-
-    // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
-    if (
-      ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
-        cityToCheck,
-      )
-    ) {
-      return "561-826-4461";
-    }
-    // Coral Springs, Parkland, Sunrise, Margate, Tamarac
-    else if (
-      ["CORAL SPRINGS", "PARKLAND", "SUNRISE", "MARGATE", "TAMARAC"].includes(
-        cityToCheck,
-      )
-    ) {
-      return "954-856-2066";
-    }
-    // Weston, Southwest Ranches, Pembroke Pines
-    else if (
-      ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
-    ) {
-      return "954-738-3421";
-    }
-    // Default phone number for all other cities
-    else {
-      return "954-852-5236";
-    }
-  };
-
-  const phoneNumber = getPhoneNumber();
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
 
   return (
     <div className="w-full flex-col bg-[#312E2C] md:flex">
@@ -119,7 +123,7 @@ const Footer = () => {
                   Our process
                 </Link>
                 <Link
-                  href={`/${urlCity}/holiday_light_installation` || "#holiday"}
+                  href={`/${cityKey}/holiday_light_installation` || "#holiday"}
                   className="font-['satoshi-regular'] text-base font-normal hover:underline md:text-sm"
                 >
                   Holiday lighting
@@ -151,8 +155,10 @@ const Footer = () => {
               </div>
             </div>
             <div className="font-['satoshi-regular'] text-sm font-normal text-[#312E2C]">
-              <p>1901 Thornridge Cir. Shiloh,</p>
-              <p>Hawaii 81063</p>
+              {/* <p>1901 Thornridge Cir. Shiloh,</p>
+              <p>Hawaii 81063</p> */}
+              <p>{address.split(",")[0]}</p>
+              <p>{address.split(",")[1]}</p>
             </div>
           </div>
         </div>

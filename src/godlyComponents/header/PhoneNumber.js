@@ -1,58 +1,12 @@
 // src/godlyComponents/header/PhoneNumber.js
 import React from "react";
 import { Phone } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useGodlyContext } from "@/context/godlyContext";
+import { getPhoneNumber } from "../footer";
 
 const PhoneNumber = () => {
-  const pathname = usePathname();
-
-  // Get city from URL directly (format: boca_raton)
-  const getCityFromUrl = () => {
-    if (pathname) {
-      const pathSegments = pathname.split("/");
-      // The city is expected to be the first segment after the leading slash
-      if (pathSegments.length > 1 && pathSegments[1]) {
-        return pathSegments[1].toLowerCase().replace(/_/g, " ");
-      }
-    }
-    return "south florida"; // Default
-  };
-
-  const urlCity = getCityFromUrl();
-
-  // Define phone numbers for different cities
-  const getPhoneNumber = () => {
-    const cityToCheck = urlCity.toUpperCase();
-
-    // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
-    if (
-      ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
-        cityToCheck,
-      )
-    ) {
-      return "561-826-4461";
-    }
-    // Coral Springs, Parkland, Sunrise, Margate, Tamarac
-    else if (
-      ["CORAL SPRINGS", "PARKLAND", "SUNRISE", "MARGATE", "TAMARAC"].includes(
-        cityToCheck,
-      )
-    ) {
-      return "954-856-2066";
-    }
-    // Weston, Southwest Ranches, Pembroke Pines
-    else if (
-      ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
-    ) {
-      return "954-738-3421";
-    }
-    // Default phone number for all other cities
-    else {
-      return "954-852-5236";
-    }
-  };
-
-  const phoneNumber = getPhoneNumber();
+  const { city } = useGodlyContext();
+  const phoneNumber = getPhoneNumber(city);
   const formattedPhoneNumber = phoneNumber.replace(/-/g, "");
 
   return (
